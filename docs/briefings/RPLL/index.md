@@ -171,6 +171,63 @@ If your route is still invalid, a controller will send you a private message wit
 
     During events it is important that you put your EOBT in your flight plan as controllers will use that to determine your takeoff slot.
 
+# Waypoint Restrictions
+
+<h3 style="text-align:center"><strong>Waypoint Restrictions</strong></h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:center">FIR</th>
+      <th style="text-align:center">Waypoint</th>
+      <th style="text-align:center">Airway</th>
+      <th style="text-align:center">Altitude (FL)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center"><strong>HONG KONG</strong></td>
+      <td style="text-align:center"><strong>NOMAN / SABNO</strong></td>
+      <td style="text-align:center"><strong>A583 / A461 / M501</strong></td>
+      <td style="text-align:center"><strong>300 / 340 / 380</strong></td>
+    </tr>
+    <tr>
+      <td rowspan="4" style="text-align:center"><strong>SINGAPORE</strong></td>
+      <td style="text-align:center"><strong>TEGID</strong></td>
+      <td style="text-align:center"><strong>M767</strong></td>
+      <td style="text-align:center"><strong>310 / 320 / 350 / 360 / 390 / 400</strong></td>
+    </tr>
+    <tr>
+      <td rowspan="3" style="text-align:center"><strong>LAXOR</strong></td>
+      <td style="text-align:center"><strong>L649</strong></td>
+      <td style="text-align:center"><strong>300 / 380</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>M772</strong></td>
+      <td style="text-align:center"><strong>300 / 380</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>N884</strong></td>
+      <td style="text-align:center"><strong>320 / 360 / 400</strong></td>
+    </tr>
+    <tr>
+      <td rowspan="3" style="text-align:center"><strong>HO CHI MINH</strong></td>
+      <td rowspan="2" style="text-align:center"><strong>PANDI / ARESI</strong></td>
+      <td style="text-align:center"><strong>M767 / L628</strong></td>
+      <td style="text-align:center"><strong>280 / 340</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>N500</strong></td>
+      <td style="text-align:center"><strong>300</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>MIGUG</strong></td>
+      <td style="text-align:center"><strong>N892</strong></td>
+      <td style="text-align:center"><strong>310 / 320 / 350 / 360 / 390 / 400</strong></td>
+    </tr>
+  </tbody>
+</table>
+
 # Clearance
 
 On first contact with the controller that will issue your clearance, it is recommended for you to give
