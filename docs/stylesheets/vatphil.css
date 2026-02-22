@@ -55,3 +55,10 @@
   -webkit-mask-size: contain;
   mask-size: contain;
 }
+
+.event-row span.label {
+  font-weight: bold;
+  color: #8c7804;
+  min-width: 80px;
+  flex-shrink: 0;
+}

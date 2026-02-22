@@ -45,17 +45,16 @@ For additional information, please see our [website](https://vatphil.com)!
 
           return `
             <div class="event-card">
-              ${poster}
-              <div class="event-body">
-                <span class="event-type">${e.type}</span>
-                <h3>${e.name}</h3>
-                <div class="event-row"><span class="label">Start</span>${toZulu(e.start_time)}</div>
-                <div class="event-row"><span class="label">End</span>${toZulu(e.end_time)}</div>
-                <div class="event-row"><span class="label">Airports</span>${airports}</div>
-                ${route ? `<div class="event-row"><span class="label">Route</span><span>${route}</span></div>` : ''}
-                <a class="event-link" href="${e.link}" target="_blank">View on VATSIM →</a>
-              </div>
-            </div>
+  ${poster}
+  <div class="event-body">
+    <h3>${e.name}</h3>
+    <div class="event-row"><span class="label">Starts:</span> ${toZulu(e.start_time)}</div>
+    <div class="event-row"><span class="label">Ends:</span> ${toZulu(e.end_time)}</div>
+    <div class="event-row"><span class="label">Airports:</span> ${airports}</div>
+    ${route ? `<div class="event-row"><span class="label">Route:</span> <span>${route}</span></div>` : ''}
+    <a class="event-link" href="${e.link}" target="_blank">View on VATSIM →</a>
+  </div>
+</div>
           `;
         }).join('')}</div>`;
       })
@@ -66,6 +65,7 @@ For additional information, please see our [website](https://vatphil.com)!
 
 </body>
 </html>
+
 
 # Reporting Errors
 If you spot an error in any of the content on this site, please report it to the Operations team by either:
