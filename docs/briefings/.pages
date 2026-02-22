@@ -1,7 +1,6 @@
 nav:
-    - RPLL (Manila): aerodromeinfo
-    - Phraseology: phraseology
-    - Routes: routes
+    - RPLL (Manila): aerodromeinfo.md
+    - Routes: routes.md
     - Facility Frequency: facility-frequency
     - Resources: resources
     - CPDLC / PDC: cpdlc-pdc.md

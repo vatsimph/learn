@@ -1,6 +1,6 @@
 nav:
     - Welcome: Welcome.md
-    - Briefings: briefings.md
+    - Briefings: briefings
     - Controllers: atc
     - NOTAMS: notams
     - More Resources: more-resources.md
