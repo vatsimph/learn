@@ -1,7 +1,7 @@
 nav:
-    - Start here: index.md
-    - Departure: departure
-    - Arrival: arrival
+    - RPLL (Manila): rpll.md
+    - Phraseology: phraseology.md
+    - Routes: routes.md
     - Facility Frequency: facility-frequency
     - Resources: resources
     - CPDLC / PDC: cpdlc-pdc.md

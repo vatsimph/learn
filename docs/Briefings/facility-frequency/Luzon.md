@@ -29,20 +29,6 @@
 | --- | --- | --- |
 | **RPLK_TWR** | Bicol Tower | 118.700 MHz |
 
-## RPLL - Manila—Ninoy Aquino International Airport
-| Callsign | Position | Frequency |
-| --- | --- | --- |
-| **RPLL_ATIS** | Manila ATIS | 126.400 MHz |
-| **RPLL_DEL** | Manila Delivery | 125.100 MHz |
-| **RPLL_GND** | Manila Ground | 121.800 MHz |
-| **RPLL_1_GND** | Manila Ramp (International Terminal 1) | 121.700 MHz |
-| **RPLL_2_GND** | Manila Ramp (Centennial Terminal 2) | 128.800 MHz |
-| **RPLL_3_GND** | Manila Ramp (Terminal 3) | 121.350 MHz |
-| **RPLL_4_GND** | Manila Ramp (Domestic Terminal 4) | 123.250 MHz |
-| **RPLL_TWR** | Manila Tower | 118.100 MHz |
-| **RPLL_F_APP** | Manila Departure / Final | 124.200 MHz |
-| **RPLL_APP** | Manila Approach | 124.800 MHz |
-
 ## RPLP - Legazpi Principal Airport
 | Callsign | Position | Frequency |
 | --- | --- | --- |

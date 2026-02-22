@@ -3,3 +3,29 @@
   --md-primary-fg-color--light: #d9d61c;
   --md-primary-fg-color--dark:  #403c01;
 }
+
+:root {
+  --md-admonition-icon--phraseology: url('../assets/img/phraseology.svg');
+}
+
+.md-typeset .admonition.phraseology,
+.md-typeset details.phraseology {
+  border-color: #00c853;
+}
+
+.md-typeset .phraseology > .admonition-title,
+.md-typeset .phraseology > summary {
+  background-color: #00c85320;
+  border-color: #00c853;
+}
+
+.md-typeset .phraseology > .admonition-title::before,
+.md-typeset .phraseology > summary::before {
+  background-color: #00c853;
+  -webkit-mask-image: var(--md-admonition-icon--phraseology);
+  mask-image: var(--md-admonition-icon--phraseology);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
