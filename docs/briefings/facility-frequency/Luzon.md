@@ -29,12 +29,6 @@
 | --- | --- | --- |
 | **RPLK_TWR** | Bicol Tower | 118.700 MHz |
 
-## RPLP - Legazpi Principal Airport
-| Callsign | Position | Frequency |
-| --- | --- | --- |
-| **RPLP_TWR** | Legazpi Tower | 123.300 MHz |
-| **RPLP_APP** | Legazpi Approach | 120.200 MHz |
-
 ## RPLS - Sangley Airport
 | Callsign | Position | Frequency |
 | --- | --- | --- |

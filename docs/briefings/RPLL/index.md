@@ -189,3 +189,121 @@ When requesting clearance, listen to the ATIS for the active runway and any acti
 
 # Pushback
 to be added
+
+# Departure
+to be added
+
+# Arrival
+
+When arriving in to Manila, it is best for you to be at FL160 when reaching the start of the [STAR](https://learn.vatphil.com/briefings/arrival/star/). On initial contact with Manila Approach (RPLL_APP), report your current level.
+
+!!! phraseology ""
+
+    **PAL123**:“Manila Approach, PAL123, FL160, inbound OLIVA”
+
+APP will then issue you further descend instructions and turns if necessary as well as the approach that you will be using. By default, controllers will vector you for an ILS approach.
+
+!!! warning
+
+    If APP didn’t give you any turns after you have passed the last waypoint on your routing, maintain your pressent heading.
+
+Below is the mandatory speed restrictions when under vectors by approach.
+<p style="color: red; font-style: italic; font-weight: bold; text-align: center;">Please follow the following table unless instructed by ATC.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:center">Category</th>
+      <th style="text-align:center">Distance (NM)</th>
+      <th style="text-align:center">Speed (IAS)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center"><strong>All</strong></td>
+      <td style="text-align:center">Crossing STAR Waypoint</td>
+      <td style="text-align:center">250</td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>All</strong></td>
+      <td style="text-align:center">20</td>
+      <td style="text-align:center">210</td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>All</strong></td>
+      <td style="text-align:center">10 FINAL</td>
+      <td style="text-align:center">180</td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>C & D</strong></td>
+      <td style="text-align:center">FAF/FAP</td>
+      <td style="text-align:center">150</td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>ATR</strong></td>
+      <td style="text-align:center">5</td>
+      <td style="text-align:center">150</td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>A & B</strong></td>
+      <td style="text-align:center">5</td>
+      <td style="text-align:center">130</td>
+    </tr>
+  </tbody>
+</table>
+
+# Manila Approach
+Approach can be split into 3 different sectors as shown below
+## Single Scope Operation
+![RPLL_APP](../../assets/img/RPHI/4.png)
+## Two Scope Operation
+![RPLL_APP](../../assets/img/RPHI/3.png)
+## Three Scope Operation
+![RPLL_APP](../../assets/img/RPHI/2.png)
+
+!!! information ""
+
+    RPLL_APP and RPLL_N Can control top-down Clark TMA which includes RPLC and RPLB. But check the controller information if they do!
+
+# Vacating
+
+You must vacate the runway as fast as possible in order for TWR to make best use of the runway.
+
+You have not vacated the runway until you have fully passed the runway stop bar, so **DO NOT STOP UNTIL YOU ARE FULLY ON A TAXIWAY** or you might cause a go around.
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:center">Runway</th>
+      <th style="text-align:center">Category</th>
+      <th style="text-align:center">Exit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2" style="text-align:center"><strong>06</strong></td>
+      <td style="text-align:center">A, B, C and Lower</td>
+      <td style="text-align:center">R2, R3, E4</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">D and Lower</td>
+      <td style="text-align:center">E2 / R1 / E1 / H1</td>
+    </tr>
+    <tr>
+      <td rowspan="2" style="text-align:center"><strong>24</strong></td>
+      <td style="text-align:center">A, B, C and Lower</td>
+      <td style="text-align:center">R4, E4</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">D and Lower</td>
+      <td style="text-align:center">R5 / E5 / H2</td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>13</strong></td>
+      <td style="text-align:center">A, B, C and Lower</td>
+      <td style="text-align:center">Any Taxiway on the Left/Right</td>
+    </tr>
+  </tbody>
+</table>
+
+The controller may give you a taxi instruction to vacate and some might not. If so, keep moving until you are vacated and hold position until GND has given you further instructions to taxi.

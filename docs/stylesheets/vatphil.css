@@ -5,7 +5,7 @@
 }
 
 :root {
-  --md-admonition-icon--phraseology: url('../assets/img/phraseology.svg');
+  --md-admonition-icon--phraseology: url('../../assets/img/phraseology.svg');
 }
 
 .md-typeset .admonition.phraseology,
@@ -24,6 +24,32 @@
   background-color: #00c853;
   -webkit-mask-image: var(--md-admonition-icon--phraseology);
   mask-image: var(--md-admonition-icon--phraseology);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+:root {
+  --md-admonition-icon--information: url('../../assets/img/information.svg');
+}
+
+.md-typeset .admonition.information,
+.md-typeset details.information {
+  border-color: #00b8d4;
+}
+
+.md-typeset .information > .admonition-title,
+.md-typeset .information > summary {
+  background-color: #00b8d420;
+  border-color: #00b8d4;
+}
+
+.md-typeset .information > .admonition-title::before,
+.md-typeset .information > summary::before {
+  background-color: #00b8d4;
+  -webkit-mask-image: var(--md-admonition-icon--information);
+  mask-image: var(--md-admonition-icon--information);
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-size: contain;
