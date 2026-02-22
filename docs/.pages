@@ -1,5 +1,5 @@
 nav:
-    - Welcome: Welcome.md
+    - Welcome: index.md
     - Briefings: briefings
     - Controllers: atc
     - NOTAMS: notams
