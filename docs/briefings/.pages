@@ -1,5 +1,5 @@
 nav:
-    - RPLL (Manila): aerodromeinfo
+    - RPLL: aerodromeinfo.md
     - Routes: routes.md
     - Facility Frequency: facility-frequency
     - Resources: resources
