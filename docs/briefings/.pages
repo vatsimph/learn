@@ -1,7 +1,7 @@
 nav:
     - index.md
+    - Charts: charts.md
     - RPLL: RPLL
     - Routes: routes.md
-    - Charts: charts.md
     - Facility Frequency: facility-frequency
     - CPDLC / PDC: cpdlc-pdc.md
