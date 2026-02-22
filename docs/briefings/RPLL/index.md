@@ -15,7 +15,7 @@ The airport caters passenger and cargo flights, as well as general and military 
 Bay assignments, are strictly implemented virtually, and are based on the latest
 real-world operations. Virtual and other real-world airlines that are not listed will park at terminal 1.
 
-<iframe src="../assets/pdfs/stands.pdf" width="100%" height="800px"></iframe>
+<iframe src="../../assets/pdfs/stands.pdf" width="100%" height="800px"></iframe>
 
 # Runways
 
@@ -163,7 +163,7 @@ Below is a table of the Take-Off Run available
 
 Local flights within RPHI and some international flights are to use routes given here [`vats.im/ph/routes`](vats.im/ph/routes). Simbrief also give a standard route which looks like this
 
-![Simbrief Routes](../assets/img/simbrief.png)
+![Simbrief Routes](../../assets/img/simbrief.png)
 
 If your route is still invalid, a controller will send you a private message with your new route. Routes within RPHI are to follow the half-moon principle in both RVSM and non-RVSM conditions. During events you will have 5 minutes between the time you request clearance and the time you request pushback, or you will have to wait until a new slot is available.
 
