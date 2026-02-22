@@ -12,12 +12,6 @@ All vACC certified controllers and staff members are eligible to contribute to t
 
 Once the verification is finish, you can now modify the plugin contents by forking this repository and pulling a request for merging.
 
-### Setup
-
-1. Download the latest Python 3 version (https://www.python.org/downloads/)
-2. Clone this repository.
-3. Install the requirements using the command `pip install -r requirements.txt` in the repository.
-
 ### Editing
 In the `docs` folder, you can make and edit pages. 
 
