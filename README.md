@@ -8,9 +8,7 @@ Kindly take note that the whole page is still **under construction** and shoul
 Also, this page doesn't collect any information on your system, nor does it use any 3rd Party Analytic Providers to trace the statistics of the site or its visitors. In any case, all of the pages connected to the domain of ```vatphil.com``` comply with its local privacy and data protection policy, which can be accessed [here](https://vatphil.com/privacy-policy).
 
 ## Contribute
-All vACC certified controllers and staff members are eligible to contribute to this repository. Kindly open a pull request with your ```Name``` and ```CERT Identification (CID)``` for verification purposes, if you wish to do so. Contributions from unverified accounts will not be accepted/merged.
-
-Once the verification is finish, you can now modify the plugin contents by forking this repository and pulling a request for merging.
+All vACC certified controllers and staff members are eligible to contribute to this repository. Kindly open a pull request with your ```Name``` and ```CERT Identification (CID)``` for verification purposes, if you wish to do so. Contributions from unverified accounts will not be merged.
 
 ### Editing
 In the `docs` folder, you can make and edit pages. 
