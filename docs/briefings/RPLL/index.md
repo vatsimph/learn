@@ -175,13 +175,13 @@ If your route is still invalid, a controller will send you a private message wit
 
 When requesting clearance, listen to the ATIS for the active runway and any active NOTAMS, and advise any limitations you have, such as Non-RVSM.
 
-!!! Phraseology "Non-Radar"
+!!! phraseology "Non-Radar"
 
     **CEB123**: Clearance Delivery, CEB123, Stand 120 with information A, request clearance to Mactan Runway 06.
 
     **RPLL_DEL**: CEB123, cleared Mactan, W25 BATAY, RUNWAY 06 IPATA2R, Climb 7000, Squawk 4251
 
-!!! Phraseology "Radar"
+!!! phraseology "Radar"
 
     **CEB123**: Clearance Delivery, CEB123, Stand 120 with information A, request clearance to Mactan Runway 06.
 
