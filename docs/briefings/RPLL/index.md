@@ -173,15 +173,34 @@ If your route is still invalid, a controller will send you a private message wit
 
 # Clearance
 
-When requesting clearance, listen to the ATIS for the active runway and any active NOTAMS, and advise any limitations you have, such as Non-RVSM.
+On first contact with the controller that will issue your clearance, it is recommended for you to give
+the following information:
 
-!!! phraseology "Non-Radar"
+- Your bay number
+- Your aircraft type
+- The ATIS information letter
+
+!!! phraseology "Phraseology"
+    
+    **PAL123**:“Manila Delivery, PAL123, bay 35, Airbus 3-2-0, Information Alpha, requesting clearance to Hong Kong”
+
+!!! warning
+
+    Radio Checks on first contact is **discouraged** to use when building communication with the controller. It's best to greet or ask the controller, should you need any help before clearance issuance.
+
+    The goal here is to be straightforward (Get to the point) and concise as possible when communicating within a controlled frequency. 
+
+Once you have requested for clearance, the controller will either tell you to standby, or give your clearance on the spot. Clearances include your routing, flight level restrictions, departure instructions and your squawk.
+
+You must read back the clearance in full. Listen carefully to all details that the controller gives you, and if you are unsure about your clearance, **let the controller know.**
+
+!!! phraseology "Non-Radar Phraseology"
 
     **CEB123**: Clearance Delivery, CEB123, Stand 120 with information A, request clearance to Mactan Runway 06.
 
     **RPLL_DEL**: CEB123, cleared Mactan, W25 BATAY, RUNWAY 06 IPATA2R, Climb 7000, Squawk 4251
 
-!!! phraseology "Radar"
+!!! phraseology "Radar Phraseology"
 
     **CEB123**: Clearance Delivery, CEB123, Stand 120 with information A, request clearance to Mactan Runway 06.
 
@@ -191,13 +210,14 @@ When requesting clearance, listen to the ATIS for the active runway and any acti
 to be added
 
 # Departure
-to be added
+
+SIDs are not used in Manila if radar services are available (APP/CTR). However, you can still request to use a SID if the controller will allow it. If radar services are not available, you will be permitted to use a SID.
 
 # Arrival
 
 When arriving in to Manila, it is best for you to be at FL160 when reaching the start of the [STAR](https://learn.vatphil.com/briefings/arrival/star/). On initial contact with Manila Approach (RPLL_APP), report your current level.
 
-!!! phraseology ""
+!!! phraseology "phraseology"
 
     **PAL123**:“Manila Approach, PAL123, FL160, inbound OLIVA”
 

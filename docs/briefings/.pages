@@ -2,7 +2,6 @@ nav:
     - index.md
     - RPLL: RPLL
     - Routes: routes.md
-    - Phraseology: phraseology.md
     - Charts: charts.md
     - Facility Frequency: facility-frequency
     - CPDLC / PDC: cpdlc-pdc.md
