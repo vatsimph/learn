@@ -34,6 +34,7 @@ theme:
     - search.suggest
     - search.highlight
     - search.share
+    - content.footnote.tooltips
   favicon: assets/img/favicon.ico
 
 extra_css:
@@ -61,3 +62,4 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - footnotes
