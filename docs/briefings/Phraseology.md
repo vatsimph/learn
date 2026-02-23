@@ -9,16 +9,6 @@ FL350, etc).
 
 ## Flights going through Hong Kong FIR and Singapore FIR
 
-### Going to Hong Kong FIR
-If you are flying through Hong Kong or will be flying to Hong Kong, you should have the
-waypoints **NOMAN** or **SABNO**. Flights that will be passing through these waypoints from
-Manila FIR is expected to file a flight level of FL300 / FL340 / FL380.
-
-### Going to Singapore FIR
-Flights going to Singapore should have the waypoint **TEGID**. Flights that will be passing
-through this waypoint from Manila FIR is expected to file a flight level of FL310 / FL320 /
-FL350 / FL360 / FL390 / FL400.
-
 ## Common Routing Mistakes
 When filing a flight plan, the route is expected to start with a TMA exit. If a TMA exit is not provided, it will be invalid.
 

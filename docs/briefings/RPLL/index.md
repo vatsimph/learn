@@ -10,6 +10,9 @@ The Ninoy Aquino International Airport has 2 Runways, 4 passenger terminals, 2 g
 
 The airport caters passenger and cargo flights, as well as general and military aviation.
 
+# Charts
+[RPLL](https://vatphil.com/charts){ .md-button .md-button--primary }
+
 # Stand Assignments
 
 Bay assignments, are strictly implemented virtually, and are based on the latest
