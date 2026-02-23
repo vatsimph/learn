@@ -18,6 +18,8 @@ If you find anything that is missing or that is incorrect, or you simply want to
 - `atc` is for Controllers / Observers.
 - `notams` is the active NOTAMS taking place.
 - `pilots` is for Pilots.
+Everything you can do on markdown is on this [website](https://squidfunk.github.io/mkdocs-material/).
+
 3. Make a pull request
 
 Take note: In each directory there is a `.pages` YAML file. Use this to define how the page titles and order are displayed to the user.

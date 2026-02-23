@@ -8,7 +8,6 @@ You may refer to the next session on how to use the booking system.
 
 ## VATPHIL Updater
 
-Simply go to the [Template](https://vatphil.com) and click on the “Download” button. Afterwards, you will be greeted by the homescreen. Click **Login with VATSIM** to continue.
-
+to be added
 
 
