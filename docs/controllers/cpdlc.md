@@ -68,6 +68,7 @@
 </table>
 
 **If RPLC_APP is online, approach will use the RPLC logon as LC_APP controls RPLB
+
 *MNL_1, MNL_2, MNL_3, MNL_4, MNL_5, MNL_6, MNL_C, MNL_N, MNL_S, MNL_CE
 
 

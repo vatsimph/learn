@@ -103,6 +103,12 @@ Below is a table of the Take-Off Run available
       <td style="text-align:center">125.100</td>
       <td style="text-align:center">DCL [RPLL]</td>
     </tr>
+        <tr>
+      <td style="text-align:center"><strong>RPLL_P_GND</strong></td>
+      <td style="text-align:center">Manila Planner</td>
+      <td style="text-align:center">122.000</td>
+      <td style="text-align:center">Event's only</td>
+    </tr>
     <tr>
       <td style="text-align:center"><strong>RPLL_1_GND</strong></td>
       <td style="text-align:center">Ramp One</td>
@@ -242,7 +248,7 @@ the following information:
 
 !!! phraseology "Phraseology"
     
-    **PAL123**:“Manila Delivery, PAL123, bay 35, Airbus 3-2-0, Information Alpha, requesting clearance to Hong Kong”
+    **PAL123**: Manila Delivery, PAL123, bay 35, Airbus 3-2-0, Information Alpha, requesting clearance to Hong Kong
 
 !!! warning
 
