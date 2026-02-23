@@ -1,6 +1,14 @@
 ## RPLL - Manila—Ninoy Aquino International Airport
 
 # Weather
+<style>
+  #weather pre {
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-size: 0.85rem;
+  }
+</style>
+
 <div id="weather">Loading...</div>
 
 <script>
