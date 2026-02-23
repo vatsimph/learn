@@ -216,7 +216,7 @@ If your route is still invalid, a controller will send you a private message wit
     <tr>
       <td rowspan="3" style="text-align:center"><strong>HO CHI MINH</strong></td>
       <td rowspan="2" style="text-align:center"><strong>PANDI / ARESI</strong></td>
-      <td style="text-align:center"><strong>M767 / L628</strong></td>
+      <td style="text-align:center"><strong>M765 / L628</strong></td>
       <td style="text-align:center"><strong>280 / 340</strong></td>
     </tr>
     <tr>
@@ -242,13 +242,13 @@ the following information:
 
 !!! phraseology "Phraseology"
     
-    **PAL123**:“Manila Delivery, PAL123, bay 35, Airbus 3-2-0, Information Alpha, requesting clearance to Hong Kong”
+    **PAL300**:“Clearance Delivery, PAL300, stand 10, A-3-2-1, with Information Alpha, request clearance Hong Kong, runway 06”
 
 !!! warning
 
-    Radio Checks on first contact is **discouraged** to use when building communication with the controller. It's best to greet or ask the controller, should you need any help before clearance issuance.
+    Radio Checks on first contact are **discouraged** when building communication with the controller. It's best to greet or ask the controller, should you need any help before clearance issuance.
 
-    The goal here is to be straightforward (Get to the point) and concise as possible when communicating within a controlled frequency. 
+    Be straightforward and concise as possible when communicating within a controlled frequency. 
 
 Once you have requested for clearance, the controller will either tell you to standby, or give your clearance on the spot. Clearances include your routing, flight level restrictions, departure instructions and your squawk.
 
@@ -256,18 +256,29 @@ You must read back the clearance in full. Listen carefully to all details that t
 
 !!! phraseology "Non-Radar Phraseology"
 
-    **CEB123**: Clearance Delivery, CEB123, Stand 120 with information A, request clearance to Mactan Runway 06.
+    **CEB585**: Clearance Delivery, CEB585, Stand 120, A-3-2-0 with information A, request clearance Mactan, runway 06.
 
-    **RPLL_DEL**: CEB123, cleared Mactan, W25 BATAY, RUNWAY 06 IPATA2R, Climb 7000, Squawk 4251
+    **RPLL_DEL**: CEB585, cleared Mactan, W25 BATAY, RUNWAY 06 IPATA2R, Climb 7000, Squawk 4251
 
 !!! phraseology "Radar Phraseology"
 
-    **CEB123**: Clearance Delivery, CEB123, Stand 120 with information A, request clearance to Mactan Runway 06.
+    **CEB585**: Clearance Delivery, CEB585, Stand 120, A-3-2-0 with information A, request clearance Mactan, runway 06.
 
-    **RPLL_DEL**: CEB123, cleared Mactan, W25 BATAY, RUNWAY 06, fly runway heading, climb 7000ft, expect radar vectors IPATA, squawk 4251
+    **RPLL_DEL**: CEB585, cleared Mactan, W25 BATAY, RUNWAY 06, fly runway heading, climb 7000ft, expect radar vectors IPATA, squawk 4251
 
 # Pushback
-to be added
+
+Normally, a controller will instruct you to push back to the nearest start-up point. The location of the start-up points are indicated in available charts 
+
+	**CEB585**: Manila Ramp, CEB585, Stand 120, request push, runway 06.
+
+    **RPLL_3_GND**: CEB585, push approved, S14, face G12
+	
+A controller may push you to a certain reference point due traffic
+
+	**CEB585**: Manila Ramp, CEB585, Stand 120, request push, runway 06.
+
+    **RPLL_3_GND**: CEB585, push approved, abeam gate 119, face G12
 
 # Departure
 
@@ -275,17 +286,17 @@ SIDs are not used in Manila if radar services are available (APP/CTR). However, 
 
 # Arrival
 
-When arriving in to Manila, it is best for you to be at FL160 when reaching the start of the [STAR](https://learn.vatphil.com/briefings/arrival/star/). On initial contact with Manila Approach (RPLL_APP), report your current level.
+When arriving in to Manila, it is best for you to be in between FL160 and FL200 when reaching the start of the [STAR](https://learn.vatphil.com/briefings/arrival/star/). On initial contact with Manila Approach (RPLL_APP), report your current level.
 
 !!! phraseology "phraseology"
 
-    **PAL123**:“Manila Approach, PAL123, FL160, inbound OLIVA”
+    **PAL301**:“Manila Approach, PAL301, FL180, inbound TADEL”
 
 APP will then issue you further descend instructions and turns if necessary as well as the approach that you will be using. By default, controllers will vector you for an ILS approach.
 
 !!! warning
 
-    If APP didn’t give you any turns after you have passed the last waypoint on your routing, maintain your pressent heading.
+    If APP didn’t give you any turns after you have passed the last waypoint on your routing, maintain your present heading.
 
 Below is the mandatory speed restrictions when under vectors by approach.
 <p style="color: red; font-style: italic; font-weight: bold; text-align: center;">Please follow the following table unless instructed by ATC.</p>
@@ -366,7 +377,7 @@ You have not vacated the runway until you have fully passed the runway stop bar,
       <td style="text-align:center">R2, R3, E4</td>
     </tr>
     <tr>
-      <td style="text-align:center">D and Lower</td>
+      <td style="text-align:center">D and Higher</td>
       <td style="text-align:center">E2 / R1 / E1 / H1</td>
     </tr>
     <tr>
@@ -375,12 +386,16 @@ You have not vacated the runway until you have fully passed the runway stop bar,
       <td style="text-align:center">R4, E4</td>
     </tr>
     <tr>
-      <td style="text-align:center">D and Lower</td>
+      <td style="text-align:center">D and Higher</td>
       <td style="text-align:center">R5 / E5 / H2</td>
     </tr>
     <tr>
-      <td style="text-align:center"><strong>13</strong></td>
+      <td rowspan = "2" style="text-align:center"><strong>13</strong></td>
       <td style="text-align:center">A, B, C and Lower</td>
+      <td style="text-align:center">Any Taxiway on the Left/Right</td>
+    </tr>
+	<tr>
+      <td style="text-align:center">D Limited to A321 or similar</td>
       <td style="text-align:center">Any Taxiway on the Left/Right</td>
     </tr>
   </tbody>
