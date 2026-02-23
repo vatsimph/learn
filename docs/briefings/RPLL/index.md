@@ -1,31 +1,4 @@
-## RPLL - Manila—Ninoy Aquino International Airport
-
-# Weather
-<style>
-  #weather pre {
-    white-space: pre-wrap;
-    word-break: break-word;
-    font-size: 0.85rem;
-  }
-</style>
-
-<div id="weather">Loading...</div>
-
-<script>
-  function fetchWeather() {
-    Promise.all([
-      fetch('https://metar.vatsim.net/RPLL').then(function(r) { return r.text(); }).catch(function() { return 'Unavailable'; }),
-      fetch('https://tgftp.nws.noaa.gov/data/forecasts/taf/stations/RPLL.TXT').then(function(r) { return r.text(); }).catch(function() { return 'Unavailable'; })
-    ]).then(function(results) {
-      document.getElementById('weather').innerHTML =
-        '<pre>' + results[0].trim() + '</pre>' +
-        '<pre>' + results[1].trim() + '</pre>';
-    });
-  }
-
-  fetchWeather();
-  setInterval(fetchWeather, 60000);
-</script>
+## RPLL - Manila - Ninoy Aquino International Airport
 
 # General
 The Ninoy Aquino International Airport has 2 Runways, 4 passenger terminals, 2 general aviation areas, 1 military airbase, 1 maintenance hangar, and 1 presidential ramp.
