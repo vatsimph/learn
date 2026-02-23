@@ -1,13 +1,12 @@
 # Installing Sector Files
 
-The Philippines vACC utilizes Eurocontrol for its Air Traffic Controllers as it can host a system that the real world controllers use (TopSky).
-
-This serves as a training management system for the controllers. It is a centralized system that allows the controllers to manage their training sessions and to manage the sessions that are booked by the controllers.
-
-You may refer to the next session on how to use the booking system.
+The Philippines vACC utilizes Eurocontrol for its Air Traffic Controllers as it can host a near 1 to 1 system that the real world controllers use (TopSky).
 
 ## VATPHIL Updater
 
 to be added
 
+??? info "Version 0.6"
+
+    Very close to V1!
 
