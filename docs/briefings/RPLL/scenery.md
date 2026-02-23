@@ -7,5 +7,5 @@
 | MSFS 2020/2024 | [Cloudsurf Asia](https://cloudsurfasia-simulations.com/rpll-ninoy-aquino-international-airport-for-microsoft-flight-simulator-2020-msfs/) | Payware |
 
 !!! warning
-    
-        X-Plane 11/12 by Cloudsurf Asia does not have taxiway H5
+
+    X-Plane 11/12 by Cloudsurf Asia does not have taxiway H5

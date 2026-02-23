@@ -277,7 +277,7 @@ SIDs are not used in Manila if radar services are available (APP/CTR). However, 
 
 When arriving in to Manila, it is best for you to be at FL160 when reaching the start of the [STAR](https://learn.vatphil.com/briefings/arrival/star/). On initial contact with Manila Approach (RPLL_APP), report your current level.
 
-!!! phraseology "phraseology"
+!!! phraseology "Phraseology"
 
     **PAL123**:“Manila Approach, PAL123, FL160, inbound OLIVA”
 
