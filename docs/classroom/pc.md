@@ -248,3 +248,9 @@ Otherwise known as Non-radar, are defined as when the controllers are unable to 
   </tbody>
 </table>
 !!! info "Speeds are in IAS"
+
+# Phraseology
+to be added
+
+# Transition Altitude and Levels
+to be added
