@@ -341,7 +341,7 @@ Approach can be split into 3 different sectors as shown below
 ## Three Scope Operation
 ![RPLL_APP](../../assets/img/RPHI/2.png)
 
-!!! information "Information"
+!!! info "Info"
 
     RPLL_APP and RPLL_N Can control top-down Clark TMA which includes RPLC and RPLB. But check the controller information if they do!
 
