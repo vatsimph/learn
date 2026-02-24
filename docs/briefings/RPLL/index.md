@@ -338,21 +338,24 @@ Below is the mandatory speed restrictions when under vectors by approach.
   </tbody>
 </table>
 
-# Manila Approach
-Approach can be split into 3 different sectors as shown below
 ## Single Scope Operation
 ![RPLL_APP](../../assets/img/RPHI/4.png)
+
 | Designator | Callsign | Vertical Limits | Frequency |
 |-----|------|----|----|
 | RPLL_APP[^2] | Manila Approach | 1500ft - FL150[^1] | 124.800 |
+
 ## Two Scope Operation
 ![RPLL_APP](../../assets/img/RPHI/3.png)
+
 | Designator | Callsign | Vertical Limits | Frequency |
 |-----|------|----|----|
 | RPLL_F_APP | Manila Departures/Finals | 1500ft - 7000ft | 124.400 |
 | RPLL_APP[^2] | Manila Approach/Arrivals | 8000ft - FL150[^1] | 124.800 |
+
 ## Three Scope Operation
 ![RPLL_APP](../../assets/img/RPHI/2.png)
+
 | Designator | Callsign | Vertical Limits | Frequency |
 |-----|------|----|----|
 | RPLL_F_APP | Manila Departures/Arrivals | 1500ft - 7000ft | 124.400 |
