@@ -24,4 +24,4 @@ When contacting Manila Radio that they will not be able to see you and are purel
 
 !!! phraseology "Phraseology"
 
-        Manila Radio, PAL123, BISIG, FL320, Next EXOMI at 1330z
+    Manila Radio, PAL123, BISIG, FL320, Next EXOMI at 1330z
