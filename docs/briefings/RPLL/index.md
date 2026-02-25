@@ -285,9 +285,9 @@ Normally, a controller will instruct you to push back to the nearest start-up po
 
     **RPLL_3_GND**: CEB585, push approved, S14, face G12
 
-!!! phraseology "Phraseology"	
-
   A controller may push you to a certain reference point due traffic
+
+!!! phraseology "Phraseology"	
 
     **CEB585**: Manila Ramp, CEB585, Stand 120, request push, runway 06.
 
