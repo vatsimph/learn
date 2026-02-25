@@ -172,7 +172,8 @@ If your route is still invalid, a controller will send you a private message wit
 
 !!! warning
 
-    During events it is important that you put your EOBT in your flight plan as controllers will use that to determine your takeoff slot.
+    During events it is important that you put your EOBT in your flight plan as 
+    controllers will use that to determine your takeoff slot.
 
 # Waypoint Restrictions
 
@@ -246,7 +247,8 @@ the following information:
 
 !!! warning
 
-    Radio Checks on first contact are **discouraged** when building communication with the controller. It's best to greet or ask the controller, should you need any help before clearance issuance.
+    Radio Checks on first contact are **discouraged** when building communication with the controller. 
+    It's best to greet or ask the controller, should you need any help before clearance issuance.
 
     Be straightforward and concise as possible when communicating within a controlled frequency. 
 
@@ -264,7 +266,8 @@ You must read back the clearance in full. Listen carefully to all details that t
 
     **CEB585**: Clearance Delivery, CEB585, Stand 120, A-3-2-0 with information A, request clearance Mactan, runway 06.
 
-    **RPLL_DEL**: CEB585, cleared Mactan, W25 BATAY, RUNWAY 06, fly runway heading, climb 7000ft, expect radar vectors IPATA, squawk 4251
+    **RPLL_DEL**: CEB585, cleared Mactan, W25 BATAY, RUNWAY 06, fly runway heading, climb 7000ft, 
+    expect radar vectors IPATA, squawk 4251
 
 # Pushback
 
@@ -290,7 +293,7 @@ When arriving in to Manila, it is best for you to be in between FL160 and FL200 
 
 !!! phraseology "phraseology"
 
-    **PAL301**:“Manila Approach, PAL301, FL180, inbound TADEL”
+    **PAL301**: “Manila Approach, PAL301, FL180, inbound TADEL”
 
 APP will then issue you further descend instructions and turns if necessary as well as the approach that you will be using. By default, controllers will vector you for an ILS approach.
 
