@@ -10,12 +10,8 @@ to be added
 <title>Vertical Separation of VFR and IFR flight with RVSM in use</title>
 <style>
   body { font-family: Arial, sans-serif; font-size: 14px; padding: 20px; }
-  table { border-collapse: collapse; width: 100%; max-width: 860px; }
-  th, td { border: 1px solid #000; padding: 6px 10px; text-align: center; }
   .title { font-size: 1.1em; }
   .bold { font-weight: bold; }
-  .vfr-bg { background-color: #dce9f7; }
-  .ifr-bg { background-color: #fde8e8; }
 </style>
 </head>
 <body>
