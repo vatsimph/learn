@@ -248,7 +248,7 @@ the following information:
 - The ATIS information letter
 
 !!! phraseology "Phraseology"
-    
+
     **PAL300**:“Clearance Delivery, PAL300, stand 10, A-3-2-1, with Information Alpha, request clearance Hong Kong, runway 06”
 
 !!! warning
@@ -279,15 +279,24 @@ You must read back the clearance in full. Listen carefully to all details that t
 
 Normally, a controller will instruct you to push back to the nearest start-up point. The location of the start-up points are indicated in available charts 
 
-	**CEB585**: Manila Ramp, CEB585, Stand 120, request push, runway 06.
+!!! phraseology "Phraseology"
+
+    **CEB585**: Manila Ramp, CEB585, Stand 120, request push, runway 06.
 
     **RPLL_3_GND**: CEB585, push approved, S14, face G12
-	
-A controller may push you to a certain reference point due traffic
 
-	**CEB585**: Manila Ramp, CEB585, Stand 120, request push, runway 06.
+!!! phraseology "Phraseology"	
+
+  A controller may push you to a certain reference point due traffic
+
+    **CEB585**: Manila Ramp, CEB585, Stand 120, request push, runway 06.
 
     **RPLL_3_GND**: CEB585, push approved, abeam gate 119, face G12
+
+!!! warning 
+
+    1. **Do not preplan your pushback!**
+    2. Connect the tug first!
 
 # Departure
 
