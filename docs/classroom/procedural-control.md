@@ -23,7 +23,7 @@ Otherwise known as Non-radar, are defined as when the controllers are unable to 
     </tr>
     <tr>
       <td style="text-align:left">ATS Outside TMA</td>
-      <td style="text-align:center">MEA[^1] - UNL</td>
+      <td style="text-align:center">MEA - UNL</td>
     </tr>
     <tr>
       <td style="text-align:left">ATS Inside TMA at FL160 and above</td>
@@ -97,7 +97,7 @@ Otherwise known as Non-radar, are defined as when the controllers are unable to 
       <td style="text-align:center" rowspan="2"><strong>D</strong></td>
       <td style="text-align:center">IFR</td>
       <td style="text-align:center">IFR from IFR</td>
-      <td style="text-align:center" rowspan="2">ATS[^2], VFR traffic, Traffic Avoidance (On Request)</td>
+      <td style="text-align:center" rowspan="2">ATS, VFR traffic, Traffic Avoidance (On Request)</td>
       <td style="text-align:center">Yes</td>
     </tr>
     <tr>
@@ -118,7 +118,7 @@ Otherwise known as Non-radar, are defined as when the controllers are unable to 
   </tbody>
 </table>
 
-[^2]: ATS: Air Traffic Service
+[^1]: ATS: Air Traffic Service
 
 # Radar Facilities
 <table>
