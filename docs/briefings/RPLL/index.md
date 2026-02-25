@@ -103,6 +103,12 @@ Below is a table of the Take-Off Run available
       <td style="text-align:center">125.100</td>
       <td style="text-align:center">DCL [RPLL]</td>
     </tr>
+        <tr>
+      <td style="text-align:center"><strong>RPLL_P_GND</strong></td>
+      <td style="text-align:center">Manila Planner</td>
+      <td style="text-align:center">122.000</td>
+      <td style="text-align:center">Event's only</td>
+    </tr>
     <tr>
       <td style="text-align:center"><strong>RPLL_1_GND</strong></td>
       <td style="text-align:center">Ramp One</td>
@@ -291,7 +297,7 @@ SIDs are not used in Manila if radar services are available (APP/CTR). However, 
 
 When arriving in to Manila, it is best for you to be in between FL160 and FL200 when reaching the start of the [STAR](https://learn.vatphil.com/briefings/arrival/star/). On initial contact with Manila Approach (RPLL_APP), report your current level.
 
-!!! phraseology "phraseology"
+!!! phraseology "Phraseology"
 
     **PAL301**: “Manila Approach, PAL301, FL180, inbound TADEL”
 
@@ -346,18 +352,33 @@ Below is the mandatory speed restrictions when under vectors by approach.
   </tbody>
 </table>
 
-# Manila Approach
-Approach can be split into 3 different sectors as shown below
 ## Single Scope Operation
 ![RPLL_APP](../../assets/img/RPHI/4.png)
+
+| Designator | Callsign | Vertical Limits | Frequency |
+|-----|------|----|----|
+| RPLL_APP[^2] | Manila Approach | 1500ft - FL150[^1] | 124.800 |
+
 ## Two Scope Operation
 ![RPLL_APP](../../assets/img/RPHI/3.png)
+
+| Designator | Callsign | Vertical Limits | Frequency |
+|-----|------|----|----|
+| RPLL_F_APP | Manila Departures/Finals | 1500ft - 7000ft | 124.400 |
+| RPLL_APP[^2] | Manila Approach/Arrivals | 8000ft - FL150[^1] | 124.800 |
+
 ## Three Scope Operation
 ![RPLL_APP](../../assets/img/RPHI/2.png)
 
-!!! information "Information"
+| Designator | Callsign | Vertical Limits | Frequency |
+|-----|------|----|----|
+| RPLL_F_APP | Manila Departures/Arrivals | 1500ft - 7000ft | 124.400 |
+| RPLL_N_APP[^2] | Manila Approach/Arrivals | 8000ft - FL150[^1] | 124.800 |
+| RPLL_S_APP | Manila Approach/Arrivals | 8000ft - FL150[^1] | 127.700 |
 
-    RPLL_APP and RPLL_N Can control top-down Clark TMA which includes RPLC and RPLB. But check the controller information if they do!
+[^1]: Vertical limit of FL150 can be increased to a maximum of FL200.
+[^2]: Can control top-down Clark TMA which includes RPLC and RPLB. But check the controller information if they do!
+
 
 # Vacating
 

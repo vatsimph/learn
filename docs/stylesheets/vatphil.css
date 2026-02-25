@@ -5,60 +5,19 @@
 }
 
 :root {
-  --md-admonition-icon--phraseology: url('../../assets/img/phraseology.svg');
+  --md-admonition-icon--phraseology: url('data:image/svg+xml;charset=utf-8,<svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 225 225"><g transform="translate(0,225) scale(0.1,-0.1)" fill="%23000000" stroke="none"><path d="M906 2144 c-39 -8 -96 -26 -127 -39 -175 -71 -301 -231 -359 -457 l-23 -86 -76 -38 c-107 -53 -193 -140 -216 -218 -23 -80 -17 -186 14 -248 37 -72 109 -136 212 -187 l92 -46 27 -72 c53 -139 164 -298 256 -365 60 -44 185 -111 237 -128 26 -8 41 -20 48 -38 6 -15 25 -42 42 -61 99 -105 265 -94 345 23 29 44 32 55 32 123 0 86 -12 114 -69 166 -93 84 -217 76 -307 -18 l-51 -53 -74 35 c-56 27 -93 55 -156 118 -69 70 -89 98 -131 186 -79 163 -86 205 -87 474 0 273 13 351 79 490 75 158 187 254 337 290 82 19 276 20 348 0 188 -50 320 -193 380 -415 26 -94 41 -297 41 -554 l0 -199 53 6 c116 12 243 78 307 158 148 187 81 421 -153 533 l-77 37 -16 57 c-51 184 -97 275 -184 362 -67 67 -155 119 -255 150 -94 30 -382 38 -489 14z"/></g></svg>')
 }
-
 .md-typeset .admonition.phraseology,
 .md-typeset details.phraseology {
-  border-color: #00c853;
+  border-color: rgb(43, 155, 70);
 }
-
 .md-typeset .phraseology > .admonition-title,
 .md-typeset .phraseology > summary {
-  background-color: #00c85320;
-  border-color: #00c853;
+  background-color: rgba(43, 155, 70, 0.1);
 }
-
 .md-typeset .phraseology > .admonition-title::before,
 .md-typeset .phraseology > summary::before {
-  background-color: #00c853;
+  background-color: rgb(43, 155, 70);
   -webkit-mask-image: var(--md-admonition-icon--phraseology);
-  mask-image: var(--md-admonition-icon--phraseology);
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-size: contain;
-  mask-size: contain;
-}
-
-:root {
-  --md-admonition-icon--information: url('../../assets/img/information.svg');
-}
-
-.md-typeset .admonition.information,
-.md-typeset details.information {
-  border-color: #00b8d4;
-}
-
-.md-typeset .information > .admonition-title,
-.md-typeset .information > summary {
-  background-color: #00b8d420;
-  border-color: #00b8d4;
-}
-
-.md-typeset .information > .admonition-title::before,
-.md-typeset .information > summary::before {
-  background-color: #00b8d4;
-  -webkit-mask-image: var(--md-admonition-icon--information);
-  mask-image: var(--md-admonition-icon--information);
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-size: contain;
-  mask-size: contain;
-}
-
-.event-row span.label {
-  font-weight: bold;
-  color: #8c7804;
-  min-width: 80px;
-  flex-shrink: 0;
+          mask-image: var(--md-admonition-icon--phraseology);
 }
