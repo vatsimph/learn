@@ -300,17 +300,35 @@ Normally, a controller will instruct you to push back to the nearest start-up po
 
 # Departure
 
-SIDs are not used in Manila if radar services are available (APP/CTR). However, you can still request to use a SID if the controller will allow it. If radar services are not available, you will be permitted to use a SID.
+The departure procedure is decided by an online Approach (**APP**) or En-route Controller (**CTR**). When both are offline, Standard Instrument Departures (**SIDs**) are given by the aerodrome controllers (**TWR**, **GND** or **DEL**). When either **APP** or **CTR** is online, they decide if departures will be given radar vectors (climb and heading instructions) to the TMA exit points or will be following a **SID**.
+
+When **APP** or **CTR** is online, after passing 2000 feet or 5 DME from RPLL, report your passing altitude to **APP**  or **CTR**. This is to help them identify you successfully in their radar screens.
+
+!!! phraseology "Phraseology"
+
+    **PAL300**: “Manila Departure, PAL300, on runway heading, passing 2000 climbing 7000”
+
+    **RPLL_F_APP**: “PAL300, radar identified, continue climb 7000”
 
 # Arrival
 
-When arriving in to Manila, it is best for you to be in between FL160 and FL200 when reaching the start of the [STAR](https://learn.vatphil.com/briefings/arrival/star/). On initial contact with Manila Approach (RPLL_APP), report your current level.
+When arriving in to Manila, it is best for you to be in between FL160 and FL200 when reaching the border of the TMA or the start of the [STAR](https://learn.vatphil.com/briefings/arrival/star/). On initial contact with Manila Approach (RPLL_APP), report your current level.
 
 !!! phraseology "Phraseology"
 
     **PAL301**: “Manila Approach, PAL301, FL180, inbound TADEL”
 
-APP will then issue you further descend instructions and turns if necessary as well as the approach that you will be using. By default, controllers will vector you for an ILS approach.
+APP will then issue your arrival clearance including the type of approach to expect to the active runway. APP either gives you radar vectors to final or gives you descent clearances via a STAR. By default, controllers will vector you to the final approach.
+
+!!! phraseology "Phraseology"
+
+    **RPLL_APP**: “PAL301, radar contact, cleared Manila expect radar vectors ILS 06”
+
+    **PAL301**: “Cleared Manila expect radar vectors ILS 06, PAL301”
+
+    **RPLL_APP**: “PAL301, maintain present heading, descend 10,000, QNH 1011”
+
+    **PAL301**: “maintain present heading, descend 10,000, QNH 1011, PAL301”
 
 !!! warning
 
