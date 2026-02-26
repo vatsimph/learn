@@ -1,0 +1,5 @@
+nav: 
+    index.md
+    - Booking Manager: booking-manager.md
+    - CDM: cdm.md
+    
