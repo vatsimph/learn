@@ -1,5 +1,5 @@
 nav: 
     - index.md
-    - STAR: star.md
+    - SIDs and STARs: sidandstar.md
     - Procedural Control: procedural-control.md
     - Visual Flight Rules: vfr.md
