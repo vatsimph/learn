@@ -247,7 +247,7 @@ the following information:
 - Your aircraft type
 - The ATIS information letter
 
-!!! phraseology "Phraseology"
+??? phraseology "Phraseology"
 
     **PAL300**:“Clearance Delivery, PAL300, stand 10, A-3-2-1, with Information Alpha, request clearance Hong Kong, runway 06”
 
@@ -262,7 +262,7 @@ Once you have requested for clearance, the controller will either tell you to st
 
 You must read back the clearance in full. Listen carefully to all details that the controller gives you, and if you are unsure about your clearance, **let the controller know.**
 
-!!! phraseology
+??? phraseology
 
     === "Non-Radar"
 
@@ -286,7 +286,7 @@ Normally, a controller will instruct you to push back to the nearest start-up po
     1. **Do not preplan your pushback!**
     2. Connect the tug first!
 
-!!! phraseology "Phraseology"
+??? phraseology "Phraseology"
 
     **CEB585**: Manila Ramp, CEB585, Stand 120, request push, runway 06.
 
@@ -294,7 +294,7 @@ Normally, a controller will instruct you to push back to the nearest start-up po
 
   A controller may push you to a certain reference point due traffic
 
-!!! phraseology "Phraseology"	
+??? phraseology "Phraseology"	
 
     **CEB585**: Manila Ramp, CEB585, Stand 120, request push, runway 06.
 
@@ -319,7 +319,7 @@ The departure procedure is decided by an online Approach (**APP**) or En-route C
 
 When **APP** or **CTR** is online, after passing 2000 feet or 5 DME from RPLL, report your passing altitude to **APP**  or **CTR**. This is to help them identify you successfully in their radar screens.
 
-!!! phraseology "Phraseology"
+??? phraseology "Phraseology"
 
     **PAL300**: “Manila Departure, PAL300, on runway heading, passing 2000 climbing 7000”
 
@@ -329,13 +329,13 @@ When **APP** or **CTR** is online, after passing 2000 feet or 5 DME from RPLL, r
 
 When arriving in to Manila, it is best for you to be in between FL160 and FL200 when reaching the border of the TMA or the start of the [STAR](https://learn.vatphil.com/briefings/arrival/star/). On initial contact with Manila Approach (RPLL_APP), report your current level.
 
-!!! phraseology "Phraseology"
+??? phraseology "Phraseology"
 
     **PAL301**: “Manila Approach, PAL301, FL180, inbound TADEL”
 
 APP will then issue your arrival clearance including the type of approach to expect to the active runway. APP either gives you radar vectors to final or gives you descent clearances via a STAR. By default, controllers will vector you to the final approach.
 
-!!! phraseology "Phraseology"
+??? phraseology "Phraseology"
 
     **RPLL_APP**: “PAL301, radar contact, cleared Manila expect radar vectors ILS 06”
 
@@ -397,26 +397,26 @@ Below is the mandatory speed restrictions when under vectors by approach.
 ## Single Scope Operation
 ![RPLL_APP](../../assets/img/RPHI/4.png)
 
-| Designator | Callsign | Vertical Limits | Frequency |
-|-----|------|----|----|
-| RPLL_APP[^2] | Manila Approach | 1500ft - FL150[^1] | 124.800 |
+| Designator | Vertical Limits | Frequency |
+|-----|----|----|
+| RPLL_APP[^2] | 1500ft - FL150[^1] | 124.800 |
 
 ## Two Scope Operation
 ![RPLL_APP](../../assets/img/RPHI/3.png)
 
-| Designator | Callsign | Vertical Limits | Frequency |
-|-----|------|----|----|
-| RPLL_F_APP | Manila Departures/Finals | 1500ft - 7000ft | 124.400 |
-| RPLL_APP[^2] | Manila Approach/Arrivals | 8000ft - FL150[^1] | 124.800 |
+| Designator | Vertical Limits | Frequency |
+|-----|------|----|
+| RPLL_F_APP | 1500ft - 7000ft | 124.400 |
+| RPLL_APP[^2] | 8000ft - FL150[^1] | 124.800 |
 
 ## Three Scope Operation
 ![RPLL_APP](../../assets/img/RPHI/2.png)
 
-| Designator | Callsign | Vertical Limits | Frequency |
-|-----|------|----|----|
-| RPLL_F_APP | Manila Departures/Arrivals | 1500ft - 7000ft | 124.400 |
-| RPLL_N_APP[^2] | Manila Approach/Arrivals | 8000ft - FL150[^1] | 124.800 |
-| RPLL_S_APP | Manila Approach/Arrivals | 8000ft - FL150[^1] | 127.700 |
+| Designator | Vertical Limits | Frequency |
+|-----|----|----|
+| RPLL_F_APP  | 1500ft - 7000ft | 124.400 |
+| RPLL_N_APP[^2] | 8000ft - FL150[^1] | 124.800 |
+| RPLL_S_APP | 8000ft - FL150[^1] | 127.700 |
 
 [^1]: Vertical limit of FL150 can be increased to a maximum of FL200.
 [^2]: Can control top-down Clark TMA which includes RPLC and RPLB. But check the controller information if they do!
@@ -468,3 +468,21 @@ You have not vacated the runway until you have fully passed the runway stop bar,
 </table>
 
 The controller may give you a taxi instruction to vacate and some might not. If so, keep moving until you are vacated and hold position until GND has given you further instructions to taxi.
+
+*[EOBT]: Estimated off block time
+*[TOBT]: Target off block time
+*[TSAT]: Target start approval time
+*[ASRT]: Actual start up time
+*[TTOT]: Target takeoff time
+*[CTOT]: Calculated takeoff time
+*[RPLL_DEL]: Clearance Delivery
+*[RPLL_GND]: Manila Ground
+*[RPLL_1_GND]: Ramp 1
+*[RPLL_2_GND]: Ramp 2
+*[RPLL_3_GND]: Ramp 3
+*[RPLL_D_GND]: Ramp 4
+*[RPLL_TWR]: Manila Tower
+*[RPLL_F_APP]: Manila Departures/Finals
+*[RPLL_N_APP]: Manila Approach
+*[RPLL_S_APP]: Manila Approach
+*[RPLL_P_GND]: Manila Planner
