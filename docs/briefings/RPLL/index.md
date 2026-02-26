@@ -262,15 +262,17 @@ Once you have requested for clearance, the controller will either tell you to st
 
 You must read back the clearance in full. Listen carefully to all details that the controller gives you, and if you are unsure about your clearance, **let the controller know.**
 
-!!! phraseology "Non-Radar Phraseology"
+!!! phraseology
 
-    **CEB585**: Clearance Delivery, CEB585, Stand 120, A-3-2-0 with information A, request clearance Mactan, runway 06.
+    === "Non-Radar"
+
+       **CEB585**: Clearance Delivery, CEB585, Stand 120, A-3-2-0 with information A, request clearance Mactan, runway 06.
 
     **RPLL_DEL**: CEB585, cleared Mactan, W25 BATAY, RUNWAY 06 IPATA2R, Climb 7000, Squawk 4251
 
-!!! phraseology "Radar Phraseology"
+    === "Radar"
 
-    **CEB585**: Clearance Delivery, CEB585, Stand 120, A-3-2-0 with information A, request clearance Mactan, runway 06.
+       **CEB585**: Clearance Delivery, CEB585, Stand 120, A-3-2-0 with information A, request clearance Mactan, runway 06.
 
     **RPLL_DEL**: CEB585, cleared Mactan, W25 BATAY, RUNWAY 06, fly runway heading, climb 7000ft, 
     expect radar vectors IPATA, squawk 4251
@@ -278,6 +280,11 @@ You must read back the clearance in full. Listen carefully to all details that t
 # Pushback
 
 Normally, a controller will instruct you to push back to the nearest start-up point. The location of the start-up points are indicated in available charts 
+
+!!! warning 
+
+    1. **Do not preplan your pushback!**
+    2. Connect the tug first!
 
 !!! phraseology "Phraseology"
 
@@ -305,11 +312,6 @@ In the event there is **RPLL_P_GND**
 
     At ± 5 1300z **RPLL_P_GND**: CEB585, contact ground ramp 121.350
 
-
-!!! warning 
-
-    1. **Do not preplan your pushback!**
-    2. Connect the tug first!
 
 # Departure
 

@@ -1,7 +1,7 @@
 # Project Information
 site_name: Philippines vACC Knowledge Base
 site_url: https://learn.vatphil.com
-site_author: Kenzo Tayko, Emilio Perez, Michael Uy and Jacob Allen
+site_author: Jacob Allen, Juan Carlos. Inspired by Kenzo Tayko, Emilio Perez, Michael Uy
 edit_uri: edit/main/docs/
 copyright: Copyright © 2026 Philippines vACC. All rights reserved. The information contained on this website is for flight simulation purposes only.
 
@@ -36,6 +36,7 @@ theme:
     - search.share
     - content.footnote.tooltips
     - content.tooltips
+    - content.tabs.link
   favicon: assets/img/favicon.ico
 
 extra_css:
@@ -63,6 +64,8 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+    - pymdownx.tabbed:
+      alternate_style: true
   - footnotes
   - tables
   - abbr
