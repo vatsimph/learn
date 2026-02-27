@@ -9,9 +9,9 @@
 ## ACC Split Sectors
 ![RPHI](../../assets/img/RPHI/1.png)
 
-# Phraseology
+## Phraseology
 
-## Manila Radio
+### Manila Radio
 
 Currently the only radio that can be implemented by Manila Control is MNL_NE_CTR, otherwise known as Manila Oceanic. Under Manila Radio, you can still expect RVSM.
 
