@@ -10,6 +10,8 @@ plugins:
   - awesome-pages
   - git-revision-date-localized
   - mike
+  - glightbox
+  
 
 # Configuration
 theme:
