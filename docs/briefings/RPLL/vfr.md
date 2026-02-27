@@ -27,7 +27,7 @@
 
 1. **Runway 06/13**
 
-   <span style="color:blue">Runway 13: Climb straight ahead. After passing runway intersection make a right climbing turn to join downwind RWY 06.</span>
+    <span style="color:blue">Runway 13: Climb straight ahead. After passing runway intersection make a right climbing turn to join downwind RWY 06.</span>
     
     <span style="color:green">Runway 06: Join downwind RWY 06</span>
     
@@ -43,7 +43,7 @@
 
 2. **Runway 31**
 
-   <span style="color:orange">Make a left turn after take-off to fly West of SOUTH HARBOR (refer to chart above), continue
+    <span style="color:orange">Make a left turn after take-off to fly West of SOUTH HARBOR (refer to chart above), continue
     climb to 1500 FT.</span>
          
     Report abeam MALABON (refer to chart above) then proceed to destination.
@@ -66,7 +66,7 @@
 
 1. **Runway 06/13**
 
-   <span style="color:blue">Runway 13: Climb straight ahead. After passing runway intersection make a right climbing turn to join downwind RWY 06.</span>
+    <span style="color:blue">Runway 13: Climb straight ahead. After passing runway intersection make a right climbing turn to join downwind RWY 06.</span>
     
     <span style="color:green">Runway 06: Join downwind RWY 06</span>
     
@@ -82,7 +82,7 @@
 
 2. **Runway 31**
 
-   <span style="color:orange">Make a left turn after take-off to fly West of SOUTH HARBOR (refer to chart above), continue
+    <span style="color:orange">Make a left turn after take-off to fly West of SOUTH HARBOR (refer to chart above), continue
     climb to 1500 FT.</span>
          
     Follow next instructions of ATC   
@@ -99,7 +99,7 @@
 
     Follow next instructions of ATC   
 
-    ![alt text](<../../assets/img/RPLL VFR/departures/Northbound 24.png>)
+    ![VFR Norhtbound_24](<../../assets/img/RPLL VFR/departures/Northbound 24.png>)
 
 ### Southbound / Eastbound aircraft FIXED WING
 
