@@ -48,21 +48,20 @@ The airport caters passenger and cargo flights, as well as general and military 
     </tr>
     <tr>
       <td style="text-align:center"><strong>RPVM_APP</strong></td>
-      <td rowspan="3" style="text-align:center">Mactan Approach<sup>[2]</sup></td>
+      <td rowspan="2" style="text-align:center">Mactan Approach[^2]</td>
       <td style="text-align:center">124.700</td>
-      <td style="text-align:center">TMA 1500 ft - FL150<sup>[1]</sup></td>
+      <td style="text-align:center">TMA 1500 ft - FL150[^1]</td>
     </tr>
     <tr>
       <td style="text-align:center"><strong>RPVM_S_APP</strong></td>
       <td style="text-align:center">121.200</td>
-      <td style="text-align:center">SUB TMA 1500 ft - FL150<sup>[1]</sup></td>
+      <td style="text-align:center">SUB TMA 1500 ft - FL150[^1]</td>
     </tr>
   </tbody>
-  
 </table>
 
-<sup>1</sup> Vertical limit of FL150 can be increased to a maximum of FL200. <br>
-<sup>2</sup> Can control top-down Mactan TMA which includes RPVD and RPSP. But check the controller information if they do!
+[^1]: Vertical limit of FL150 can be increased to a maximum of FL200.
+[^2]: Can control top-down Mactan TMA which includes RPVD and RPSP. But check the controller information if they do!
 
 
 # Stand Assignments
