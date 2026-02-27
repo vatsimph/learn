@@ -8,7 +8,6 @@ Here you will find aerodrome briefings for the airports within the Philippines! 
 # RPHI Briefing
 
 <figure markdown="span">
-  ![RNAV Routes](../../assets/img/RP_ENR_6-1.2.png){ width="300" }
+  ![RNAV Routes](../../assets/img/RP_ENR_6-1.2.png){ width="800" }
   <figcaption>RNAV Routes Within RPHI</figcaption>
 </figure>
-
