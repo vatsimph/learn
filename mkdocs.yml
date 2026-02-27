@@ -45,6 +45,9 @@ extra_css:
   - stylesheets/vatphil.css
 
 extra:
+  analytics:
+    provider: google
+    property: G-779QHKRL0K
   social:
     - icon: fontawesome/brands/facebook 
       link: https://facebook.com/philippinesvacc
