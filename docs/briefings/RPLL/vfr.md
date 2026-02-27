@@ -26,18 +26,25 @@
 ### Northbound aircraft FIXED WING
 
 1. **Runway 06/13**
-![Image title](../../assets/img/RPLL VFR/departures/Northbound 0613.png){ align=left }
-    <span style="color:blue">Runway 13: Climb straight ahead. After passing runway intersection make a right climbing turn to join downwind RWY 06.</span>
-    
-    <span style="color:green">Runway 06: Join downwind RWY 06</span>
-    
-    <span style="color:red">Obtain clearance from Manila Control Tower before crossing final approach of RWY 06. </span>
-    
-    Climb to 1500 FT after crossing final approach of RWY 06. 
-    
-    <span style="color:orange">Execute a left turn <span style="color:purple">abeam threshold of RWY 13 </span> to fly West of SOUTH HARBOR. (refer to chart above)</span>
-    
-    Report abeam MALABON (refer to chart above) then proceed to destination.
+
+<div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
+<div markdown>
+![Image title](../../assets/img/RPLL VFR/departures/Northbound 0613.png)
+</div>
+<div markdown>
+<span style="color:blue">Runway 13: Climb straight ahead. After passing runway intersection make a right climbing turn to join downwind RWY 06.</span>
+
+<span style="color:green">Runway 06: Join downwind RWY 06</span>
+
+<span style="color:red">Obtain clearance from Manila Control Tower before crossing final approach of RWY 06.</span>
+
+Climb to 1500 FT after crossing final approach of RWY 06.
+
+<span style="color:orange">Execute a left turn <span style="color:purple">abeam threshold of RWY 13</span> to fly West of SOUTH HARBOR. (refer to chart above)</span>
+
+Report abeam MALABON (refer to chart above) then proceed to destination.
+</div>
+</div>
     
     ![VFR_Northbound_0613](<../../assets/img/RPLL VFR/departures/Northbound 0613.png>)
 
