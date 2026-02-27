@@ -312,6 +312,8 @@ APP will then issue your arrival clearance including the type of approach to exp
     3. General Aviation aircraft departures shall taxi from the parking apron via TWY G1 to TWY A4.
     4. General Aviation aircraft arrivals shall taxi to the parking apron via TWY A5 to TWY G2.
 
+[^1]: Vertical limit of FL150 can be increased to a maximum of FL200.
+[^2]: Can control top-down Mactan SUB-TMA which includes RPSP and RPVD. But check the controller information if they do!
 
 *[EOBT]: Estimated off block time
 *[TOBT]: Target off block time
