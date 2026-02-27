@@ -210,10 +210,6 @@ the following information:
 - Your aircraft type
 - The ATIS information letter
 
-??? phraseology "Phraseology"
-
-    **PAL1862**: Clearance Delivery, PAL1862, stand 10, A-3-2-1, with Information Alpha, request clearance Manila runway 04R
-
 !!! warning
 
     Radio Checks on first contact are **discouraged** when building communication with the controller. 
