@@ -1,7 +1,7 @@
-## RPLL - Manila - Ninoy Aquino International Airport
+## RPVM - Mactan-Cebu International Airport
 
 # General
-The Ninoy Aquino International Airport has 2 Runways, 2 passenger terminals, 1 general aviation areas, 1 military airbase, and 1 military maintenance hangar.
+The Mactan-Cebu International Airport has 2 Runways, 2 passenger terminals, 1 general aviation areas, 1 military airbase, and 1 military maintenance hangar.
 
 - Terminal 1 - Domestic Passenger and Cargo Flights 
 - Terminal 2 - International Passenger and Cargo Flights
@@ -13,8 +13,7 @@ The airport caters passenger and cargo flights, as well as general and military 
 
 # Stand Assignments
 
-Bay assignments, are strictly implemented virtually, and are based on the latest
-real-world operations. Virtual and other real-world airlines that are not listed will park at terminal 2.
+Bay assignments, are strictly implemented virtually, and are based on the latest real-world operations. Virtual and other real-world airlines that are not listed will park at terminal 2.
 
 #soon
 
@@ -141,8 +140,7 @@ If your route is still invalid, a controller will send you a private message wit
 
 !!! warning
 
-    During events it is important that you put your EOBT in your flight plan as 
-    controllers will use that to determine your takeoff slot.
+    During events it is important that you put your EOBT in your flight plan as controllers will use that to determine your takeoff slot.
 
 # Waypoint Restrictions
 
@@ -213,7 +211,7 @@ the following information:
 
 ??? phraseology "Phraseology"
 
-    **PAL1862**:“Clearance Delivery, PAL1862, stand 10, A-3-2-1, with Information Alpha, request clearance Manila runway 04R”
+    **PAL1862**: Clearance Delivery, PAL1862, stand 10, A-3-2-1, with Information Alpha, request clearance Manila runway 04R
 
 !!! warning
 
@@ -258,9 +256,9 @@ When **APP** or **CTR** is online, after passing 2000 feet or 5 DME from RPVM, r
 
 ??? phraseology "Phraseology"
 
-    **CEB586**: “Mactan Approach, CEB586, passing 2000, climbing FL150, MULOP4P”
+    **CEB586**: Mactan Approach, CEB586, passing 2000, climbing FL150, MULOP4P
 
-    **RPVM_APP**: “CEB586, radar identified, continue climb FL150”
+    **RPVM_APP**: CEB586, radar identified, continue climb FL150
 
 # Arrival
 
@@ -268,19 +266,19 @@ When arriving in to Mactan, it is best for you to be in between FL160 and FL180 
 
 ??? phraseology "Phraseology"
 
-    **PAL301**: “Manila Approach, PAL301, FL180, inbound TADEL”
+    **PAL301**: Mactan Approach, PAL301, FL180, inbound BATAY
 
 APP will then issue your arrival clearance including the type of approach to expect to the active runway. APP either gives you radar vectors to final or gives you descent clearances via a STAR. By default, controllers will vector you to the final approach.
 
 ??? phraseology "Phraseology"
 
-    **RPLL_APP**: “PAL301, radar contact, cleared Manila expect radar vectors ILS 06”
+    **RPVM_APP**: PAL301, radar contact, cleared Mactan expect radar vectors ILS 22L
 
-    **PAL301**: “Cleared Manila expect radar vectors ILS 06, PAL301”
+    **PAL301**: Cleared Mactan expect radar vectors ILS 22L, PAL301
 
-    **RPLL_APP**: “PAL301, maintain present heading, descend 10,000, QNH 1011”
+    **RPVM_APP**: PAL301, Maintain present heading, descend 10,000, QNH 1011
 
-    **PAL301**: “maintain present heading, descend 10,000, QNH 1011, PAL301”
+    **PAL301**: Maintain present heading, descend 10,000, QNH 1011, PAL301
 
 !!! warning
 
