@@ -1,8 +1,7 @@
 ## RPVM - Mactan - Cebu International Airport
-## RPVM - Mactan-Cebu International Airport
 
 # General
-The Mactan-Cebu International Airport has 2 Runways, 2 passenger terminals, 1 general aviation areas, 1 military airbase, and 1 military maintenance hangar.
+The Mactan - Cebu International Airport has 2 Runways, 2 passenger terminals, 1 general aviation areas, 1 military airbase, and 1 military maintenance hangar.
 
 - Terminal 1 - Domestic Passenger and Cargo Flights 
 - Terminal 2 - International Passenger and Cargo Flights
