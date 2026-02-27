@@ -10,7 +10,10 @@ When cruising level of a VFR flight is above 3000 feet, the tables in the [RVSM]
 
 ## VFR rules per aerodrome
 
+<div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 1rem;" markdown>
+
 [RPLL](../briefings/RPLL/vfr.md){ .md-button .md-button--primary }
 
 [RPVM](../briefings/RPVM/vfr.md){ .md-button .md-button--primary }
 
+</div>
