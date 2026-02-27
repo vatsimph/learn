@@ -48,7 +48,7 @@ Report abeam MALABON (refer to chart above) then proceed to destination.
 
 1. **Runway 31**
 
-    <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
+<div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
 ![VFR Northbound_31](<../../assets/img/RPLL VFR/departures/Northbound 31.png>)
 </div>
@@ -61,7 +61,7 @@ Report abeam MALABON (refer to chart above) then proceed to destination.
 
 2. **Runway 24**
     
-    <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
+<div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
 ![alt text](<../../assets/img/RPLL VFR/departures/Northbound 24.png>)
 </div>
@@ -80,7 +80,7 @@ Report abeam MALABON (refer to chart above) then proceed to destination.
 
 1. **Runway 06/13**
 
-    <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
+<div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
 ![VFR_Northbound_0613](<../../assets/img/RPLL VFR/departures/Northbound 0613.png>)
 </div>
@@ -101,7 +101,7 @@ Follow next instructions of ATC
 
 2. **Runway 31**
 
-    <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
+<div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
 ![VFR Northbound_31](<../../assets/img/RPLL VFR/departures/Northbound 31.png>)
 </div>
@@ -114,7 +114,7 @@ Follow next instructions of ATC
 
 3. **Runway 24**
     
-    <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
+<div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
 ![VFR Norhtbound_24](<../../assets/img/RPLL VFR/departures/Northbound 24.png>)
 </div>
@@ -133,7 +133,7 @@ Follow next instructions of ATC
 
 1. **Runway 06/13/24**
 
-    <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
+<div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
 ![VFR_SouthEastBound_061324](<../../assets/img/RPLL VFR/departures/SouthEastbound 061324.png>)
 </div>
@@ -149,7 +149,7 @@ Follow next instructions of ATC
 </div>
 
 2. **Runway 31**
-   <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
+<div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
 ![VFR_SouthEastBound_31](<../../assets/img/RPLL VFR/departures/SouthEastbound 31.png>)
 </div>
