@@ -284,34 +284,50 @@ APP will then issue your arrival clearance including the type of approach to exp
 
 # Taxi Routing
 
-1. When RWY 04R in use:
-    1. Departures shall taxi from parking aprons via TWY D1 or TWY D2 or TWY D3 then TWY C to TWY B7 to TWY A5 for short field take-off; or continue TWY A6 for normal take-off.
-    2. Arrivals shall taxi via Rapid Exit TWY R1 or TWY A3 to TWY B4 or via TWY A2 to TWY B3 to the parking apron; or via TWY A1 to TWY B2 to TWY C then TWY D1 to the parking apron.
-    3. General Aviation aircraft departures shall taxi from the parking apron via TWY G2.
-    4.  General Aviation aircraft arrivals shall taxi to the parking apron via TWY G1.
+=== "RWY 04R"
 
-2. When RWY 22L in use:
+    **Departures:** D1/D2/D3 → C → B7 → A5 (intersection) or A6 (normal)
+    
+    **Arrivals:** R1/A3 → B4 or A2 → B3 or A1 → B2 → C → D1
+    
+    **GA Departures:** G2
+    
+    **GA Arrivals:** G1
 
-    1. Departures shall taxi from parking aprons via TWY D1 or TWY D2 or TWY D3 to TWY C to TWY B3 to TWY A2 for short field take-off; or continue TWY C to TWY B2 to TWY A1 for normal take-off.
-    2. Arrivals shall taxi via Rapid Exit TWY R2 to TWY B6 or TWY A5 to TWY B7 or TWY A6 to TWY C then TWY D1 or TWY D2 or TWY D3 to the parking apron.
-    3. General Aviation aircraft departures shall taxi from the parking apron via TWY G1 or TWY G2.
-    4. General Aviation aircraft arrivals shall taxi to the parking apron via TWY G1 or TWY G2.
+=== "RWY 22L"
 
-3.  When RWY 04L in use:
-    1. Departures shall taxi from parking aprons via TWY D1 or TWY D2 or TWY D3 then TWY C to TWY B7 or TWY B6.
-    2. Arrivals shall taxi via TWY B2 to the parking apron; or via TWY B3 to TWY C then TWY D1 or TWY D2 or TWY D3 
-    3. General Aviation aircraft departures shall taxi from the parking apron via TWY G1 or TWY G2.
-    4. General Aviation aircraft arrivals shall taxi to the parking apron via TWY G1 or TWY G2. 
+    **Departures:** D1/D2/D3 → C → B3 → A2 (intersection) or B2 → A1 (normal)
+    
+    **Arrivals:** R2 → B6 or A5 → B7 or A6 → C → D1/D2/D3
+    
+    **GA Departures:** G1 or G2
+    
+    **GA Arrivals:** G1 or G2
 
-4. When RWY 22R in use:
-    1. Departures shall taxi from parking aprons via TWY D1 or TWY D2 or TWY D3 then TWY C to TWY B2.
-    2. Arrivals shall taxi via TWY B7 or TWY B6 to TWY C then TWY D1 or TWY D2 or TWY D3 to the parking apron.
-    3. General Aviation aircraft departures shall taxi from the parking apron via TWY G1 to TWY A4.
-    4. General Aviation aircraft arrivals shall taxi to the parking apron via TWY A5 to TWY G2.
+=== "RWY 04L"
+
+    **Departures:** D1/D2/D3 → C → B7 or B6
+    
+    **Arrivals:** B2 or B3 → C → D1/D2/D3
+    
+    **GA Departures:** G1 or G2
+    
+    **GA Arrivals:** G1 or G2
+
+=== "RWY 22R"
+
+    **Departures:** D1/D2/D3 → C → B2
+    
+    **Arrivals:** B7 or B6 → C → D1/D2/D3
+    
+    **GA Departures:** G1 → A4
+    
+    **GA Arrivals:** A5 → G2
 
 [^1]: Vertical limit of FL150 can be increased to a maximum of FL200.
 [^2]: Can control top-down Mactan SUB-TMA which includes RPSP and RPVD. But check the controller information if they do!
 
+*[GA]: General Aviation
 *[EOBT]: Estimated off block time
 *[TOBT]: Target off block time
 *[TSAT]: Target start approval time
