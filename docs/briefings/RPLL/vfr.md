@@ -9,7 +9,7 @@
 
 2. Prior entering designated VFR areas, contact RPLL_TWR on 118.100 MHz
 3. Adhere to established Manila VFR arrival/departure routings
-4. Maintain not above 1500 FT within 10 NM from RPLL, not aboe 2500 FT within 10 - 15 NM from RPLL
+4. Maintain not above 1500 FT within 10 NM from RPLL, not above 2500 FT within 10 - 15 NM from RPLL
 5. When intending to transit the IFR climb/descend areas, contact Manila Approach on 124.400 (RPLL_F_APP), 124.800 MHz (RPLL_APP) or 119.300 MHz (MNL_CTR) for the necessary clearance.
 6. All VFR aircraft inside the Manila Control Zone (CTR) must maintain listening watch with RPLL_TWR or higher controller up to the exit points
 7. All VFR aircraft outside the Manila CTR but inside Manila TMA must maintain listening watch with RPLL_F_APP or higher controller
