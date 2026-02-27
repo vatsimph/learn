@@ -18,145 +18,102 @@
 
 ## Vertical Separation of VFR and IFR Flight with RVSM **in Use**
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Vertical Separation of VFR and IFR flight with RVSM in use</title>
-<style>
-  body { font-family: Arial, sans-serif; font-size: 14px; padding: 20px; }
-  .title { font-size: 1.1em; }
-  .bold { font-weight: bold; }
-</style>
-</head>
-<body>
-<table>
+<table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif; font-size: 14px; text-align: center;">
   <thead>
-    <tr>
-      <th colspan="8" class="title">Vertical Separation of VFR and IFR flight with RVSM in use</th>
+    <tr style="background-color: #f2f2f2;">
+      <th colspan="8" style="padding: 10px; border: 1px solid #ccc;">Vertical Separation of VFR and IFR flight with RVSM in use</th>
     </tr>
     <tr>
-      <th colspan="8" class="bold">Magnetic Route Figure of Merit</th>
+      <th colspan="4" style="padding: 8px; border: 1px solid #ccc; background-color: #e9e9e9;">0° to 179° (Eastbound)</th>
+      <th colspan="4" style="padding: 8px; border: 1px solid #ccc; background-color: #e9e9e9;">180° to 359° (Westbound)</th>
     </tr>
-    <tr>
-      <th colspan="4">0° to 179°</th>
-      <th colspan="4">180° to 359°</th>
+    <tr style="font-weight: bold;">
+      <td colspan="2" style="border: 1px solid #ccc; padding: 5px;">VFR</td>
+      <td colspan="2" style="border: 1px solid #ccc; padding: 5px;">IFR</td>
+      <td colspan="2" style="border: 1px solid #ccc; padding: 5px;">VFR</td>
+      <td colspan="2" style="border: 1px solid #ccc; padding: 5px;">IFR</td>
     </tr>
-    <tr>
-      <th colspan="2">VFR</th>
-      <th colspan="2">IFR</th>
-      <th colspan="2">VFR</th>
-      <th colspan="2">IFR</th>
-    </tr>
-    <tr>
-      <th class="bold">FL</th>
-      <th class="bold">feet</th>
-      <th class="bold">FL</th>
-      <th class="bold">feet</th>
-      <th class="bold">FL</th>
-      <th class="bold">feet</th>
-      <th class="bold">FL</th>
-      <th class="bold">feet</th>
+    <tr style="font-weight: bold; font-size: 12px;">
+      <td style="border: 1px solid #ccc; width: 12.5%;">FL</td><td style="border: 1px solid #ccc; width: 12.5%;">Feet</td>
+      <td style="border: 1px solid #ccc; width: 12.5%;">FL</td><td style="border: 1px solid #ccc; width: 12.5%;">Feet</td>
+      <td style="border: 1px solid #ccc; width: 12.5%;">FL</td><td style="border: 1px solid #ccc; width: 12.5%;">Feet</td>
+      <td style="border: 1px solid #ccc; width: 12.5%;">FL</td><td style="border: 1px solid #ccc; width: 12.5%;">Feet</td>
     </tr>
   </thead>
   <tbody>
-    <tr><td class="vfr-bg">—</td><td class="vfr-bg">—</td><td>010</td><td>1,000</td><td class="vfr-bg">—</td><td class="vfr-bg">—</td><td>020</td><td>2,000</td></tr>
-    <tr><td class="vfr-bg">—</td><td class="vfr-bg">—</td><td>030</td><td>3,000</td><td class="vfr-bg">—</td><td class="vfr-bg">—</td><td>040</td><td>4,000</td></tr>
-    <tr><td class="vfr-bg">035</td><td class="vfr-bg">3,500</td><td>050</td><td>5,000</td><td class="vfr-bg">045</td><td class="vfr-bg">4,500</td><td>060</td><td>6,000</td></tr>
-    <tr><td class="vfr-bg">055</td><td class="vfr-bg">5,500</td><td>070</td><td>7,000</td><td class="vfr-bg">065</td><td class="vfr-bg">6,500</td><td>080</td><td>8,000</td></tr>
-    <tr><td class="vfr-bg">075</td><td class="vfr-bg">7,500</td><td>090</td><td>9,000</td><td class="vfr-bg">085</td><td class="vfr-bg">8,500</td><td>100</td><td>10,000</td></tr>
-    <tr><td class="vfr-bg">095</td><td class="vfr-bg">9,500</td><td>110</td><td>11,000</td><td class="vfr-bg">105</td><td class="vfr-bg">10,500</td><td>120</td><td>12,000</td></tr>
-    <tr><td class="vfr-bg">115</td><td class="vfr-bg">11,500</td><td>130</td><td>13,000</td><td class="vfr-bg">125</td><td class="vfr-bg">12,500</td><td>140</td><td>14,000</td></tr>
-    <tr><td class="vfr-bg">135</td><td class="vfr-bg">13,500</td><td>150</td><td>15,000</td><td class="vfr-bg">145</td><td class="vfr-bg">14,500</td><td>160</td><td>16,000</td></tr>
-    <tr><td class="vfr-bg">155</td><td class="vfr-bg">15,500</td><td>170</td><td>17,000</td><td class="vfr-bg">165</td><td class="vfr-bg">16,500</td><td>180</td><td>18,000</td></tr>
-    <tr><td class="vfr-bg">175</td><td class="vfr-bg">17,500</td><td>190</td><td>19,000</td><td class="vfr-bg">185</td><td class="vfr-bg">18,500</td><td>200</td><td>20,000</td></tr>
-    <tr><td class="vfr-bg">195</td><td class="vfr-bg">19,500</td><td>210</td><td>21,000</td><td class="vfr-bg">—</td><td class="vfr-bg">—</td><td>220</td><td>22,000</td></tr>
-    <tr><td>—</td><td>—</td><td>230</td><td>23,000</td><td>—</td><td>—</td><td>240</td><td>24,000</td></tr>
-    <tr><td>—</td><td>—</td><td>250</td><td>25,000</td><td>—</td><td>—</td><td>260</td><td>26,000</td></tr>
-    <tr><td>—</td><td>—</td><td>270</td><td>27,000</td><td>—</td><td>—</td><td>280</td><td>28,000</td></tr>
-    <tr><td>—</td><td>—</td><td>290</td><td>29,000</td><td>—</td><td>—</td><td>300</td><td>30,000</td></tr>
-    <tr><td>—</td><td>—</td><td>310</td><td>33,000</td><td>—</td><td>—</td><td>320</td><td>32,000</td></tr>
-    <tr><td>—</td><td>—</td><td>330</td><td>35,000</td><td>—</td><td>—</td><td>340</td><td>30,000</td></tr>
-    <tr><td>—</td><td>—</td><td>350</td><td>35,000</td><td>—</td><td>—</td><td>360</td><td>36,000</td></tr>
-    <tr><td>—</td><td>—</td><td>370</td><td>37,000</td><td>—</td><td>—</td><td>380</td><td>38,000</td></tr>
-    <tr><td>—</td><td>—</td><td>390</td><td>39,000</td><td>—</td><td>—</td><td>400</td><td>40,000</td></tr>
-    <tr><td>—</td><td>—</td><td>410</td><td>41,000</td><td>—</td><td>—</td><td>430</td><td>43,000</td></tr>
-    <tr><td>—</td><td>—</td><td>450</td><td>45,000</td><td>—</td><td>—</td><td>470</td><td>47,000</td></tr>
-    <tr><td>—</td><td>—</td><td>490</td><td>49,000</td><td>—</td><td>—</td><td>510</td><td>51,000</td></tr>
+    <tr><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">010</td><td style="border: 1px solid #ccc;">1,000</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">020</td><td style="border: 1px solid #ccc;">2,000</td></tr>
+    <tr><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">030</td><td style="border: 1px solid #ccc;">3,000</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">040</td><td style="border: 1px solid #ccc;">4,000</td></tr>
+    <tr><td style="border: 1px solid #ccc; background-color: #dce9f7;">035</td><td style="border: 1px solid #ccc; background-color: #dce9f7;">3,500</td><td style="border: 1px solid #ccc;">050</td><td style="border: 1px solid #ccc;">5,000</td><td style="border: 1px solid #ccc; background-color: #dce9f7;">045</td><td style="border: 1px solid #ccc; background-color: #dce9f7;">4,500</td><td style="border: 1px solid #ccc;">060</td><td style="border: 1px solid #ccc;">6,000</td></tr>
+    <tr><td style="border: 1px solid #ccc; background-color: #dce9f7;">055</td><td style="border: 1px solid #ccc; background-color: #dce9f7;">5,500</td><td style="border: 1px solid #ccc;">070</td><td style="border: 1px solid #ccc;">7,000</td><td style="border: 1px solid #ccc; background-color: #dce9f7;">065</td><td style="border: 1px solid #ccc; background-color: #dce9f7;">6,500</td><td style="border: 1px solid #ccc;">080</td><td style="border: 1px solid #ccc;">8,000</td></tr>
+    <tr><td style="border: 1px solid #ccc; background-color: #dce9f7;">075</td><td style="border: 1px solid #ccc; background-color: #dce9f7;">7,500</td><td style="border: 1px solid #ccc;">090</td><td style="border: 1px solid #ccc;">9,000</td><td style="border: 1px solid #ccc; background-color: #dce9f7;">085</td><td style="border: 1px solid #ccc; background-color: #dce9f7;">8,500</td><td style="border: 1px solid #ccc;">100</td><td style="border: 1px solid #ccc;">10,000</td></tr>
+    <tr><td style="border: 1px solid #ccc; background-color: #dce9f7;">095</td><td style="border: 1px solid #ccc; background-color: #dce9f7;">9,500</td><td style="border: 1px solid #ccc;">110</td><td style="border: 1px solid #ccc;">11,000</td><td style="border: 1px solid #ccc; background-color: #dce9f7;">105</td><td style="border: 1px solid #ccc; background-color: #dce9f7;">10,500</td><td style="border: 1px solid #ccc;">120</td><td style="border: 1px solid #ccc;">12,000</td></tr>
+    <tr><td style="border: 1px solid #ccc; background-color: #dce9f7;">115</td><td style="border: 1px solid #ccc; background-color: #dce9f7;">11,500</td><td style="border: 1px solid #ccc;">130</td><td style="border: 1px solid #ccc;">13,000</td><td style="border: 1px solid #ccc; background-color: #dce9f7;">125</td><td style="border: 1px solid #ccc; background-color: #dce9f7;">12,500</td><td style="border: 1px solid #ccc;">140</td><td style="border: 1px solid #ccc;">14,000</td></tr>
+    <tr><td style="border: 1px solid #ccc; background-color: #dce9f7;">135</td><td style="border: 1px solid #ccc; background-color: #dce9f7;">13,500</td><td style="border: 1px solid #ccc;">150</td><td style="border: 1px solid #ccc;">15,000</td><td style="border: 1px solid #ccc; background-color: #dce9f7;">145</td><td style="border: 1px solid #ccc; background-color: #dce9f7;">14,500</td><td style="border: 1px solid #ccc;">160</td><td style="border: 1px solid #ccc;">16,000</td></tr>
+    <tr><td style="border: 1px solid #ccc; background-color: #dce9f7;">155</td><td style="border: 1px solid #ccc; background-color: #dce9f7;">15,500</td><td style="border: 1px solid #ccc;">170</td><td style="border: 1px solid #ccc;">17,000</td><td style="border: 1px solid #ccc; background-color: #dce9f7;">165</td><td style="border: 1px solid #ccc; background-color: #dce9f7;">16,500</td><td style="border: 1px solid #ccc;">180</td><td style="border: 1px solid #ccc;">18,000</td></tr>
+    <tr><td style="border: 1px solid #ccc; background-color: #dce9f7;">175</td><td style="border: 1px solid #ccc; background-color: #dce9f7;">17,500</td><td style="border: 1px solid #ccc;">190</td><td style="border: 1px solid #ccc;">19,000</td><td style="border: 1px solid #ccc; background-color: #dce9f7;">185</td><td style="border: 1px solid #ccc; background-color: #dce9f7;">18,500</td><td style="border: 1px solid #ccc;">200</td><td style="border: 1px solid #ccc;">20,000</td></tr>
+    <tr><td style="border: 1px solid #ccc; background-color: #dce9f7;">195</td><td style="border: 1px solid #ccc; background-color: #dce9f7;">19,500</td><td style="border: 1px solid #ccc;">210</td><td style="border: 1px solid #ccc;">21,000</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">220</td><td style="border: 1px solid #ccc;">22,000</td></tr>
+    <tr><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">230</td><td style="border: 1px solid #ccc;">23,000</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">240</td><td style="border: 1px solid #ccc;">24,000</td></tr>
+    <tr><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">250</td><td style="border: 1px solid #ccc;">25,000</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">260</td><td style="border: 1px solid #ccc;">26,000</td></tr>
+    <tr><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">270</td><td style="border: 1px solid #ccc;">27,000</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">280</td><td style="border: 1px solid #ccc;">28,000</td></tr>
+    <tr style="font-weight: bold;"><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">290</td><td style="border: 1px solid #ccc;">29,000</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">300</td><td style="border: 1px solid #ccc;">30,000</td></tr>
+    <tr style="font-weight: bold;"><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">310</td><td style="border: 1px solid #ccc;">31,000</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">320</td><td style="border: 1px solid #ccc;">32,000</td></tr>
+    <tr style="font-weight: bold;"><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">330</td><td style="border: 1px solid #ccc;">33,000</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">340</td><td style="border: 1px solid #ccc;">34,000</td></tr>
+    <tr style="font-weight: bold;"><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">350</td><td style="border: 1px solid #ccc;">35,000</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">360</td><td style="border: 1px solid #ccc;">36,000</td></tr>
+    <tr style="font-weight: bold;"><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">370</td><td style="border: 1px solid #ccc;">37,000</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">380</td><td style="border: 1px solid #ccc;">38,000</td></tr>
+    <tr style="font-weight: bold;"><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">390</td><td style="border: 1px solid #ccc;">39,000</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">400</td><td style="border: 1px solid #ccc;">40,000</td></tr>
+    <tr style="font-weight: bold;"><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">410</td><td style="border: 1px solid #ccc;">41,000</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">430</td><td style="border: 1px solid #ccc;">43,000</td></tr>
+    <tr><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">450</td><td style="border: 1px solid #ccc;">45,000</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">470</td><td style="border: 1px solid #ccc;">47,000</td></tr>
+    <tr><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">490</td><td style="border: 1px solid #ccc;">49,000</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">—</td><td style="border: 1px solid #ccc;">510</td><td style="border: 1px solid #ccc;">51,000</td></tr>
   </tbody>
 </table>
-</body>
-</html>
-
 
 ## Vertical Separation of VFR and IFR Flight with RVSM **not in use**
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Vertical Separation of VFR and IFR flight with RVSM not in use</title>
-<style>
-  body { font-family: Arial, sans-serif; font-size: 14px; padding: 20px; }
-  table { border-collapse: collapse; width: 100%; max-width: 860px; }
-  th, td { border: 1px solid #000; padding: 6px 10px; text-align: center; }
-  .title { font-size: 1.1em; }
-  .bold { font-weight: bold; }
-  .vfr-bg { background-color: #dce9f7; }
-</style>
-</head>
-<body>
-<table>
+<table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif; font-size: 14px; text-align: center;">
   <thead>
-    <tr>
-      <th colspan="8" class="title">Vertical Separation of VFR and IFR flight with RVSM not in use</th>
+    <tr style="background-color: #f2f2f2;">
+      <th colspan="8" style="padding: 10px; border: 1px solid #000; font-size: 1.1em;">Vertical Separation of VFR and IFR flight with RVSM not in use</th>
     </tr>
     <tr>
-      <th colspan="8" class="bold">Magnetic Route Figure of Merit</th>
+      <th colspan="8" style="padding: 8px; border: 1px solid #000; font-weight: bold;">Magnetic Route Figure of Merit</th>
     </tr>
     <tr>
-      <th colspan="4">0° to 179°</th>
-      <th colspan="4">180° to 359°</th>
+      <th colspan="4" style="padding: 8px; border: 1px solid #000; background-color: #e9e9e9;">0° to 179°</th>
+      <th colspan="4" style="padding: 8px; border: 1px solid #000; background-color: #e9e9e9;">180° to 359°</th>
     </tr>
-    <tr>
-      <th colspan="2">VFR</th>
-      <th colspan="2">IFR</th>
-      <th colspan="2">VFR</th>
-      <th colspan="2">IFR</th>
+    <tr style="font-weight: bold;">
+      <td colspan="2" style="border: 1px solid #000; padding: 5px;">VFR</td>
+      <td colspan="2" style="border: 1px solid #000; padding: 5px;">IFR</td>
+      <td colspan="2" style="border: 1px solid #000; padding: 5px;">VFR</td>
+      <td colspan="2" style="border: 1px solid #000; padding: 5px;">IFR</td>
     </tr>
-    <tr>
-      <th class="bold">FL</th>
-      <th class="bold">feet</th>
-      <th class="bold">FL</th>
-      <th class="bold">feet</th>
-      <th class="bold">FL</th>
-      <th class="bold">feet</th>
-      <th class="bold">FL</th>
-      <th class="bold">feet</th>
+    <tr style="font-weight: bold;">
+      <td style="border: 1px solid #000; width: 12.5%;">FL</td><td style="border: 1px solid #000; width: 12.5%;">feet</td>
+      <td style="border: 1px solid #000; width: 12.5%;">FL</td><td style="border: 1px solid #000; width: 12.5%;">feet</td>
+      <td style="border: 1px solid #000; width: 12.5%;">FL</td><td style="border: 1px solid #000; width: 12.5%;">feet</td>
+      <td style="border: 1px solid #000; width: 12.5%;">FL</td><td style="border: 1px solid #000; width: 12.5%;">feet</td>
     </tr>
   </thead>
   <tbody>
-    <tr><td class="vfr-bg">—</td><td class="vfr-bg">—</td><td>010</td><td>1,000</td><td class="vfr-bg">—</td><td class="vfr-bg">—</td><td>020</td><td>2,000</td></tr>
-    <tr><td class="vfr-bg">—</td><td class="vfr-bg">—</td><td>030</td><td>3,000</td><td class="vfr-bg">—</td><td class="vfr-bg">—</td><td>040</td><td>4,000</td></tr>
-    <tr><td class="vfr-bg">035</td><td class="vfr-bg">3,500</td><td>050</td><td>5,000</td><td class="vfr-bg">045</td><td class="vfr-bg">4,500</td><td>060</td><td>6,000</td></tr>
-    <tr><td class="vfr-bg">055</td><td class="vfr-bg">5,500</td><td>070</td><td>7,000</td><td class="vfr-bg">065</td><td class="vfr-bg">6,500</td><td>080</td><td>8,000</td></tr>
-    <tr><td class="vfr-bg">075</td><td class="vfr-bg">7,500</td><td>090</td><td>9,000</td><td class="vfr-bg">085</td><td class="vfr-bg">8,500</td><td>100</td><td>10,000</td></tr>
-    <tr><td class="vfr-bg">095</td><td class="vfr-bg">9,500</td><td>110</td><td>11,000</td><td class="vfr-bg">105</td><td class="vfr-bg">10,500</td><td>120</td><td>12,000</td></tr>
-    <tr><td class="vfr-bg">115</td><td class="vfr-bg">11,500</td><td>130</td><td>13,000</td><td class="vfr-bg">125</td><td class="vfr-bg">12,500</td><td>140</td><td>14,000</td></tr>
-    <tr><td class="vfr-bg">135</td><td class="vfr-bg">13,500</td><td>150</td><td>15,000</td><td class="vfr-bg">145</td><td class="vfr-bg">14,500</td><td>160</td><td>16,000</td></tr>
-    <tr><td class="vfr-bg">155</td><td class="vfr-bg">15,500</td><td>170</td><td>17,000</td><td class="vfr-bg">165</td><td class="vfr-bg">16,500</td><td>180</td><td>18,000</td></tr>
-    <tr><td class="vfr-bg">175</td><td class="vfr-bg">17,500</td><td>190</td><td>19,000</td><td class="vfr-bg">185</td><td class="vfr-bg">18,500</td><td>200</td><td>20,000</td></tr>
-    <tr><td class="vfr-bg">195</td><td class="vfr-bg">19,500</td><td>210</td><td>21,000</td><td class="vfr-bg">—</td><td class="vfr-bg">—</td><td>220</td><td>22,000</td></tr>
-    <tr><td class="vfr-bg">—</td><td class="vfr-bg">—</td><td>230</td><td>23,000</td><td class="vfr-bg">—</td><td class="vfr-bg">—</td><td>240</td><td>24,000</td></tr>
-    <tr><td class="vfr-bg">—</td><td class="vfr-bg">—</td><td>250</td><td>25,000</td><td class="vfr-bg">—</td><td class="vfr-bg">—</td><td>260</td><td>26,000</td></tr>
-    <tr><td class="vfr-bg">—</td><td class="vfr-bg">—</td><td>270</td><td>27,000</td><td class="vfr-bg">—</td><td class="vfr-bg">—</td><td>280</td><td>28,000</td></tr>
-    <tr><td class="vfr-bg">—</td><td class="vfr-bg">—</td><td>290</td><td>29,000</td><td class="vfr-bg">—</td><td class="vfr-bg">—</td><td>310</td><td>31,000</td></tr>
-    <tr><td class="vfr-bg">—</td><td class="vfr-bg">—</td><td>330</td><td>33,000</td><td class="vfr-bg">—</td><td class="vfr-bg">—</td><td>350</td><td>35,000</td></tr>
-    <tr><td class="vfr-bg">—</td><td class="vfr-bg">—</td><td>370</td><td>37,000</td><td class="vfr-bg">—</td><td class="vfr-bg">—</td><td>390</td><td>39,000</td></tr>
-    <tr><td class="vfr-bg">—</td><td class="vfr-bg">—</td><td>410</td><td>41,000</td><td class="vfr-bg">—</td><td class="vfr-bg">—</td><td>430</td><td>43,000</td></tr>
-    <tr><td class="vfr-bg">—</td><td class="vfr-bg">—</td><td>450</td><td>45,000</td><td class="vfr-bg">—</td><td class="vfr-bg">—</td><td>470</td><td>47,000</td></tr>
-    <tr><td class="vfr-bg">—</td><td class="vfr-bg">—</td><td>490</td><td>49,000</td><td class="vfr-bg">—</td><td class="vfr-bg">—</td><td>510</td><td>51,000</td></tr>
+    <tr><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000;">010</td><td style="border: 1px solid #000;">1,000</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000;">020</td><td style="border: 1px solid #000;">2,000</td></tr>
+    <tr><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000;">030</td><td style="border: 1px solid #000;">3,000</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000;">040</td><td style="border: 1px solid #000;">4,000</td></tr>
+    <tr><td style="border: 1px solid #000; background-color: #dce9f7;">035</td><td style="border: 1px solid #000; background-color: #dce9f7;">3,500</td><td style="border: 1px solid #000;">050</td><td style="border: 1px solid #000;">5,000</td><td style="border: 1px solid #000; background-color: #dce9f7;">045</td><td style="border: 1px solid #000; background-color: #dce9f7;">4,500</td><td style="border: 1px solid #000;">060</td><td style="border: 1px solid #000;">6,000</td></tr>
+    <tr><td style="border: 1px solid #000; background-color: #dce9f7;">055</td><td style="border: 1px solid #000; background-color: #dce9f7;">5,500</td><td style="border: 1px solid #000;">070</td><td style="border: 1px solid #000;">7,000</td><td style="border: 1px solid #000; background-color: #dce9f7;">065</td><td style="border: 1px solid #000; background-color: #dce9f7;">6,500</td><td style="border: 1px solid #000;">080</td><td style="border: 1px solid #000;">8,000</td></tr>
+    <tr><td style="border: 1px solid #000; background-color: #dce9f7;">075</td><td style="border: 1px solid #000; background-color: #dce9f7;">7,500</td><td style="border: 1px solid #000;">090</td><td style="border: 1px solid #000;">9,000</td><td style="border: 1px solid #000; background-color: #dce9f7;">085</td><td style="border: 1px solid #000; background-color: #dce9f7;">8,500</td><td style="border: 1px solid #000;">100</td><td style="border: 1px solid #000;">10,000</td></tr>
+    <tr><td style="border: 1px solid #000; background-color: #dce9f7;">095</td><td style="border: 1px solid #000; background-color: #dce9f7;">9,500</td><td style="border: 1px solid #000;">110</td><td style="border: 1px solid #000;">11,000</td><td style="border: 1px solid #000; background-color: #dce9f7;">105</td><td style="border: 1px solid #000; background-color: #dce9f7;">10,500</td><td style="border: 1px solid #000;">120</td><td style="border: 1px solid #000;">12,000</td></tr>
+    <tr><td style="border: 1px solid #000; background-color: #dce9f7;">115</td><td style="border: 1px solid #000; background-color: #dce9f7;">11,500</td><td style="border: 1px solid #000;">130</td><td style="border: 1px solid #000;">13,000</td><td style="border: 1px solid #000; background-color: #dce9f7;">125</td><td style="border: 1px solid #000; background-color: #dce9f7;">12,500</td><td style="border: 1px solid #000;">140</td><td style="border: 1px solid #000;">14,000</td></tr>
+    <tr><td style="border: 1px solid #000; background-color: #dce9f7;">135</td><td style="border: 1px solid #000; background-color: #dce9f7;">13,500</td><td style="border: 1px solid #000;">150</td><td style="border: 1px solid #000;">15,000</td><td style="border: 1px solid #000; background-color: #dce9f7;">145</td><td style="border: 1px solid #000; background-color: #dce9f7;">14,500</td><td style="border: 1px solid #000;">160</td><td style="border: 1px solid #000;">16,000</td></tr>
+    <tr><td style="border: 1px solid #000; background-color: #dce9f7;">155</td><td style="border: 1px solid #000; background-color: #dce9f7;">15,500</td><td style="border: 1px solid #000;">170</td><td style="border: 1px solid #000;">17,000</td><td style="border: 1px solid #000; background-color: #dce9f7;">165</td><td style="border: 1px solid #000; background-color: #dce9f7;">16,500</td><td style="border: 1px solid #000;">180</td><td style="border: 1px solid #000;">18,000</td></tr>
+    <tr><td style="border: 1px solid #000; background-color: #dce9f7;">175</td><td style="border: 1px solid #000; background-color: #dce9f7;">17,500</td><td style="border: 1px solid #000;">190</td><td style="border: 1px solid #000;">19,000</td><td style="border: 1px solid #000; background-color: #dce9f7;">185</td><td style="border: 1px solid #000; background-color: #dce9f7;">18,500</td><td style="border: 1px solid #000;">200</td><td style="border: 1px solid #000;">20,000</td></tr>
+    <tr><td style="border: 1px solid #000; background-color: #dce9f7;">195</td><td style="border: 1px solid #000; background-color: #dce9f7;">19,500</td><td style="border: 1px solid #000;">210</td><td style="border: 1px solid #000;">21,000</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000;">220</td><td style="border: 1px solid #000;">22,000</td></tr>
+    <tr><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000;">230</td><td style="border: 1px solid #000;">23,000</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000;">240</td><td style="border: 1px solid #000;">24,000</td></tr>
+    <tr><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000;">250</td><td style="border: 1px solid #000;">25,000</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000;">260</td><td style="border: 1px solid #000;">26,000</td></tr>
+    <tr><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000;">270</td><td style="border: 1px solid #000;">27,000</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000;">280</td><td style="border: 1px solid #000;">28,000</td></tr>
+    <tr><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000;">290</td><td style="border: 1px solid #000;">29,000</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000;">310</td><td style="border: 1px solid #000;">31,000</td></tr>
+    <tr><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000;">330</td><td style="border: 1px solid #000;">33,000</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000;">350</td><td style="border: 1px solid #000;">35,000</td></tr>
+    <tr><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000;">370</td><td style="border: 1px solid #000;">37,000</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000;">390</td><td style="border: 1px solid #000;">39,000</td></tr>
+    <tr><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000;">410</td><td style="border: 1px solid #000;">41,000</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000;">430</td><td style="border: 1px solid #000;">43,000</td></tr>
+    <tr><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000;">450</td><td style="border: 1px solid #000;">45,000</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000;">470</td><td style="border: 1px solid #000;">47,000</td></tr>
+    <tr><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000;">490</td><td style="border: 1px solid #000;">49,000</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000; background-color: #dce9f7;">—</td><td style="border: 1px solid #000;">510</td><td style="border: 1px solid #000;">51,000</td></tr>
   </tbody>
 </table>
-</body>
-</html>
