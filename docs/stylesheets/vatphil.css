@@ -21,3 +21,21 @@
   -webkit-mask-image: var(--md-admonition-icon--phraseology);
           mask-image: var(--md-admonition-icon--phraseology);
 }
+
+:root {
+  --md-admonition-icon--weather: url('../../assets/img/cloud-sunny.svg');
+}
+.md-typeset .admonition.weather,
+.md-typeset details.weather {
+  border-color: rgb(41, 128, 185);
+}
+.md-typeset .weather > .admonition-title,
+.md-typeset .weather > summary {
+  background-color: rgba(41, 128, 185, 0.1);
+}
+.md-typeset .weather > .admonition-title::before,
+.md-typeset .weather > summary::before {
+  background-color: rgb(41, 128, 185);
+  -webkit-mask-image: var(--md-admonition-icon--weather);
+          mask-image: var(--md-admonition-icon--weather);
+}
