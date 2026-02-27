@@ -249,7 +249,7 @@ the following information:
 
 ??? phraseology "Phraseology"
 
-    **PAL300**:“Clearance Delivery, PAL300, stand 10, A-3-2-1, with Information Alpha, request clearance Hong Kong, runway 06”
+    **PAL300**: Clearance Delivery, PAL300, stand 10, A-3-2-1, with Information Alpha, request clearance Hong Kong, runway 06
 
 !!! warning
 
