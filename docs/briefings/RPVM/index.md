@@ -131,6 +131,22 @@ Below is a table of the Take-Off Run available
 
     Take-off/landing on Rwy 04L/22R allowed whenever Rwy 04R/22L
 
+!!! warning
+
+    Code C aircraft not allowed to enter Twy C whenever a Code D and above aircraft is taking-off and landing on Rwy 04L/22R.
+
+    Code D and above aircraft not allowed to enter Twy C whenever a Code C and above taking-off or landing on Rwy 04L/22R
+
+??? info "Aircraft Codes"
+    | Code letter | Wingspan | Typical aeroplane |
+    |:-----------:|:---------|:------------------|
+    | A | < 15 m | PIPER PA-31/CESSNA 404 Titan |
+    | B | 15 m but < 24 m | BOMBARDIER Regional Jet CRJ-200/DE HAVILLAND CANADA DHC-6 |
+    | C | 24 m but < 36 m | BOEING 737-700/AIRBUS A-320/EMBRAER ERJ 190-100 |
+    | D | 36 m but < 52 m | B767 Series/AIRBUS A-310 |
+    | E | 52 m but < 65 m | B777 Series/B787 Series/A330 Family |
+    | F | 65 m but < 80 m | BOEING 747-8/AIRBUS A-380-800 |
+
 # Routes
 
 Local flights within RPHI and some international flights are to use routes given below. Simbrief also give a standard route which looks like this
