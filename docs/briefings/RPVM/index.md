@@ -1,4 +1,4 @@
-## RPLL - Manila - Ninoy Aquino International Airport
+## RPVM - Mactan - Cebu International Airport
 
 # General
 The Ninoy Aquino International Airport has 2 Runways, 2 passenger terminals, 1 general aviation areas, 1 military airbase, and 1 military maintenance hangar.
@@ -16,7 +16,7 @@ The airport caters passenger and cargo flights, as well as general and military 
 Bay assignments, are strictly implemented virtually, and are based on the latest
 real-world operations. Virtual and other real-world airlines that are not listed will park at terminal 2.
 
-#soon
+TBD
 
 # Runways
 
@@ -50,7 +50,7 @@ Below is a table of the Take-Off Run available
       <td style="text-align:center">9,121 (2780)</td>
     </tr>
     <tr>
-      <td style="text-align:center">AA3</td>
+      <td style="text-align:center">A3</td>
       <td style="text-align:center">7,841 (2390)</td>
     </tr>
     <tr>
@@ -213,7 +213,7 @@ the following information:
 
 ??? phraseology "Phraseology"
 
-    **PAL1862**:“Clearance Delivery, PAL1862, stand 10, A-3-2-1, with Information Alpha, request clearance Manila runway 04R”
+    **PAL1862**:“Clearance Delivery, PAL1862, stand B3, A-3-2-1, with Information Alpha, request clearance Manila runway 04R”
 
 !!! warning
 
@@ -228,7 +228,7 @@ You must read back the clearance in full. Listen carefully to all details that t
 
 ??? phraseology
 
-    **CEB586**: Clearance Delivery, CEB586, Stand 120, A-3-2-0 with information A, request clearance Manila, runway 04R.
+    **CEB586**: Clearance Delivery, CEB586, Stand B2, A-3-2-0 with information A, request clearance Manila, runway 04R.
 
     **RPVM_DEL**: CEB586, cleared Manila, W11 CONDE, RUNWAY 04R MULOP4P, Climb  FL150, Squawk 4024
 
@@ -268,117 +268,52 @@ When arriving in to Mactan, it is best for you to be in between FL160 and FL180 
 
 ??? phraseology "Phraseology"
 
-    **PAL301**: “Manila Approach, PAL301, FL180, inbound TADEL”
+    **CEB585**: “Mactan Approach, CEB585, passing FL170, inbound BATAY”
 
-APP will then issue your arrival clearance including the type of approach to expect to the active runway. APP either gives you radar vectors to final or gives you descent clearances via a STAR. By default, controllers will vector you to the final approach.
+APP will then issue your arrival clearance including the type of approach to expect to the active runway. APP either gives you radar vectors to final or gives you descent clearances via a STAR.
 
 ??? phraseology "Phraseology"
 
-    **RPLL_APP**: “PAL301, radar contact, cleared Manila expect radar vectors ILS 06”
+    **RPVM_APP**: “CEB585, radar contact, cleared Mactan, BATAY3P expect RNP04R”
 
-    **PAL301**: “Cleared Manila expect radar vectors ILS 06, PAL301”
+    **CEB585**: “Cleared Mactan, BATAY3P, expect RNP04R, CEB585”
 
-    **RPLL_APP**: “PAL301, maintain present heading, descend 10,000, QNH 1011”
+    **RPVM_APP**: “CEB585, descend via STAR 4000, Mactan QNH 1009”
 
-    **PAL301**: “maintain present heading, descend 10,000, QNH 1011, PAL301”
+    **CEB585**: “descend via STAR 4000, Mactan QNH 1009, CEB585”
 
 !!! warning
 
     If APP didn’t give you any turns after you have passed the last waypoint on your routing, maintain your present heading.
 
-Below is the mandatory speed restrictions when under vectors by approach.
-<p style="color: red; font-style: italic; font-weight: bold; text-align: center;">Please follow the following table unless instructed by ATC.</p>
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:center">Category</th>
-      <th style="text-align:center">Distance (NM)</th>
-      <th style="text-align:center">Speed (IAS)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:center"><strong>All</strong></td>
-      <td style="text-align:center">Crossing STAR Waypoint</td>
-      <td style="text-align:center">250</td>
-    </tr>
-    <tr>
-      <td style="text-align:center"><strong>All</strong></td>
-      <td style="text-align:center">20</td>
-      <td style="text-align:center">210</td>
-    </tr>
-    <tr>
-      <td style="text-align:center"><strong>All</strong></td>
-      <td style="text-align:center">10 FINAL</td>
-      <td style="text-align:center">180</td>
-    </tr>
-    <tr>
-      <td style="text-align:center"><strong>C & D</strong></td>
-      <td style="text-align:center">FAF/FAP</td>
-      <td style="text-align:center">150</td>
-    </tr>
-    <tr>
-      <td style="text-align:center"><strong>ATR</strong></td>
-      <td style="text-align:center">5</td>
-      <td style="text-align:center">150</td>
-    </tr>
-    <tr>
-      <td style="text-align:center"><strong>A & B</strong></td>
-      <td style="text-align:center">5</td>
-      <td style="text-align:center">130</td>
-    </tr>
-  </tbody>
-</table>
+# Aircraft Taxiing Route
 
+1. When RWY 04R in use:
+    1. Departures shall taxi from parking aprons via TWY D1 or TWY D2 or TWY D3 then TWY C to TWY B7 to TWY A5 for short field take-off; or continue TWY A6 for normal take-off.
+    2. Arrivals shall taxi via Rapid Exit TWY R1 or TWY A3 to TWY B4 or via TWY A2 to TWY B3 to the parking apron; or via TWY A1 to TWY B2 to TWY C then TWY D1 to the parking apron.
+    3. General Aviation aircraft departures shall taxi from the parking apron via TWY G2.
+    4.  General Aviation aircraft arrivals shall taxi to the parking apron via TWY G1.
 
+2. When RWY 22L in use:
 
-# Vacating
+    1. Departures shall taxi from parking aprons via TWY D1 or TWY D2 or TWY D3 to TWY C to TWY B3 to TWY A2 for short field take-off; or continue TWY C to TWY B2 to TWY A1 for normal take-off.
+    2. Arrivals shall taxi via Rapid Exit TWY R2 to TWY B6 or TWY A5 to TWY B7 or TWY A6 to TWY C then TWY D1 or TWY D2 or TWY D3 to the parking apron.
+    3. General Aviation aircraft departures shall taxi from the parking apron via TWY G1 or TWY G2.
+    4. General Aviation aircraft arrivals shall taxi to the parking apron via TWY G1 or TWY G2.
 
-You must vacate the runway as fast as possible in order for TWR to make best use of the runway.
+3.  When RWY 04L in use:
+    1. Departures shall taxi from parking aprons via TWY D1 or TWY D2 or TWY D3 then TWY C to TWY B7 or TWY B6.
+    2. Arrivals shall taxi via TWY B2 to the parking apron; or via TWY B3 to TWY C then TWY D1 or TWY D2 or TWY D3 
+    3. General Aviation aircraft departures shall taxi from the parking apron via TWY G1 or TWY G2.
+    4. General Aviation aircraft arrivals shall taxi to the parking apron via TWY G1 or TWY G2. 
 
-You have not vacated the runway until you have fully passed the runway stop bar, so **DO NOT STOP UNTIL YOU ARE FULLY ON A TAXIWAY** or you might cause a go around.
+4. When RWY 22R in use:
+    1. Departures shall taxi from parking aprons via TWY D1 or TWY D2 or TWY D3 then TWY C to TWY B2.
+    2. Arrivals shall taxi via TWY B7 or TWY B6 to TWY C then TWY D1 or TWY D2 or TWY D3 to the parking apron.
+    3. General Aviation aircraft departures shall taxi from the parking apron via TWY G1 to TWY A4.
+    4. General Aviation aircraft arrivals shall taxi to the parking apron via TWY A5 to TWY G2.
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:center">Runway</th>
-      <th style="text-align:center">Category</th>
-      <th style="text-align:center">Exit</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td rowspan="2" style="text-align:center"><strong>06</strong></td>
-      <td style="text-align:center">A, B, C and Lower</td>
-      <td style="text-align:center">R2, R3, E4</td>
-    </tr>
-    <tr>
-      <td style="text-align:center">D and Higher</td>
-      <td style="text-align:center">E2 / R1 / E1 / H1</td>
-    </tr>
-    <tr>
-      <td rowspan="2" style="text-align:center"><strong>24</strong></td>
-      <td style="text-align:center">A, B, C and Lower</td>
-      <td style="text-align:center">R4, E4</td>
-    </tr>
-    <tr>
-      <td style="text-align:center">D and Higher</td>
-      <td style="text-align:center">R5 / E5 / H2</td>
-    </tr>
-    <tr>
-      <td rowspan = "2" style="text-align:center"><strong>13</strong></td>
-      <td style="text-align:center">A, B, C and Lower</td>
-      <td style="text-align:center">Any Taxiway on the Left/Right</td>
-    </tr>
-	<tr>
-      <td style="text-align:center">D Limited to A321 or similar</td>
-      <td style="text-align:center">Any Taxiway on the Left/Right</td>
-    </tr>
-  </tbody>
-</table>
-
-The controller may give you a taxi instruction to vacate and some might not. If so, keep moving until you are vacated and hold position until GND has given you further instructions to taxi.
 
 *[EOBT]: Estimated off block time
 *[TOBT]: Target off block time
@@ -386,14 +321,8 @@ The controller may give you a taxi instruction to vacate and some might not. If 
 *[ASRT]: Actual start up time
 *[TTOT]: Target takeoff time
 *[CTOT]: Calculated takeoff time
-*[RPLL_DEL]: Clearance Delivery
-*[RPLL_GND]: Manila Ground
-*[RPLL_1_GND]: Ramp 1
-*[RPLL_2_GND]: Ramp 2
-*[RPLL_3_GND]: Ramp 3
-*[RPLL_D_GND]: Ramp 4
-*[RPLL_TWR]: Manila Tower
-*[RPLL_F_APP]: Manila Departures/Finals
-*[RPLL_N_APP]: Manila Approach
-*[RPLL_S_APP]: Manila Approach
-*[RPLL_P_GND]: Manila Planner
+*[RPVM_DEL]: Clearance Delivery
+*[RPVM_GND]: Mactan Ground
+*[RPVM_TWR]: Mactan Tower
+*[RPVM_APP]: Mactan Approach
+*[RPVM_S_APP]: Mactan Approach
