@@ -1,7 +1,22 @@
 # Reduced Vertical Separation Minima (RVSM)
 
-to be added
-# Vertical Separation of VFR and IFR Flight with RVSM **in Use**
+**Reduced Vertical Separation Minima**, or **RVSM** is the reduction of the standard vertical separation between aircraft, from 2000 feet to 1000 feet, between the altitude block of FL290 and FL410. This reduction therefore increases the number of aircraft that can fly in a particular volume of controlled airspace.
+
+## Requirements for RVSM operations
+
+* Two independent altitude measuring systems
+  * For each condition in the full RVSM flight envelope, the largest combined absolute value for residual static source error plus avionics error may not exceed 200 feet
+* SSR (Secondary Surveillance Radar) altitude reporting transponder
+* Altitude alert system that alerts the crew when the altitude displayed deviates from the selected altitude by more than 200 feet
+* Autopilot with altitude control
+
+## Separation Standards within RVSM airpsace
+
+* 1000 feet (300 meters) between RVSM-approved aircraft, and
+* 2000ft (600m) between non-RVSM approved state aircraft and any other aircraft operating within RVSM airspace.
+* 2000ft (600m) between non-RVSM aircraft operating as general air traffic (GAT) and any other aircraft within RVSM airspace.
+
+## Vertical Separation of VFR and IFR Flight with RVSM **in Use**
 
 <!DOCTYPE html>
 <html lang="en">
@@ -74,7 +89,7 @@ to be added
 </html>
 
 
-# Vertical Separation of VFR and IFR Flight with RVSM **not in use**
+## Vertical Separation of VFR and IFR Flight with RVSM **not in use**
 
 <!DOCTYPE html>
 <html lang="en">
