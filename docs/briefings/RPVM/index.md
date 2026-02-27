@@ -129,7 +129,7 @@ Below is a table of the Take-Off Run available
 
 !!! warning
 
-    Runways 04L and 04R are not used at the same time
+    Take-off/landing on Rwy 04L/22R allowed whenever Rwy 04R/22L
 
 # Routes
 
