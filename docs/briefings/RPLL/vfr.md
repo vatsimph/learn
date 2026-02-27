@@ -26,7 +26,7 @@
 ### Northbound aircraft FIXED WING
 
 1. **Runway 06/13**
-
+![Image title](../../assets/img/RPLL VFR/VFR Area Chart Fixed Wing.png){ align=left }
     <span style="color:blue">Runway 13: Climb straight ahead. After passing runway intersection make a right climbing turn to join downwind RWY 06.</span>
     
     <span style="color:green">Runway 06: Join downwind RWY 06</span>
