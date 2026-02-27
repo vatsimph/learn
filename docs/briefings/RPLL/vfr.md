@@ -45,91 +45,122 @@ Climb to 1500 FT after crossing final approach of RWY 06.
 Report abeam MALABON (refer to chart above) then proceed to destination.
 </div>
 </div>
-    
-    ![VFR_Northbound_0613](<../../assets/img/RPLL VFR/departures/Northbound 0613.png>)
 
-2. **Runway 31**
+1. **Runway 31**
 
-    <span style="color:orange">Make a left turn after take-off to fly West of SOUTH HARBOR (refer to chart above), continue
-    climb to 1500 FT.</span>
-         
-    Report abeam MALABON (refer to chart above) then proceed to destination.
+    <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
+<div markdown>
+![VFR Northbound_31](<../../assets/img/RPLL VFR/departures/Northbound 31.png>)
+</div>
+<div markdown>
+<span style="color:orange">Make a left turn after take-off to fly West of SOUTH HARBOR (refer to chart above), continue climb to 1500 FT.</span>
 
-    ![VFR Northbound_31](<../../assets/img/RPLL VFR/departures/Northbound 31.png>)
+Report abeam MALABON (refer to chart above) then proceed to destination.
+</div>
+</div>
 
-3. **Runway 24**
+2. **Runway 24**
     
-    <span style="color:red">Climb straight ahead. Make a right turn at the end of the runway.
-    
-    Climb to 1500 FT
-    
-    <span style="color:orange">Execute a left turn <span style="color:purple">abeam threshold of RWY 13 </span> to fly West of SOUTH HARBOR. (refer to chart above)</span>
-    
-    Report abeam MALABON (refer to chart above) then proceed to destination.
+    <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
+<div markdown>
+![alt text](<../../assets/img/RPLL VFR/departures/Northbound 24.png>)
+</div>
+<div markdown>
+<span style="color:red">Climb straight ahead. Make a right turn at the end of the runway.</span>
 
-    ![alt text](<../../assets/img/RPLL VFR/departures/Northbound 24.png>)
+Climb to 1500 FT
+
+<span style="color:orange">Execute a left turn <span style="color:purple">abeam threshold of RWY 13</span> to fly West of SOUTH HARBOR. (refer to chart above)</span>
+
+Report abeam MALABON (refer to chart above) then proceed to destination.
+</div>
+</div>
 
 ### Westbound aircraft FIXED WING
 
 1. **Runway 06/13**
 
-    <span style="color:blue">Runway 13: Climb straight ahead. After passing runway intersection make a right climbing turn to join downwind RWY 06.</span>
-    
-    <span style="color:green">Runway 06: Join downwind RWY 06</span>
-    
-    <span style="color:red">Obtain clearance from RPLL_TWR before crossing final approach of RWY 06. </span>
-    
-    Climb to 1500 FT after crossing final approach of RWY 06. 
-    
-    <span style="color:orange">Execute a left turn <span style="color:purple">abeam threshold of RWY 13 </span> to fly abeam of NORTH HARBOR. (refer to chart above)</span>
+    <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
+<div markdown>
+![VFR_Northbound_0613](<../../assets/img/RPLL VFR/departures/Northbound 0613.png>)
+</div>
+<div markdown>
+<span style="color:blue">Runway 13: Climb straight ahead. After passing runway intersection make a right climbing turn to join downwind RWY 06.</span>
 
-    Follow next instructions of ATC    
-    
-    ![VFR_Northbound_0613](<../../assets/img/RPLL VFR/departures/Northbound 0613.png>)
+<span style="color:green">Runway 06: Join downwind RWY 06</span>
+
+<span style="color:red">Obtain clearance from RPLL_TWR before crossing final approach of RWY 06.</span>
+
+Climb to 1500 FT after crossing final approach of RWY 06.
+
+<span style="color:orange">Execute a left turn <span style="color:purple">abeam threshold of RWY 13</span> to fly abeam of NORTH HARBOR. (refer to chart above)</span>
+
+Follow next instructions of ATC
+</div>
+</div>
 
 2. **Runway 31**
 
-    <span style="color:orange">Make a left turn after take-off to fly West of SOUTH HARBOR (refer to chart above), continue
-    climb to 1500 FT.</span>
-         
-    Follow next instructions of ATC   
+    <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
+<div markdown>
+![VFR Northbound_31](<../../assets/img/RPLL VFR/departures/Northbound 31.png>)
+</div>
+<div markdown>
+<span style="color:orange">Make a left turn after take-off to fly West of SOUTH HARBOR (refer to chart above), continue climb to 1500 FT.</span>
 
-    ![VFR Northbound_31](<../../assets/img/RPLL VFR/departures/Northbound 31.png>)
+Follow next instructions of ATC
+</div>
+</div>
 
 3. **Runway 24**
     
-    <span style="color:red">Climb straight ahead. Make a right turn at the end of the runway.
-    
-    Climb to 1500 FT
-    
-    <span style="color:orange">Execute a left turn <span style="color:purple">abeam threshold of RWY 13 </span> to fly abeam NORTH HARBOR. (refer to chart above)</span>
+    <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
+<div markdown>
+![VFR Norhtbound_24](<../../assets/img/RPLL VFR/departures/Northbound 24.png>)
+</div>
+<div markdown>
+<span style="color:red">Climb straight ahead. Make a right turn at the end of the runway.</span>
 
-    Follow next instructions of ATC   
+Climb to 1500 FT
 
-    ![VFR Norhtbound_24](<../../assets/img/RPLL VFR/departures/Northbound 24.png>)
+<span style="color:orange">Execute a left turn <span style="color:purple">abeam threshold of RWY 13</span> to fly abeam NORTH HARBOR. (refer to chart above)</span>
+
+Follow next instructions of ATC
+</div>
+</div>)
 
 ### Southbound / Eastbound aircraft FIXED WING
 
 1. **Runway 06/13/24**
 
-    <span style="color:blue">Runway 13: Make a straight-out departure climbing to 1500 FT towards the East side of the MERALCO CHIMNEYS.</span>
-    
-    <span style="color:orange">Runway 06: Climb straight ahead to 1500 FT and execute a right turn towards the East side of the MERALCO CHIMNEYS</span>
-    
-    <span style="color:green">Runway 24: Climb straight ahead to 1500 FT and execute a left turn towards the East side of the MERALCO CHIMNEY </span>
+    <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
+<div markdown>
+![VFR_SouthEastBound_061324](<../../assets/img/RPLL VFR/departures/SouthEastbound 061324.png>)
+</div>
+<div markdown>
+<span style="color:blue">Runway 13: Make a straight-out departure climbing to 1500 FT towards the East side of the MERALCO CHIMNEYS.</span>
 
-    Follow next instructions of ATC
-    ![VFR_SouthEastBound_061324](<../../assets/img/RPLL VFR/departures/SouthEastbound 061324.png>)
+<span style="color:orange">Runway 06: Climb straight ahead to 1500 FT and execute a right turn towards the East side of the MERALCO CHIMNEYS</span>
+
+<span style="color:green">Runway 24: Climb straight ahead to 1500 FT and execute a left turn towards the East side of the MERALCO CHIMNEY</span>
+
+Follow next instructions of ATC
+</div>
+</div>
 
 2. **Runway 31**
-    <span style="color:blue">Climb straight ahead and execute a left climbing turn</span>    
+   <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
+<div markdown>
+![VFR_SouthEastBound_31](<../../assets/img/RPLL VFR/departures/SouthEastbound 31.png>)
+</div>
+<div markdown>
+<span style="color:blue">Climb straight ahead and execute a left climbing turn</span>
 
-    <span style="color:red">Obtain clearance from RPLL_TWR before crossing over the threshold/final approach path of RWY 06.
+<span style="color:red">Obtain clearance from RPLL_TWR before crossing over the threshold/final approach path of RWY 06.</span>
 
-    <span style="color:green">Fly straight ahead climbing to 1500 FT towards the East Side of the MERALCO CHIMNEYS</span>
-
-
-    ![VFR_SouthEastBound_31](<../../assets/img/RPLL VFR/departures/SouthEastbound 31.png>)
+<span style="color:green">Fly straight ahead climbing to 1500 FT towards the East Side of the MERALCO CHIMNEYS</span>
+</div>
+</div>
 
 ## VFR Arrival Flights
 
