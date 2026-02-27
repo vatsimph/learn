@@ -13,73 +13,6 @@ The airport caters passenger and cargo flights, as well as general and military 
 # Charts
 [RPLL](https://vatphil.com/charts){ .md-button .md-button--primary }
 
-# Stand Assignments
-
-Bay assignments, are strictly implemented virtually, and are based on the latest
-real-world operations. Virtual and other real-world airlines that are not listed will park at terminal 1.
-
-<iframe src="../../assets/pdfs/stands.pdf" width="100%" height="800px"></iframe>
-
-# Runways
-
-<div markdown="1">
-Manila currently only has 2 runways that intersect each other.
-Below is a table of the Take-Off Run available
-
-**Take-off Run Available.**
-</div>
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:center">Runway</th>
-      <th style="text-align:center">Intersection</th>
-      <th style="text-align:center">TORA ft (m)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td rowspan="2" style="text-align:center"><strong>06</strong></td>
-      <td style="text-align:center">E4</td>
-      <td style="text-align:center">6,854 (2089)</td>
-    </tr>
-    <tr>
-      <td style="text-align:center">E5</td>
-      <td style="text-align:center">10,098 (3078)</td>
-    </tr>
-    <tr>
-      <td rowspan="2" style="text-align:center"><strong>24</strong></td>
-      <td style="text-align:center">E1</td>
-      <td style="text-align:center">9,951 (3033)</td>
-    </tr>
-    <tr>
-      <td style="text-align:center">E2</td>
-      <td style="text-align:center">7,733 (2357)</td>
-    </tr>
-    <tr>
-      <td rowspan="2" style="text-align:center"><strong>13</strong></td>
-      <td style="text-align:center">F1</td>
-      <td style="text-align:center">6,148 (1874)</td>
-    </tr>
-    <tr>
-      <td style="text-align:center">F2</td>
-      <td style="text-align:center">4,701 (1433)</td>
-    </tr>
-    <tr>
-      <td rowspan="2" style="text-align:center"><strong>31</strong></td>
-      <td style="text-align:center">F4</td>
-      <td style="text-align:center">4,948 (1508)</td>
-    </tr>
-    <tr>
-      <td style="text-align:center">F5</td>
-      <td style="text-align:center">6,516 (1986)</td>
-    </tr>
-  </tbody>
-</table>
-
-!!! warning
-
-    Runway 31 is only for departures.
-
 # Frequency List
 <table>
   <thead>
@@ -167,6 +100,73 @@ Below is a table of the Take-Off Run available
     </tr>
   </tbody>
 </table>
+
+# Stand Assignments
+
+Bay assignments, are strictly implemented virtually, and are based on the latest
+real-world operations. Virtual and other real-world airlines that are not listed will park at terminal 1.
+
+<iframe src="../../assets/pdfs/stands.pdf" width="100%" height="800px"></iframe>
+
+# Runways
+
+<div markdown="1">
+Manila currently only has 2 runways that intersect each other.
+Below is a table of the Take-Off Run available
+
+**Take-off Run Available.**
+</div>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:center">Runway</th>
+      <th style="text-align:center">Intersection</th>
+      <th style="text-align:center">TORA ft (m)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2" style="text-align:center"><strong>06</strong></td>
+      <td style="text-align:center">E4</td>
+      <td style="text-align:center">6,854 (2089)</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">E5</td>
+      <td style="text-align:center">10,098 (3078)</td>
+    </tr>
+    <tr>
+      <td rowspan="2" style="text-align:center"><strong>24</strong></td>
+      <td style="text-align:center">E1</td>
+      <td style="text-align:center">9,951 (3033)</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">E2</td>
+      <td style="text-align:center">7,733 (2357)</td>
+    </tr>
+    <tr>
+      <td rowspan="2" style="text-align:center"><strong>13</strong></td>
+      <td style="text-align:center">F1</td>
+      <td style="text-align:center">6,148 (1874)</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">F2</td>
+      <td style="text-align:center">4,701 (1433)</td>
+    </tr>
+    <tr>
+      <td rowspan="2" style="text-align:center"><strong>31</strong></td>
+      <td style="text-align:center">F4</td>
+      <td style="text-align:center">4,948 (1508)</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">F5</td>
+      <td style="text-align:center">6,516 (1986)</td>
+    </tr>
+  </tbody>
+</table>
+
+!!! warning
+
+    Runway 31 is only for departures.
 
 # Routes
 

@@ -11,11 +11,65 @@ The airport caters passenger and cargo flights, as well as general and military 
 # Charts
 [RPVM](https://vatphil.com/charts?icao=RPVM){ .md-button .md-button--primary }
 
+# Frequency List
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:center">Designator</th>
+      <th style="text-align:center">Callsign</th>
+      <th style="text-align:center">Frequency</th>
+      <th style="text-align:center">Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center"><strong>RPLL_ATIS</strong></td>
+      <td style="text-align:center"></td>
+      <td style="text-align:center">126.400</td>
+      <td style="text-align:center">Every hour</td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>RPVM_DEL</strong></td>
+      <td style="text-align:center">Clearance Delivery</td>
+      <td style="text-align:center">126.600</td>
+      <td style="text-align:center"></td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>RPVM_GND</strong></td>
+      <td style="text-align:center">Mactan Ground</td>
+      <td style="text-align:center">121.800</td>
+      <td style="text-align:center"></td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>RPVM_TWR</strong></td>
+      <td style="text-align:center">Mactan Tower</td>
+      <td style="text-align:center">118.100</td>
+      <td style="text-align:center"></td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>RPVM_APP</strong></td>
+      <td rowspan="3" style="text-align:center">Mactan Approach<sup>[2]</sup></td>
+      <td style="text-align:center">124.700</td>
+      <td style="text-align:center">TMA 1500 ft - FL150<sup>[1]</sup></td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>RPVM_S_APP</strong></td>
+      <td style="text-align:center">121.200</td>
+      <td style="text-align:center">SUB TMA 1500 ft - FL150<sup>[1]</sup></td>
+    </tr>
+  </tbody>
+  
+</table>
+
+<sup>1</sup> Vertical limit of FL150 can be increased to a maximum of FL200. <br>
+<sup>2</sup> Can control top-down Mactan TMA which includes RPVD and RPSP. But check the controller information if they do!
+
+
 # Stand Assignments
 
 Bay assignments, are strictly implemented virtually, and are based on the latest real-world operations. Virtual and other real-world airlines that are not listed will park at terminal 2.
 
-TBD
+<iframe src="../../assets/pdfs/RPVMstands.pdf" width="70%" height="500px"></iframe>
 
 # Runways
 
@@ -76,59 +130,6 @@ Below is a table of the Take-Off Run available
 !!! warning
 
     Runways 04L and 04R are not used at the same time
-
-# Frequency List
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:center">Designator</th>
-      <th style="text-align:center">Callsign</th>
-      <th style="text-align:center">Frequency</th>
-      <th style="text-align:center">Remarks</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:center"><strong>RPLL_ATIS</strong></td>
-      <td style="text-align:center"></td>
-      <td style="text-align:center">126.400</td>
-      <td style="text-align:center">Every hour</td>
-    </tr>
-    <tr>
-      <td style="text-align:center"><strong>RPVM_DEL</strong></td>
-      <td style="text-align:center">Clearance Delivery</td>
-      <td style="text-align:center">126.600</td>
-      <td style="text-align:center"></td>
-    </tr>
-    <tr>
-      <td style="text-align:center"><strong>RPVM_GND</strong></td>
-      <td style="text-align:center">Mactan Ground</td>
-      <td style="text-align:center">121.800</td>
-      <td style="text-align:center"></td>
-    </tr>
-    <tr>
-      <td style="text-align:center"><strong>RPVM_TWR</strong></td>
-      <td style="text-align:center">Mactan Tower</td>
-      <td style="text-align:center">118.100</td>
-      <td style="text-align:center"></td>
-    </tr>
-    <tr>
-      <td style="text-align:center"><strong>RPVM_APP</strong></td>
-      <td rowspan="3" style="text-align:center">Mactan Approach<sup>[2]</sup></td>
-      <td style="text-align:center">124.700</td>
-      <td style="text-align:center">TMA 1500 ft - FL150<sup>[1]</sup></td>
-    </tr>
-    <tr>
-      <td style="text-align:center"><strong>RPVM_S_APP</strong></td>
-      <td style="text-align:center">121.200</td>
-      <td style="text-align:center">SUB TMA 1500 ft - FL150<sup>[1]</sup></td>
-    </tr>
-  </tbody>
-  
-</table>
-
-<sup>1</sup> Vertical limit of FL150 can be increased to a maximum of FL200. <br>
-<sup>2</sup> Can control top-down Mactan TMA which includes RPVD and RPSP. But check the controller information if they do!
 
 # Routes
 
@@ -285,7 +286,7 @@ APP will then issue your arrival clearance including the type of approach to exp
     If APP didn’t give you any turns after you have passed the last waypoint on your routing, maintain your present heading.
 
 
-# Aircraft Taxiing Route
+# Taxi Routing
 
 1. When RWY 04R in use:
     1. Departures shall taxi from parking aprons via TWY D1 or TWY D2 or TWY D3 then TWY C to TWY B7 to TWY A5 for short field take-off; or continue TWY A6 for normal take-off.
