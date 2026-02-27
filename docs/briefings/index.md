@@ -1,9 +1,13 @@
 # Briefings
 Here you will find aerodrome briefings for the airports within the Philippines! To start select an Aerodrome below.
 
+<div class="grid" style="grid-template-columns: repeat(2, 1fr); gap: 1rem;" markdown>
+
 [RPLL](https://learn.vatphil.com/briefings/RPLL/){ .md-button .md-button--primary }
 
 [RPVM](https://learn.vatphil.com/briefings/RPVM/){ .md-button .md-button--primary }
+
+</div>
 
 # RPHI Briefing
 
