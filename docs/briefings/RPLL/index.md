@@ -106,7 +106,7 @@ The airport caters passenger and cargo flights, as well as general and military 
 Bay assignments, are strictly implemented virtually, and are based on the latest
 real-world operations. Virtual and other real-world airlines that are not listed will park at terminal 1.
 
-<iframe src="../../assets/pdfs/stands.pdf" width="100%" height="800px"></iframe>
+<iframe src="../../assets/pdfs/stands.pdf" width="70%" height="500px""></iframe>
 
 # Runways
 
