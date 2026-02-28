@@ -23,9 +23,9 @@
 
 # VFR Departure Flights
 
-### Northbound aircraft FIXED WING
+## Northbound aircraft FIXED WING
 
-## **Runway 06/13**
+### **Runway 06/13**
 
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
@@ -46,7 +46,7 @@ Report abeam MALABON (refer to chart above) then proceed to destination.
 </div>
 </div>
 
-## **Runway 31**
+### **Runway 31**
 
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
@@ -59,7 +59,7 @@ Report abeam MALABON (refer to chart above) then proceed to destination.
 </div>
 </div>
 
-## **Runway 24**
+###**Runway 24**
     
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
@@ -76,9 +76,9 @@ Report abeam MALABON (refer to chart above) then proceed to destination.
 </div>
 </div>
 
-### Westbound aircraft FIXED WING
+## Westbound aircraft FIXED WING
 
-## **Runway 06/13**
+### **Runway 06/13**
 
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
@@ -99,7 +99,7 @@ Follow next instructions of ATC
 </div>
 </div>
 
-## **Runway 31**
+### **Runway 31**
 
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
@@ -112,7 +112,7 @@ Follow next instructions of ATC
 </div>
 </div>
 
-## **Runway 24**
+### **Runway 24**
     
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
@@ -129,9 +129,9 @@ Follow next instructions of ATC
 </div>
 </div>
 
-### Southbound / Eastbound aircraft FIXED WING
+## Southbound / Eastbound aircraft FIXED WING
 
-## **Runway 06/13/24**
+### **Runway 06/13/24**
 
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
@@ -148,7 +148,7 @@ Follow next instructions of ATC
 </div>
 </div>
 
-## **Runway 31**
+### **Runway 31**
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
 ![VFR_SouthEastBound_31](<../../assets/img/RPLL VFR/departures/SouthEastbound 31.png>)
