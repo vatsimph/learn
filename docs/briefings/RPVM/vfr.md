@@ -20,7 +20,7 @@
 
 ### VFR Departures
 
-==="VFR departures RWY 04L / RWY 04R"
+=== "VFR departures RWY 04L / RWY 04R"
 
     North bound aircraft FIXED WING
 
@@ -37,7 +37,7 @@
     1. After airborne, turn right SOUTHEAST towards PANDANON
     2. Contact RPVM_APP or proceed as instructed by ATC
 
-==="VFR departures RWY 22L / RWY 22R"
+=== "VFR departures RWY 22L / RWY 22R"
 
     North bound aircraft FIXED WING
 
@@ -56,7 +56,7 @@
 
 ### VFR Arrival
 
-==="VFR arrivals RWY 04L / RWY 04R"
+=== "VFR arrivals RWY 04L / RWY 04R"
 
     From the North
 
@@ -85,7 +85,7 @@
         3. Obtain clearance to join final O4R or 04L, or proceed as instructed by ATC
         
 
-==="VFR arrivals RWY 22L / RWY 22R"
+=== "VFR arrivals RWY 22L / RWY 22R"
 
     From the North
 
@@ -112,3 +112,22 @@
         1. Report to RPVM_TWR approaching EAST of NAGA not higher than 1000 FT
         2. Proceed IL CORSO
         3. Obtain clearance to join midfield downwind 22R or 22L, or proceed as instructed by ATC
+
+## Traffic Patterns
+
+=== "Runway 04L"
+
+    [RPVM_TrafficPattern_04L](<../../assets/img/RPVM VFR/Traffic Pattern/TrafficPattern04L.png>)
+
+=== "Runway 04R"
+
+    ![RPVM_TrafficPattern_04R](<../../assets/img/RPVM VFR/Traffic Pattern/TrafficPattern04R.png>)
+
+=== "Runway 22L"
+
+    ![RPVM_TrafficPattern_22L](<../../assets/img/RPVM VFR/Traffic Pattern/TrafficPattern22L.png>)
+
+=== "Runway 22R"
+
+    ![RPVM_TrafficPattern_22R](<../../assets/img/RPVM VFR/Traffic Pattern/TrafficPattern22R.png>)
+
