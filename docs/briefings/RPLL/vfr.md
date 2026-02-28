@@ -17,15 +17,14 @@
 9. Any deviation from departure / arrival procedures shall have prior approval from RPLL_TWR or higher controller
 10. All runway threshold or approach path crossing shall have explicit clearance from RPLL_TWR or higher controller.
 
-## VFR Departure Flights
 
-### VFR Area Chart FIXED WING
+## VFR Area Chart FIXED WING
 
 ![VFR area chart Fixed Wing](<../../assets/img/RPLL VFR/VFR Area Chart Fixed Wing.png>)
 
-### Northbound aircraft FIXED WING
+## Northbound aircraft FIXED WING
 
-1. **Runway 06/13**
+**Runway 06/13**
 
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
@@ -46,7 +45,7 @@ Report abeam MALABON (refer to chart above) then proceed to destination.
 </div>
 </div>
 
-1. **Runway 31**
+**Runway 31**
 
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
@@ -59,7 +58,7 @@ Report abeam MALABON (refer to chart above) then proceed to destination.
 </div>
 </div>
 
-2. **Runway 24**
+**Runway 24**
     
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
@@ -167,18 +166,18 @@ Follow next instructions of ATC
 === "From the North"
 
     1. Report to RPLL_TWR approaching MALABON
-    2. 
-        a. Runway 13: Request straight-in approach before SOUTH HARBOR
-            i. WHEN APPROVED, report PHILIPPINE NAVY
-            ii. When disapproved, join downwind RWY 13 or as instructed by ATC
+    2. <br>
+        a. Runway 13: Request straight-in approach before SOUTH HARBOR<br>
+            i. WHEN APPROVED, report PHILIPPINE NAVY<br>
+            ii. When disapproved, join downwind RWY 13 or as instructed by ATC<br>
         b. Runway 06/24: Subject to ATC instructions
 
 === "From the South or East"
 
     1. Report to RPLL_TWR approaching MUNTINLUPA
     2. Report over SOUTHMALL
-    3. 
-        a. Runway 13: request for clearance to cross over threshold/final approach path of RWY 06 prior to entering downwind at traffic pattern altitude.
+    3. <br>
+        a. Runway 13: request for clearance to cross over threshold/final approach path of RWY 06 prior to entering downwind at traffic pattern altitude.<br>
         b. Runway 06/24: Subject to ATC instructions
 
 === "From the west"
