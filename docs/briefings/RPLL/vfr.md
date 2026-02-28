@@ -17,15 +17,15 @@
 9. Any deviation from departure / arrival procedures shall have prior approval from RPLL_TWR or higher controller
 10. All runway threshold or approach path crossing shall have explicit clearance from RPLL_TWR or higher controller.
 
-## VFR Departure Flights
-
 ### VFR Area Chart FIXED WING
 
 ![VFR area chart Fixed Wing](<../../assets/img/RPLL VFR/VFR Area Chart Fixed Wing.png>)
 
+# VFR Departure Flights
+
 ### Northbound aircraft FIXED WING
 
-1. **Runway 06/13**
+## **Runway 06/13**
 
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
@@ -46,7 +46,7 @@ Report abeam MALABON (refer to chart above) then proceed to destination.
 </div>
 </div>
 
-1. **Runway 31**
+## **Runway 31**
 
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
@@ -59,7 +59,7 @@ Report abeam MALABON (refer to chart above) then proceed to destination.
 </div>
 </div>
 
-2. **Runway 24**
+## **Runway 24**
     
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
@@ -78,7 +78,7 @@ Report abeam MALABON (refer to chart above) then proceed to destination.
 
 ### Westbound aircraft FIXED WING
 
-**Runway 06/13**
+## **Runway 06/13**
 
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
@@ -99,7 +99,7 @@ Follow next instructions of ATC
 </div>
 </div>
 
-**Runway 31**
+## **Runway 31**
 
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
@@ -112,7 +112,7 @@ Follow next instructions of ATC
 </div>
 </div>
 
-**Runway 24**
+## **Runway 24**
     
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
@@ -131,7 +131,7 @@ Follow next instructions of ATC
 
 ### Southbound / Eastbound aircraft FIXED WING
 
-**Runway 06/13/24**
+## **Runway 06/13/24**
 
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
@@ -148,7 +148,7 @@ Follow next instructions of ATC
 </div>
 </div>
 
-**Runway 31**
+## **Runway 31**
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
 ![VFR_SouthEastBound_31](<../../assets/img/RPLL VFR/departures/SouthEastbound 31.png>)
@@ -162,7 +162,7 @@ Follow next instructions of ATC
 </div>
 </div>
 
-## VFR Arrival Flights
+# VFR Arrival Flights
 
 === "From the North"
 
@@ -186,7 +186,7 @@ Follow next instructions of ATC
     1. Report to RPLL_APP/RPLL_F_APP approaching CORREGIDOR at or below 2500 FT.
     2. Continue towards abeam Sangley not above 1500 FT within 10 NM RPLL, contact RPLL_TWR for further instructions
 
-## Traffic Patterns
+# Traffic Patterns
 
 === "Runway 06"
 
