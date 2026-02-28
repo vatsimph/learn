@@ -23,7 +23,7 @@
 
 # VFR Departure Flights
 
-## Northbound aircraft FIXED WING
+### Northbound aircraft FIXED WING
 
 ### **Runway 06/13**
 
@@ -76,7 +76,7 @@ Report abeam MALABON (refer to chart above) then proceed to destination.
 </div>
 </div>
 
-## Westbound aircraft FIXED WING
+### Westbound aircraft FIXED WING
 
 ### **Runway 06/13**
 
@@ -129,7 +129,7 @@ Follow next instructions of ATC
 </div>
 </div>
 
-## Southbound / Eastbound aircraft FIXED WING
+### Southbound / Eastbound aircraft FIXED WING
 
 ### **Runway 06/13/24**
 
