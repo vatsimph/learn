@@ -75,7 +75,7 @@ Report abeam MALABON (refer to chart above) then proceed to destination.
 </div>
 </div>
 
-### Westbound aircraft FIXED WING
+## Westbound aircraft FIXED WING
 
 **Runway 06/13**
 
@@ -128,7 +128,7 @@ Follow next instructions of ATC
 </div>
 </div>
 
-### Southbound / Eastbound aircraft FIXED WING
+## Southbound / Eastbound aircraft FIXED WING
 
 **Runway 06/13/24**
 
@@ -185,7 +185,7 @@ Follow next instructions of ATC
     1. Report to RPLL_APP/RPLL_F_APP approaching CORREGIDOR at or below 2500 FT.
     2. Continue towards abeam Sangley not above 1500 FT within 10 NM RPLL, contact RPLL_TWR for further instructions
 
-## Traffic Patterns
+# Traffic Patterns
 
 === "Runway 06"
 
