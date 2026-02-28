@@ -16,4 +16,6 @@ When cruising level of a VFR flight is above 3000 feet, the tables in the [RVSM]
 
 [RPVM](../briefings/RPVM/vfr.md){ .md-button .md-button--primary }
 
+[RPMD](../briefings/RPMD/vfr.md){ .md-button .md-button--primary }
+
 </div>

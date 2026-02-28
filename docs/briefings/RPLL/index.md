@@ -1,4 +1,4 @@
-## RPLL - Manila - Ninoy Aquino International Airport
+# RPLL - Manila - Ninoy Aquino International Airport
 
 # General
 The Ninoy Aquino International Airport has 2 Runways, 4 passenger terminals, 2 general aviation areas, 1 military airbase, 1 maintenance hangar, and 1 presidential ramp.

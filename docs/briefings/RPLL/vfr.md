@@ -78,7 +78,7 @@ Report abeam MALABON (refer to chart above) then proceed to destination.
 
 ### Westbound aircraft FIXED WING
 
-1. **Runway 06/13**
+**Runway 06/13**
 
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
@@ -99,7 +99,7 @@ Follow next instructions of ATC
 </div>
 </div>
 
-2. **Runway 31**
+**Runway 31**
 
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
@@ -112,7 +112,7 @@ Follow next instructions of ATC
 </div>
 </div>
 
-3. **Runway 24**
+**Runway 24**
     
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
@@ -127,11 +127,11 @@ Climb to 1500 FT
 
 Follow next instructions of ATC
 </div>
-</div>)
+</div>
 
 ### Southbound / Eastbound aircraft FIXED WING
 
-1. **Runway 06/13/24**
+**Runway 06/13/24**
 
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
@@ -148,7 +148,7 @@ Follow next instructions of ATC
 </div>
 </div>
 
-2. **Runway 31**
+**Runway 31**
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
 ![VFR_SouthEastBound_31](<../../assets/img/RPLL VFR/departures/SouthEastbound 31.png>)
@@ -164,22 +164,38 @@ Follow next instructions of ATC
 
 ## VFR Arrival Flights
 
-### From the North
+=== "From the North"
 
-1. Report to RPLL_TWR approaching MALABON
-2. 
-    1. Runway 13: Request straight-in approach before SOUTH HARBOR
-        1. WHEN APPROVED, report PHILIPPINE NAVY
-        2. When disapproved, join downwind RWY 13 or as instructed by ATC
-    2. Runway 06/24: Subject to ATC instructions
+    1. Report to RPLL_TWR approaching MALABON
+    2. 
+        a. Runway 13: Request straight-in approach before SOUTH HARBOR
+            i. WHEN APPROVED, report PHILIPPINE NAVY
+            ii. When disapproved, join downwind RWY 13 or as instructed by ATC
+        b. Runway 06/24: Subject to ATC instructions
 
-### From the South/East
-1. Report to RPLL_TWR approaching MUNTINLUPA
-2. Report over SOUTHMALL
-3. 
-    1. Runway 13: request for clearance to cross over threshold/final approach path of RWY 06 prior to entering downwind at traffic pattern altitude.
-    2. Runway 06/24: Subject to ATC instructions
+=== "From the South or East"
 
-### From the West
-1. Report to RPLL_APP/RPLL_F_APP approaching CORREGIDOR at or below 2500 FT.
-2. Continue towards abeam Sangley not above 1500 FT within 10 NM RPLL, contact RPLL_TWR for further instructions
+    1. Report to RPLL_TWR approaching MUNTINLUPA
+    2. Report over SOUTHMALL
+    3. 
+        a. Runway 13: request for clearance to cross over threshold/final approach path of RWY 06 prior to entering downwind at traffic pattern altitude.
+        b. Runway 06/24: Subject to ATC instructions
+
+=== "From the west"
+
+    1. Report to RPLL_APP/RPLL_F_APP approaching CORREGIDOR at or below 2500 FT.
+    2. Continue towards abeam Sangley not above 1500 FT within 10 NM RPLL, contact RPLL_TWR for further instructions
+
+## Traffic Patterns
+
+=== "Runway 06"
+
+    ![RPLL_TrafficPattern_06](<../../assets/img/RPLL VFR/traffic pattern/Pattern06.png>)
+
+=== "Runway 24"
+
+    ![RPLL_TrafficPattern_24](<../../assets/img/RPLL VFR/traffic pattern/Pattern24.png>)
+
+=== "Runway 13"
+
+    ![RPLL_TrafficPattern_13](<../../assets/img/RPLL VFR/traffic pattern/Pattern13.png>)
