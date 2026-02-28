@@ -15,7 +15,7 @@
 
 Currently the only radio that can be implemented by Manila Control is MNL_NE_CTR, otherwise known as Manila Oceanic. Under Manila Radio, you can still expect [RVSM](rvsm.md).
 
-When contacting Manila Radio that they will not be able to see you and are purely going off what you give them. It is important to have atleast these four information at hand.
+When contacting Manila Radio, keep in mind that they will not be able to see you and are purely going off what you give them. It is important to have atleast these four information at hand.
 
 1. Aircraft identification.
 2. Position and time
