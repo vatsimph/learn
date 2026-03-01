@@ -49,9 +49,6 @@ The airport caters passenger and cargo flights, as well as general and military 
   </tbody>
 </table>
 
-
-
-
 ## Runways
 
 <div markdown="1">
