@@ -397,28 +397,42 @@ Below is the mandatory speed restrictions when under vectors by approach.
 
 ### Single Scope Operation
 
-![RPLL_APP](../../assets/img/RPHI/4.png){ align=left }
+<div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
+<div markdown>
+![RPLL_APP](../../assets/img/RPHI/4.png)
+</div>
+<div markdown>
 
 | Designator | Vertical Limits | Frequency |
 |-----|----|----|
 | RPLL_APP[^2] | 1500ft - FL150[^1] | 124.800 |
 
-<div style="clear:both"></div>
+</div>
+</div>
 
 ### Two Scope Operation
 
-![RPLL_APP](../../assets/img/RPHI/3.png){ align=left }
+<div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
+<div markdown>
+![RPLL_APP](../../assets/img/RPHI/3.png)
+</div>
+<div markdown>
 
 | Designator | Vertical Limits | Frequency |
 |-----|------|----|
 | RPLL_F_APP | 1500ft - 7000ft | 124.400 |
 | RPLL_APP[^2] | 8000ft - FL150[^1] | 124.800 |
 
-<div style="clear:both"></div>
+</div>
+</div>
 
 ### Three Scope Operation
 
-![RPLL_APP](../../assets/img/RPHI/2.png){ align=left }
+<div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
+<div markdown>
+![RPLL_APP](../../assets/img/RPHI/2.png)
+</div>
+<div markdown>
 
 | Designator | Vertical Limits | Frequency |
 |-----|----|----|
@@ -426,7 +440,8 @@ Below is the mandatory speed restrictions when under vectors by approach.
 | RPLL_N_APP[^2] | 8000ft - FL150[^1] | 124.800 |
 | RPLL_S_APP | 8000ft - FL150[^1] | 127.700 |
 
-<div style="clear:both"></div>
+</div>
+</div>
 
 [^1]: Vertical limit of FL150 can be increased to a maximum of FL200.
 [^2]: Can control top-down Clark TMA which includes RPLC and RPLB. But check the controller information if they do!
