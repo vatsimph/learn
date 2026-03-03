@@ -1,6 +1,6 @@
 # RPLL - Manila - Ninoy Aquino International Airport
 
-# General
+## General
 The Ninoy Aquino International Airport has 2 Runways, 4 passenger terminals, 2 general aviation areas, 1 military airbase, 1 maintenance hangar, and 1 presidential ramp.
 
 - Terminal 1 - International and Cargo Terminal
@@ -10,10 +10,10 @@ The Ninoy Aquino International Airport has 2 Runways, 4 passenger terminals, 2 g
 
 The airport caters passenger and cargo flights, as well as general and military aviation.
 
-# Charts
+## Charts
 [RPLL](https://vatphil.com/charts){ .md-button .md-button--primary }
 
-# Frequency List
+## Frequency List
 <table>
   <thead>
     <tr>
@@ -101,7 +101,7 @@ The airport caters passenger and cargo flights, as well as general and military 
   </tbody>
 </table>
 
-# Stand Assignments
+## Stand Assignments
 
 Bay assignments, are strictly implemented virtually, and are based on the latest
 real-world operations. Virtual and other real-world airlines that are not listed will park at terminal 1.
@@ -403,6 +403,8 @@ Below is the mandatory speed restrictions when under vectors by approach.
 |-----|----|----|
 | RPLL_APP[^2] | 1500ft - FL150[^1] | 124.800 |
 
+<div style="clear:both"></div>
+
 ### Two Scope Operation
 
 ![RPLL_APP](../../assets/img/RPHI/3.png){ align=left }
@@ -411,6 +413,8 @@ Below is the mandatory speed restrictions when under vectors by approach.
 |-----|------|----|
 | RPLL_F_APP | 1500ft - 7000ft | 124.400 |
 | RPLL_APP[^2] | 8000ft - FL150[^1] | 124.800 |
+
+<div style="clear:both"></div>
 
 ### Three Scope Operation
 
@@ -421,6 +425,8 @@ Below is the mandatory speed restrictions when under vectors by approach.
 | RPLL_F_APP  | 1500ft - 7000ft | 124.400 |
 | RPLL_N_APP[^2] | 8000ft - FL150[^1] | 124.800 |
 | RPLL_S_APP | 8000ft - FL150[^1] | 127.700 |
+
+<div style="clear:both"></div>
 
 [^1]: Vertical limit of FL150 can be increased to a maximum of FL200.
 [^2]: Can control top-down Clark TMA which includes RPLC and RPLB. But check the controller information if they do!
