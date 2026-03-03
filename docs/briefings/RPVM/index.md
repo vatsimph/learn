@@ -1,6 +1,6 @@
-## RPVM - Mactan - Cebu International Airport
+# RPVM - Mactan - Cebu International Airport
 
-# General
+## General
 The Mactan - Cebu International Airport has 2 Runways, 2 passenger terminals, 1 general aviation areas, 1 military airbase, and 1 military maintenance hangar.
 
 - Terminal 1 - Domestic Passenger and Cargo Flights 
@@ -8,10 +8,10 @@ The Mactan - Cebu International Airport has 2 Runways, 2 passenger terminals, 1 
 
 The airport caters passenger and cargo flights, as well as general and military aviation.
 
-# Charts
+## Charts
 [RPVM](https://vatphil.com/charts?icao=RPVM){ .md-button .md-button--primary }
 
-# Frequency List
+## Frequency List
 <table>
   <thead>
     <tr>
@@ -64,13 +64,13 @@ The airport caters passenger and cargo flights, as well as general and military 
 [^2]: Can control top-down Mactan TMA which includes RPVD and RPSP. But check the controller information if they do!
 
 
-# Stand Assignments
+## Stand Assignments
 
 Bay assignments, are strictly implemented virtually, and are based on the latest real-world operations. Virtual and other real-world airlines that are not listed will park at terminal 2.
 
 <iframe src="../../assets/pdfs/RPVMstands.pdf" width="70%" height="500px"></iframe>
 
-# Runways
+## Runways
 
 <div markdown="1">
 Mactan currently has 2 runways .
@@ -146,7 +146,7 @@ Below is a table of the Take-Off Run available
     | E | 52 m but < 65 m | B777 Series/B787 Series/A330 Family |
     | F | 65 m but < 80 m | BOEING 747-8/AIRBUS A-380-800 |
 
-# Routes
+## Routes
 
 Local flights within RPHI and some international flights are to use routes given below. Simbrief also give a standard route which looks like this
 
@@ -158,7 +158,7 @@ If your route is still invalid, a controller will send you a private message wit
 
     During events it is important that you put your EOBT in your flight plan as controllers will use that to determine your takeoff slot.
 
-# Waypoint Restrictions
+## Waypoint Restrictions
 
 <h3 style="text-align:center"><strong>Waypoint Restrictions</strong></h3>
 
@@ -216,7 +216,7 @@ If your route is still invalid, a controller will send you a private message wit
 </table>
 
 
-# Clearance
+## Clearance
 
 On first contact with the controller that will issue your clearance, it is recommended for you to give
 the following information:
@@ -244,7 +244,7 @@ You must read back the clearance in full. Listen carefully to all details that t
 
 
 
-# Pushback
+## Pushback
 
 Normally, a controller in Mactan will instruct you to push back to the nearest reference point.
 
@@ -260,7 +260,7 @@ Normally, a controller in Mactan will instruct you to push back to the nearest r
     **RPVM_GND**: CEB586, push and start approved, abeam B3, face D2
 
 
-# Departure
+## Departure
 
 The departure procedure is decided by an online Approach (**APP**) or En-route Controller (**CTR**). When both are offline, Standard Instrument Departures (**SIDs**) are given by the aerodrome controllers (**TWR**, **GND** or **DEL**). When either **APP** or **CTR** is online, they decide if departures will be given radar vectors (climb and heading instructions) to the TMA exit points or will be following a **SID**.
 
@@ -272,7 +272,7 @@ When **APP** or **CTR** is online, after passing 2000 feet or 5 DME from RPVM, r
 
     **RPVM_APP**: CEB586, radar identified, continue climb FL150
 
-# Arrival
+## Arrival
 
 When arriving in to Mactan, it is best for you to be in between FL160 and FL180 when reaching the border of the TMA or the start of the STAR. On initial contact with Mactan Approach (RPVM_APP), report your current level.
 
@@ -297,7 +297,7 @@ APP will then issue your arrival clearance including the type of approach to exp
     If APP didn’t give you any turns after you have passed the last waypoint on your routing, maintain your present heading.
 
 
-# Taxi Routing
+## Taxi Routing
 
 === "RWY 04R"
 
