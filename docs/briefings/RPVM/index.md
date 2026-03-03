@@ -128,13 +128,11 @@ Below is a table of the Take-Off Run available
 
 !!! warning
 
-    Take-off/landing on Rwy 04L/22R allowed whenever Rwy 04R/22L
-
-!!! warning
+    Take-off/landing on Rwy 04L/22R not allowed whenever Rwy 04R/22L is in use.
 
     Code C aircraft not allowed to enter Twy C whenever a Code D and above aircraft is taking-off and landing on Rwy 04L/22R.
 
-    Code D and above aircraft not allowed to enter Twy C whenever a Code C and above taking-off or landing on Rwy 04L/22R
+    Code D and above aircraft not allowed to enter Twy C whenever a Code C and above taking-off or landing on Rwy 04L/22R.
 
 ??? info "Aircraft Codes"
     | Code letter | Wingspan | Typical aeroplane |
