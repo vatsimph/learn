@@ -108,7 +108,7 @@ real-world operations. Virtual and other real-world airlines that are not listed
 
 <iframe src="../../assets/pdfs/stands.pdf" width="70%" height="500px""></iframe>
 
-# Runways
+## Runways
 
 <div markdown="1">
 Manila currently only has 2 runways that intersect each other.
@@ -168,7 +168,7 @@ Below is a table of the Take-Off Run available
 
     Runway 31 is only for departures.
 
-# Routes
+## Routes
 
 Local flights within RPHI and some international flights are to use routes given below. Simbrief also give a standard route which looks like this
 
@@ -181,7 +181,7 @@ If your route is still invalid, a controller will send you a private message wit
     During events it is important that you put your EOBT in your flight plan as 
     controllers will use that to determine your takeoff slot.
 
-# Waypoint Restrictions
+## Waypoint Restrictions
 
 <h3 style="text-align:center"><strong>Waypoint Restrictions</strong></h3>
 
@@ -238,7 +238,7 @@ If your route is still invalid, a controller will send you a private message wit
   </tbody>
 </table>
 
-# Clearance
+## Clearance
 
 On first contact with the controller that will issue your clearance, it is recommended for you to give
 the following information:
@@ -276,7 +276,7 @@ You must read back the clearance in full. Listen carefully to all details that t
 
         **RPLL_DEL**: CEB585, cleared Mactan, W25 BATAY, RUNWAY 06, fly runway heading, climb 7000ft, expect radar vectors IPATA, squawk 4251
 
-# Pushback
+## Pushback
 
 Normally, a controller will instruct you to push back to the nearest start-up point. The location of the start-up points are indicated in available charts 
 
@@ -312,7 +312,7 @@ In the event there is **RPLL_P_GND**
     At ± 5 TOBT **RPLL_P_GND**: CEB585, contact ground ramp 121.350
 
 
-# Departure
+## Departure
 
 The departure procedure is decided by an online Approach (**APP**) or En-route Controller (**CTR**). When both are offline, Standard Instrument Departures (**SIDs**) are given by the aerodrome controllers (**TWR**, **GND** or **DEL**). When either **APP** or **CTR** is online, they decide if departures will be given radar vectors (climb and heading instructions) to the TMA exit points or will be following a **SID**.
 
@@ -324,7 +324,7 @@ When **APP** or **CTR** is online, after passing 2000 feet or 5 DME from RPLL, r
 
     **RPLL_F_APP**: “PAL300, radar identified, continue climb 7000”
 
-# Arrival
+## Arrival
 
 When arriving in to Manila, it is best for you to be in between FL160 and FL200 when reaching the border of the TMA or the start of the [STAR](https://learn.vatphil.com/briefings/arrival/star/). On initial contact with Manila Approach (RPLL_APP), report your current level.
 
@@ -393,23 +393,28 @@ Below is the mandatory speed restrictions when under vectors by approach.
   </tbody>
 </table>
 
-## Single Scope Operation
-![RPLL_APP](../../assets/img/RPHI/4.png)
+## Manila Approach
+
+### Single Scope Operation
+
+![RPLL_APP](../../assets/img/RPHI/4.png){ align=left }
 
 | Designator | Vertical Limits | Frequency |
 |-----|----|----|
 | RPLL_APP[^2] | 1500ft - FL150[^1] | 124.800 |
 
-## Two Scope Operation
-![RPLL_APP](../../assets/img/RPHI/3.png)
+### Two Scope Operation
+
+![RPLL_APP](../../assets/img/RPHI/3.png){ align=left }
 
 | Designator | Vertical Limits | Frequency |
 |-----|------|----|
 | RPLL_F_APP | 1500ft - 7000ft | 124.400 |
 | RPLL_APP[^2] | 8000ft - FL150[^1] | 124.800 |
 
-## Three Scope Operation
-![RPLL_APP](../../assets/img/RPHI/2.png)
+### Three Scope Operation
+
+![RPLL_APP](../../assets/img/RPHI/2.png){ align=left }
 
 | Designator | Vertical Limits | Frequency |
 |-----|----|----|
@@ -421,7 +426,7 @@ Below is the mandatory speed restrictions when under vectors by approach.
 [^2]: Can control top-down Clark TMA which includes RPLC and RPLB. But check the controller information if they do!
 
 
-# Vacating
+## Vacating
 
 You must vacate the runway as fast as possible in order for TWR to make best use of the runway.
 
