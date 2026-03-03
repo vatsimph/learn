@@ -21,7 +21,7 @@
 
 ![VFR area chart Fixed Wing](<../../assets/img/RPLL VFR/VFR Area Chart Fixed Wing.png>)
 
-# VFR Departure Flights
+# VFR Departure
 
 ### Northbound aircraft FIXED WING
 
@@ -162,7 +162,7 @@ Follow next instructions of ATC
 </div>
 </div>
 
-# VFR Arrival Flights
+# VFR Arrival
 
 === "From the North"
 
@@ -199,3 +199,7 @@ Follow next instructions of ATC
 === "Runway 13"
 
     ![RPLL_TrafficPattern_13](<../../assets/img/RPLL VFR/traffic pattern/Pattern13.png>)
+
+!!! warning
+
+    Runway 31 can only be used in an emergency.
