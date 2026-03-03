@@ -299,7 +299,7 @@ APP will then issue your arrival clearance including the type of approach to exp
 
 === "RWY 04R"
 
-    **Departures:** D1/D2/D3 → C → B7 → A5 (intersection) or A6 (normal)
+    **Departures:** D1/D2/D3 → C → B7 → A5 (intersection) or A6
     
     **Arrivals:** R1/A3 → B4 or A2 → B3 or A1 → B2 → C → D1
     
@@ -309,7 +309,7 @@ APP will then issue your arrival clearance including the type of approach to exp
 
 === "RWY 22L"
 
-    **Departures:** D1/D2/D3 → C → B3 → A2 (intersection) or B2 → A1 (normal)
+    **Departures:** D1/D2/D3 → C → B3 → A2 (intersection) or B2 → A1
     
     **Arrivals:** R2 → B6 or A5 → B7 or A6 → C → D1/D2/D3
     
