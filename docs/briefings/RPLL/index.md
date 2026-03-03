@@ -324,6 +324,10 @@ When **APP** or **CTR** is online, after passing 2000 feet or 5 DME from RPLL, r
 
     **RPLL_F_APP**: “PAL300, radar identified, continue climb 7000”
 
+### Runway Occupancy Time-Departure (ROTD)
+
+At RPLL we implement ROTD - Runway Occupancy Time-Departure for **A320 and lower**. ROTD of 45 seconds will start at the time the aircraft reaches no 1 position (lined-up on the runway threshold marker) and the pilot reads back the ATC’s take-off clearance to the time it is airborne (wheels off the ground).
+
 ## Arrival
 
 When arriving in to Manila, it is best for you to be in between FL160 and FL200 when reaching the border of the TMA or the start of the [STAR](https://learn.vatphil.com/briefings/arrival/star/). On initial contact with Manila Approach (RPLL_APP), report your current level.
@@ -494,6 +498,11 @@ You have not vacated the runway until you have fully passed the runway stop bar,
 
 The controller may give you a taxi instruction to vacate and some might not. If so, keep moving until you are vacated and hold position until GND has given you further instructions to taxi.
 
+### Runway Occupancy Time-Arrivals (ROTA)
+For arrivals we implement ROTA - Runway Occupancy Time-Arrivals for **A320 and lower**. ROTA of 55 seconds will start at the time the aircraft reaches above the threshold marker to the time it vacates.
+
+*[ROTD]: Runway Occupancy Time-Departure
+*[ROTA]: Runway Occupancy Time-Arrivals
 *[EOBT]: Estimated off block time
 *[TOBT]: Target off block time
 *[TSAT]: Target start approval time
