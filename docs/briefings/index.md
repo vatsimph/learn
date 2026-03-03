@@ -9,6 +9,7 @@ Here you will find aerodrome briefings for the airports within the Philippines! 
 
 [RPMD](https://learn.vatphil.com/briefings/RPMD/){ .md-button .md-button--primary }
 
+[RPHI](https://learn.vatphil.com/briefings/RPHI/){ .md-button .md-button--primary }
 </div>
 
 # RPHI Briefing

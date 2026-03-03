@@ -5,5 +5,6 @@ nav:
     - RPVM: RPVM
     - RPMD: RPMD
     - Routes: routes.md
+    - Manila (RPHI) Flight Information Region: RPHI.md
     - Facility Frequency: facility-frequency
     - CPDLC / PDC: cpdlc-pdc.md
