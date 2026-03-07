@@ -51,4 +51,4 @@ When contacting Manila Radio, keep in mind that they will not be able to see you
 
     Manila Radio, PAL123, Over BISIG 1300z, FL320, Next EXOMI at 1330z
 
-*[MNL_NE]: Manila Radio or Manila Control
+*[MNL_NE_CTR]: Manila Radio or Manila Control
