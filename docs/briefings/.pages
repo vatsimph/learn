@@ -2,6 +2,7 @@ nav:
     - index.md
     - Charts: charts.md
     - RPLL: RPLL
+    - RPLC: RPLC
     - RPVM: RPVM
     - RPMD: RPMD
     - Routes: routes.md
