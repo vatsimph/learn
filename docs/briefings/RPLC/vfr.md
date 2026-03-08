@@ -13,7 +13,7 @@
 7. All VFR flights arriving/departing to/from Diosdado Macapagal International Airport shall follow the prescribed arrival and departure procedures or as instructed by the ATC.
 8. Deviation from VFR arrival/departure procedures shall be subject to ATC approval.
 
-!!! note
+!!! info
     All altitudes indicated are on MSL setting.
 
 # VFR Departure
@@ -31,8 +31,6 @@ Maintain straight out departure until cleared by Clark Tower to make right turn 
 
 Proceed West of Tarlac City (or a heading of 350 degrees) at 1500 FT.
 
-!!! note
-    Higher altitude must be requested by the pilot from ATC.
 </div>
 </div>
 
@@ -45,8 +43,6 @@ Proceed West of Tarlac City (or a heading of 350 degrees) at 1500 FT.
 <div markdown>
 Make a left turn to Expo Pilipino then proceed West of Tarlac City (or a heading of 350 degrees) at 1500 FT.
 
-!!! note
-    Higher altitude must be requested by the pilot from ATC.
 </div>
 </div>
 
@@ -89,8 +85,6 @@ Proceed to destination.
 <div markdown>
 Make a right turn to Expo Pilipino, climb to 1500 FT and proceed to destination.
 
-!!! note
-    Higher altitude must be requested by the pilot from ATC.
 </div>
 </div>
 
@@ -103,8 +97,6 @@ Make a right turn to Expo Pilipino, climb to 1500 FT and proceed to destination.
 <div markdown>
 Make a left turn to Expo Pilipino, climb to 1500 FT and proceed to destination.
 
-!!! note
-    Higher altitude must be requested by the pilot from ATC.
 </div>
 </div>
 
@@ -123,8 +115,6 @@ After passing Feliciano, turn right on a heading of 060 degrees and continue cli
 
 Proceed to destination.
 
-!!! note
-    Higher altitude must be requested by the pilot from ATC.
 </div>
 </div>
 
@@ -139,8 +129,6 @@ Make a right turn on a heading of 060 degrees and continue climb towards Magalan
 
 Proceed to destination.
 
-!!! note
-    Higher altitude must be requested by the pilot from ATC.
 </div>
 </div>
 
