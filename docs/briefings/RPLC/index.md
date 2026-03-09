@@ -30,25 +30,25 @@ The airport caters passenger and cargo flights, as well as general and military 
     </tr>
     <tr>
       <td style="text-align:center"><strong>RPLC_RMP</strong></td>
-      <td style="text-align:center"></td>
+      <td style="text-align:center">Clark Ramp</td>
       <td style="text-align:center">121.650</td>
       <td style="text-align:center"></td>
     </tr>
     <tr>
       <td style="text-align:center"><strong>RPLC_GND</strong></td>
-      <td style="text-align:center"></td>
+      <td style="text-align:center">Clark Ground</td>
       <td style="text-align:center">124.300</td>
       <td style="text-align:center"></td>
     </tr>
     <tr>
       <td style="text-align:center"><strong>RPLC_TWR</strong></td>
-      <td style="text-align:center"></td>
+      <td style="text-align:center">Clark Tower</td>
       <td style="text-align:center">118.700</td>
       <td style="text-align:center"></td>
     </tr>
     <tr>
       <td style="text-align:center"><strong>RPLC_APP</strong></td>
-      <td style="text-align:center"></td>
+      <td style="text-align:center">Clark Approach</td>
       <td style="text-align:center">119.200</td>
       <td style="text-align:center"></td>
     </tr>
