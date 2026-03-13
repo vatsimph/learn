@@ -57,7 +57,7 @@ Here you will find aerodrome briefings for the airports within the Philippines! 
 
 ### Manila Radio
 
-Currently the only radio that can be implemented by Manila Control is MNL_NE_CTR, otherwise known as Manila Oceanic. Under Manila Radio, you can still expect [RVSM](rvsm.md).
+Currently the only radio that can be implemented by Manila Control is MNL_NE_CTR, otherwise known as Manila Oceanic. Under Manila Radio, you can still expect [[RVSM](rvsm.md).](https://learn.vatphil.com/classroom/rvsm/).
 
 When contacting Manila Radio, keep in mind that they will not be able to see you and are purely going off what you give them. It is important to have atleast these four information at hand.
 
