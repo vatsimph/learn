@@ -12,7 +12,7 @@ Here you will find aerodrome briefings for the airports within the Philippines! 
 [RPHI](https://learn.vatphil.com/briefings/RPHI/){ .md-button .md-button--primary }
 </div>
 
-# RPHI Briefing
+## RPHI Briefing
 
 <figure markdown="span">
   ![RNAV Routes](../../assets/img/RP_ENR_6-1.2.png){ width="800" }
