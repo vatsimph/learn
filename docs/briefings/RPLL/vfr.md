@@ -181,7 +181,7 @@ Follow next instructions of ATC
         a. Runway 13: request for clearance to cross over threshold/final approach path of RWY 06 prior to entering downwind at traffic pattern altitude.
         b. Runway 06/24: Subject to ATC instructions
 
-=== "From the west"
+=== "From the West"
 
     1. Report to RPLL_APP/RPLL_F_APP approaching CORREGIDOR at or below 2500 FT.
     2. Continue towards abeam Sangley not above 1500 FT within 10 NM RPLL, contact RPLL_TWR for further instructions
