@@ -443,7 +443,7 @@ Below is the mandatory speed restrictions when under vectors by approach.
 | Designator | Vertical Limits | Frequency |
 |-----|----|----|
 | RPLL_F_APP  | 1500ft - 7000ft | 124.400 |
-| RPLL_N_APP[^2] | 8000ft - FL150[^1] | 124.800 |
+| RPLL_N_APP[^2] | 8000ft - FL150[^1] | 119.900 |
 | RPLL_S_APP | 8000ft - FL150[^1] | 127.700 |
 
 </div>
