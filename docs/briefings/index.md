@@ -821,3 +821,10 @@ When contacting Manila Radio, keep in mind that they will not be able to see you
 !!! warning "Warning"
 
     There are areas within the FIR where Controllers and Pilots will not hear each other due to radio wave propagation
+
+
+## Airborne from a Non-Towered Aerodrome
+
+!!! phraseology "Phraseology"
+
+    CEB123 Cleared to join CAB, climb FL150, squawk 4020
