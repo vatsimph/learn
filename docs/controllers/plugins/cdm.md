@@ -12,27 +12,13 @@ On VATSIM, CDM is a tool that encourages virtual pilots & controllers to coordin
 | CTOT | Also known as a "slot". The aircraft must depart -5/+10 minutes of this time. |
 
 
-Below is an example of how it is setup in VATPHIL
-![CDM](https://lh3.googleusercontent.com/keep-bbsk/AFgXFlKlF39IG2qT6JaBc6IimZjLIG7miSdc5tIpKIOYL5VbIr6t0_Uf7pF5Hbftbspg2uvUOZM7o5xXYKlIvegMgspANzkvfLGjIoVqGRh9FGyYCKj84KE9=s512)
-
 Pilots can change their TOBT at https://cdm.vatsimspain.es/vdgs/index.php
-To enable it, simply press on the aerodrome you are controlling. Note that only one (1) controller can be the “Master” at one time. If RPLL_P_GND is online then they take master followed by RPLL_DEL.
-
+To enable it, simply press on the aerodrome you are controlling. Note that only one (1) controller can be the “Master” at one time. If MNL_FMP is online then they take master followed by RPLL_DEL.
 
 Red: No master set.
 Purple: Master set by another ATC.
 Yellow: Enabling/Disabling Master.
 Green: Master Airport set by me.
-![CDMLogin](https://lh3.googleusercontent.com/keep-bbsk/AFgXFlIPhto0RKvk6niFv27tZQaW147lc0Fh0axscoYtje8KxKhVEHW-6ThWb537_DuxfN01v4fwMk2UAWRu4aitG338v2wUVwOlmiyrlqayCL9Yo4IM-dTy=s586){ align=left }
-
-
-
-
-
-
-
-
-
 
 *[EOBT]: Estimated off block time
 *[TOBT]: Target off block time
