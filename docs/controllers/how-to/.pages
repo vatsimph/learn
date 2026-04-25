@@ -1,4 +1,5 @@
 nav:
     - Booking a Session: cc.md
     - Sector Files: install.md
+    - VACS: vacs.md
     - TrackAudio: trackaudio.md
