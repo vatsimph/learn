@@ -44,7 +44,7 @@ On the audio settings screen, you can change all audio settings — from your in
 ### Coordination Etiquette
 
 ??? info "How should I initially speak to the controller that I'm coordinating with?"
-    The person answering the call should identify themselves **first** — for example, "Gatwick AIR". The calling controller will then identify themselves and pass their message.
+    The person answering the call should identify themselves **first** — for example, "Manila Control". The calling controller will then identify themselves and pass their message.
 
 ??? info "What should I do if the controller I am calling does not answer?"
     You should wait a few minutes as they may be busy. They may call you back. If they don't, try calling them again.
