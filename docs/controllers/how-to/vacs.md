@@ -107,3 +107,18 @@ To accept an incoming call, click the **flashing green station**. Alternatively,
 To make a call, simply press the controller you would like to call. On most profiles, area positions will be aliased (e.g. *Manila Control* will show as *MNL CTR* on all profiles that contain it). If you are unsure who an alias will call, check the frequency mapping in the profiles menu.
 
 > **Note:** You will only see controllers who are **online AND using VACS**.
+
+### Phraseology
+
+
+??? phraseology "Answering a call"
+
+    "To be added"
+
+??? phraseology "Transfer of Information"
+
+    "To be added"
+
+??? phraseology "Mic Check"
+
+    "Line Check"
