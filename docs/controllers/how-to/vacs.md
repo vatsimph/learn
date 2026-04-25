@@ -23,14 +23,14 @@ You can access VACS through the **External Program Only**. The inbuilt EuroScope
 On the audio settings screen, you can change all audio settings — from your input volume to the volume of the inbound call tone.
 
 <figure markdown="span">
-  ![Hotkeys](../assets/png/Config.png){ width="300" }
+  ![Hotkeys](../../assets/png/Config.png){ width="300" }
   <figcaption>You can set your transmit mode by going to **Settings → Transmit**. The Transmit page also includes an explanation of how each Transmit Mode works.</figcaption>
 </figure>
 
 ??? tip "Voice activation is the most realistic mode of transmission for PH controllers."
 
 <figure markdown="span">
-  ![Hotkeys](../assets/png/Hotkeys.png){ width="300" }
+  ![Hotkeys](../../assets/png/Hotkeys.png){ width="300" }
   <figcaption>Hotkeys are a useful way to accept and deny incoming calls without having to open the VACS program each time. To set your hotkeys, go to **Settings → Hotkeys**.</figcaption>
 </figure>
 
@@ -52,34 +52,31 @@ On the audio settings screen, you can change all audio settings — from your in
 ??? info "I can hear the other controller speaking on their frequency — is this meant to happen?"
     Yes. The other controller may be using voice activation in their audio settings, so you may hear them talking on their frequency. This is standard practice in the real world too, so you know when it's not a good time to talk.
 
-??? info "Does this replace all coordination?"
-    No. TeamSpeak should still be used to coordinate ADC to ADC.
-
 ---
 
 ### Using VACS
 
 The main panel is what you will see 90% of the time. There are 4 main buttons:
 
-![Mission](../assets/png/Mission.png){ align=left }
+![Mission](../../assets/png/Mission.png){ align=left }
 **Mission**  
 Takes you to the menu where you can change the view of your panel.
 
 <div style="clear: both;"></div>
 
-![Phonebook](../assets/png/Phonebook.png){ align=left }
+![Phonebook](../../assets/png/Phonebook.png){ align=left }
 **Phonebook**  
 Opens a phonebook-styled menu showing a list of people that called you, the time of the call, and whether it was inbound or outbound. You can also dial a controller by their CID or add them to your ignored list.
 
 <div style="clear: both;"></div>
 
-![Settings](../assets/png/Settings.png){ align=left }
+![Settings](../../assets/png/Settings.png){ align=left }
 **Settings**  
 The settings menu. Used for audio settings, hotkeys, and transmission methods.
 
 <div style="clear: both;"></div>
 
-![End Call](../assets/png/EndCall.png){ align=left }
+![End Call](../../assets/png/EndCall.png){ align=left }
 **End Call**  
 Ends the current call.
 
