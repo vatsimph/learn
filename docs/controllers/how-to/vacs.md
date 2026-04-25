@@ -24,14 +24,14 @@ On the audio settings screen, you can change all audio settings — from your in
 
 <figure markdown="span">
   ![Hotkeys](../../assets/png/Config.png){ width="300" }
-  <figcaption>You can set your transmit mode by going to **Settings → Transmit**. The Transmit page also includes an explanation of how each Transmit Mode works.</figcaption>
+  <figcaption>You can set your transmit mode by going to Settings → Transmit. The Transmit page also includes an explanation of how each Transmit Mode works.</figcaption>
 </figure>
 
 ??? tip "Voice activation is the most realistic mode of transmission for PH controllers."
 
 <figure markdown="span">
-  ![Hotkeys](../../assets/png/Hotkeys.png){ width="300" }
-  <figcaption>Hotkeys are a useful way to accept and deny incoming calls without having to open the VACS program each time. To set your hotkeys, go to **Settings → Hotkeys**.</figcaption>
+  ![Hotkeys](../../assets/png/Hotkey.png){ width="300" }
+  <figcaption>Hotkeys are a useful way to accept and deny incoming calls without having to open the VACS program each time. To set your hotkeys, go to Settings → Hotkeys.</figcaption>
 </figure>
 
 
