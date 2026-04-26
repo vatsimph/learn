@@ -8,9 +8,21 @@ The VATPHIL Updater is a desktop application that automatically downloads, insta
 
 ---
 
-# VATPHIL Updater
+## Euroscope 
 
-## Logging In
+The euroscope [[Download]](https://www.euroscope.hu/wp/installation/) page can be found here.
+
+### Installation
+
+Installation of EuroScope is easy. Just follow the instructions of the installer. Well, the only thing you should specify is the folder you would like to put the files in.
+
+### Prerequisites
+
+Before installing EuroScope v3.2.4 and later be sure to download and install the latest C++ redistributable package from Microsoft: https://aka.ms/vs/17/release/vc_redist.x86.exe
+
+## VATPHIL Updater
+
+### Logging In
 
 When you open the updater, you will be prompted to log in with your VATSIM account.
 
@@ -22,7 +34,7 @@ When you open the updater, you will be prompted to log in with your VATSIM accou
 
 ---
 
-## Selecting an Installation Folder
+### Selecting an Installation Folder
 
 Before installing, you need to point the updater to a folder where your sector files will live.
 
@@ -34,7 +46,7 @@ Before installing, you need to point the updater to a folder where your sector f
 
 ---
 
-## Installing / Updating Sector Files
+### Installing / Updating Sector Files
 
 Once a folder is selected, the updater checks the remote files against your local install.
 
@@ -48,7 +60,7 @@ Click **Install Update** to begin. A progress bar at the bottom of the status ca
 
 ---
 
-## Entering Your Controller Details
+### Entering Your Controller Details
 
 After installing, fill in the **Controller Details** panel in the left sidebar:
 
@@ -65,7 +77,7 @@ Click **Apply** when done. EuroScope is ready to connect immediately.
 
 ---
 
-## Selective Repair
+### Selective Repair
 
 If only specific files are missing or corrupted, use **Selective Repair** instead of a full reinstall.
 
@@ -76,7 +88,7 @@ If only specific files are missing or corrupted, use **Selective Repair** instea
 
 ---
 
-## Full Reinstall
+### Full Reinstall
 
 **Reinstall** re-downloads every file from scratch. Use this if your installation is in an inconsistent state or you want a completely clean install.
 
@@ -85,12 +97,11 @@ If only specific files are missing or corrupted, use **Selective Repair** instea
 
 ---
 
-## Keeping the Updater Itself Up to Date
+### Keeping the Updater Itself Up to Date
 
 The updater checks for a new version of itself each time you log in. If a newer version is available, you will be prompted to download and install it. The app restarts automatically once the update is applied — no manual steps required.
 
 ??? info "Version 0.8.5"
 
-    Controller Beta
-
+    Controller Beta [[Download]](https://github.com/HacobAllon/VATPHIL-Sector-Updater/releases/tag/v0.8.8)
 
