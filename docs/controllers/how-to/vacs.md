@@ -90,7 +90,7 @@ VACS does not automatically group positions based on where you are controlling â
 
 To change your profile, click the **Profiles** button, navigate to **Profiles**, and select the region or aerodrome you are currently controlling in.
 
-> **Note:** When opening the Profiles page for the first time, it may appear blank as no profiles have been imported. To resolve this, press **Select Stations Config**, then select the `VATPHIL` file located inside the UK folder in your EuroScope installation.
+> **Note:** When opening the Profiles page for the first time, it may appear blank as no profiles have been imported. To resolve this, press **Select Stations Config**, then select the `VATPHIL` file located inside the vatphil sector file folder in your EuroScope installation.
 
 ---
 
