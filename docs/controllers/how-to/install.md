@@ -101,7 +101,7 @@ If only specific files are missing or corrupted, use **Selective Repair** instea
 
 The updater checks for a new version of itself each time you log in. If a newer version is available, you will be prompted to download and install it. The app restarts automatically once the update is applied — no manual steps required.
 
-??? info "Version 0.8.5"
+??? info "Version 0.8.10"
 
-    Controller Beta [[Download]](https://github.com/HacobAllon/VATPHIL-Sector-Updater/releases/tag/v0.8.8)
+    Controller Beta can be found here -> [Download](https://vats.im/ph/install)
 

@@ -7,6 +7,7 @@ nav:
     - RPVM: RPVM
     - RPVK: RPVK
     - RPVR: RPVR
+    - RPVP: RPVP
     - RPMD: RPMD
     - Routes: routes.md
     - CPDLC: cpdlc.md

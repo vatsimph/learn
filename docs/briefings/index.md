@@ -259,6 +259,7 @@ Here you will find aerodrome briefings for the airports within the Philippines. 
     { icao: "RPVR", name: "Roxas",                type: "Principal Class 1", lat: 11.5977, lon: 122.7517 },
     { icao: "RPVM", name: "Mactan-Cebu Intl",     type: "International",     lat: 10.3075, lon: 123.9794 },
     { icao: "RPMD", name: "Francisco Bangoy",     type: "International",     lat:  7.1255, lon: 125.6458 },
+    { icao: "RPVP", name: "Puerto Princesa",      type: "International",     lat: 9.7419, lon: 118.7597 },
   ];
 
   var SECTOR_INFO = {
@@ -729,6 +730,8 @@ Here you will find aerodrome briefings for the airports within the Philippines. 
     [RPVK →](https://learn.vatphil.com/briefings/RPVK/)
 
     [RPVR →](https://learn.vatphil.com/briefings/RPVR/)
+
+    [RPVP →](https://learn.vatphil.com/briefings/RPVP/)
 
 -   **Mindanao**
 
