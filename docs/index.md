@@ -4,16 +4,7 @@ Welcome to **Philippines vACC Knowledge Base!** This serves as a guide for obser
 
 For additional information, please see our [website](https://vatphil.com)!
 
-# Reporting Errors
-If you spot an error in any of the content on this site, please report it to the Operations team by either:
-
-Emailing staff@vatphil.com or Join our [Discord Server](https://community.vatsim.net/)!
-
-Thank you for choosing to fly in our airspace. We wish that you have a safe and enjoyable flight! Remember that if you are unsure about something on your flight, it is always best to ask the controllers.
-
 # Events
-
-Upcoming events organised by VATSIM Philippines.
 
 <div id="vatphil-events">
   <p style="color: var(--md-default-fg-color--light)">Loading events...</p>
@@ -117,20 +108,21 @@ Upcoming events organised by VATSIM Philippines.
     if (!res.ok) throw new Error('API error');
     const json = await res.json();
 
-    const PHIL_KEYWORDS = ['phi', 'phil', 'vatphil', 'philippines'];
+    const PHIL_KEYWORDS = ['phi', 'phil', 'vatphil', 'philippines', 'rpll', 'rpvp', 'rpmd', 'rpvm', 'rplc'];
 
     // Temporary: log all organiser strings so you can verify the correct value
     console.log('[VATPHIL Events] All organisers in SEA feed:',
       (json.data || []).flatMap(e => e.organisers).map(o => JSON.stringify(o))
     );
 
-    const events = (json.data || []).filter(e =>
-      e.organisers && e.organisers.some(o => {
-        const div = (o.division || '').toLowerCase();
-        const sub = (o.subdivision || '').toLowerCase();
-        return PHIL_KEYWORDS.some(k => div.includes(k) || sub.includes(k));
-      })
-    );
+    // VATPHIL events use division=SEA with subdivision=null, so filter by RP* airport ICAOs
+    const events = (json.data || []).filter(e => {
+      const hasRPAirport = e.airports && e.airports.some(a => a.icao.toUpperCase().startsWith('RP'));
+      const hasPhilKeyword = [e.name, e.short_description, e.description].some(
+        t => t && PHIL_KEYWORDS.some(k => t.toLowerCase().includes(k))
+      );
+      return hasRPAirport || hasPhilKeyword;
+    });
 
     if (events.length === 0) {
       container.innerHTML = '<p class="no-events">No upcoming VATPHIL events at this time. Check back soon!</p>';
@@ -168,8 +160,15 @@ Upcoming events organised by VATSIM Philippines.
     container.appendChild(grid);
 
   } catch (err) {
-    container.innerHTML = '<p class="no-events"No events just yet!</p>';
+    container.innerHTML = '<p class="no-events">Could not load events. Please try again later or visit <a href="https://my.vatsim.net/events" target="_blank">my.vatsim.net/events</a>.</p>';
     console.error('VATPHIL events error:', err);
   }
 })();
 </script>
+
+# Reporting Errors
+If you spot an error in any of the content on this site, please report it to the Operations team by either:
+
+Emailing staff@vatphil.com or Join our [Discord Server](https://community.vatsim.net/)!
+
+Thank you for choosing to fly in our airspace. We wish that you have a safe and enjoyable flight! Remember that if you are unsure about something on your flight, it is always best to ask the controllers.
