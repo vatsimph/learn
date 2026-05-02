@@ -6,8 +6,17 @@ For additional information, please see our [website](https://vatphil.com)!
 
 # Events
 
+Upcoming events organised by VATSIM Philippines.
+
 <div id="vatphil-events">
   <p style="color: var(--md-default-fg-color--light)">Loading events...</p>
+</div>
+
+<!-- Modal overlay -->
+<div id="event-modal-overlay" onclick="closeEventModal()"></div>
+<div id="event-modal">
+  <button id="event-modal-close" onclick="closeEventModal()">&#x2715;</button>
+  <div id="event-modal-content"></div>
 </div>
 
 <style>
@@ -25,21 +34,30 @@ For additional information, please see our [website](https://vatphil.com)!
     background: var(--md-default-bg-color);
     box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     transition: box-shadow 0.2s;
-    text-decoration: none;
     display: flex;
     flex-direction: column;
     color: inherit;
+    cursor: pointer;
   }
 
   .event-card:hover {
     box-shadow: 0 4px 14px rgba(0,0,0,0.15);
   }
 
-  .event-card img {
+  .event-card-banner {
     width: 100%;
-    aspect-ratio: 16/7;
-    object-fit: cover;
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .event-card-banner img {
+    width: 100%;
+    height: auto;
     display: block;
+    object-fit: contain;
   }
 
   .event-card-body {
@@ -80,13 +98,140 @@ For additional information, please see our [website](https://vatphil.com)!
     color: var(--md-default-fg-color--light, #888);
   }
 
+  .event-read-more {
+    margin-top: 0.65rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--md-primary-fg-color, #1976d2);
+    align-self: flex-start;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s;
+  }
+
+  .event-card:hover .event-read-more {
+    border-bottom-color: var(--md-primary-fg-color, #1976d2);
+  }
+
   .no-events {
     color: var(--md-default-fg-color--light);
     font-style: italic;
   }
+
+  #event-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 9998;
+  }
+
+  #event-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(640px, 94vw);
+    max-height: 85vh;
+    overflow-y: auto;
+    background: var(--md-default-bg-color);
+    border-radius: 10px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+    z-index: 9999;
+    padding: 1.5rem;
+  }
+
+  #event-modal.open,
+  #event-modal-overlay.open {
+    display: block;
+  }
+
+  #event-modal-close {
+    position: absolute;
+    top: 0.9rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--md-default-fg-color--light);
+    line-height: 1;
+    padding: 0.2rem 0.4rem;
+  }
+
+  #event-modal-close:hover {
+    color: var(--md-default-fg-color);
+  }
+
+  .modal-banner img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .modal-type-badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--md-primary-fg-color, #1976d2);
+    margin-bottom: 0.3rem;
+  }
+
+  .modal-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 0.75rem;
+  }
+
+  .modal-meta {
+    font-size: 0.85rem;
+    color: var(--md-default-fg-color--light, #666);
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--md-default-fg-color--lightest, #e0e0e0);
+  }
+
+  .modal-description {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    white-space: pre-wrap;
+    margin-bottom: 1.25rem;
+  }
+
+  .modal-link {
+    display: inline-block;
+    padding: 0.5rem 1.1rem;
+    background: var(--md-primary-fg-color, #1976d2);
+    color: #fff !important;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .modal-link:hover {
+    opacity: 0.88;
+  }
 </style>
 
 <script>
+function closeEventModal() {
+  document.getElementById('event-modal').classList.remove('open');
+  document.getElementById('event-modal-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeEventModal();
+});
+
 (async function () {
   const container = document.getElementById('vatphil-events');
 
@@ -102,20 +247,33 @@ For additional information, please see our [website](https://vatphil.com)!
     return `${fmt(start)} – ${fmt(end)}`;
   }
 
+  function openModal(ev) {
+    const airports = ev.airports.map(a => a.icao).join(', ');
+    const content = document.getElementById('event-modal-content');
+    content.innerHTML = `
+      ${ev.banner ? `<div class="modal-banner"><img src="${ev.banner}" alt="${ev.name}"></div>` : ''}
+      <div class="modal-type-badge">${ev.type}</div>
+      <div class="modal-title">${ev.name}</div>
+      <div class="modal-meta">
+        <span>${formatDate(ev.start_time)}</span>
+        <span>${formatTime(ev.start_time, ev.end_time)}</span>
+        ${airports ? `<span>${airports}</span>` : ''}
+      </div>
+      <div class="modal-description">${ev.short_description || ev.description || ''}</div>
+      <a class="modal-link" href="${ev.link}" target="_blank" rel="noopener noreferrer">View on myVATSIM</a>
+    `;
+    document.getElementById('event-modal').classList.add('open');
+    document.getElementById('event-modal-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
   try {
-    // Use the SEA division endpoint — VATPHIL is a subdivision under SEA
     const res = await fetch('https://my.vatsim.net/api/v2/events/view/division/SEA');
     if (!res.ok) throw new Error('API error');
     const json = await res.json();
 
-    const PHIL_KEYWORDS = ['phi', 'phil', 'vatphil', 'philippines', 'rpll', 'rpvp', 'rpmd', 'rpvm', 'rplc'];
+    const PHIL_KEYWORDS = ['phi', 'phil', 'vatphil', 'philippines', 'rpll', 'rpvp', 'rpmd', 'rplb', 'rplc'];
 
-    // Temporary: log all organiser strings so you can verify the correct value
-    console.log('[VATPHIL Events] All organisers in SEA feed:',
-      (json.data || []).flatMap(e => e.organisers).map(o => JSON.stringify(o))
-    );
-
-    // VATPHIL events use division=SEA with subdivision=null, so filter by RP* airport ICAOs
     const events = (json.data || []).filter(e => {
       const hasRPAirport = e.airports && e.airports.some(a => a.icao.toUpperCase().startsWith('RP'));
       const hasPhilKeyword = [e.name, e.short_description, e.description].some(
@@ -132,24 +290,23 @@ For additional information, please see our [website](https://vatphil.com)!
     const grid = document.createElement('div');
     grid.className = 'event-grid';
 
-    events.forEach(e => {
-      const airports = e.airports.map(a => a.icao).join(', ');
-      const card = document.createElement('a');
+    events.forEach(ev => {
+      const airports = ev.airports.map(a => a.icao).join(', ');
+      const card = document.createElement('div');
       card.className = 'event-card';
-      card.href = e.link;
-      card.target = '_blank';
-      card.rel = 'noopener noreferrer';
+      card.onclick = () => openModal(ev);
 
       card.innerHTML = `
-        ${e.banner ? `<img src="${e.banner}" alt="${e.name}" loading="lazy">` : ''}
+        ${ev.banner ? `<div class="event-card-banner"><img src="${ev.banner}" alt="${ev.name}" loading="lazy"></div>` : ''}
         <div class="event-card-body">
-          <div class="event-type-badge">${e.type}</div>
-          <div class="event-name">${e.name}</div>
+          <div class="event-type-badge">${ev.type}</div>
+          <div class="event-name">${ev.name}</div>
           <div class="event-meta">
-            <span>${formatDate(e.start_time)}</span>
-            <span>${formatTime(e.start_time, e.end_time)}</span>
+            <span>${formatDate(ev.start_time)}</span>
+            <span>${formatTime(ev.start_time, ev.end_time)}</span>
             ${airports ? `<span class="event-airports">${airports}</span>` : ''}
           </div>
+          <span class="event-read-more">Read more</span>
         </div>
       `;
 
