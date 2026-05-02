@@ -6,8 +6,6 @@ For additional information, please see our [website](https://vatphil.com)!
 
 # Events
 
-Upcoming events organised by VATSIM Philippines.
-
 <div id="vatphil-events">
   <p style="color: var(--md-default-fg-color--light)">Loading events...</p>
 </div>
