@@ -5,12 +5,10 @@ Welcome to **Philippines vACC Knowledge Base!** This serves as a guide for obser
 For additional information, please see our [website](https://vatphil.com)!
 
 # Events
-
 <div id="vatphil-events">
   <p style="color: var(--md-default-fg-color--light)">Loading events...</p>
 </div>
 
-<!-- Modal overlay -->
 <div id="event-modal-overlay" onclick="closeEventModal()"></div>
 <div id="event-modal">
   <button id="event-modal-close" onclick="closeEventModal()">&#x2715;</button>
@@ -315,12 +313,11 @@ document.addEventListener('keydown', function(e) {
     container.appendChild(grid);
 
   } catch (err) {
-    container.innerHTML = '<p class="no-events">Could not load events. Please try again later or visit <a href="https://my.vatsim.net/events" target="_blank">my.vatsim.net/events</a>.</p>';
+    container.innerHTML = '<p class="no-events">Could not load events. Please try again later or visit <a href="https://vatphil.com/events" target="_blank">vatphil.com/events</a>.</p>';
     console.error('VATPHIL events error:', err);
   }
 })();
 </script>
-
 # Reporting Errors
 If you spot an error in any of the content on this site, please report it to the Operations team by either:
 
