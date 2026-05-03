@@ -119,28 +119,28 @@ The airport caters passenger and cargo flights, as well as general and military 
       <td style="text-align:center">Event's only</td>
     </tr>
     <tr>
-      <td style="text-align:center"><strong>RPLL_1_GND</strong></td>
-      <td style="text-align:center">Ramp One</td>
+      <td style="text-align:center"><strong>RPLL_1_RMP</strong></td>
+      <td style="text-align:center">Apron Control One</td>
       <td style="text-align:center">121.700</td>
       <td style="text-align:center">Terminal 1</td>
     </tr>
     <tr>
-      <td style="text-align:center"><strong>RPLL_2_GND</strong></td>
-      <td style="text-align:center">Ramp Two</td>
+      <td style="text-align:center"><strong>RPLL_2_RMP</strong></td>
+      <td style="text-align:center">Apron Control Two</td>
       <td style="text-align:center">128.800</td>
       <td style="text-align:center">Terminal 2</td>
     </tr>
     <tr>
       <td style="text-align:center"><strong>RPLL_3_GND</strong></td>
-      <td style="text-align:center">Ramp Three</td>
+      <td style="text-align:center">Apron Control Three</td>
       <td style="text-align:center">121.350</td>
       <td style="text-align:center">Terminal 3</td>
     </tr>
     <tr>
-      <td style="text-align:center"><strong>RPLL_4_GND</strong></td>
-      <td style="text-align:center">Ramp Four</td>
+      <td style="text-align:center"><strong>RPLL_G_GND</strong></td>
+      <td style="text-align:center">Apron Control GenAv</td>
       <td style="text-align:center">123.250</td>
-      <td style="text-align:center">Terminal 4</td>
+      <td style="text-align:center">GenAv</td>
     </tr>
     <tr>
       <td style="text-align:center"><strong>RPLL_GND</strong></td>
