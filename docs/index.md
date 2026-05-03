@@ -201,6 +201,50 @@ For additional information, please see our [website](https://vatphil.com)!
     margin-bottom: 1.25rem;
   }
 
+  .modal-routes {
+    margin-bottom: 1.25rem;
+  }
+
+  .modal-routes-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--md-default-fg-color--light, #888);
+    margin-bottom: 0.6rem;
+  }
+
+  .modal-route-item {
+    background: var(--md-code-bg-color, #f5f5f5);
+    border-radius: 6px;
+    padding: 0.65rem 0.85rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .modal-route-airports {
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .modal-route-arrow {
+    color: var(--md-primary-fg-color, #1976d2);
+    font-size: 1rem;
+  }
+
+  .modal-route-string {
+  font-family: monospace;
+  font-size: 0.78rem;
+  color: var(--md-default-fg-color--light, #666);
+  word-break: break-word;
+  white-space: normal;
+  line-height: 1.5;
+}
+
   .modal-link {
     display: inline-block;
     padding: 0.5rem 1.1rem;
@@ -243,6 +287,26 @@ document.addEventListener('keydown', function(e) {
     return `${fmt(start)} – ${fmt(end)}`;
   }
 
+  function buildRoutesHTML(routes) {
+    if (!routes || routes.length === 0) return '';
+    const items = routes.map(r => `
+      <div class="modal-route-item">
+        <div class="modal-route-airports">
+          <span>${r.departure}</span>
+          <span class="modal-route-arrow">→</span>
+          <span>${r.arrival}</span>
+        </div>
+        ${r.route ? `<div class="modal-route-string">${r.route.trim()}</div>` : ''}
+      </div>
+    `).join('');
+    return `
+      <div class="modal-routes">
+        <div class="modal-routes-title">Route${routes.length > 1 ? 's' : ''}</div>
+        ${items}
+      </div>
+    `;
+  }
+
   function openModal(ev) {
     const airports = ev.airports.map(a => a.icao).join(', ');
     const content = document.getElementById('event-modal-content');
@@ -256,6 +320,7 @@ document.addEventListener('keydown', function(e) {
         ${airports ? `<span>${airports}</span>` : ''}
       </div>
       <div class="modal-description">${ev.short_description || ev.description || ''}</div>
+      ${buildRoutesHTML(ev.routes)}
       <a class="modal-link" href="${ev.link}" target="_blank" rel="noopener noreferrer">View on myVATSIM</a>
     `;
     document.getElementById('event-modal').classList.add('open');
@@ -264,18 +329,23 @@ document.addEventListener('keydown', function(e) {
   }
 
   try {
-    const res = await fetch('https://my.vatsim.net/api/v2/events/view/division/SEA');
+    const res = await fetch('https://my.vatsim.net/api/v2/events/latest');
     if (!res.ok) throw new Error('API error');
     const json = await res.json();
 
-    const PHIL_KEYWORDS = ['phi', 'phil', 'vatphil', 'philippines', 'rpll', 'rpvp', 'rpmd', 'rplb', 'rplc'];
+    const PHIL_KEYWORDS = ['vatphil', 'philippines', 'rpll', 'rpvp', 'rpmd', 'rplb', 'rplc'];
 
     const events = (json.data || []).filter(e => {
-      const hasRPAirport = e.airports && e.airports.some(a => a.icao.toUpperCase().startsWith('RP'));
+      const hasRPAirport = e.airports && e.airports.some(
+        a => a.icao.toUpperCase().startsWith('RP')
+      );
+      const hasRPRoute = e.routes && e.routes.some(
+        r => r.departure && r.departure.toUpperCase().startsWith('RP')
+      );
       const hasPhilKeyword = [e.name, e.short_description, e.description].some(
         t => t && PHIL_KEYWORDS.some(k => t.toLowerCase().includes(k))
       );
-      return hasRPAirport || hasPhilKeyword;
+      return hasRPAirport || hasRPRoute || hasPhilKeyword;
     });
 
     if (events.length === 0) {
@@ -318,7 +388,9 @@ document.addEventListener('keydown', function(e) {
   }
 })();
 </script>
+
 # Reporting Errors
+
 If you spot an error in any of the content on this site, please report it to the Operations team by either:
 
 Emailing staff@vatphil.com or Join our [Discord Server](https://community.vatsim.net/)!
