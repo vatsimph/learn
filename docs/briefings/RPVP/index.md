@@ -1,6 +1,7 @@
 # RPVP - Puerto Princesa International Airport
 
 ## General
+
 Puerto Princesa International Airport has 1 Runway and 1 passenger terminal.
 
 - Main Terminal - Domestic, International and Cargo Flights
@@ -8,6 +9,7 @@ Puerto Princesa International Airport has 1 Runway and 1 passenger terminal.
 The airport caters passenger and cargo flights, as well as general and military aviation.
 
 ## Charts
+
 [RPVP](https://vatphil.com/charts?icao=RPVP){ .md-button .md-button--primary }
 
 ## Frequency List
@@ -21,6 +23,7 @@ The airport caters passenger and cargo flights, as well as general and military 
     </tr>
   </thead>
   <tbody>
+
     <tr>
       <td style="text-align:center"><strong>RPVP_TWR</strong></td>
       <td style="text-align:center">Puerto Princesa Tower</td>
@@ -180,7 +183,6 @@ APP will then issue your arrival clearance including the type of approach to exp
 | 4 | A330, A321, A320, and lower category aircraft |
 | 5 | A321, A320, and lower category aircraft |
 | 6 | A321, A320, and lower category aircraft |
-
 
 ## Visual Approach Chart
 
