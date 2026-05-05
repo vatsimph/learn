@@ -31,13 +31,13 @@
 }
 </style>
 
-<div class="metar-loading" id="metar-loading-RPLL">Fetching METAR...</div>
-<div class="metar-card" id="metar-card-RPLL" style="display:none;"></div>
+<div class="metar-loading" id="metar-loading-RPLC">Fetching METAR...</div>
+<div class="metar-card" id="metar-card-RPLC" style="display:none;"></div>
 </div>
 
 <script>
 (function () {
-  var ICAO = "RPLL";
+  var ICAO = "RPLC";
   var loadingEl = document.getElementById("metar-loading-" + ICAO);
   var cardEl    = document.getElementById("metar-card-" + ICAO);
 
