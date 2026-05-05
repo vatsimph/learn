@@ -6,7 +6,7 @@
 
 ### Level Changes
 
-??? phraseology "Phraseology"
+!!! phraseology "Phraseology"
 
     === "Climb"
 
@@ -30,7 +30,7 @@
 
 ### Transfer of Control / Frequency Change
 
-??? phraseology "Phraseology"
+!!! phraseology "Phraseology"
 
     === "Standard"
 
@@ -49,7 +49,7 @@
 
 ### Traffic Information
 
-??? phraseology "Phraseology"
+!!! phraseology "Phraseology"
 
     === "Passing Traffic"
 
@@ -69,7 +69,7 @@
 
 ### IFR Departure Clearance
 
-??? phraseology "Phraseology"
+!!! phraseology "Phraseology"
 
     === "Non-Radar"
 
@@ -91,7 +91,7 @@
 
 ### Startup Approval
 
-??? phraseology "Phraseology"
+!!! phraseology "Phraseology"
 
     === "Approved"
 
@@ -115,7 +115,7 @@
 
 ### Pushback
 
-??? phraseology "Phraseology"
+!!! phraseology "Phraseology"
 
     === "Approved"
 
@@ -129,7 +129,7 @@
 
 ### Taxi
 
-??? phraseology "Phraseology"
+!!! phraseology "Phraseology"
 
     === "Standard Taxi"
 
@@ -153,7 +153,7 @@
 
 ### Holding Instructions
 
-??? phraseology "Phraseology"
+!!! phraseology "Phraseology"
 
     === "Hold Short"
 
@@ -177,7 +177,7 @@
 
 ### Take-off Clearance
 
-??? phraseology "Phraseology"
+!!! phraseology "Phraseology"
 
     === "Immediate"
 
@@ -201,7 +201,7 @@
 
 ### Landing Clearance
 
-??? phraseology "Phraseology"
+!!! phraseology "Phraseology"
 
     === "Standard"
 
@@ -231,7 +231,7 @@
 
 ### Departure Instructions (Radar)
 
-??? phraseology "Phraseology"
+!!! phraseology "Phraseology"
 
     === "Radar Vectors"
 
@@ -249,7 +249,7 @@
 
 ### STAR Clearance / Approach Sequencing
 
-??? phraseology "Phraseology"
+!!! phraseology "Phraseology"
 
     === "STAR Clearance"
 
@@ -263,7 +263,7 @@
 
         **PAL101**: Speed 210 knots, PAL101.
 
-   === "Heading"
+    === "Heading"
 
         **RPLL_APP**: PAL101, Left heading 1-0-0
 
@@ -273,7 +273,7 @@
 
 ### Approach Clearance
 
-??? phraseology "Phraseology"
+!!! phraseology "Phraseology"
 
     === "ILS"
 
@@ -301,7 +301,7 @@
 
 ### Holding
 
-??? phraseology "Phraseology"
+!!! phraseology "Phraseology"
 
     === "Enter Hold"
 
@@ -321,7 +321,7 @@
 
 ### Issuance of Clearance (Departure from Non-Towered Aerodrome)
 
-??? phraseology "Phraseology"
+!!! phraseology "Phraseology"
 
     === "Clearance"
 
@@ -333,7 +333,7 @@
 
 ### Separation Instructions
 
-??? phraseology "Phraseology"
+!!! phraseology "Phraseology"
 
     === "Cross at Time"
 
@@ -351,7 +351,7 @@
 
 ### Emergency / Special Procedures
 
-??? phraseology "Phraseology"
+!!! phraseology "Phraseology"
 
     === "Minimum Fuel"
 
