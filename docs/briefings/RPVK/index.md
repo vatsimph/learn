@@ -37,7 +37,7 @@
 
 <script>
 (function () {
-  var ICAO = "RPLL";
+  var ICAO = "RPVK";
   var loadingEl = document.getElementById("metar-loading-" + ICAO);
   var cardEl    = document.getElementById("metar-card-" + ICAO);
 
