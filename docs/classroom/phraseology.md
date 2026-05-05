@@ -75,17 +75,17 @@
 
         **CEB585**: Clearance Delivery, CEB585, Stand 120, A320 with information A, request clearance Mactan, runway 06.
 
-        **RPLL_DEL**: CEB585, cleared Mactan via W25 BATAY, runway 06, IPATA2R departure, climb 7000ft, squawk 4251.
+        **RPLL_DEL**: CEB585, cleared Mactan W25 BATAY, runway 06, IPATA2R departure, climb 7000ft, squawk 4251.
 
-        **CEB585**: Cleared Mactan via W25 BATAY, runway 06, IPATA2R departure, climb 7000ft, squawk 4251, CEB585.
+        **CEB585**: Cleared Mactan W25 BATAY, runway 06, IPATA2R departure, climb 7000ft, squawk 4251, CEB585.
 
     === "Radar"
 
         **CEB585**: Clearance Delivery, CEB585, Stand 120, A320 with information A, request clearance Mactan, runway 06.
 
-        **RPLL_DEL**: CEB585, cleared Mactan via W25 BATAY, runway 06, fly runway heading, climb 7000ft, expect radar vectors IPATA, squawk 4251.
+        **RPLL_DEL**: CEB585, cleared Mactan W25 BATAY, runway 06, fly runway heading, climb 7000ft, expect radar vectors IPATA, squawk 4251.
 
-        **CEB585**: Cleared Mactan via W25 BATAY, runway 06, fly runway heading, climb 7000ft, expect radar vectors IPATA, squawk 4251, CEB585.
+        **CEB585**: Cleared Mactan W25 BATAY, runway 06, fly runway heading, climb 7000ft, expect radar vectors IPATA, squawk 4251, CEB585.
 
 ---
 
