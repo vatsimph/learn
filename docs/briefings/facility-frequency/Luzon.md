@@ -1,3 +1,25 @@
+# Frequencies
+
+| Callsign | Frequency | CPDLC
+|---|---|---|
+| MNL_CTR | 119.300 | RPHI
+| MNL_C_CTR | 132.075 | RPHC
+| MNL_N_CTR | 126.575 | RPHN
+| MNL_S_CTR | 133.500 | RPHS
+| MNL_2_CTR | 124.950 |
+| MNL_N1_CTR | 129.000 |
+| MNL_S1_CTR | 131.500 |
+| MNL_NW_CTR | 128.700 |
+| MNL_NE_CTR | 132.500 |
+| MNL_CN_CTR | 120.500 |
+| MNL_CE_CTR | 128.750 |
+| MNL_CS_CTR | 125.700 |
+| MNL_CW_CTR | 132.700 |
+| MNL_W_CTR | 118.900 |
+| MNL_SW_CTR | 124.900 |
+| MNL_SE_CTR | 125.750 |
+
+
 # Luzon Region
 
 ## RPLB - Subic Bay International Airport
