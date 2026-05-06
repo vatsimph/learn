@@ -746,7 +746,7 @@ Normally, a controller will instruct you to push back to the nearest start-up po
 
 ??? phraseology "Phraseology"
 
-    **CEB585**: Manila Ramp, CEB585, Stand 120, request push, runway 06.
+    **CEB585**: Apron Control Three, CEB585, Stand 120, request push, runway 06.
 
     **RPLL_3_GND**: CEB585, push approved, S14, face G12
 
@@ -754,7 +754,7 @@ Normally, a controller will instruct you to push back to the nearest start-up po
 
 ??? phraseology "Phraseology"	
 
-    **CEB585**: Manila Ramp, CEB585, Stand 120, request push, runway 06.
+    **CEB585**: Apron Control Three, CEB585, Stand 120, request push, runway 06.
 
     **RPLL_3_GND**: CEB585, push approved, abeam gate 119, face G12
 
@@ -768,7 +768,7 @@ In the event there is **RPLL_P_GND**
 
     **CEB585**: 1300z, **CEB585**
 
-    At ± 5 TOBT **RPLL_P_GND**: CEB585, contact ground ramp 121.350
+    At ± 5 TOBT **RPLL_P_GND**: CEB585, contact Apron Control Three 121.350
 
 
 ## Departure
@@ -983,10 +983,10 @@ For arrivals we implement ROTA - Runway Occupancy Time-Arrivals for **A320 and l
 *[CTOT]: Calculated takeoff time
 *[RPLL_DEL]: Clearance Delivery
 *[RPLL_GND]: Manila Ground
-*[RPLL_1_GND]: Ramp 1
-*[RPLL_2_GND]: Ramp 2
-*[RPLL_3_GND]: Ramp 3
-*[RPLL_D_GND]: Ramp 4
+*[RPLL_1_RMP]: Apron Control One
+*[RPLL_2_RMP]: Apron Control Two
+*[RPLL_3_RMP]: Apron Control Three
+*[RPLL_G_RMP]: Apron Control GenAv
 *[RPLL_TWR]: Manila Tower
 *[RPLL_F_APP]: Manila Departures/Finals
 *[RPLL_N_APP]: Manila Approach
