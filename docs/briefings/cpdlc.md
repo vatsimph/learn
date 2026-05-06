@@ -8,10 +8,10 @@ Automatic Dependent Surveillance – Contract / Controller–Pilot Data Link Com
 
 | Sector | Routes | Primary Comms | Secondary Comms |
 |--------|--------|---------------|-----------------|
-| East | A582, A590, G578, M501, G467 | CPDLC | HF |
-| North | A583 | VHF | HF |
-| South | P515, R337, A339, B462, B473 | HF | — |
-| West | N892, L625, L628, M772, M765, W17 | HF | — |
+| East | A582, A590, G578, M501, G467 | CPDLC | VHF |
+| North | A583 | VHF | CPDLC |
+| South | P515, R337, A339, B462, B473 | VHF | — |
+| West | N892, L625, L628, M772, M765, W17 | VHF | — |
 
 > In airspace where both VHF voice and CPDLC are available, flight crew **should use VHF** as the primary means of communication.
 !!! warning "Warning"
