@@ -781,11 +781,11 @@ Here you will find aerodrome briefings for the airports within the Philippines. 
 ## ACC South Combined
 ![RPHI](../../assets/img/RPHI/9.png)
 
-## *Central* ACC Combined
-![RPHI](../../assets/img/RPHI/8.png)
-
 ## North and South *Central* ACC Combined
 ![RPHI](../../assets/img/RPHI/6.png)
+
+## *Central* ACC Combined
+![RPHI](../../assets/img/RPHI/8.png)
 
 
 ## Strategic Lateral Offset Procedures (SLOP)
