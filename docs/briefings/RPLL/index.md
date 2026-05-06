@@ -131,13 +131,13 @@ The airport caters passenger and cargo flights, as well as general and military 
       <td style="text-align:center">Terminal 2</td>
     </tr>
     <tr>
-      <td style="text-align:center"><strong>RPLL_3_GND</strong></td>
+      <td style="text-align:center"><strong>RPLL_3_RMP</strong></td>
       <td style="text-align:center">Apron Control Three</td>
       <td style="text-align:center">121.350</td>
       <td style="text-align:center">Terminal 3</td>
     </tr>
     <tr>
-      <td style="text-align:center"><strong>RPLL_G_GND</strong></td>
+      <td style="text-align:center"><strong>RPLL_G_RMP</strong></td>
       <td style="text-align:center">Apron Control GenAv</td>
       <td style="text-align:center">123.250</td>
       <td style="text-align:center">GenAv</td>
@@ -748,7 +748,7 @@ Normally, a controller will instruct you to push back to the nearest start-up po
 
     **CEB585**: Apron Control Three, CEB585, Stand 120, request push, runway 06.
 
-    **RPLL_3_GND**: CEB585, push approved, S14, face G12
+    **RPLL_3_RMP**: CEB585, push approved, S14, face G12
 
   A controller may push you to a certain reference point due traffic
 
@@ -756,7 +756,7 @@ Normally, a controller will instruct you to push back to the nearest start-up po
 
     **CEB585**: Apron Control Three, CEB585, Stand 120, request push, runway 06.
 
-    **RPLL_3_GND**: CEB585, push approved, abeam gate 119, face G12
+    **RPLL_3_RMP**: CEB585, push approved, abeam gate 119, face G12
 
 In the event there is **RPLL_P_GND**
 
