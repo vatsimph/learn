@@ -108,17 +108,103 @@ To make a call, simply press the controller you would like to call. On most prof
 
 > **Note:** You will only see controllers who are **online AND using VACS**.
 
-### Phraseology
+## Wiresign
 
+Each controller is assigned a personal **wiresign** — a short phonetic identifier.
 
-??? phraseology "Answering a call"
+> Example: `John Doe` → **Juliet Delta** &nbsp;
 
-    "To be added"
+Wiresigns are appended at the end of acknowledgements and readbacks of important messages (clearances, flight levels, direct routings).
 
-??? phraseology "Transfer of Information"
+---
 
-    "To be added"
+## Basic Call Format
 
+Address the **called station first**, then identify yourself, then state your request:
+
+```
+[Called Station], [Your Station], [Request/Info]
+```
+ 
+> Because VACS shows caller ID, self-identification may be dropped once both parties know who they're speaking to.
+ 
+---
+ 
+## Phraseology
+ 
+??? phraseology "Answering a Call"
+ 
+    Wait for the **top-left dot to turn green** before speaking — this confirms the connection is established.
+ 
+    The controller **answering** the call identifies themselves first:
+ 
+    ```
+    "[Your Station]"
+    ```
+ 
+    The calling controller then identifies themselves and passes their message:
+ 
+    ```
+    "[Your Station], [Request/Info]"
+    ```
+ 
+    **Example — APP calls CTR:**
+    ```
+    CTR answers: "Manila Control"
+    APP: "Approach, CEB911 request direct IPATA"
+    CTR: "Approved, direct IPATA"
+    ```
+ 
+??? phraseology "Transfer of Information / Coordination"
+ 
+    State the called station, your station (if needed), then the coordination item. Responses should be as brief as possible.
+ 
+    **Approach → Control**
+    ```
+    Initiate: "Manila Approach, Control, CEB911 request direct IPATA"
+    Response: "Approved, direct IPATA" / "Approved"
+    ```
+ 
+    **Ground → Tower (runway crossing)**
+    ```
+    Initiate: "Request crossing Runway 31"
+    Response: "Approved" / "Standby"
+    ```
+ 
+    **Cross-facility (e.g., Tambler → Kalibo)**
+    ```
+    Initiate: "Kalibo, Tambler, request direct routing CEB992"
+    Response: "Approved" / "Approved, direct CEB992"
+    ```
+ 
+    For important items (clearances, flight levels, direct routes), **read back and sign off with your wiresign**:
+    ```
+    "Direct IPATA approved. -Lima Kilo"
+    "Readback, direct IPATA approved. -Juliet Alpha"
+    ```
+ 
+    For routine approvals, wiresign is optional — a plain **"Approved"** is sufficient.
+ 
 ??? phraseology "Mic Check"
-
+ 
+    ```
     "Line Check"
+    ```
+ 
+---
+ 
+- **Called station first**, then your station, then the request
+- **Answering controller identifies first** when picking up
+- Informal language is fine — what matters is clarity
+- Keep calls **short** — say what needs to be said and end the call
+---
+ 
+## Quick Reference
+ 
+| Situation | Caller says | Responder says |
+|---|---|---|
+| Answering a call | *(wait for green dot)* | `"[Your Wiresign]"` |
+| APP → CTR coordination | `"[CTR], [APP], [AC] request [info]"` | `"Approved"` / `"Approved, [readback]"` |
+| GND → TWR runway crossing | `"Request crossing [RWY]"` | `"Approved"` / `"Standby"` |
+| Readback w/ wiresign | — | `"[Readback]. -[Wiresign]"` |
+| Mic check | `"Line Check"` | `"Line Check"` |
