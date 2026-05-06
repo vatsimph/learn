@@ -174,9 +174,7 @@ Address the **called station first**, then identify yourself, then state your re
  
 ??? phraseology "Mic Check"
  
-    ```
     "Line Check"
-    ```
  
 ---
  
