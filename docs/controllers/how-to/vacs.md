@@ -147,34 +147,21 @@ Address the **called station first**, then identify yourself, then state your re
     ```
     "[Your Station], [Request/Info]"
     ```
- 
-    **Example — APP calls CTR:**
-    ```
-    CTR answers: "Manila Control"
-    APP: "Approach, CEB911 request direct IPATA"
-    CTR: "Approved, direct IPATA"
-    ```
- 
+
 ??? phraseology "Transfer of Information / Coordination"
  
     State the called station, your station (if needed), then the coordination item. Responses should be as brief as possible.
  
-    **Approach → Control**
+    **Control → Approach**
     ```
-    Initiate: "Manila Approach, Control, CEB911 request direct IPATA"
-    Response: "Approved, direct IPATA" / "Approved"
+    Initiate: "Manila Control, Approach, CEB911 request VOR 13"
+    Response: "Approved, VOR 13" / "Approved"
     ```
  
     **Ground → Tower (runway crossing)**
     ```
     Initiate: "Request crossing Runway 31"
     Response: "Approved" / "Standby"
-    ```
- 
-    **Cross-facility (e.g., Tambler → Kalibo)**
-    ```
-    Initiate: "Kalibo, Tambler, request direct routing CEB992"
-    Response: "Approved" / "Approved, direct CEB992"
     ```
  
     For important items (clearances, flight levels, direct routes), **read back and sign off with your wiresign**:
@@ -187,9 +174,7 @@ Address the **called station first**, then identify yourself, then state your re
  
 ??? phraseology "Mic Check"
  
-    ```
     "Line Check"
-    ```
  
 ---
  
