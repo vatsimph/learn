@@ -771,15 +771,15 @@ Here you will find aerodrome briefings for the airports within the Philippines. 
 
 ## Manila ACC
 ![RPHI](../../assets/img/RPHI/7.png)
-## North ACC Combined and South ACC Combined
+## North Combined and South Combined ACC
 ![RPHI](../../assets/img/RPHI/5.png)
-##  North and South Central ACC Combined
+## North and South Central ACC Combined
 ![RPHI](../../assets/img/RPHI/6.png)
-## ACC Split Sectors
+## ACC Split
 ![RPHI](../../assets/img/RPHI/1.png)
-## Central ACC Combined
+## North and South Central ACC Split
 ![RPHI](../../assets/img/RPHI/8.png)
-## Manila ACC South Combined
+## SW+SE ACC Combined
 ![RPHI](../../assets/img/RPHI/9.png)
 
 ## Strategic Lateral Offset Procedures (SLOP)
