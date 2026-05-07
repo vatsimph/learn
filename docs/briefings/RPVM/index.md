@@ -74,6 +74,11 @@ Bay assignments, are strictly implemented virtually, and are based on the latest
 
 <div markdown="1">
 Mactan currently has 2 runways .
+
+Primary Runway (04R/22L) : **0930Z** - **1930Z**
+
+Secondary (04L/22R) : **1930Z** - **0930Z** (+1 day) 
+
 Below is a table of the Take-Off Run available
 
 **Take-off Run Available.**
@@ -133,6 +138,7 @@ Below is a table of the Take-Off Run available
     Code C aircraft not allowed to enter Twy C whenever a Code D and above aircraft is taking-off and landing on Rwy 04L/22R.
 
     Code D and above aircraft not allowed to enter Twy C whenever a Code C and above taking-off or landing on Rwy 04L/22R.
+
 
 ??? info "Aircraft Codes"
     | Code letter | Wingspan | Typical aeroplane |
