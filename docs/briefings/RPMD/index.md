@@ -31,8 +31,8 @@
 }
 </style>
 
-<div class="metar-loading" id="metar-loading-RPLL">Fetching METAR...</div>
-<div class="metar-card" id="metar-card-RPLL" style="display:none;"></div>
+<div class="metar-loading" id="metar-loading-RPMD">Fetching METAR...</div>
+<div class="metar-card" id="metar-card-RPMD" style="display:none;"></div>
 </div>
 
 <script>
