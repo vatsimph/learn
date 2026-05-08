@@ -3,7 +3,7 @@ site_name: Philippines vACC Knowledge Base
 site_url: https://learn.vatphil.com
 site_author: Jacob Allen, Juan Carlos. Inspired by Kenzo Tayko, Emilio Perez, Michael Uy
 edit_uri: edit/main/docs/
-copyright: Copyright © 2026 Philippines vACC. All rights reserved. The information contained on this website is for flight simulation purposes only.
+copyright: Copyright © 2026 Philippines vACC. All rights reserved. The information contained on this website is for flight simulation purposes only. It is not intended for real world navigation. This site is not affiliated with the CAAP, the actual Philippines ACC, or any governing aviation body. All content contained herein is approved only for use on the VATSIM network. [Privacy Policy](https://vatphil.com/privacy-policy)
 
 plugins:
   - search
