@@ -1,6 +1,22 @@
 # Weather
 To be added
 
+## PAGASA Multi-Level 30-HR Prognostic Charts
+
+## 700hPa (~10,000 ft)
+![700hPa Prog Chart](https://pubfiles.pagasa.dost.gov.ph/naia/PWGG70.gif)
+
+## 500hPa (~18,000 ft)
+![500hPa Prog Chart](https://pubfiles.pagasa.dost.gov.ph/naia/PWGG50.gif)
+
+## 300hPa (~30,000 ft)
+![300hPa Prog Chart](https://pubfiles.pagasa.dost.gov.ph/naia/PWGG30.gif)
+
+## 200hPa (~38,600 ft)
+![200hPa Prog Chart](https://pubfiles.pagasa.dost.gov.ph/naia/PWGG20.gif)
+
+> Source: [PAGASA Aviation](https://www.pagasa.dost.gov.ph/aviation#terminal-aerodome-forecast)
+> 
 ## Meteorological Aerodrome Report (METAR)
 
 An aviation MET REPORT, or METAR (Meteorological Aerodrome Report), is a standard format weather report, issued by most major aerodromes every 30 or 60 minutes during their period of operation, which provides a brief outline of current weather conditions, including wind speed and direction, visibility, clouds, temperature, pressure and runway conditions.
