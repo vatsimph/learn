@@ -6,12 +6,12 @@ Automatic Dependent Surveillance – Contract / Controller–Pilot Data Link Com
 
 ## Data Link Airspace and Routes
 
-| Sector | Routes | Primary Comms | Secondary Comms |
-|--------|--------|---------------|-----------------|
-| East | A582, A590, G578, M501, G467 | CPDLC | VHF |
-| North | A583 | VHF | CPDLC |
-| South | P515, R337, A339, B462, B473 | VHF | — |
-| West | N892, L625, L628, M772, M765, W17 | VHF | — |
+| Sector | Routes                            | Primary Comms | Secondary Comms |
+| ------ | --------------------------------- | ------------- | --------------- |
+| East   | A582, A590, G578, M501, G467      | CPDLC         | VHF             |
+| North  | A583                              | VHF           | CPDLC           |
+| South  | P515, R337, A339, B462, B473      | VHF           | —               |
+| West   | N892, L625, L628, M772, M765, W17 | VHF           | —               |
 
 > In airspace where both VHF voice and CPDLC are available, flight crew **should use VHF** as the primary means of communication.
 !!! warning "Warning"
@@ -49,10 +49,10 @@ An AFN (ATS Facilities Notification) log on is required when:
 
 ### Downlink Message Responses
 
-| Response | Meaning |
-|----------|---------|
-| **WILCO** | Pilot will fully comply with the clearance/instruction |
-| **UNABLE** | Negative response to a clearance request (applies to all elements of a multi-element request) |
+| Response   | Meaning                                                                                              |
+| ---------- | ---------------------------------------------------------------------------------------------------- |
+| **WILCO**  | Pilot will fully comply with the clearance/instruction                                               |
+| **UNABLE** | Negative response to a clearance request (applies to all elements of a multi-element request)        |
 | **AFFIRM** | Appropriate response to an uplinked negotiation request (e.g. *CAN YOU ACCEPT [altitude] AT [time]*) |
 
 > **ROGER** and **AFFIRM** are **not** appropriate responses to a clearance request. The controller must approve by sending an uplink containing the actual clearance.
@@ -79,34 +79,34 @@ If a CPDLC dialogue is interrupted, the controller shall **recommence the entire
 
 **Phraseology:**
 
-| Speaker | Message |
-|---------|---------|
+| Speaker                     | Message                                                                |
+| --------------------------- | ---------------------------------------------------------------------- |
 | Controller / Radio Operator | *CPDLC FAILURE. DISCONNECT CPDLC THEN LOG ON TO [facility designator]* |
-| Flight Crew | *ROGER* |
+| Flight Crew                 | *ROGER*                                                                |
 
 ### Unplanned Data Link Shutdown
 
 **Phraseology to all affected aircraft:**
 
-| Speaker | Message |
-|---------|---------|
+| Speaker                     | Message                                                           |
+| --------------------------- | ----------------------------------------------------------------- |
 | Controller / Radio Operator | *ALL STATIONS CPDLC FAILURE. DISCONNECT CPDLC. CONTINUE ON VOICE* |
-| Flight Crew | *ROGER* |
+| Flight Crew                 | *ROGER*                                                           |
 
 ### Planned Data Link Shutdown
 
 **Pre-shutdown CPDLC message / voice phraseology:**
 
-| Speaker | Message |
-|---------|---------|
+| Speaker                     | Message                                                         |
+| --------------------------- | --------------------------------------------------------------- |
 | Controller / Radio Operator | *CPDLC WILL BE SHUT DOWN. DISCONNECT CPDLC. CONTINUE ON VOICE.* |
-| Flight Crew | *ROGER* |
+| Flight Crew                 | *ROGER*                                                         |
 
 > The controller may also provide the voice frequency operationally.
 
 ### Resumption of Data Link Operations
 
-| Speaker | Message |
-|---------|---------|
+| Speaker                     | Message                                                    |
+| --------------------------- | ---------------------------------------------------------- |
 | Controller / Radio Operator | *[ALL STATIONS] RESUME NORMAL CPDLC and ADS-C OPERATIONS.* |
-| Flight Crew | *LOG ON [facility designation]* |
+| Flight Crew                 | *LOG ON [facility designation]*                            |

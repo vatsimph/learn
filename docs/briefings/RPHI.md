@@ -1,43 +1,23 @@
 # RPHI Briefing
 
-<figure markdown="span">
-  ![RNAV Routes](../../assets/img/RP_ENR_6-1.2.png){ width="800" }
-  <figcaption>RNAV Routes Within RPHI</figcaption>
-</figure>
-
-## Frequencies
-
-| Callsign | Frequency |
-|---|---|
-| MNL_CTR | 119.300 |
-| MNL_C_CTR | 132.075 |
-| MNL_N_CTR | 126.575 |
-| MNL_S_CTR | 133.500 |
-| MNL_2_CTR | 124.950 |
-| MNL_N1_CTR | 129.000 |
-| MNL_S1_CTR | 131.500 |
-| MNL_NW_CTR | 128.700 |
-| MNL_NE_CTR | 132.500 |
-| MNL_CN_CTR | 120.500 |
-| MNL_CE_CTR | 128.750 |
-| MNL_CS_CTR | 125.700 |
-| MNL_CW_CTR | 132.700 |
-| MNL_W_CTR | 118.900 |
-| MNL_SW_CTR | 124.900 |
-| MNL_SE_CTR | 125.750 |
-
 ## Manila ACC
-![RPHI](../../assets/img/RPHI/7.png)
+![RPHI](../../assets/img/RPHI/7.png){width=400px}
+
 ## North ACC Combined and South ACC Combined
-![RPHI](../../assets/img/RPHI/5.png)
-##  North and South Central ACC Combined
-![RPHI](../../assets/img/RPHI/6.png)
+![RPHI](../../assets/img/RPHI/5.png){width=400px}
+
 ## ACC Split Sectors
-![RPHI](../../assets/img/RPHI/1.png)
-## Central ACC Combined
-![RPHI](../../assets/img/RPHI/8.png)
-## Manila ACC South Combined
-![RPHI](../../assets/img/RPHI/9.png)
+![RPHI](../../assets/img/RPHI/1.png){width=400px}
+
+## ACC South Combined
+![RPHI](../../assets/img/RPHI/9.png){width=400px}
+
+## North and South *Central* ACC Combined
+![RPHI](../../assets/img/RPHI/6.png){width=400px}
+
+## *Central* ACC Combined
+![RPHI](../../assets/img/RPHI/8.png){width=400px}
+
 
 ## Strategic Lateral Offset Procedures (SLOP)
 
@@ -63,9 +43,9 @@ lateral deviations can be mitigated, thereby reducing the risk of collision.
 
 ### Manila Radio
 
-Currently the only radio that can be implemented by Manila Control is MNL_NE_CTR, otherwise known as Manila Oceanic. Under Manila Radio, you can still expect [RVSM](rvsm.md).
+Currently the only radio that can be implemented by Manila Control is MNL_NE_CTR, otherwise known as Manila Oceanic.
 
-When contacting Manila Radio, keep in mind that they will not be able to see you and are purely going off what you give them. It is important to have atleast these four information at hand.
+When contacting Manila Radio, note that the controller has no radar coverage and relies solely on pilot provided information. On first contact, include the following four elements:
 
 1. Aircraft identification.
 2. Position and time
@@ -80,4 +60,10 @@ When contacting Manila Radio, keep in mind that they will not be able to see you
 
 !!! warning "Warning"
 
-    There are areas within the FIR where Controllers and Pilots will not hear each other due to radio wave propagation.
+    There are areas within the FIR where Controllers and Pilots will not hear each other due to radio wave propagation, primarily around the boundary of the FIR.
+
+## Airborne from a Non-Controlled Aerodrome
+
+!!! phraseology "Phraseology"
+
+    CEB123 Cleared to join CAB, climb FL150, squawk 4020

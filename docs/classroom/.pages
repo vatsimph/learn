@@ -1,6 +1,7 @@
 nav: 
     - index.md
     - Phraseology: phraseology.md
+    - CPDLC: cpdlc.md
     - SIDs and STARs: sidandstar.md
     - Procedural Control: procedural-control.md
     - Visual Flight Rules: vfr.md

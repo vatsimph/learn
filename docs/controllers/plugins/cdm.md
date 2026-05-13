@@ -27,3 +27,4 @@ Green: Master Airport set by me.
 *[TTOT]: Target takeoff time
 *[CTOT]: Calculated takeoff time
 *[RPLL_P_GND]: Manila Planner
+*[MNL_FMP]: Manila Flow

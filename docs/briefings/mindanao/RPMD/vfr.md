@@ -23,6 +23,10 @@
 
 ![VFR Area Chart RPMD](<../../assets/img/RPMD VFR/VFR Area Chart RPMD.png>)
 
+## Helicopter VFR Area Chart
+
+![VFR Heli Area Chart RPMD](<../../assets/img/RPMD VFR/VFR Heli.png>)
+
 ## VFR Departures
 
 === "VFR departures 05"

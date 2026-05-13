@@ -1,14 +1,8 @@
 nav:
     - index.md
     - Charts: charts.md
-    - RPLC: RPLC
-    - RPLL: RPLL
-    - RPVE: RPVE
-    - RPVM: RPVM
-    - RPVK: RPVK
-    - RPVR: RPVR
-    - RPVP: RPVP
-    - RPMD: RPMD
     - Routes: routes.md
-    - CPDLC: cpdlc.md
-    - Facility Frequency: facility-frequency
+    - RPHI: rphi.md
+    - Luzon: luzon
+    - Visayas: visayas
+    - Mindanao: mindanao

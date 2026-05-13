@@ -2,6 +2,10 @@
   --md-primary-fg-color:        #8c7804;
   --md-primary-fg-color--light: #d9d61c;
   --md-primary-fg-color--dark:  #403c01;
+  --vatphil-navy:               #0a0f1e;
+  --vatphil-purple:             #1a2340;
+  --vatphil-olive:              #2a2810;
+  --vatphil-cream:              #f0ede0;
 }
 
 :root {
@@ -72,4 +76,9 @@
 
 .md-header {
     z-index: 9999 !important;
+}
+
+.md-nav__item--section > label.md-nav__link .md-ellipsis {
+  font-weight: 700;
+  color: var(--md-default-fg-color) !important;
 }

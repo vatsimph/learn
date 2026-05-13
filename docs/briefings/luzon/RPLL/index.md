@@ -158,7 +158,7 @@ The airport caters passenger and cargo flights, as well as general and military 
       <td style="text-align:center"><strong>RPLL_F_APP</strong></td>
       <td style="text-align:center">Manila Finals/Departure</td>
       <td style="text-align:center">124.400</td>
-      <td style="text-align:center">1500ft - 7000ft</td>
+      <td style="text-align:center">1500ft - FL150</td>
     </tr>
     <tr>
       <td style="text-align:center"><strong>RPLL_S_APP</strong></td>
@@ -871,55 +871,46 @@ Below is the mandatory speed restrictions when under vectors by approach.
 
 ## Manila Approach
 
-### Single Scope Operation
+### Scope configurations
 
-<div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
-<div markdown>
-![RPLL_APP](../../assets/img/RPHI/4.png)
-</div>
-<div markdown>
+=== "One scope"
+    <figure markdown style="float: left; margin-right: 1.5rem; width: 40%;">
+    ![One Scope](../../assets/img/RPHI/4.png)
+    </figure>
 
-| Designator | Vertical Limits | Frequency |
-|-----|----|----|
-| RPLL_APP[^2] | 1500ft - FL150[^1] | 124.800 |
+    | Designator   | Limits         | Freq    |
+    | ------------ | -------------- | ------- |
+    | RPLL_APP[^2] | 1500ft – FL150[^1] | 124.800 |
 
-</div>
-</div>
+    <div style="clear: both;"></div>
 
-### Two Scope Operation
+=== "Two scope"
+    <figure markdown style="float: left; margin-right: 1.5rem; width: 40%;">
+    ![Two Scope](../../assets/img/RPHI/3.png)
+    </figure>
 
-<div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
-<div markdown>
-![RPLL_APP](../../assets/img/RPHI/3.png)
-</div>
-<div markdown>
+    | Designator   | Limits             | Freq    |
+    | ------------ | ------------------ | ------- |
+    | RPLL_F_APP   | 1500ft – FL150[^1] | 124.400 |
+    | RPLL_APP[^2] | 8000ft – FL150[^1] | 124.800 |
 
-| Designator | Vertical Limits | Frequency |
-|-----|------|----|
-| RPLL_F_APP | 1500ft - 7000ft | 124.400 |
-| RPLL_APP[^2] | 8000ft - FL150[^1] | 124.800 |
+    <div style="clear: both;"></div>
 
-</div>
-</div>
+=== "Three scope"
+    <figure markdown style="float: left; margin-right: 1.5rem; width: 40%;">
+    ![Three Scope](../../assets/img/RPHI/2.png)
+    </figure>
 
-### Three Scope Operation
+    | Designator     | Limits             | Freq    |
+    | -------------- | ------------------ | ------- |
+    | RPLL_F_APP     | 1500ft – FL150[^1] | 124.400 |
+    | RPLL_N_APP[^2] | 8000ft – FL150[^1] | 119.900 |
+    | RPLL_S_APP     | 8000ft – FL150[^1] | 127.700 |
 
-<div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
-<div markdown>
-![RPLL_APP](../../assets/img/RPHI/2.png)
-</div>
-<div markdown>
-
-| Designator | Vertical Limits | Frequency |
-|-----|----|----|
-| RPLL_F_APP  | 1500ft - 7000ft | 124.400 |
-| RPLL_N_APP[^2] | 8000ft - FL150[^1] | 119.900 |
-| RPLL_S_APP | 8000ft - FL150[^1] | 127.700 |
-
-</div>
+    <div style="clear: both;"></div>
 </div>
 
-[^1]: Vertical limit of FL150 can be increased to a maximum of FL200.
+[^1]: Vertical limit of FL150 can be increased to a maximum of FL250.
 [^2]: Can control top-down Clark TMA which includes RPLC and RPLB. But check the controller information if they do!
 
 

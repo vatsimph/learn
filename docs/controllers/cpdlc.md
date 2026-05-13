@@ -20,13 +20,13 @@
       <td style="text-align:center"><strong>RPLL</strong></td>
       <td style="text-align:center">DCL/PDC</td>
       <td style="text-align:center">MANILA DELIVERY</td>
-      <td style="text-align:center">LL_DEL, LL_#_GND, LL_GND, LL_TWR, LL_APP</td>
+      <td style="text-align:center">LL_DEL, LL_#_RMP, LL_GND, LL_TWR, LL_APP</td>
     </tr>
     <tr>
       <td style="text-align:center"><strong>RPLC</strong></td>
       <td style="text-align:center">DCL/PDC</td>
       <td style="text-align:center">CLARK DELIVERY</td>
-      <td style="text-align:center">LC_DEL, LC_GND, LC_TWR, LC_APP</td>
+      <td style="text-align:center">LC_DEL, LC_RMP, LC_GND, LC_TWR, LC_APP</td>
     </tr>
     <tr>
       <td style="text-align:center"><strong>RPLB**</strong></td>
@@ -67,9 +67,9 @@
   </tbody>
 </table>
 
-**If RPLC_APP is online, approach will use the RPLC logon as LC_APP controls RPLB
+!!! info
 
-*MNL_1, MNL_2, MNL_3, MNL_4, MNL_5, MNL_6, MNL_C, MNL_N, MNL_S, MNL_CE
+    If RPLC_APP is online, approach will use the RPLC logon as LC_APP controls RPLB
 
 
 ## Further reading

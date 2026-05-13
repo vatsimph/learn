@@ -1,49 +1,52 @@
 # Project Information
 site_name: Philippines vACC Knowledge Base
 site_url: https://learn.vatphil.com
-site_author: Jacob Allen, Juan Carlos. Inspired by Kenzo Tayko, Emilio Perez, Michael Uy
+site_author: Jacob Allen, Juan Carlos. Inspired by Kenzo Tayko, Emilio Perez and Michael Uy
 edit_uri: edit/main/docs/
-copyright: Copyright © 2026 Philippines vACC. All rights reserved. The information contained on this website is for flight simulation purposes only. It is not intended for real world navigation. This site is not affiliated with the CAAP, the actual Philippines ACC, or any governing aviation body. All content contained herein is approved only for use on the VATSIM network.
+copyright: Copyright © 2026 Philippines vACC. All rights reserved. This site is not affiliated with the CAAP, the actual Philippines ACC, or any governing aviation body. All content contained herein is approved only for use on the VATSIM network.
 
 plugins:
   - search
   - awesome-pages
-  - git-revision-date-localized
+  - git-revision-date-localized:
+      exclude:
+        - index.md
   - mike
   - glightbox
+  
   
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js
 
 # Configuration
 theme:
+  name: material
   icon:
     annotation: material/arrow-right-circle
-  name: material
+  custom_dir: overrides
   font:
     text: Mulish
-
   palette:
     - scheme: vatphil
       primary: 
       accent: amber
-
-
   logo: assets/img/vatphil-wlogo.png
+  favicon: assets/img/favicon.ico
   features:
     - navigation.instant
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.tracking    
+    - navigation.tracking
     - navigation.indexes
+    - navigation.sections
     - navigation.top
+    - navigation.prune
     - search.suggest
     - search.highlight
     - search.share
     - content.footnote.tooltips
     - content.tooltips
     - content.tabs.link
-  favicon: assets/img/favicon.ico
 
 extra_css:
   - stylesheets/vatphil.css
@@ -63,6 +66,12 @@ extra:
     - icon: material/home
       link: https://vatphil.com
       name: Philippines vACC Main Website
+    - icon: simple/discord
+      link: https://community.vatsim.net/
+      name: Join our Discord!
+    - icon: material/email
+      link: mailto:staff@vatphil.com
+      name: Contact Us
 
   version:
     provider: mike

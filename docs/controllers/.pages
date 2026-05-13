@@ -1,5 +1,6 @@
 title: Controllers
 nav:
+    - index.md
     - How to 101: how-to
     - Hoppie's information: cpdlc.md
     - Plugins: plugins
