@@ -14,7 +14,7 @@
 
 ## VFR Area Chart FIXED WING
 
-![VFR Area Chart RPVM](<../../assets/img/RPVM VFR/VFR Area Chart RPVM.png>)
+![VFR Area Chart RPVM](</assets/img/RPVM VFR/VFR Area Chart RPVM.png>)
 
 ## VFR Departures
 
@@ -115,17 +115,17 @@
 
 === "Runway 04L"
 
-    ![RPVM_TrafficPattern_04L](<../../assets/img/RPVM VFR/Traffic Pattern/TrafficPattern04L.png>)
+    ![RPVM_TrafficPattern_04L](</assets/img/RPVM VFR/Traffic Pattern/TrafficPattern04L.png>)
 
 === "Runway 04R"
 
-    ![RPVM_TrafficPattern_04R](<../../assets/img/RPVM VFR/Traffic Pattern/TrafficPattern04R.png>)
+    ![RPVM_TrafficPattern_04R](</assets/img/RPVM VFR/Traffic Pattern/TrafficPattern04R.png>)
 
 === "Runway 22L"
 
-    ![RPVM_TrafficPattern_22L](<../../assets/img/RPVM VFR/Traffic Pattern/TrafficPattern22L.png>)
+    ![RPVM_TrafficPattern_22L](</assets/img/RPVM VFR/Traffic Pattern/TrafficPattern22L.png>)
 
 === "Runway 22R"
 
-    ![RPVM_TrafficPattern_22R](<../../assets/img/RPVM VFR/Traffic Pattern/TrafficPattern22R.png>)
+    ![RPVM_TrafficPattern_22R](</assets/img/RPVM VFR/Traffic Pattern/TrafficPattern22R.png>)
 

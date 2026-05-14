@@ -21,11 +21,11 @@
 
 ## VFR Area Chart FIXED WING
 
-![VFR Area Chart RPMD](<../../assets/img/RPMD VFR/VFR Area Chart RPMD.png>)
+![VFR Area Chart RPMD](</assets/img/RPMD VFR/VFR Area Chart RPMD.png>)
 
 ## Helicopter VFR Area Chart
 
-![VFR Heli Area Chart RPMD](<../../assets/img/RPMD VFR/VFR Heli.png>)
+![VFR Heli Area Chart RPMD](</assets/img/RPMD VFR/VFR Heli.png>)
 
 ## VFR Departures
 
@@ -125,8 +125,8 @@
 
 === "Runway 05"
 
-    ![RPMD_TrafficPattern05](<../../assets/img/RPMD VFR/Traffic Pattern/TrafficPattern05.png>)
+    ![RPMD_TrafficPattern05](</assets/img/RPMD VFR/Traffic Pattern/TrafficPattern05.png>)
 
 === "Runway 23"
 
-    ![RPMD_TrafficPattern23](<../../assets/img/RPMD VFR/Traffic Pattern/TrafficPattern23.png>)
+    ![RPMD_TrafficPattern23](</assets/img/RPMD VFR/Traffic Pattern/TrafficPattern23.png>)

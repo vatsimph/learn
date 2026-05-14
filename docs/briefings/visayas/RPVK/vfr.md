@@ -19,9 +19,9 @@
 
 ## Visual Reporting Points
 
-| Reporting Point | Coordinates | Distance from ARP | Direction | Description |
-|---|---|---|---|---|
-| BALETE | 113320N 1222245E | 7.4 NM | SE | Balete Town |
-| DUMAGUIT PORT | 113544N 1222854E  | 8.0 NM | SE | DUMAGUIT PORT |
-| IBAJAY | 114906N 1221004E | 14.8 NM | NW | Ibajay River |
-| MAKATO | 114239N 1221739E | 8.0 NM | NW | Makato town |
+| Reporting Point | Coordinates      | Distance from ARP | Direction | Description   |
+| --------------- | ---------------- | ----------------- | --------- | ------------- |
+| BALETE          | 113320N 1222245E | 7.4 NM            | SE        | Balete Town   |
+| DUMAGUIT PORT   | 113544N 1222854E | 8.0 NM            | SE        | DUMAGUIT PORT |
+| IBAJAY          | 114906N 1221004E | 14.8 NM           | NW        | Ibajay River  |
+| MAKATO          | 114239N 1221739E | 8.0 NM            | NW        | Makato town   |

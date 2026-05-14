@@ -161,8 +161,8 @@
 
 === "Runway 14"
 
-    ![Traffic Pattern 14](<../../assets/img/RPVR VFR/traffic_circuit_rwy14.pdf>)
+    ![Traffic Pattern 14](</assets/img/RPVR VFR/traffic_circuit_rwy14.pdf>)
 
 === "Runway 32"
 
-    ![Traffic Pattern 32](<../../assets/img/RPVR VFR/traffic_circuit_rwy32.pdf>)
+    ![Traffic Pattern 32](</assets/img/RPVR VFR/traffic_circuit_rwy32.pdf>)
