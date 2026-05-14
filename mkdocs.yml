@@ -21,11 +21,11 @@ extra_javascript:
 # Configuration
 theme:
   name: material
+  font:
+    text: Mulish
   icon:
     annotation: material/arrow-right-circle
   custom_dir: overrides
-  font:
-    text: Mulish
   palette:
     - scheme: vatphil
       primary: 
