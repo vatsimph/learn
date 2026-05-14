@@ -24,7 +24,6 @@
 
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
-![VFR Northbound RWY20](../../assets/img/RPLC VFR/departures/Northbound 20.png)
 </div>
 <div markdown>
 Maintain straight out departure until cleared by Clark Tower to make right turn to Expo Pilipino.
@@ -38,7 +37,6 @@ Proceed West of Tarlac City (or a heading of 350 degrees) at 1500 FT.
 
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
-![VFR Northbound RWY02](../../assets/img/RPLC VFR/departures/Northbound 02.png)
 </div>
 <div markdown>
 Make a left turn to Expo Pilipino then proceed West of Tarlac City (or a heading of 350 degrees) at 1500 FT.
@@ -52,7 +50,6 @@ Make a left turn to Expo Pilipino then proceed West of Tarlac City (or a heading
 
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
-![VFR Southbound RWY20](../../assets/img/RPLC VFR/departures/Southbound 20.png)
 </div>
 <div markdown>
 Make a left turn towards San Fernando via Angeles Church climbing to 1500 FT.
@@ -65,7 +62,6 @@ Proceed to destination.
 
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
-![VFR Southbound RWY02](../../assets/img/RPLC VFR/departures/Southbound 02.png)
 </div>
 <div markdown>
 Make a right turn for a downwind departure, proceed towards San Fernando via Angeles Church climbing to 1500 FT.
@@ -80,7 +76,6 @@ Proceed to destination.
 
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
-![VFR Westbound RWY20](../../assets/img/RPLC VFR/departures/Westbound 20.png)
 </div>
 <div markdown>
 Make a right turn to Expo Pilipino, climb to 1500 FT and proceed to destination.
@@ -92,7 +87,6 @@ Make a right turn to Expo Pilipino, climb to 1500 FT and proceed to destination.
 
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
-![VFR Westbound RWY02](../../assets/img/RPLC VFR/departures/Westbound 02.png)
 </div>
 <div markdown>
 Make a left turn to Expo Pilipino, climb to 1500 FT and proceed to destination.
@@ -106,7 +100,6 @@ Make a left turn to Expo Pilipino, climb to 1500 FT and proceed to destination.
 
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
-![VFR Eastbound RWY20](../../assets/img/RPLC VFR/departures/Eastbound 20.png)
 </div>
 <div markdown>
 Make a left turn and climb to traffic altitude for a downwind departure.
@@ -122,7 +115,6 @@ Proceed to destination.
 
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
-![VFR Eastbound RWY02](../../assets/img/RPLC VFR/departures/Eastbound 02.png)
 </div>
 <div markdown>
 Make a right turn on a heading of 060 degrees and continue climb towards Magalang.

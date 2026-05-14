@@ -20,7 +20,7 @@
 
 ## VFR Area Chart FIXED WING
 
-![VFR area chart Fixed Wing](<../../assets/img/RPLL VFR/VFR Area Chart Fixed Wing.png>)
+![VFR area chart Fixed Wing](<../../assets/img/RPLL_VFR/VFR Area Chart Fixed Wing.png>)
 
 # VFR Departure
 
@@ -30,7 +30,7 @@
 
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
-![Image title](../../assets/img/RPLL VFR/departures/Northbound 0613.png)
+![Image title](../../assets/img/RPLL_VFR/departures/Northbound 0613.png)
 </div>
 <div markdown>
 <span style="color:blue">Runway 13: Climb straight ahead. After passing runway intersection make a right climbing turn to join downwind RWY 06.</span>
@@ -51,7 +51,7 @@ Report abeam MALABON (refer to chart above) then proceed to destination.
 
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
-![VFR Northbound_31](<../../assets/img/RPLL VFR/departures/Northbound 31.png>)
+![VFR Northbound_31](<../../assets/img/RPLL_VFR/departures/Northbound 31.png>)
 </div>
 <div markdown>
 <span style="color:orange">Make a left turn after take-off to fly West of SOUTH HARBOR (refer to chart above), continue climb to 1500 FT.</span>
@@ -64,7 +64,7 @@ Report abeam MALABON (refer to chart above) then proceed to destination.
     
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
-![alt text](<../../assets/img/RPLL VFR/departures/Northbound 24.png>)
+![alt text](<../../assets/img/RPLL_VFR/departures/Northbound 24.png>)
 </div>
 <div markdown>
 <span style="color:red">Climb straight ahead. Make a right turn at the end of the runway.</span>
@@ -104,7 +104,7 @@ Follow next instructions of ATC
 
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
-![VFR Northbound_31](<../../assets/img/RPLL VFR/departures/Northbound 31.png>)
+![VFR Northbound_31](<../../assets/img/RPLL_VFR/departures/Northbound 31.png>)
 </div>
 <div markdown>
 <span style="color:orange">Make a left turn after take-off to fly West of SOUTH HARBOR (refer to chart above), continue climb to 1500 FT.</span>
@@ -117,7 +117,7 @@ Follow next instructions of ATC
     
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
-![VFR Norhtbound_24](<../../assets/img/RPLL VFR/departures/Northbound 24.png>)
+![VFR Norhtbound_24](<../../assets/img/RPLL_VFR/departures/Northbound 24.png>)
 </div>
 <div markdown>
 <span style="color:red">Climb straight ahead. Make a right turn at the end of the runway.</span>
@@ -152,7 +152,7 @@ Follow next instructions of ATC
 **Runway 31**
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
-![VFR_SouthEastBound_31](<../../assets/img/RPLL VFR/departures/SouthEastbound 31.png>)
+![VFR_SouthEastBound_31](<../../assets/img/RPLL_VFR/departures/SouthEastbound 31.png>)
 </div>
 <div markdown>
 <span style="color:blue">Climb straight ahead and execute a left climbing turn</span>
@@ -191,15 +191,15 @@ Follow next instructions of ATC
 
 === "Runway 06"
 
-    ![RPLL_TrafficPattern_06](<../../assets/img/RPLL VFR/traffic_pattern/Pattern06.png>)
+    ![RPLL_TrafficPattern_06](<../../assets/img/RPLL_VFR/traffic_pattern/Pattern06.png>)
 
 === "Runway 24"
 
-    ![RPLL_TrafficPattern_24](<../../assets/img/RPLL VFR/traffic_pattern/Pattern24.png>)
+    ![RPLL_TrafficPattern_24](<../../assets/img/RPLL_VFR/traffic_pattern/Pattern24.png>)
 
 === "Runway 13"
 
-    ![RPLL_TrafficPattern_13](<../../assets/img/RPLL VFR/traffic_pattern/Pattern13.png>)
+    ![RPLL_TrafficPattern_13](<../../assets/img/RPLL_VFR/traffic_pattern/Pattern13.png>)
 
 !!! warning
 
