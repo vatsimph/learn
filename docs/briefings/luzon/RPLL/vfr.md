@@ -191,15 +191,15 @@ Follow next instructions of ATC
 
 === "Runway 06"
 
-    ![RPLL_TrafficPattern_06](<../../assets/img/RPLL VFR/traffic pattern/Pattern06.png>)
+    ![RPLL_TrafficPattern_06](<../../assets/img/RPLL VFR/traffic_pattern/Pattern06.png>)
 
 === "Runway 24"
 
-    ![RPLL_TrafficPattern_24](<../../assets/img/RPLL VFR/traffic pattern/Pattern24.png>)
+    ![RPLL_TrafficPattern_24](<../../assets/img/RPLL VFR/traffic_pattern/Pattern24.png>)
 
 === "Runway 13"
 
-    ![RPLL_TrafficPattern_13](<../../assets/img/RPLL VFR/traffic pattern/Pattern13.png>)
+    ![RPLL_TrafficPattern_13](<../../assets/img/RPLL VFR/traffic_pattern/Pattern13.png>)
 
 !!! warning
 
