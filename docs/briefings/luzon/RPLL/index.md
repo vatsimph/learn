@@ -563,7 +563,7 @@ function searchStand(){
 </body>
 </html>
 
-<iframe src="../../assets/pdfs/stands.pdf" width="70%" height="500px""></iframe>
+<iframe src="assets/pdfs/stands.pdf" width="70%" height="500px""></iframe>
 
 ## Runways
 
@@ -629,9 +629,9 @@ Below is a table of the Take-Off Run available
 
 Local flights within RPHI and some international flights are to use routes given below. Simbrief also give a standard route which looks like this
 
-![Simbrief Routes](../../assets/img/simbrief.png)
+![Simbrief Routes](assets/img/simbrief.png)
 
-<iframe src="../../assets/pdfs/routes.pdf" width="70%" height="500px""></iframe>
+<iframe src="assets/pdfs/stands.pdf" width="70%" height="500px""></iframe>
 
 If your route is still invalid, a controller will send you a private message with your new route. Routes within RPHI are to follow the half-moon principle in both RVSM and non-RVSM conditions. During events you will have 5 minutes between the time you request clearance and the time you request pushback, or you will have to wait until a new slot is available.
 
@@ -789,7 +789,7 @@ For all departing IFR traffic on runway 31 must use the **HARBO1** Departure.
 
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
-![Image title](../../assets/img/31.png)
+![Image title](assets/img/31.png)
 </div>
 <div markdown>
 After HARBO, Maintain 318°(M) until instructed by ATC.
@@ -875,7 +875,7 @@ Below is the mandatory speed restrictions when under vectors by approach.
 
 === "One scope"
     <figure markdown style="float: left; margin-right: 1.5rem; width: 40%;">
-    ![One Scope](../../assets/img/RPHI/4.png)
+    ![One Scope](assets/img/RPHI/4.png)
     </figure>
 
     | Designator   | Limits         | Freq    |
@@ -886,7 +886,7 @@ Below is the mandatory speed restrictions when under vectors by approach.
 
 === "Two scope"
     <figure markdown style="float: left; margin-right: 1.5rem; width: 40%;">
-    ![Two Scope](../../assets/img/RPHI/3.png)
+    ![Two Scope](assets/img/RPHI/3.png)
     </figure>
 
     | Designator   | Limits             | Freq    |
@@ -898,7 +898,7 @@ Below is the mandatory speed restrictions when under vectors by approach.
 
 === "Three scope"
     <figure markdown style="float: left; margin-right: 1.5rem; width: 40%;">
-    ![Three Scope](../../assets/img/RPHI/2.png)
+    ![Three Scope](assets/img/RPHI/2.png)
     </figure>
 
     | Designator     | Limits             | Freq    |
