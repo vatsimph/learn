@@ -2,11 +2,18 @@
 
 Flight Training Areas (FTAs) within the Manila FIR (RPHI) are designated blocks of airspace reserved for military and civil flight training operations. Within RPHI, these areas are identified using the **RP-T#** designation (e.g., RP-T1, RP-T6, RP-T10).
 
+---
+
+## Making a Reservation
+
+Training area reservations within RPHI are managed through [**V-LARA**](https://lara.lusep.fi/), the VATSIM airspace reservation web client. Reservations are visible to ATC in real time, only make a reservation if you genuinely intend to use the airspace.
+
 Below is a chart of all currently published Flight Training Areas within RPHI.
 
-<iframe src="../../assets/pdfs/trainingareas.pdf" width="70%" height="700px"></iframe>
+<iframe src="../../assets/pdfs/trainingareas.pdf" width="100%" height="700px"></iframe>
 
----
+
+# V-Lara
 
 ## Area Vertical Limits
 
@@ -37,15 +44,7 @@ The following table summarises the upper and lower vertical limits for each RP-T
 | RP-T28  | 3000 FT | SFC     |
 
 !!! note
-    Always verify vertical limits against the current AIP Philippines ENR 5.2 before flight. Controllers may adjust approved levels based on traffic.
-
----
-
-## Making a Reservation
-
-Training area reservations within RPHI are managed through **V-LARA**, the VATSIM airspace reservation web client. Reservations are visible to ATC in real time, only make a reservation if you genuinely intend to use the airspace.
-
-### V-Lara
+    Always verify vertical limits against the current AIP Philippines ENR 6.1-5 before flight. Controllers may adjust approved levels based on traffic.
 
 === "1. Review the Area"
 
@@ -87,14 +86,3 @@ Training area reservations within RPHI are managed through **V-LARA**, the VATSI
 
 !!! tip
     If your **ACTIVE** reservation is ending within 10 minutes and activity is still ongoing, contact ATC immediately to request an extension. The reservation will be automatically cancelled when the end time is reached.
-
----
-
-## Quick Rules Summary
-
-- Reservations must be made at least **30 minutes** in advance
-- Minimum reservation duration: **30 minutes**
-- Maximum reservation duration: **3 hours**
-- Maximum advance booking: **7 days**
-- Pilots may edit reservations up to **30 minutes** before start time
-- Only **one reservation** may be active per airspace block at a time

@@ -2,7 +2,7 @@ nav:
     - index.md
     - Charts: charts.md
     - Routes: routes.md
-    - Airspace Reservation: v-lara.md
+    - Airspace Reservation: airspacereservation.md
     - RPHI: manilacontrol.md
     - Luzon: luzon
     - Visayas: visayas
