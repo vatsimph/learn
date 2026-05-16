@@ -1,22 +1,22 @@
 # RPHI Briefing
 
 ## Manila ACC
-![RPHI](../../assets/img/RPHI/7.png){width=400px}
+![RPHI](../assets/img/RPHI/7.png){width=400px}
 
 ## North ACC Combined and South ACC Combined
-![RPHI](../../assets/img/RPHI/5.png){width=400px}
+![RPHI](../assets/img/RPHI/5.png){width=400px}
 
 ## ACC Split Sectors
-![RPHI](../../assets/img/RPHI/1.png){width=400px}
+![RPHI](../assets/img/RPHI/1.png){width=400px}
 
 ## ACC South Combined
-![RPHI](../../assets/img/RPHI/9.png){width=400px}
+![RPHI](../assets/img/RPHI/9.png){width=400px}
 
 ## North and South *Central* ACC Combined
-![RPHI](../../assets/img/RPHI/6.png){width=400px}
+![RPHI](../assets/img/RPHI/6.png){width=400px}
 
 ## *Central* ACC Combined
-![RPHI](../../assets/img/RPHI/8.png){width=400px}
+![RPHI](../assets/img/RPHI/8.png){width=400px}
 
 
 ## Strategic Lateral Offset Procedures (SLOP)
