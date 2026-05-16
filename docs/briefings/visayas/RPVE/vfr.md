@@ -150,26 +150,26 @@
 
 ## Visual Reporting Points
 
-<iframe src="../../../assets/img/RPVE%20VFR/AreaChart.pdf" width="100%" height="600px" style="border:none;"></iframe>
+<iframe src="../../../assets/img/RPVE VFR/AreaChart.pdf" width="100%" height="600px" style="border:none;"></iframe>
 
-| Reporting Point | Coordinates | Distance from ARP | Direction | Description |
-|---|---|---|---|---|
-| BORACAY ISLAND | 115926N 1215452E | 5.0 NM | NNW | Northern Tip of Boracay Island |
-| CALATONG | 121052N 1220342E | 16.0 NM | NNE | Calatong Hill |
-| CARABAO ISLAND | 120343N 1215618E | 8.0 NM | N | Carabao Island |
-| HABANA | 115200N 1220143E | 5.0 NM | SE | Habana Community |
-| IBAJAY | 114906N 1221004E | 14.0 NM | SE | Ibajay River |
-| NABAS | 114944N 1220533E | 10.0 NM | SE | Nabas Town |
-| ROMBLON AP | 121833N 1220434E | 24.0 NM | NNE | Romblon Airport, Tablas |
-| SIBOLON ISLAND | 120611N 1213434E | 25.0 NM | NW | Sibolon Island |
+| Reporting Point | Coordinates      | Distance from ARP | Direction | Description                    |
+| --------------- | ---------------- | ----------------- | --------- | ------------------------------ |
+| BORACAY ISLAND  | 115926N 1215452E | 5.0 NM            | NNW       | Northern Tip of Boracay Island |
+| CALATONG        | 121052N 1220342E | 16.0 NM           | NNE       | Calatong Hill                  |
+| CARABAO ISLAND  | 120343N 1215618E | 8.0 NM            | N         | Carabao Island                 |
+| HABANA          | 115200N 1220143E | 5.0 NM            | SE        | Habana Community               |
+| IBAJAY          | 114906N 1221004E | 14.0 NM           | SE        | Ibajay River                   |
+| NABAS           | 114944N 1220533E | 10.0 NM           | SE        | Nabas Town                     |
+| ROMBLON AP      | 121833N 1220434E | 24.0 NM           | NNE       | Romblon Airport, Tablas        |
+| SIBOLON ISLAND  | 120611N 1213434E | 25.0 NM           | NW        | Sibolon Island                 |
 
 
 ## Traffic Patterns
 
 === "Runway 06"
 
-    <iframe src="../../../assets/img/RPVE%20VFR/rwy06.pdf" width="100%" height="600px" style="border:none;"></iframe>
+    <iframe src="../../../assets/img/RPVE 0VFR/rwy06.pdf" width="100%" height="600px" style="border:none;"></iframe>
 
 === "Runway 24"
 
-    <iframe src="../../../assets/img/RPVE%20VFR/rwy24.pdf" width="100%" height="600px" style="border:none;"></iframe>
+    <iframe src="../../../assets/img/RPVE VFR/rwy24.pdf" width="100%" height="600px" style="border:none;"></iframe>
