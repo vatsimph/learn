@@ -4,7 +4,7 @@ Flight Training Areas (FTAs) within the Manila FIR (RPHI) are designated blocks 
 
 Below is a chart of all currently published Flight Training Areas within RPHI.
 
-<iframe src="../assets/pdfs/trainingareas.pdf" width="70%" height="700px"></iframe>
+<iframe src="../../assets/pdfs/trainingareas.pdf" width="70%" height="700px"></iframe>
 
 ---
 
