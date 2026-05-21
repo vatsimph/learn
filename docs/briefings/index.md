@@ -880,6 +880,6 @@ Here you will find aerodrome briefings for the airports within the Philippines. 
 
     ---
 
-    [FIR →](https://learn.vatphil.com/briefings/manilacontrol/RPHI/)
+    [FIR →](https://learn.vatphil.com/briefings/manilacontrol)
 
 </div>
