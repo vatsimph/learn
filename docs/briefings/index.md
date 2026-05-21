@@ -13,58 +13,114 @@ Here you will find aerodrome briefings for the airports within the Philippines. 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 
 <style>
+/* ===== Map container ===== */
 #vatphil-map {
   width: 100%;
   height: 540px;
   border-radius: 8px;
   margin-top: 1rem;
   margin-bottom: 1.5rem;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(140, 120, 4, 0.3);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
   position: relative;
   z-index: 0;
 }
 
+/* ===== Shared chrome — frosted-glass dark panel with gold accent ===== */
+.vp-tooltip,
+.vp-right-card,
+.vp-copy-toast,
+.vp-layer-control {
+  font-family: 'Mulish', system-ui, -apple-system, sans-serif;
+}
+
+.vp-right-card {
+  background: rgba(15, 17, 25, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 3px solid #8c7804;
+  border-radius: 6px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  color: #e8e6dc;
+}
+
+/* ===== Airport tooltip ===== */
 .vp-tooltip {
-  background: #1a1a1a !important;
-  border: 1px solid rgba(220, 80, 80, 0.5) !important;
+  background: rgba(15, 17, 25, 0.96) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-left: 3px solid rgba(220, 80, 80, 0.7) !important;
   border-radius: 6px !important;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.5) !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   padding: 0 !important;
   white-space: nowrap;
 }
 .vp-tooltip::before { display: none !important; }
-.vp-tt-inner { padding: 10px 13px 9px; }
-.vp-tt-icao { font-family: monospace; font-size: 11px; color: #ff9999; letter-spacing: 0.08em; margin-bottom: 2px; }
-.vp-tt-name { font-size: 13px; font-weight: 600; color: #f0f0f0; margin-bottom: 3px; line-height: 1.3; }
-.vp-tt-type { font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 7px; }
-.vp-tt-hint { font-size: 10px; color: rgba(255,150,150,0.6); font-style: italic; }
+.vp-tt-inner { padding: 10px 14px; }
+.vp-tt-icao {
+  font-family: var(--md-code-font, monospace);
+  font-size: 10px;
+  font-weight: 700;
+  color: #ff9999;
+  letter-spacing: 0.1em;
+  margin-bottom: 3px;
+}
+.vp-tt-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #f0ede0;
+  margin-bottom: 3px;
+  line-height: 1.3;
+}
+.vp-tt-type {
+  font-size: 9px;
+  color: rgba(232, 230, 220, 0.55);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 7px;
+  font-weight: 600;
+}
+.vp-tt-hint {
+  font-size: 10px;
+  color: rgba(255, 150, 150, 0.55);
+  font-style: italic;
+}
 
-
+/* ===== Right-side stacked panel ===== */
 .vp-right-controls {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
+.vp-right-card {
+  padding: 11px 13px;
+  min-width: 200px;
+  max-width: 240px;
+}
+
 .vp-sl-title {
-  font-size: 9px;
+  font-size: 10px;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #666;
-  margin-bottom: 6px;
-  border-bottom: 1px solid #333;
-  padding-bottom: 4px;
+  color: rgba(232, 230, 220, 0.7);
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 .vp-sl-empty {
-  color: #444;
+  color: rgba(232, 230, 220, 0.4);
   font-size: 11px;
   font-style: italic;
 }
 
 .vp-sl-entry {
-  margin-bottom: 8px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   animation: vp-fadein 0.2s ease;
 }
 .vp-sl-entry:last-child {
@@ -80,16 +136,16 @@ Here you will find aerodrome briefings for the airports within the Philippines. 
 .vp-sl-entry-overlap  .vp-sl-entry-id { color: #7dc4ff; }
 
 .vp-sl-entry-id {
-  font-family: monospace;
+  font-family: var(--md-code-font, monospace);
   font-size: 11px;
-  font-weight: bold;
+  font-weight: 700;
   letter-spacing: 0.08em;
-  margin-bottom: 1px;
+  margin-bottom: 2px;
 }
 .vp-sl-entry-name {
   font-size: 11px;
-  color: #bbb;
-  margin-bottom: 4px;
+  color: rgba(232, 230, 220, 0.7);
+  margin-bottom: 5px;
 }
 .vp-sl-freq-row {
   display: flex;
@@ -98,84 +154,134 @@ Here you will find aerodrome briefings for the airports within the Philippines. 
   font-size: 10px;
   gap: 8px;
 }
-.vp-sl-freq-role { color: #666; }
+.vp-sl-freq-role {
+  color: rgba(232, 230, 220, 0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 9px;
+  font-weight: 600;
+}
 .vp-sl-freq-val {
-  font-family: monospace;
+  font-family: var(--md-code-font, monospace);
   color: #a8d4ff;
   font-weight: 600;
   cursor: pointer;
   border-radius: 3px;
-  padding: 1px 3px;
-  transition: background 0.15s;
+  padding: 2px 6px;
+  transition: background 0.15s, color 0.15s;
 }
 .vp-sl-freq-val:hover {
-  background: rgba(168,212,255,0.15);
+  background: rgba(168, 212, 255, 0.18);
+  color: #d4e8ff;
 }
 .vp-sl-freq-val:hover::after {
   content: ' ✦';
   font-size: 8px;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
-
+/* ===== Layer toggle list inside the right panel ===== */
 .vp-layer-control {
-  background: #1a1a1a;
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 6px;
-  padding: 8px 10px;
   font-size: 11px;
-  color: #ccc;
-  line-height: 1.8;
-  min-width: 150px;
+  color: rgba(232, 230, 220, 0.85);
+  line-height: 1.9;
 }
-.vp-layer-control label { display: flex; align-items: center; gap: 7px; cursor: pointer; user-select: none; }
-.vp-layer-control input { cursor: pointer; accent-color: #dc3232; }
-.vp-layer-control .vp-swatch { display: inline-block; width: 18px; height: 3px; border-radius: 2px; flex-shrink: 0; }
+.vp-layer-control label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.15s;
+}
+.vp-layer-control label:hover { color: #f0ede0; }
+.vp-layer-control input {
+  cursor: pointer;
+  accent-color: #d9d61c;
+}
+.vp-layer-control .vp-swatch {
+  display: inline-block;
+  width: 18px;
+  height: 3px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
 
-
-.vp-daynight-control {
-  background: #1a1a1a;
-  border: 1px solid rgba(255,255,255,0.12);
+/* ===== TMA click popup ===== */
+.vp-tma-popup .leaflet-popup-content-wrapper {
+  background: rgba(15, 17, 25, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 3px solid #ffdd00;
   border-radius: 6px;
-  overflow: hidden;
+  color: #f0ede0;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
-.vp-daynight-btn {
-  display: flex; align-items: center; padding: 7px 11px; font-size: 11px;
-  font-family: inherit; color: #ccc; background: transparent; border: none;
-  cursor: pointer; transition: background 0.2s, color 0.2s; width: 100%;
+.vp-tma-popup .leaflet-popup-tip {
+  background: rgba(15, 17, 25, 0.96);
 }
-.vp-daynight-btn:hover { background: rgba(255,255,255,0.07); color: #fff; }
+.vp-tma-popup .leaflet-popup-content {
+  margin: 10px 14px;
+  font-family: 'Mulish', system-ui, -apple-system, sans-serif;
+}
+.vp-tma-popup .leaflet-popup-close-button {
+  color: rgba(232, 230, 220, 0.5) !important;
+  font-size: 16px !important;
+  padding: 6px 8px 0 0 !important;
+}
+.vp-tma-popup .leaflet-popup-close-button:hover {
+  color: #f0ede0 !important;
+}
+.vp-tma-pop-id {
+  font-family: var(--md-code-font, monospace);
+  font-size: 10px;
+  font-weight: 700;
+  color: #ffdd00;
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+.vp-tma-pop-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #f0ede0;
+  letter-spacing: 0.02em;
+}
 
-
+/* ===== Copy-frequency toast ===== */
 .vp-copy-toast {
   position: fixed;
   bottom: 24px;
   left: 50%;
   transform: translateX(-50%) translateY(12px);
-  background: #1a1a1a;
-  border: 1px solid rgba(168,212,255,0.35);
+  background: rgba(15, 17, 25, 0.96);
+  border: 1px solid rgba(168, 212, 255, 0.35);
   color: #a8d4ff;
   font-size: 11px;
-  font-family: monospace;
-  padding: 6px 14px;
+  font-family: var(--md-code-font, monospace);
+  padding: 8px 18px;
   border-radius: 20px;
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.2s, transform 0.2s;
   z-index: 9999;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  letter-spacing: 0.04em;
 }
 .vp-copy-toast.show {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
 }
 
-/* On-map sector labels */
+/* ===== On-map sector labels ===== */
 .vp-sector-label {
   background: transparent;
   border: none;
   pointer-events: none;
 }
-
 .vp-sector-label.vp-overlap-label {
   pointer-events: auto !important;
   cursor: pointer;
@@ -185,64 +291,81 @@ Here you will find aerodrome briefings for the airports within the Philippines. 
   line-height: 1.4;
   pointer-events: none;
   white-space: nowrap;
-  padding: 5px 9px 6px;
+  padding: 6px 10px 7px;
   border-radius: 5px;
-  backdrop-filter: blur(2px);
-  transition: background 0.15s, border-color 0.15s;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
 }
 .vp-sector-label-inner.primary {
-  background: rgba(30, 8, 8, 0.72);
-  border: 1px solid rgba(255, 100, 100, 0.45);
+  background: rgba(30, 8, 8, 0.78);
+  border: 1px solid rgba(255, 100, 100, 0.5);
 }
 .vp-sector-label-inner.overlap {
-  background: rgba(8, 18, 38, 0.72);
-  border: 1px solid rgba(74, 158, 255, 0.45);
+  background: rgba(8, 18, 38, 0.78);
+  border: 1px solid rgba(74, 158, 255, 0.5);
 }
-/* Hover state for overlap labels */
 .vp-sector-label-inner.overlap.hovered {
-  background: rgba(20, 50, 100, 0.85);
+  background: rgba(20, 50, 100, 0.88);
   border-color: rgba(100, 180, 255, 0.85);
-  box-shadow: 0 0 10px rgba(74, 158, 255, 0.4);
+  box-shadow: 0 0 12px rgba(74, 158, 255, 0.4);
 }
 .vp-sector-label-inner.primary .vp-lbl-id { color: #ff9999; }
 .vp-sector-label-inner.overlap  .vp-lbl-id { color: #7dc4ff; }
 .vp-sector-label-inner.overlap.hovered .vp-lbl-id { color: #a8d4ff; }
 .vp-lbl-id {
-  font-family: monospace;
+  font-family: var(--md-code-font, monospace);
   font-size: 11px;
-  font-weight: bold;
-  letter-spacing: 0.07em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
 }
 .vp-lbl-name {
   font-size: 10px;
-  color: #ccd8ee;
+  color: rgba(232, 230, 220, 0.78);
 }
 .vp-lbl-freq {
   font-size: 10px;
   color: #a8d4ff;
-  font-family: monospace;
-  margin-top: 1px;
+  font-family: var(--md-code-font, monospace);
+  margin-top: 2px;
 }
 .vp-lbl-freq-role {
-  color: #7a9abb;
-  font-family: sans-serif;
+  color: rgba(168, 212, 255, 0.55);
+  font-family: 'Mulish', system-ui, -apple-system, sans-serif;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-
+/* ===== Airport markers ===== */
 .vp-marker-wrap {
-  position: relative; width: 22px; height: 22px;
-  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .vp-pulse {
-  position: absolute; top: 50%; left: 50%;
-  width: 12px; height: 12px; margin: -6px 0 0 -6px;
-  border-radius: 50%; background: rgba(220, 50, 50, 0.5);
-  animation: vp-pulse 2.2s ease-out infinite; pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
+  border-radius: 50%;
+  background: rgba(220, 50, 50, 0.5);
+  animation: vp-pulse 2.2s ease-out infinite;
+  pointer-events: none;
 }
 @keyframes vp-pulse {
   0%   { transform: scale(1);   opacity: 0.6; }
-  70%  { transform: scale(2.4); opacity: 0; }
-  100% { transform: scale(2.4); opacity: 0; }
+  70%  { transform: scale(2.4); opacity: 0;   }
+  100% { transform: scale(2.4); opacity: 0;   }
+}
+
+@media (max-width: 600px) {
+  .vp-right-card { min-width: 160px; max-width: 200px; padding: 9px 11px; }
 }
 </style>
 
@@ -252,15 +375,15 @@ Here you will find aerodrome briefings for the airports within the Philippines. 
 <script>
 (function () {
   var aerodromes = [
-    { icao: "RPLL", name: "Ninoy Aquino Intl",    type: "International",     lat: 14.5086, lon: 121.0197 },
-    { icao: "RPLC", name: "Clark Intl",           type: "International",     lat: 15.1860, lon: 120.5600 },
-    { icao: "RPVE", name: "Caticlan",             type: "Principal Class 1", lat: 11.9246, lon: 121.9530 },
-    { icao: "RPVK", name: "Kalibo",               type: "Principal Class 1", lat: 11.6795, lon: 122.3760 },
-    { icao: "RPVR", name: "Roxas",                type: "Principal Class 1", lat: 11.5977, lon: 122.7517 },
-    { icao: "RPVM", name: "Mactan-Cebu Intl",     type: "International",     lat: 10.3075, lon: 123.9794 },
-    { icao: "RPMD", name: "Francisco Bangoy",     type: "International",     lat:  7.1255, lon: 125.6458 },
-    { icao: "RPVP", name: "Puerto Princesa",      type: "International",     lat: 9.7419,  lon: 118.7597 },
-    { icao: "RPLB", name: "Subic",                type: "International",     lat: 14.7944, lon: 120.2714 },
+    { icao: "RPLL", name: "Ninoy Aquino Intl",    type: "International",     lat: 14.5086, lon: 121.0197, region: "luzon"    },
+    { icao: "RPLC", name: "Clark Intl",           type: "International",     lat: 15.1860, lon: 120.5600, region: "luzon"    },
+    { icao: "RPVE", name: "Caticlan",             type: "Principal Class 1", lat: 11.9246, lon: 121.9530, region: "visayas"  },
+    { icao: "RPVK", name: "Kalibo",               type: "Principal Class 1", lat: 11.6795, lon: 122.3760, region: "visayas"  },
+    { icao: "RPVR", name: "Roxas",                type: "Principal Class 1", lat: 11.5977, lon: 122.7517, region: "visayas"  },
+    { icao: "RPVM", name: "Mactan-Cebu Intl",     type: "International",     lat: 10.3075, lon: 123.9794, region: "visayas"  },
+    { icao: "RPMD", name: "Francisco Bangoy",     type: "International",     lat:  7.1255, lon: 125.6458, region: "mindanao" },
+    { icao: "RPVP", name: "Puerto Princesa",      type: "International",     lat: 9.7419,  lon: 118.7597, region: "visayas"  },
+    { icao: "RPLB", name: "Subic",                type: "International",     lat: 14.7944, lon: 120.2714, region: "luzon"    },
   ];
 
   var SECTOR_INFO = {
@@ -319,10 +442,7 @@ Here you will find aerodrome briefings for the airports within the Philippines. 
     {"type":"Feature","properties":{"id":"RPVP","name":"Puerto Princesa Approach"},"geometry":{"type":"MultiPolygon","coordinates":[[[[118.664848,9.080119],[118.722626,9.082659],[118.781379,9.082128],[118.839951,9.086645],[118.897911,9.096177],[118.954811,9.110652],[119.010223,9.129959],[119.063721,9.153953],[119.114914,9.182451],[119.163399,9.215239],[119.208816,9.252068],[119.250816,9.292658],[119.289085,9.336701],[119.323334,9.383865],[119.353287,9.433792],[119.378723,9.486102],[119.399452,9.540400],[119.415306,9.596270],[119.426170,9.653290],[119.431953,9.711026],[119.432609,9.769039],[119.428131,9.826888],[119.418556,9.884133],[119.403946,9.940336],[119.384414,9.995071],[119.360099,10.047919],[119.209930,9.971013],[119.188492,10.009060],[119.163765,10.045120],[119.135933,10.078919],[119.105209,10.110198],[119.071831,10.138718],[119.174515,10.270417],[119.126571,10.304185],[119.075806,10.333706],[119.022606,10.358752],[118.967384,10.379133],[118.910561,10.394693],[118.852569,10.405313],[118.793861,10.410911],[118.734871,10.411444],[118.676063,10.406908],[118.617889,10.397339],[118.560783,10.382808],[118.505188,10.363428],[118.451530,10.339348],[118.400223,10.310750],[118.351654,10.277854],[118.306190,10.240912],[118.264183,10.200207],[118.225952,10.156049],[118.191780,10.108775],[118.161941,10.058747],[118.136650,10.006348],[118.116096,9.951976],[118.107361,9.914931],[118.583816,9.740868],[118.583748,9.738962],[118.584465,9.724477],[118.586456,9.709997],[118.589714,9.695966],[118.594208,9.682156],[118.599907,9.668786],[118.606766,9.655955],[118.614731,9.643763],[118.623741,9.632301],[118.633736,9.621657],[118.644630,9.611912],[118.656341,9.603139],[118.668785,9.595406],[118.681862,9.588771],[118.695480,9.583284],[118.709526,9.578988],[118.723900,9.575915],[118.738483,9.574082],[118.753154,9.573522],[118.767876,9.574221],[118.782448,9.576178],[118.664848,9.080119]]]]}}
   ];
 
-  var TILES = {
-    night: { url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',             label: 'Day mode' },
-    day:   { url: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', label: 'Night mode' }
-  };
+  var TILE_URL = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
   var ATT = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>';
 
   function makeIcon() {
@@ -446,8 +566,7 @@ Here you will find aerodrome briefings for the airports within the Philippines. 
 
     var map = L.map('vatphil-map', { center: [12.0, 122.5], zoom: 6, zoomControl: true, attributionControl: true });
 
-    var currentMode = 'night';
-    var tileLayer = L.tileLayer(TILES.night.url, { attribution: ATT, subdomains: 'abcd', maxZoom: 19 }).addTo(map);
+    L.tileLayer(TILE_URL, { attribution: ATT, subdomains: 'abcd', maxZoom: 19 }).addTo(map);
 
     var highlightLayers = [];
     
@@ -464,17 +583,28 @@ Here you will find aerodrome briefings for the airports within the Philippines. 
       updatePanel(null);
     });
 
-    // TMA layer — yellow, display only, non-interactive
+    // TMA layer — yellow. Click a TMA to see its name; hover highlights softly.
+    var tmaBaseStyle  = { color: '#ffdd00', weight: 1.5, opacity: 0.7, fillColor: '#ffdd00', fillOpacity: 0.04, dashArray: '4, 5' };
+    var tmaHoverStyle = { color: '#ffdd00', weight: 2,   opacity: 0.9, fillColor: '#ffdd00', fillOpacity: 0.12, dashArray: '4, 5' };
     var tmaLayerGroup = L.geoJSON({ type: 'FeatureCollection', features: tmas }, {
-      style: {
-        color: '#ffdd00',
-        weight: 1.5,
-        opacity: 0.7,
-        fillColor: '#ffdd00',
-        fillOpacity: 0.04,
-        dashArray: '4, 5'
-      },
-      interactive: false
+      style: tmaBaseStyle,
+      onEachFeature: function(feature, layer) {
+        var p = feature.properties || {};
+        var id   = p.id   || '';
+        var name = p.name || id;
+        layer.bindPopup(
+          '<div class="vp-tma-pop-id">' + id + '</div>' +
+          '<div class="vp-tma-pop-name">' + name + '</div>',
+          { className: 'vp-tma-popup', maxWidth: 240, autoPan: true, closeButton: true }
+        );
+        layer.on('mouseover', function() { layer.setStyle(tmaHoverStyle); });
+        layer.on('mouseout',  function() { layer.setStyle(tmaBaseStyle);  });
+        layer.on('click', function(e) {
+          L.DomEvent.stopPropagation(e);
+          clearHighlights();
+          updatePanel(null);
+        });
+      }
     }).addTo(map);
 
     var sectorLayerGroup = L.geoJSON({ type: 'FeatureCollection', features: sectors }, {
@@ -584,7 +714,10 @@ Here you will find aerodrome briefings for the airports within the Philippines. 
                 iconSize: [LBL_PX_W, LBL_PX_H],
                 iconAnchor: [0, 0]
               }),
-              interactive: !isPrimary
+              interactive: !isPrimary,
+              // Float sector labels above airport markers so the red pulse dot
+              // doesn't bleed through the label card.
+              zIndexOffset: 1000
             });
 
             if (!isPrimary) {
@@ -646,6 +779,11 @@ Here you will find aerodrome briefings for the airports within the Philippines. 
       }
     }).addTo(map);
 
+    // Sectors are added after TMAs, so they paint on top. Bring TMAs back to the
+    // front so a click inside a TMA boundary opens the TMA popup, while clicks
+    // outside any TMA still hit the underlying sector.
+    tmaLayerGroup.bringToFront();
+
     var markerLayer = L.layerGroup();
     aerodromes.forEach(function(a) {
       var marker = L.marker([a.lat, a.lon], { icon: makeIcon() });
@@ -656,32 +794,29 @@ Here you will find aerodrome briefings for the airports within the Philippines. 
         + '<div class="vp-tt-hint">Click to open briefing</div></div>',
         { className: 'vp-tooltip', direction: 'top', offset: [0, -4], permanent: false, sticky: false }
       );
-      marker.on('click', function() { window.location.href = 'https://learn.vatphil.com/briefings/' + a.icao; });
+      marker.on('click', function() { window.location.href = 'https://learn.vatphil.com/briefings/' + a.region + '/' + a.icao + '/'; });
       markerLayer.addLayer(marker);
     });
     markerLayer.addTo(map);
 
     // Day/Night toggle
-    var DayNightControl = L.Control.extend({
+    var CombinedControl = L.Control.extend({
       onAdd: function() {
-        var div = L.DomUtil.create('div', 'vp-daynight-control');
-        var btn = L.DomUtil.create('button', 'vp-daynight-btn', div);
-        btn.textContent = 'Day mode';
-        L.DomEvent.disableClickPropagation(div);
-        L.DomEvent.disableScrollPropagation(div);
-        L.DomEvent.on(btn, 'click', function() {
-          var next = currentMode === 'night' ? 'day' : 'night';
-          map.removeLayer(tileLayer);
-          tileLayer = L.tileLayer(TILES[next].url, { attribution: ATT, subdomains: 'abcd', maxZoom: 19 });
-          tileLayer.addTo(map); tileLayer.bringToBack();
-          currentMode = next;
-          btn.textContent = TILES[next].label;
-        });
-        return div;
+        var container = L.DomUtil.create('div', 'vp-right-controls');
+
+        // Layer toggles card
+        var layerCard = L.DomUtil.create('div', 'vp-right-card vp-layer-control', container);
+        layerCard.innerHTML =
+          '<div class="vp-sl-title">Layers</div>' +
+          '<label><input type="checkbox" id="vp-toggle-sectors" checked> <span class="vp-swatch" style="background:#4a9eff"></span> Sectors</label>' +
+          '<label><input type="checkbox" id="vp-toggle-tma" checked> <span class="vp-swatch" style="background:#ffdd00"></span> TMAs</label>' +
+          '<label><input type="checkbox" id="vp-toggle-aero" checked> <span class="vp-swatch" style="background:#dc3232"></span> Aerodromes</label>';
+
+        L.DomEvent.disableClickPropagation(container);
+        L.DomEvent.disableScrollPropagation(container);
+        return container;
       }
     });
-    new DayNightControl({ position: 'topleft' }).addTo(map);
-
     new CombinedControl({ position: 'topright' }).addTo(map);
 
     setTimeout(function() {
@@ -717,34 +852,34 @@ Here you will find aerodrome briefings for the airports within the Philippines. 
 -   **Luzon**
 
     ---
-    [RPLL →](https://learn.vatphil.com/briefings/RPLL/)
+    [RPLL →](https://learn.vatphil.com/briefings/luzon/RPLL/)
 
-    [RPLC →](https://learn.vatphil.com/briefings/RPLC/)
+    [RPLC →](https://learn.vatphil.com/briefings/luzon/RPLC/)
 
-    [RPLB →](https://learn.vatphil.com/briefings/RPLB/)
+    [RPLB →](https://learn.vatphil.com/briefings/luzon/RPLB/)
 
 -   **Visayas**
 
     ---
-    [RPVM →](https://learn.vatphil.com/briefings/RPVM/)
+    [RPVM →](https://learn.vatphil.com/briefings/visayas/RPVM/)
 
-    [RPVE →](https://learn.vatphil.com/briefings/RPVE/)
+    [RPVE →](https://learn.vatphil.com/briefings/visayas/RPVE/)
 
-    [RPVK →](https://learn.vatphil.com/briefings/RPVK/)
+    [RPVK →](https://learn.vatphil.com/briefings/visayas/RPVK/)
 
-    [RPVR →](https://learn.vatphil.com/briefings/RPVR/)
+    [RPVR →](https://learn.vatphil.com/briefings/visayas/RPVR/)
 
-    [RPVP →](https://learn.vatphil.com/briefings/RPVP/)
+    [RPVP →](https://learn.vatphil.com/briefings/visayas/RPVP/)
 
 -   **Mindanao**
 
     ---
-    [RPMD →](https://learn.vatphil.com/briefings/RPMD/)
+    [RPMD →](https://learn.vatphil.com/briefings/mindanao/RPMD/)
 
 -   **RPHI**
 
     ---
 
-    [FIR →](https://learn.vatphil.com/briefings/RPHI/)
+    [FIR →](https://learn.vatphil.com/briefings/manilacontrol/RPHI/)
 
 </div>
