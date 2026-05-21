@@ -144,6 +144,480 @@ The airport caters passenger and cargo flights, as well as general and military 
 
 Bay assignments, are strictly implemented virtually, and are based on the latest real-world operations. Virtual and other real-world airlines that are not listed will park at terminal 2.
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mactan-Cebu Stand Finder</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        #sf-root {
+            all: initial;
+            display: block;
+            font-family: 'Mulish', system-ui, -apple-system, sans-serif;
+            box-sizing: border-box;
+            color: #e8e6dc;
+            background: transparent;
+            position: relative;
+            --sf-gold: #8c7804;
+            --sf-gold-light: #d9d61c;
+            --sf-panel-bg: rgba(15, 17, 25, 0.94);
+            --sf-text: #e8e6dc;
+            --sf-text-muted: rgba(232, 230, 220, 0.55);
+        }
+        #sf-root *, #sf-root *::before, #sf-root *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: inherit;
+        }
+
+        #sf-root #wrapper {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            border-radius: 8px;
+            overflow: hidden;
+            z-index: 0;
+            isolation: isolate;
+            border: 1px solid rgba(140, 120, 4, 0.3);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        #sf-root #map {
+            height: 100%;
+            width: 100%;
+        }
+
+        #sf-root #panel {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            z-index: 10;
+            background: var(--sf-panel-bg);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-left: 3px solid var(--sf-gold);
+            border-radius: 6px;
+            padding: 12px 14px;
+            width: 280px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+        }
+
+        #sf-root .sf-title {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--sf-text);
+            letter-spacing: 0.1em;
+            line-height: 1.45;
+            text-transform: uppercase;
+        }
+
+        #sf-root .sf-row {
+            display: flex;
+            gap: 6px;
+        }
+
+        #sf-root #standInput {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 4px;
+            color: var(--sf-text);
+            font-size: 13px;
+            padding: 7px 10px;
+            outline: none;
+            flex: 1;
+            line-height: normal;
+            height: auto;
+            width: auto;
+            min-height: 0;
+            box-shadow: none;
+            -webkit-appearance: none;
+            appearance: none;
+            transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+        }
+
+        #sf-root #standInput::placeholder {
+            color: rgba(232, 230, 220, 0.4);
+        }
+
+        #sf-root #standInput:focus {
+            border-color: var(--sf-gold-light);
+            background: rgba(255, 255, 255, 0.07);
+            box-shadow: 0 0 0 2px rgba(217, 214, 28, 0.18);
+        }
+
+        #sf-root #goBtn {
+            background: var(--sf-gold);
+            border: 1px solid var(--sf-gold);
+            border-radius: 4px;
+            color: #1a1a1a;
+            cursor: pointer;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 7px 14px;
+            line-height: normal;
+            height: auto;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            box-shadow: none;
+            transition: background 0.15s, border-color 0.15s;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        #sf-root #goBtn:hover {
+            background: var(--sf-gold-light);
+            border-color: var(--sf-gold-light);
+        }
+
+        #sf-root .sf-legend {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 10px;
+            margin-top: 2px;
+        }
+
+        #sf-root .sf-leg-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11px;
+            color: rgba(232, 230, 220, 0.8);
+            line-height: 1.4;
+        }
+
+        #sf-root .sf-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: inline-block;
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05);
+        }
+
+        #sf-root .leaflet-tooltip {
+            background: rgba(15, 17, 25, 0.95);
+            border: 1px solid rgba(140, 120, 4, 0.6);
+            color: var(--sf-gold-light);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 3px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+            letter-spacing: 0.04em;
+        }
+
+        #sf-root .leaflet-tooltip-top::before,
+        #sf-root .leaflet-tooltip-bottom::before,
+        #sf-root .leaflet-tooltip-left::before,
+        #sf-root .leaflet-tooltip-right::before {
+            border: none !important;
+            display: none !important;
+        }
+
+        #sf-root .leaflet-popup-content-wrapper {
+            background: rgba(15, 17, 25, 0.97);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 3px solid var(--pop-col, var(--sf-gold));
+            color: var(--sf-text);
+            border-radius: 6px;
+            box-shadow: 0 6px 22px rgba(0, 0, 0, 0.55);
+        }
+
+        .sf-pop-t1  { --pop-col: #ff9900; --pop-col-bg: rgba(255,153,0,0.16);  --pop-col-bd: rgba(255,153,0,0.45); }
+        .sf-pop-com { --pop-col: #8aa9ff; --pop-col-bg: rgba(138,169,255,0.16);--pop-col-bd: rgba(138,169,255,0.45); }
+        .sf-pop-rpa { --pop-col: #00e096; --pop-col-bg: rgba(0,224,150,0.16);  --pop-col-bd: rgba(0,224,150,0.45); }
+        .sf-pop-t2  { --pop-col: #00a8ff; --pop-col-bg: rgba(0,168,255,0.16);  --pop-col-bd: rgba(0,168,255,0.45); }
+
+        #sf-root .leaflet-popup-tip {
+            background: rgba(15, 17, 25, 0.97);
+        }
+
+        #sf-root .leaflet-popup-content {
+            margin: 12px 16px;
+            font-size: 12px;
+            line-height: 1.6;
+            color: var(--sf-text);
+        }
+
+        #sf-root .pop-stand {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--pop-col, var(--sf-gold-light));
+            letter-spacing: 0.02em;
+        }
+
+        #sf-root .pop-term {
+            font-size: 10px;
+            color: var(--sf-text-muted);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+        }
+
+        #sf-root .pop-lbl {
+            font-size: 9px;
+            color: rgba(232, 230, 220, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 9px;
+            font-weight: 700;
+        }
+
+        #sf-root .pop-val {
+            color: var(--sf-text);
+            font-size: 12px;
+            margin-top: 2px;
+        }
+
+        #sf-root .atag {
+            display: inline-block;
+            background: var(--pop-col-bg, rgba(140, 120, 4, 0.18));
+            border: 1px solid var(--pop-col-bd, rgba(140, 120, 4, 0.45));
+            border-radius: 3px;
+            color: var(--pop-col, var(--sf-gold-light));
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 6px;
+            margin: 3px 3px 0 0;
+            text-decoration: none;
+            line-height: 1.4;
+            letter-spacing: 0.03em;
+        }
+
+        @media (max-width: 520px) {
+            #sf-root #panel {
+                width: calc(100% - 24px);
+                max-width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="sf-root">
+    <div id="panel">
+        <div class="sf-title">Mactan-Cebu International Airport Stand Finder</div>
+        <div class="sf-row">
+            <input type="text" id="standInput" placeholder="Stand or airline (e.g. B1, PAL)" onkeypress="if(event.key==='Enter') searchStand()">
+            <button id="goBtn" onclick="searchStand()">Go</button>
+        </div>
+        <div class="sf-legend">
+            <div class="sf-leg-row"><span class="sf-dot" style="background:#ff9900"></span>Terminal 1 (Domestic)</div>
+            <div class="sf-leg-row"><span class="sf-dot" style="background:#8aa9ff"></span>Northeast Apron</div>
+            <div class="sf-leg-row"><span class="sf-dot" style="background:#00e096"></span>Remote Apron</div>
+            <div class="sf-leg-row"><span class="sf-dot" style="background:#00a8ff"></span>Terminal 2 (International)</div>
+        </div>
+    </div>
+    <div id="wrapper">
+        <div id="map"></div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+var map = L.map('map', {zoomControl:false}).setView([10.3145, 123.9795], 16);
+L.control.zoom({position:'bottomright'}).addTo(map);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {attribution:'© OpenStreetMap © CARTO'}).addTo(map);
+
+map.on('popupopen', function(e){
+    var btn = e.popup._container && e.popup._container.querySelector('.leaflet-popup-close-button');
+    if(btn){
+        btn.removeAttribute('href');
+        btn.setAttribute('role','button');
+        btn.style.cursor = 'pointer';
+    }
+});
+
+function parseCoord(s) {
+    var dir = s.slice(-1);
+    var num = s.slice(0,-1);
+    var isLng = (dir==='E'||dir==='W');
+    var dLen = isLng ? 3 : 2;
+    var d = parseFloat(num.slice(0,dLen));
+    var m = parseFloat(num.slice(dLen,dLen+2));
+    var sec = parseFloat(num.slice(dLen+2));
+    var dec = d + m/60 + sec/3600;
+    return (dir==='S'||dir==='W') ? -dec : dec;
+}
+
+// Airline groupings — _T1/_T2 suffixes denote domestic-only / international-only
+// per the assignment table; normalizeAirline() strips them for search matching.
+var T1  = ["PAL_T1","CEB_T1","SRQ","APG_T1","RLB"];
+var RPA = ["PAL","CEB","SRQ","APG","RLB"];
+var T2  = ["PAL_T2","CEB_T2","SRQ","APG_T2","RLB","ABL","JNA","JJA","AAR","HVN","UAL","CES","KAL","JST","SJX","CPA","UAE","QTR","TWB","TGW","EVA","SIA"];
+var COM = [];
+
+var T1_ACFT = "A300, A319, A320, A330, A340, B737, B747, B777, DC10, MD-11, MD-80, MD-82";
+var RPA_ACFT_WB = "A300, A319, A320, A330, A340, B737, B747, B777, DC10, MD-11, MD-80, MD-82";
+var T2_ACFT_E = "A330, A340, B747, B757, B767, B777";
+var CODE_C = "A319, A320, A321, B737";
+
+var stands = [
+    // Terminal 1 (Northeast Apron contact bays)
+    {id:"B1", lat:parseCoord("101851.28N"), lng:parseCoord("1235841.62E"), t:"T1",  acft:T1_ACFT, al:T1},
+    {id:"B2", lat:parseCoord("101852.94N"), lng:parseCoord("1235843.31E"), t:"T1",  acft:T1_ACFT, al:T1},
+    {id:"B3", lat:parseCoord("101854.63N"), lng:parseCoord("1235844.99E"), t:"T1",  acft:T1_ACFT, al:T1},
+    {id:"B4", lat:parseCoord("101856.28N"), lng:parseCoord("1235846.65E"), t:"T1",  acft:T1_ACFT, al:T1},
+    {id:"B5", lat:parseCoord("101857.97N"), lng:parseCoord("1235848.34E"), t:"T1",  acft:T1_ACFT, al:T1},
+    {id:"B6", lat:parseCoord("101859.32N"), lng:parseCoord("1235849.95E"), t:"T1",  acft:"B737-800 and lower aircraft category", al:T1},
+
+    // Commuter stands (Northeast Apron — C1-C5R, R50 cluster)
+    {id:"C1",   lat:parseCoord("101904.77N"), lng:parseCoord("1235855.48E"), t:"COM", acft:"A319, A320, A321, B737-800", al:COM},
+    {id:"C1L",  lat:parseCoord("101904.45N"), lng:parseCoord("1235854.45E"), t:"COM", acft:"Q400, ATR72 and lower category", al:COM},
+    {id:"C1R",  lat:parseCoord("101905.27N"), lng:parseCoord("1235855.80E"), t:"COM", acft:"Q400, ATR72 and lower category", al:COM},
+    {id:"C2",   lat:parseCoord("101903.74N"), lng:parseCoord("1235853.81E"), t:"COM", acft:"A319, A320, A321, B737-800", al:COM},
+    {id:"C2L",  lat:parseCoord("101903.66N"), lng:parseCoord("1235853.66E"), t:"COM", acft:"Q400, ATR72 and lower category", al:COM},
+    {id:"C3",   lat:parseCoord("101902.70N"), lng:parseCoord("1235852.76E"), t:"COM", acft:"A319, A320, A321, B737-800", al:COM},
+    {id:"C3R",  lat:parseCoord("101902.88N"), lng:parseCoord("1235852.87E"), t:"COM", acft:"Q400, ATR72 and lower category", al:COM},
+    {id:"C4",   lat:parseCoord("101901.67N"), lng:parseCoord("1235851.72E"), t:"COM", acft:"A319, A320, A321, B737-800", al:COM},
+    {id:"C4R",  lat:parseCoord("101902.09N"), lng:parseCoord("1235852.08E"), t:"COM", acft:"ATR72, Q400", al:COM},
+    {id:"C5R",  lat:parseCoord("101901.31N"), lng:parseCoord("1235851.29E"), t:"COM", acft:"ATR72, Q400", al:COM},
+    {id:"R50",  lat:parseCoord("101903.79N"), lng:parseCoord("1235857.55E"), t:"COM", acft:"A319, A320, A321, B737-800", al:COM},
+    {id:"R50L", lat:parseCoord("101904.59N"), lng:parseCoord("1235856.98E"), t:"COM", acft:"Q400, ATR72 and lower category", al:COM},
+    {id:"R50R", lat:parseCoord("101903.66N"), lng:parseCoord("1235857.92E"), t:"COM", acft:"Q400, ATR72 and lower category", al:COM},
+
+    // Remote Apron (bays 11-16)
+    {id:"11",  lat:parseCoord("101848.35N"), lng:parseCoord("1235847.89E"), t:"RPA", acft:"B737, F50", al:RPA},
+    {id:"11A", lat:parseCoord("101849.05N"), lng:parseCoord("1235848.13E"), t:"RPA", acft:RPA_ACFT_WB, al:RPA},
+    {id:"12",  lat:parseCoord("101849.19N"), lng:parseCoord("1235848.73E"), t:"RPA", acft:"B737, F50", al:RPA},
+    {id:"13",  lat:parseCoord("101850.28N"), lng:parseCoord("1235849.82E"), t:"RPA", acft:"B737, F50", al:RPA},
+    {id:"13A", lat:parseCoord("101850.96N"), lng:parseCoord("1235850.06E"), t:"RPA", acft:RPA_ACFT_WB, al:RPA},
+    {id:"14",  lat:parseCoord("101851.12N"), lng:parseCoord("1235850.67E"), t:"RPA", acft:"B737, F50", al:RPA},
+    {id:"15",  lat:parseCoord("101852.21N"), lng:parseCoord("1235851.76E"), t:"RPA", acft:"B737, F50", al:RPA},
+    {id:"15A", lat:parseCoord("101852.83N"), lng:parseCoord("1235852.00E"), t:"RPA", acft:RPA_ACFT_WB, al:RPA},
+    {id:"16",  lat:parseCoord("101853.05N"), lng:parseCoord("1235852.60E"), t:"RPA", acft:"B737, F50", al:RPA},
+
+    // Terminal 2 (Southwest Apron)
+    {id:"C12C", lat:parseCoord("101849.48N"), lng:parseCoord("1235839.78E"), t:"T2", acft:T2_ACFT_E, al:T2},
+    {id:"C12L", lat:parseCoord("101848.53N"), lng:parseCoord("1235839.56E"), t:"T2", acft:CODE_C, al:T2},
+    {id:"C12R", lat:parseCoord("101849.83N"), lng:parseCoord("1235840.05E"), t:"T2", acft:CODE_C, al:T2},
+    {id:"C13C", lat:parseCoord("101846.01N"), lng:parseCoord("1235838.41E"), t:"T2", acft:T2_ACFT_E, al:T2},
+    {id:"C13L", lat:parseCoord("101845.25N"), lng:parseCoord("1235839.60E"), t:"T2", acft:CODE_C, al:T2},
+    {id:"C13R", lat:parseCoord("101846.48N"), lng:parseCoord("1235838.57E"), t:"T2", acft:CODE_C, al:T2},
+    {id:"C14",  lat:parseCoord("101843.71N"), lng:parseCoord("1235840.42E"), t:"T2", acft:CODE_C, al:T2},
+    {id:"C15",  lat:parseCoord("101842.85N"), lng:parseCoord("1235841.43E"), t:"T2", acft:CODE_C, al:T2},
+    {id:"C16",  lat:parseCoord("101842.74N"), lng:parseCoord("1235842.15E"), t:"T2", acft:T2_ACFT_E, al:T2},
+    {id:"C17",  lat:parseCoord("101842.16N"), lng:parseCoord("1235842.60E"), t:"T2", acft:CODE_C, al:T2},
+    {id:"C18",  lat:parseCoord("101839.88N"), lng:parseCoord("1235840.31E"), t:"T2", acft:CODE_C, al:T2},
+    {id:"C19",  lat:parseCoord("101840.80N"), lng:parseCoord("1235839.37E"), t:"T2", acft:CODE_C, al:T2},
+    {id:"C20",  lat:parseCoord("101841.72N"), lng:parseCoord("1235838.43E"), t:"T2", acft:CODE_C, al:T2},
+    {id:"C21",  lat:parseCoord("101842.65N"), lng:parseCoord("1235837.49E"), t:"T2", acft:CODE_C, al:T2},
+    {id:"C22",  lat:parseCoord("101843.70N"), lng:parseCoord("1235836.17E"), t:"T2", acft:CODE_C, al:T2},
+    {id:"C23",  lat:parseCoord("101843.76N"), lng:parseCoord("1235834.44E"), t:"T2", acft:CODE_C, al:T2},
+    {id:"R75",  lat:parseCoord("101842.92N"), lng:parseCoord("1235832.99E"), t:"T2", acft:CODE_C, al:T2}
+];
+
+var tCol = {"T1":"#ff9900","COM":"#8aa9ff","RPA":"#00e096","T2":"#00a8ff"};
+var tLbl = {"T1":"Terminal 1 (Domestic)","COM":"Northeast Apron","RPA":"Remote Apron","T2":"Terminal 2 (International)"};
+var standMarkers = {};
+
+stands.forEach(function(s){
+    var col = tCol[s.t]||"#8c7804";
+    var m = L.circleMarker([s.lat,s.lng],{radius:5,fillColor:col,color:"#000",weight:1,fillOpacity:0.9}).addTo(map);
+    var tags = s.al.length
+        ? s.al.map(function(a){return '<span class="atag">'+a.replace(/_T[12]$|_CGO$/,'')+'</span>';}).join('')
+        : '<span class="pop-val" style="opacity:0.6">No published airline assignment</span>';
+    m.bindPopup(
+        '<div class="pop-stand">Stand '+s.id+'</div><div class="pop-term">'+tLbl[s.t]+'</div><div class="pop-lbl">Aircraft Types</div><div class="pop-val">'+s.acft+'</div><div class="pop-lbl">Airlines</div><div>'+tags+'</div>',
+        {
+            maxWidth: 300,
+            offset: [0, -8],
+            autoPan: true,
+            autoPanPaddingTopLeft: [320, 80],
+            autoPanPaddingBottomRight: [40, 80],
+            className: 'sf-pop-' + s.t.toLowerCase()
+        }
+    );
+    m.bindTooltip('Stand '+s.id,{sticky:true,direction:'top',offset:[0,-6]});
+    standMarkers[s.id.toUpperCase()] = {marker:m, stand:s, defCol:col};
+});
+
+function resetMarkerStyles(){
+    Object.keys(standMarkers).forEach(function(k){
+        var rec = standMarkers[k];
+        rec.marker.setStyle({
+            radius: 5,
+            fillColor: rec.defCol,
+            color: "#000",
+            weight: 1,
+            fillOpacity: 0.9,
+            opacity: 1
+        });
+    });
+}
+
+function normalizeAirline(code){
+    return code.replace(/_T[12]$|_CGO$/, '').toUpperCase();
+}
+
+function searchStand(){
+    var v = document.getElementById('standInput').value.trim().toUpperCase();
+    resetMarkerStyles();
+    if(!v) return;
+
+    if(standMarkers[v]){
+        map.closePopup();
+        map.setView(standMarkers[v].marker.getLatLng(), 18);
+        standMarkers[v].marker.openPopup();
+        return;
+    }
+
+    var matches = [];
+    Object.keys(standMarkers).forEach(function(k){
+        var rec = standMarkers[k];
+        var airlines = rec.stand.al.map(normalizeAirline);
+        if(airlines.indexOf(v) !== -1) matches.push(rec);
+    });
+
+    if(matches.length === 0){
+        alert('No stand or airline matches "' + v + '".');
+        return;
+    }
+
+    Object.keys(standMarkers).forEach(function(k){
+        var rec = standMarkers[k];
+        if(matches.indexOf(rec) === -1){
+            rec.marker.setStyle({fillOpacity: 0.15, opacity: 0.25});
+        }
+    });
+
+    matches.forEach(function(rec){
+        rec.marker.setStyle({
+            radius: 8,
+            fillColor: '#d9d61c',
+            color: '#8c7804',
+            weight: 2,
+            fillOpacity: 1,
+            opacity: 1
+        });
+        rec.marker.bringToFront();
+    });
+
+    map.closePopup();
+    var bounds = L.latLngBounds(matches.map(function(r){ return r.marker.getLatLng(); }));
+    if(matches.length === 1){
+        map.setView(matches[0].marker.getLatLng(), 18);
+        matches[0].marker.openPopup();
+    } else {
+        map.fitBounds(bounds, {
+            paddingTopLeft: [320, 60],
+            paddingBottomRight: [40, 60],
+            maxZoom: 17
+        });
+    }
+}
+</script>
+</body>
+</html>
+
 <iframe src="../../../assets/pdfs/RPVMstands.pdf" width="70%" height="500px"></iframe>
 
 ## Runways
