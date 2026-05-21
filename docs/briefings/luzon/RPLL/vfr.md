@@ -83,7 +83,7 @@ Report abeam MALABON (refer to chart above) then proceed to destination.
 
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
-![VFR_Northbound_0613](../../../assets/img/RPLL%20VFR/departures/Northbound%200613.png)
+![VFR_Northbound_0613](../../../assets/img/RPLL_VFR/departures/Northbound%200613.png)
 </div>
 <div markdown>
 <span style="color:blue">Runway 13: Climb straight ahead. After passing runway intersection make a right climbing turn to join downwind RWY 06.</span>
@@ -136,7 +136,7 @@ Follow next instructions of ATC
 
 <div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
 <div markdown>
-![VFR_SouthEastBound_061324](../../../assets/img/RPLL%20VFR/departures/SouthEastbound%20061324.png)
+![VFR_SouthEastBound_061324](../../../assets/img/RPLL_VFR/departures/SouthEastbound%20061324.png)
 </div>
 <div markdown>
 <span style="color:blue">Runway 13: Make a straight-out departure climbing to 1500 FT towards the East side of the MERALCO CHIMNEYS.</span>

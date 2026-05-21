@@ -185,22 +185,28 @@ real-world operations. Virtual and other real-world airlines that are not listed
 <!DOCTYPE html>
 <html>
 <head>
-    <title>RPLL - Manila/Ninoy Aquino International Airport</title>
+    <title>Manila International Airport</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
         #sf-root {
             all: initial;
             display: block;
-            font-family: Arial, sans-serif;
+            font-family: 'Mulish', system-ui, -apple-system, sans-serif;
             box-sizing: border-box;
-            color: #ddd;
+            color: #e8e6dc;
             background: transparent;
             position: relative;
+            --sf-gold: #8c7804;
+            --sf-gold-light: #d9d61c;
+            --sf-panel-bg: rgba(15, 17, 25, 0.94);
+            --sf-text: #e8e6dc;
+            --sf-text-muted: rgba(232, 230, 220, 0.55);
         }
         #sf-root *, #sf-root *::before, #sf-root *::after {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            font-family: inherit;
         }
 
         #sf-root #wrapper {
@@ -209,8 +215,10 @@ real-world operations. Virtual and other real-world airlines that are not listed
             height: 600px;
             border-radius: 8px;
             overflow: hidden;
-            z-index: 0;        /* add this */
-            isolation: isolate; /* add this */
+            z-index: 0;
+            isolation: isolate;
+            border: 1px solid rgba(140, 120, 4, 0.3);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
         }
 
         #sf-root #map {
@@ -220,27 +228,30 @@ real-world operations. Virtual and other real-world airlines that are not listed
 
         #sf-root #panel {
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 12px;
+            left: 12px;
             z-index: 10;
-            background: rgba(20,20,20,0.92);
-            border: 1px solid #444;
+            background: var(--sf-panel-bg);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-left: 3px solid var(--sf-gold);
             border-radius: 6px;
-            padding: 10px 12px;
-            width: 260px;
+            padding: 12px 14px;
+            width: 280px;
             display: flex;
             flex-direction: column;
-            gap: 8px;
-            font-family: Arial, sans-serif;
+            gap: 10px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
         }
 
         #sf-root .sf-title {
-            font-size: 13px;
-            font-weight: bold;
-            color: #fff;
-            letter-spacing: 1px;
-            line-height: 1.3;
-            font-family: Arial, sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--sf-text);
+            letter-spacing: 0.1em;
+            line-height: 1.45;
+            text-transform: uppercase;
         }
 
         #sf-root .sf-row {
@@ -249,15 +260,14 @@ real-world operations. Virtual and other real-world airlines that are not listed
         }
 
         #sf-root #standInput {
-            background: #2a2a2a;
-            border: 1px solid #555;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 4px;
-            color: #ddd;
-            font-size: 12px;
-            padding: 5px 8px;
+            color: var(--sf-text);
+            font-size: 13px;
+            padding: 7px 10px;
             outline: none;
             flex: 1;
-            font-family: Arial, sans-serif;
             line-height: normal;
             height: auto;
             width: auto;
@@ -265,137 +275,170 @@ real-world operations. Virtual and other real-world airlines that are not listed
             box-shadow: none;
             -webkit-appearance: none;
             appearance: none;
+            transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+        }
+
+        #sf-root #standInput::placeholder {
+            color: rgba(232, 230, 220, 0.4);
         }
 
         #sf-root #standInput:focus {
-            border-color: #00a8ff;
-            box-shadow: none;
+            border-color: var(--sf-gold-light);
+            background: rgba(255, 255, 255, 0.07);
+            box-shadow: 0 0 0 2px rgba(217, 214, 28, 0.18);
         }
 
         #sf-root #goBtn {
-            background: #00a8ff;
-            border: none;
+            background: var(--sf-gold);
+            border: 1px solid var(--sf-gold);
             border-radius: 4px;
-            color: #fff;
+            color: #1a1a1a;
             cursor: pointer;
-            font-size: 12px;
-            font-weight: bold;
-            padding: 5px 10px;
-            font-family: Arial, sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 7px 14px;
             line-height: normal;
             height: auto;
-            text-transform: none;
-            letter-spacing: normal;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
             box-shadow: none;
-            transition: background 0.15s;
+            transition: background 0.15s, border-color 0.15s;
             -webkit-appearance: none;
             appearance: none;
         }
 
         #sf-root #goBtn:hover {
-            background: #0090dd;
+            background: var(--sf-gold-light);
+            border-color: var(--sf-gold-light);
         }
 
         #sf-root .sf-legend {
             display: flex;
             flex-direction: column;
-            gap: 4px;
-            border-top: 1px solid #333;
-            padding-top: 6px;
+            gap: 6px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 10px;
+            margin-top: 2px;
         }
 
         #sf-root .sf-leg-row {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             font-size: 11px;
-            color: #aaa;
-            font-family: Arial, sans-serif;
+            color: rgba(232, 230, 220, 0.8);
             line-height: 1.4;
         }
 
         #sf-root .sf-dot {
-            width: 10px;
-            height: 10px;
+            width: 9px;
+            height: 9px;
             border-radius: 50%;
             flex-shrink: 0;
             display: inline-block;
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05);
         }
 
         #sf-root .leaflet-tooltip {
-            background: #111;
-            border: 1px solid #333;
-            color: #00a8ff;
+            background: rgba(15, 17, 25, 0.95);
+            border: 1px solid rgba(140, 120, 4, 0.6);
+            color: var(--sf-gold-light);
             font-size: 11px;
-            padding: 2px 7px;
+            font-weight: 700;
+            padding: 3px 8px;
             border-radius: 3px;
-            box-shadow: none;
-            font-family: Arial, sans-serif;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+            letter-spacing: 0.04em;
+        }
+
+        /* Hide Leaflet's default white arrow on tooltips */
+        #sf-root .leaflet-tooltip-top::before,
+        #sf-root .leaflet-tooltip-bottom::before,
+        #sf-root .leaflet-tooltip-left::before,
+        #sf-root .leaflet-tooltip-right::before {
+            border: none !important;
+            display: none !important;
         }
 
         #sf-root .leaflet-popup-content-wrapper {
-            background: #1a1a1a;
-            border: 1px solid #00a8ff;
-            color: #ddd;
-            border-radius: 5px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.6);
-            font-family: Arial, sans-serif;
+            background: rgba(15, 17, 25, 0.97);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 3px solid var(--pop-col, var(--sf-gold));
+            color: var(--sf-text);
+            border-radius: 6px;
+            box-shadow: 0 6px 22px rgba(0, 0, 0, 0.55);
         }
 
+        /* Per-terminal popup colour (set on the popup wrapper by JS) */
+        .sf-pop-t1     { --pop-col: #00a8ff; --pop-col-bg: rgba(0,168,255,0.16);  --pop-col-bd: rgba(0,168,255,0.45); }
+        .sf-pop-t2     { --pop-col: #00e096; --pop-col-bg: rgba(0,224,150,0.16);  --pop-col-bd: rgba(0,224,150,0.45); }
+        .sf-pop-rpa-t2 { --pop-col: #00b07a; --pop-col-bg: rgba(0,176,122,0.16);  --pop-col-bd: rgba(0,176,122,0.45); }
+        .sf-pop-t3     { --pop-col: #ff9900; --pop-col-bg: rgba(255,153,0,0.16);  --pop-col-bd: rgba(255,153,0,0.45); }
+        .sf-pop-t4     { --pop-col: #cc66ff; --pop-col-bg: rgba(204,102,255,0.16);--pop-col-bd: rgba(204,102,255,0.45); }
+        .sf-pop-cgo    { --pop-col: #ff4444; --pop-col-bg: rgba(255,68,68,0.16);  --pop-col-bd: rgba(255,68,68,0.45); }
+
         #sf-root .leaflet-popup-tip {
-            background: #00a8ff;
+            background: rgba(15, 17, 25, 0.97);
         }
 
         #sf-root .leaflet-popup-content {
-            margin: 10px 14px;
+            margin: 12px 16px;
             font-size: 12px;
             line-height: 1.6;
-            font-family: Arial, sans-serif;
-            color: #ddd;
+            color: var(--sf-text);
         }
 
         #sf-root .pop-stand {
-            font-size: 16px;
-            font-weight: bold;
-            color: #00a8ff;
-            font-family: Arial, sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--pop-col, var(--sf-gold-light));
+            letter-spacing: 0.02em;
         }
 
         #sf-root .pop-term {
             font-size: 10px;
-            color: #888;
-            margin-bottom: 5px;
+            color: var(--sf-text-muted);
+            margin-bottom: 8px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            font-family: Arial, sans-serif;
+            letter-spacing: 0.1em;
+            font-weight: 600;
         }
 
         #sf-root .pop-lbl {
             font-size: 9px;
-            color: #666;
+            color: rgba(232, 230, 220, 0.5);
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 6px;
-            font-family: Arial, sans-serif;
+            letter-spacing: 0.1em;
+            margin-top: 9px;
+            font-weight: 700;
         }
 
         #sf-root .pop-val {
-            color: #ccc;
-            font-family: Arial, sans-serif;
+            color: var(--sf-text);
+            font-size: 12px;
+            margin-top: 2px;
         }
 
         #sf-root .atag {
             display: inline-block;
-            background: rgba(0,168,255,0.15);
-            border: 1px solid rgba(0,168,255,0.4);
-            border-radius: 2px;
-            color: #00a8ff;
+            background: var(--pop-col-bg, rgba(140, 120, 4, 0.18));
+            border: 1px solid var(--pop-col-bd, rgba(140, 120, 4, 0.45));
+            border-radius: 3px;
+            color: var(--pop-col, var(--sf-gold-light));
             font-size: 10px;
-            padding: 1px 5px;
-            margin: 2px 2px 0 0;
-            font-family: Arial, sans-serif;
+            font-weight: 600;
+            padding: 2px 6px;
+            margin: 3px 3px 0 0;
             text-decoration: none;
             line-height: 1.4;
+            letter-spacing: 0.03em;
+        }
+
+        @media (max-width: 520px) {
+            #sf-root #panel {
+                width: calc(100% - 24px);
+                max-width: 280px;
+            }
         }
     </style>
 </head>
@@ -405,7 +448,7 @@ real-world operations. Virtual and other real-world airlines that are not listed
     <div id="panel">
         <div class="sf-title">RPLL — Manila/Ninoy Aquino International Airport Stand Finder</div>
         <div class="sf-row">
-            <input type="text" id="standInput" placeholder="Stand number…" onkeypress="if(event.key==='Enter') searchStand()">
+            <input type="text" id="standInput" placeholder="Stand or airline (e.g. 17, GAP)" onkeypress="if(event.key==='Enter') searchStand()">
             <button id="goBtn" onclick="searchStand()">Go</button>
         </div>
         <div class="sf-legend">
@@ -426,6 +469,17 @@ real-world operations. Virtual and other real-world airlines that are not listed
 var map = L.map('map', {zoomControl:false}).setView([14.508, 121.010], 14);
 L.control.zoom({position:'bottomright'}).addTo(map);
 L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {attribution:'© OpenStreetMap © CARTO'}).addTo(map);
+
+// Prevent MkDocs Material's "instant navigation" from hijacking Leaflet's
+// close button (it's an <a href="#close">, which Material treats as a link).
+map.on('popupopen', function(e){
+    var btn = e.popup._container && e.popup._container.querySelector('.leaflet-popup-close-button');
+    if(btn){
+        btn.removeAttribute('href');
+        btn.setAttribute('role','button');
+        btn.style.cursor = 'pointer';
+    }
+});
 
 var polyStyle = {color:"#2a4a6a", weight:1.5, fillColor:"#0a1e30", fillOpacity:0.7};
 var set1=[[14.5096807,121.0128721],[14.5096502,121.0128261],[14.5094288,121.0124263],[14.5094091,121.0123949],[14.509393,121.0123628],[14.5090514,121.0117447],[14.5090331,121.0117116],[14.5088765,121.011794],[14.5087251,121.0115192],[14.5086648,121.0115521],[14.5087344,121.0116953],[14.5086096,121.0117723],[14.5086037,121.0117631],[14.5085629,121.01179],[14.5085807,121.0118212],[14.5085615,121.0118359],[14.5085128,121.0118648],[14.5083753,121.0119448],[14.5084437,121.0120802],[14.508412,121.0121006],[14.5083607,121.0121335],[14.50835,121.0121404],[14.5083277,121.012157],[14.5082978,121.0121739],[14.5083138,121.0122006],[14.5083274,121.012223],[14.5083898,121.0121829],[14.5084716,121.0121303],[14.5085065,121.0121984],[14.5085918,121.012365],[14.5085226,121.0124194],[14.508476,121.0124504],[14.5084909,121.0124784],[14.508501,121.0124947],[14.5085456,121.0124636],[14.508624,121.0124142],[14.5087409,121.0126358],[14.5087481,121.0126494],[14.5086787,121.0126991],[14.5086105,121.0127443],[14.5086206,121.0127645],[14.5086345,121.012788],[14.5087029,121.0127447],[14.5087784,121.0126976],[14.5089049,121.0129329],[14.5088366,121.0129854],[14.5087804,121.0130198],[14.5087897,121.0130371],[14.5088024,121.0130584],[14.50886,121.0130243],[14.5089363,121.0129751],[14.5089789,121.0130512],[14.5090377,121.0131561],[14.5090124,121.0131751],[14.5090443,121.0132319],[14.5089911,121.0132663],[14.5089388,121.0132962],[14.5089533,121.0133183],[14.5089687,121.0133416],[14.5090177,121.0133106],[14.509097,121.0132605],[14.509133,121.0133274],[14.5093001,121.0136378],[14.5092259,121.0136882],[14.509178,121.0137198],[14.5091893,121.0137378],[14.5092051,121.0137635],[14.5092541,121.0137324],[14.5093282,121.0136859],[14.5094911,121.0139542],[14.5095403,121.0139177],[14.5095897,121.0136426],[14.5095181,121.0136243],[14.5094678,121.0135945],[14.5094352,121.0135646],[14.5094079,121.0135288],[14.5093859,121.0134854],[14.5093749,121.0134504],[14.5093677,121.0133957],[14.50937,121.0133534],[14.5093801,121.0133085],[14.5093965,121.0132687],[14.5094156,121.0132372],[14.5094432,121.0132046],[14.5094706,121.0131809],[14.5095031,121.0131604],[14.5095524,121.013141],[14.5096012,121.0131335],[14.5096514,121.0131352],[14.50967,121.0131394],[14.5096733,121.0131119],[14.5097017,121.0128778],[14.5096807,121.0128721]];
@@ -449,7 +503,7 @@ function parseCoord(s) {
 }
 
 var T1 = ["CCA","AIC","ANG","AAR","CAL","CES","EVA","IAE","JAL","KAL","KAC","MAS","OMA","PAL_T1","RBA","RYL_T1","SVA","CSZ","HVN","CXA","TZP","VJC"];
-var T3I = ["ANA","ACA","CPA","CSN","UAE","ETH","ETD","HGB","GFA","HKE","AXM","QFA","JJA","KLM","QTR","THA","THY","TGW","SIA","AFR","UAL"];
+var T3I = ["ANA","ACA","CPA","CSN","UAE","ETH","ETD","HGB","GFA","HKE","AXM","QFA","JJA","KLM","QTR","THA","THY","TGW","SIA","AFR","UAL","CEB"];
 var CARGO = ["PAL_CGO","GAP_CGO","FDX","UPS","ABW","CKS","GTI","CLX"];
 
 var stands = [
@@ -549,30 +603,603 @@ stands.forEach(function(s){
     var col = tCol[s.t]||"#00a8ff";
     var m = L.circleMarker([s.lat,s.lng],{radius:5,fillColor:col,color:"#000",weight:1,fillOpacity:0.9}).addTo(map);
     var tags = s.al.map(function(a){return '<span class="atag">'+a.replace(/_T[12]$|_CGO$/,'')+'</span>';}).join('');
-    m.bindPopup('<div class="pop-stand">Stand '+s.id+'</div><div class="pop-term">'+tLbl[s.t]+'</div><div class="pop-lbl">Aircraft Types</div><div class="pop-val">'+s.acft+'</div><div class="pop-lbl">Airlines</div><div>'+tags+'</div>',{maxWidth:300});
+    m.bindPopup(
+        '<div class="pop-stand">Stand '+s.id+'</div><div class="pop-term">'+tLbl[s.t]+'</div><div class="pop-lbl">Aircraft Types</div><div class="pop-val">'+s.acft+'</div><div class="pop-lbl">Airlines</div><div>'+tags+'</div>',
+        {
+            maxWidth: 300,
+            offset: [0, -8],
+            autoPan: true,
+            autoPanPaddingTopLeft: [320, 80],
+            autoPanPaddingBottomRight: [40, 80],
+            className: 'sf-pop-' + s.t.toLowerCase()
+        }
+    );
     m.bindTooltip('Stand '+s.id,{sticky:true,direction:'top',offset:[0,-6]});
     standMarkers[s.id]={marker:m,stand:s,defCol:col};
 });
 
+function resetMarkerStyles(){
+    Object.keys(standMarkers).forEach(function(k){
+        var rec = standMarkers[k];
+        rec.marker.setStyle({
+            radius: 5,
+            fillColor: rec.defCol,
+            color: "#000",
+            weight: 1,
+            fillOpacity: 0.9,
+            opacity: 1
+        });
+    });
+}
+
+function normalizeAirline(code){
+    return code.replace(/_T[12]$|_CGO$/, '').toUpperCase();
+}
+
 function searchStand(){
-    var v=document.getElementById('standInput').value.trim().toUpperCase();
-    if(standMarkers[v]){map.setView(standMarkers[v].marker.getLatLng(),18);standMarkers[v].marker.openPopup();}
-    else alert('Stand "'+v+'" not found.');
+    var v = document.getElementById('standInput').value.trim().toUpperCase();
+    resetMarkerStyles();
+    if(!v) return;
+
+    // 1) Stand ID match — single result, zoom + popup
+    if(standMarkers[v]){
+        map.closePopup();
+        map.setView(standMarkers[v].marker.getLatLng(), 18);
+        standMarkers[v].marker.openPopup();
+        return;
+    }
+
+    // 2) Airline code match — highlight all matching stands
+    var matches = [];
+    Object.keys(standMarkers).forEach(function(k){
+        var rec = standMarkers[k];
+        var airlines = rec.stand.al.map(normalizeAirline);
+        if(airlines.indexOf(v) !== -1) matches.push(rec);
+    });
+
+    if(matches.length === 0){
+        alert('No stand or airline matches "' + v + '".');
+        return;
+    }
+
+    // Dim non-matches
+    Object.keys(standMarkers).forEach(function(k){
+        var rec = standMarkers[k];
+        if(matches.indexOf(rec) === -1){
+            rec.marker.setStyle({fillOpacity: 0.15, opacity: 0.25});
+        }
+    });
+
+    // Highlight matches in gold
+    matches.forEach(function(rec){
+        rec.marker.setStyle({
+            radius: 8,
+            fillColor: '#d9d61c',
+            color: '#8c7804',
+            weight: 2,
+            fillOpacity: 1,
+            opacity: 1
+        });
+        rec.marker.bringToFront();
+    });
+
+    // Fit map to the highlighted group
+    map.closePopup();
+    var bounds = L.latLngBounds(matches.map(function(r){ return r.marker.getLatLng(); }));
+    if(matches.length === 1){
+        map.setView(matches[0].marker.getLatLng(), 18);
+        matches[0].marker.openPopup();
+    } else {
+        map.fitBounds(bounds, {
+            paddingTopLeft: [320, 60],
+            paddingBottomRight: [40, 60],
+            maxZoom: 16
+        });
+    }
 }
 </script>
 </body>
 </html>
 
-<iframe src="../../../assets/pdfs/stands.pdf" width="70%" height="500px""></iframe>
+<iframe src="../../../assets/pdfs/stands.pdf" width="70%" height="500px"></iframe>
 
 ## Runways
 
 <div markdown="1">
 Manila currently only has 2 runways that intersect each other.
+
+### Hours of Operation
+
+| Days          | RWY 13/31                    | RWY 06/24                    |
+|:-------------:|:----------------------------:|:----------------------------:|
+| MON, WED, FRI | H24                          | 0000Z – 2200Z, 2220Z – 2359Z |
+| TUE, SUN      | H24                          | 0000Z – 1630Z, 2130Z – 2359Z |
+| THU, SAT      | 0000Z – 1500Z, 2000Z – 2359Z | 0000Z – 2200Z, 2220Z – 2359Z |
+</div>
+
+<div class="rwy-schedule">
+<style>
+.rwy-schedule {
+  margin: 1rem 0 1.5rem;
+  padding: 0.9rem 1rem 1rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-left: 4px solid var(--md-primary-fg-color);
+  border-radius: 4px;
+  background: var(--md-code-bg-color);
+  color: var(--md-default-fg-color);
+  font-size: 0.8rem;
+}
+.rwy-schedule * { box-sizing: border-box; }
+
+.rwy-schedule .rs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+.rwy-schedule .rs-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--md-default-fg-color--light);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.rwy-schedule .rs-subtitle {
+  font-size: 0.65rem;
+  color: var(--md-default-fg-color--lighter);
+  margin-top: 2px;
+  letter-spacing: 0.04em;
+}
+.rwy-schedule .rs-clock {
+  font-family: var(--md-code-font, monospace);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--md-default-fg-color);
+  letter-spacing: 0.04em;
+  text-align: right;
+}
+.rwy-schedule .rs-clock-label {
+  font-size: 0.6rem;
+  color: var(--md-default-fg-color--lighter);
+  text-align: right;
+  margin-top: 2px;
+  letter-spacing: 0.06em;
+}
+
+.rwy-schedule .rs-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+.rwy-schedule .rs-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.7rem;
+  color: var(--md-default-fg-color--light);
+}
+.rwy-schedule .rs-legend-box {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+.rwy-schedule .rs-legend-line {
+  width: 12px;
+  height: 2px;
+  background: #e53935;
+  border-radius: 1px;
+}
+
+.rwy-schedule .rs-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+.rwy-schedule .rs-rwy-name {
+  font-family: var(--md-code-font, monospace);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--md-default-fg-color);
+}
+.rwy-schedule .rs-rwy-type {
+  font-size: 0.65rem;
+  color: var(--md-default-fg-color--lighter);
+  margin-top: 2px;
+}
+
+.rwy-schedule .rs-bar-wrap {
+  position: relative;
+  height: 32px;
+  border-radius: 4px;
+}
+.rwy-schedule .rs-bar-bg {
+  position: absolute;
+  inset: 0;
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+}
+.rwy-schedule .rs-bar-active {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: var(--md-primary-fg-color);
+  border-radius: 3px;
+}
+.rwy-schedule .rs-bar-label {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--md-code-font, monospace);
+  font-size: 0.62rem;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.rwy-schedule .rs-now-line {
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  width: 2px;
+  background: #e53935;
+  border-radius: 2px;
+  z-index: 10;
+  transition: left 1s linear;
+}
+.rwy-schedule .rs-now-line::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background: #e53935;
+  border-radius: 50%;
+}
+
+.rwy-schedule .rs-axis {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.9rem;
+}
+.rwy-schedule .rs-axis-ticks {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--md-code-font, monospace);
+  font-size: 0.6rem;
+  color: var(--md-default-fg-color--lighter);
+}
+
+.rwy-schedule .rs-status-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+.rwy-schedule .rs-status-card {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  padding: 0.6rem 0.8rem;
+  background: var(--md-default-bg-color);
+}
+.rwy-schedule .rs-status-card.active {
+  border-left: 3px solid var(--md-primary-fg-color);
+}
+.rwy-schedule .rs-status-card.inactive {
+  border-left: 3px solid var(--md-default-fg-color--lightest);
+}
+.md-typeset .rwy-schedule .rs-sc-label {
+  font-size: 0.65rem;
+  font-weight: 800 !important;
+  color: var(--md-default-fg-color);
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.rwy-schedule .rs-sc-rwy {
+  font-family: var(--md-code-font, monospace);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--md-default-fg-color);
+}
+.rwy-schedule .rs-sc-sub {
+  font-size: 0.7rem;
+  color: var(--md-default-fg-color--light);
+  margin-top: 3px;
+}
+.rwy-schedule .rs-sc-sub span {
+  color: var(--md-primary-fg-color);
+  font-weight: 600;
+}
+
+.rwy-schedule .rs-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--md-primary-fg-color);
+  margin-right: 5px;
+  animation: rs-pulse 2s infinite;
+}
+.rwy-schedule .rs-dot.off {
+  background: var(--md-default-fg-color--lighter);
+  animation: none;
+}
+@keyframes rs-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@media (max-width: 480px) {
+  .rwy-schedule .rs-row,
+  .rwy-schedule .rs-axis { grid-template-columns: 80px 1fr; }
+  .rwy-schedule .rs-status-grid { grid-template-columns: 1fr; }
+  .rwy-schedule .rs-bar-label { font-size: 0.55rem; }
+}
+</style>
+
+<div class="rs-header">
+  <div>
+    <div class="rs-clock" style="text-align:left;" id="rs-clock">--:--:--Z</div>
+    <div class="rs-clock-label" style="text-align:left;" id="rs-today">—</div>
+  </div>
+  <div style="text-align:right;">
+  </div>
+</div>
+
+<div class="rs-legend">
+  <div class="rs-legend-item"><div class="rs-legend-box" style="background:var(--md-primary-fg-color);"></div> Active</div>
+  <div class="rs-legend-item"><div class="rs-legend-box" style="background:var(--md-default-bg-color); border:1px solid var(--md-default-fg-color--lightest);"></div> Inactive</div>
+  <div class="rs-legend-item"><div class="rs-legend-line"></div> Now</div>
+</div>
+
+<div class="rs-row">
+  <div>
+    <div class="rs-rwy-name">13/31</div>
+  </div>
+  <div class="rs-bar-wrap">
+    <div class="rs-bar-bg"></div>
+    <div id="rs-1331-segments"></div>
+    <div class="rs-now-line" id="rs-now1"></div>
+  </div>
+</div>
+
+<div class="rs-row">
+  <div>
+    <div class="rs-rwy-name">06/24</div>
+  </div>
+  <div class="rs-bar-wrap">
+    <div class="rs-bar-bg"></div>
+    <div id="rs-0624-segments"></div>
+    <div class="rs-now-line" id="rs-now2"></div>
+  </div>
+</div>
+
+<div class="rs-axis">
+  <div></div>
+  <div class="rs-axis-ticks">
+    <span>0000</span><span>0200</span><span>0400</span><span>0600</span>
+    <span>0800</span><span>1000</span><span>1200</span><span>1400</span>
+    <span>1600</span><span>1800</span><span>2000</span><span>2200</span><span>2400</span>
+  </div>
+</div>
+
+<div class="rs-status-grid">
+  <div class="rs-status-card" id="rs-card-1331">
+    <div class="rs-sc-label">RWY 13/31</div>
+    <div class="rs-sc-rwy" id="rs-state-1331">—</div>
+    <div class="rs-sc-sub" id="rs-sub-1331">—</div>
+  </div>
+  <div class="rs-status-card" id="rs-card-0624">
+    <div class="rs-sc-label">RWY 06/24</div>
+    <div class="rs-sc-rwy" id="rs-state-0624">—</div>
+    <div class="rs-sc-sub" id="rs-sub-0624">—</div>
+  </div>
+</div>
+
+<script>
+(function () {
+  // Schedules in minutes from 0000Z. 1440 = end of day.
+  // Day index: 0 = Sun, 1 = Mon, ..., 6 = Sat (UTC)
+  var DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+  // RWY 13/31
+  //   MON, TUE, WED, FRI, SUN: H24
+  //   THU, SAT: 0000-1500, 2000-2359
+  var SCHED_1331 = {
+    0: [[0, 1440]],                  // Sun H24
+    1: [[0, 1440]],                  // Mon H24
+    2: [[0, 1440]],                  // Tue H24
+    3: [[0, 1440]],                  // Wed H24
+    4: [[0, 900], [1200, 1440]],     // Thu
+    5: [[0, 1440]],                  // Fri H24
+    6: [[0, 900], [1200, 1440]]      // Sat
+  };
+
+  // RWY 06/24
+  //   MON, WED, THU, FRI, SAT: 0000-2200, 2220-2359
+  //   TUE, SUN: 0000-1630, 2130-2359
+  var SCHED_0624 = {
+    0: [[0, 990], [1290, 1440]],     // Sun
+    1: [[0, 1320], [1340, 1440]],    // Mon
+    2: [[0, 990], [1290, 1440]],     // Tue
+    3: [[0, 1320], [1340, 1440]],    // Wed
+    4: [[0, 1320], [1340, 1440]],    // Thu
+    5: [[0, 1320], [1340, 1440]],    // Fri
+    6: [[0, 1320], [1340, 1440]]     // Sat
+  };
+
+  function pct(m) { return (m / 1440) * 100; }
+  function fmtHHMM(m) {
+    m = ((m % 1440) + 1440) % 1440;
+    var h = Math.floor(m / 60), mm = Math.floor(m % 60);
+    return String(h).padStart(2, '0') + String(mm).padStart(2, '0') + 'Z';
+  }
+  function fmtDur(m) {
+    if (m < 0) m = 0;
+    var h = Math.floor(m / 60), mm = Math.floor(m % 60);
+    if (h === 0) return mm + 'm';
+    return h + 'h ' + mm + 'm';
+  }
+
+  function renderSegments(containerId, segments) {
+    var c = document.getElementById(containerId);
+    c.innerHTML = '';
+    var wrap = c.parentElement; // .rs-bar-wrap
+    segments.forEach(function (seg) {
+      var start = seg[0], end = seg[1];
+      var widthPct = pct(end - start);
+      var bar = document.createElement('div');
+      bar.className = 'rs-bar-active';
+      bar.style.left = pct(start) + '%';
+      bar.style.width = widthPct + '%';
+      c.appendChild(bar);
+
+      // Only draw a label if the segment is wide enough to hold it
+      if (widthPct >= 10) {
+        var label = document.createElement('div');
+        label.className = 'rs-bar-label';
+        label.style.left = pct((start + end) / 2) + '%';
+        label.textContent = fmtHHMM(start) + ' – ' + fmtHHMM(end >= 1440 ? 1439 : end);
+        c.appendChild(label);
+
+        // If the centred label overflows the bar, anchor it to the segment edge instead
+        var wrapRect = wrap.getBoundingClientRect();
+        var labRect = label.getBoundingClientRect();
+        if (labRect.right > wrapRect.right - 2) {
+          label.style.left = 'auto';
+          label.style.right = (100 - pct(end >= 1440 ? 1440 : end)) + '%';
+          label.style.marginRight = '4px';
+          label.style.transform = 'translateY(-50%)';
+        } else if (labRect.left < wrapRect.left + 2) {
+          label.style.left = pct(start) + '%';
+          label.style.marginLeft = '4px';
+          label.style.transform = 'translateY(-50%)';
+        }
+      }
+    });
+  }
+
+  function describeSchedule(segs) {
+    if (segs.length === 1 && segs[0][0] === 0 && segs[0][1] >= 1440) return 'H24';
+    return segs.map(function (s) {
+      return fmtHHMM(s[0]) + '–' + fmtHHMM(s[1] >= 1440 ? 1439 : s[1]);
+    }).join(', ');
+  }
+
+  function activeNow(segs, t) {
+    for (var i = 0; i < segs.length; i++) {
+      if (t >= segs[i][0] && t < segs[i][1]) return true;
+    }
+    return false;
+  }
+
+  // minutes until next state change, scanning today and tomorrow if needed
+  function nextChange(daySegs, dayIdx, t) {
+    var todaySegs = daySegs[dayIdx];
+    var active = activeNow(todaySegs, t);
+
+    // build state transitions for today: list of times when state flips
+    var flips = [];
+    todaySegs.forEach(function (s) {
+      if (s[0] > 0) flips.push(s[0]);                 // inactive -> active
+      if (s[1] < 1440) flips.push(s[1]);              // active -> inactive
+    });
+    flips.sort(function (a, b) { return a - b; });
+
+    for (var i = 0; i < flips.length; i++) {
+      if (flips[i] > t) {
+        return { in: flips[i] - t, at: flips[i], newState: !active };
+      }
+    }
+
+    // no flip today — check start of tomorrow
+    var tomorrow = daySegs[(dayIdx + 1) % 7];
+    var tStart = tomorrow[0][0];
+    var tomorrowActiveAtMidnight = (tStart === 0);
+    if (tomorrowActiveAtMidnight !== active) {
+      return { in: (1440 - t) + 0, at: 0, newState: tomorrowActiveAtMidnight };
+    }
+    // otherwise look for first flip in tomorrow
+    var tFlips = [];
+    tomorrow.forEach(function (s) {
+      if (s[0] > 0) tFlips.push(s[0]);
+      if (s[1] < 1440) tFlips.push(s[1]);
+    });
+    tFlips.sort(function (a, b) { return a - b; });
+    if (tFlips.length) {
+      return { in: (1440 - t) + tFlips[0], at: tFlips[0], newState: !active };
+    }
+    return null;
+  }
+
+  function update() {
+    var now = new Date();
+    var hh = String(now.getUTCHours()).padStart(2, '0');
+    var mm = String(now.getUTCMinutes()).padStart(2, '0');
+    var ss = String(now.getUTCSeconds()).padStart(2, '0');
+    document.getElementById('rs-clock').textContent = hh + ':' + mm + ':' + ss + 'Z';
+
+    var day = now.getUTCDay();
+    document.getElementById('rs-today').textContent = DAYS[day] + ' (UTC)';
+
+    var total = now.getUTCHours() * 60 + now.getUTCMinutes() + now.getUTCSeconds() / 60;
+    var p = pct(total) + '%';
+    document.getElementById('rs-now1').style.left = p;
+    document.getElementById('rs-now2').style.left = p;
+
+    var segs1331 = SCHED_1331[day];
+    var segs0624 = SCHED_0624[day];
+
+    renderSegments('rs-1331-segments', segs1331);
+    renderSegments('rs-0624-segments', segs0624);
+
+    // status cards
+    [
+      {
+        active: activeNow(segs1331, total),
+        change: nextChange(SCHED_1331, day, total),
+        card: 'rs-card-1331', state: 'rs-state-1331', sub: 'rs-sub-1331'
+      },
+      {
+        active: activeNow(segs0624, total),
+        change: nextChange(SCHED_0624, day, total),
+        card: 'rs-card-0624', state: 'rs-state-0624', sub: 'rs-sub-0624'
+      }
+    ].forEach(function (r) {
+      var card = document.getElementById(r.card);
+      card.classList.remove('active', 'inactive');
+      card.classList.add(r.active ? 'active' : 'inactive');
+      document.getElementById(r.state).textContent = r.active ? 'Active' : 'Inactive';
+      if (r.change) {
+        var verb = r.change.newState ? 'Opens' : 'Closes';
+        document.getElementById(r.sub).innerHTML =
+          verb + ' at <span>' + fmtHHMM(r.change.at) + '</span> · in <span>' + fmtDur(r.change.in) + '</span>';
+      } else {
+        document.getElementById(r.sub).innerHTML = r.active ? 'H24 today' : 'Closed all day';
+      }
+    });
+  }
+
+  update();
+  setInterval(update, 1000);
+})();
+</script>
+</div>
+
 Below is a table of the Take-Off Run available
 
 **Take-off Run Available.**
-</div>
 <table>
   <thead>
     <tr>

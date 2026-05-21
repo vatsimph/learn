@@ -180,7 +180,7 @@ You must read back the clearance in full. Listen carefully to all details that t
 
 ## Pushback
 
-Normally, a controller in Puerto Princesa will instruct you to push back to the nearest start-up point. Other times, they will push you to a reference point.
+Normally, a controller in Puerto Princesa will instruct you to push back facing a direction.
 
 For RWY 09 departures, expect to face West
 

@@ -154,11 +154,347 @@ Mactan currently has 2 runways .
 Primary Runway (04R/22L) : **0930Z** - **1930Z**
 
 Secondary (04L/22R) : **1930Z** - **0930Z** (+1 day) 
+</div>
+
+<div class="rwy-schedule">
+<style>
+.rwy-schedule {
+  margin: 1rem 0 1.5rem;
+  padding: 0.9rem 1rem 1rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-left: 4px solid var(--md-primary-fg-color);
+  border-radius: 4px;
+  background: var(--md-code-bg-color);
+  color: var(--md-default-fg-color);
+  font-size: 0.8rem;
+}
+.rwy-schedule * { box-sizing: border-box; }
+
+.rwy-schedule .rs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+.rwy-schedule .rs-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--md-default-fg-color--light);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.rwy-schedule .rs-clock {
+  font-family: var(--md-code-font, monospace);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--md-default-fg-color);
+  letter-spacing: 0.04em;
+  text-align: right;
+}
+.rwy-schedule .rs-clock-label {
+  font-size: 0.6rem;
+  color: var(--md-default-fg-color--lighter);
+  text-align: right;
+  margin-top: 2px;
+  letter-spacing: 0.06em;
+}
+
+.rwy-schedule .rs-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+.rwy-schedule .rs-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.7rem;
+  color: var(--md-default-fg-color--light);
+}
+.rwy-schedule .rs-legend-box {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+.rwy-schedule .rs-legend-line {
+  width: 12px;
+  height: 2px;
+  background: #e53935;
+  border-radius: 1px;
+}
+
+.rwy-schedule .rs-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+.rwy-schedule .rs-rwy-name {
+  font-family: var(--md-code-font, monospace);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--md-default-fg-color);
+}
+.rwy-schedule .rs-rwy-type {
+  font-size: 0.65rem;
+  color: var(--md-default-fg-color--lighter);
+  margin-top: 2px;
+}
+
+.rwy-schedule .rs-bar-wrap {
+  position: relative;
+  height: 32px;
+  border-radius: 4px;
+}
+.rwy-schedule .rs-bar-bg {
+  position: absolute;
+  inset: 0;
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+}
+.rwy-schedule .rs-bar-active,
+.rwy-schedule .rs-bar-active-2a,
+.rwy-schedule .rs-bar-active-2b {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: var(--md-primary-fg-color);
+  border-radius: 3px;
+}
+.rwy-schedule .rs-bar-active-2a { left: 0; }
+.rwy-schedule .rs-bar-active-2b { right: 0; }
+
+.rwy-schedule .rs-bar-label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--md-code-font, monospace);
+  font-size: 0.62rem;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.rwy-schedule .rs-now-line {
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  width: 2px;
+  background: #e53935;
+  border-radius: 2px;
+  z-index: 10;
+  transition: left 1s linear;
+}
+.rwy-schedule .rs-now-line::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background: #e53935;
+  border-radius: 50%;
+}
+
+.rwy-schedule .rs-axis {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.9rem;
+}
+.rwy-schedule .rs-axis-ticks {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--md-code-font, monospace);
+  font-size: 0.6rem;
+  color: var(--md-default-fg-color--lighter);
+}
+
+.rwy-schedule .rs-status-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+.rwy-schedule .rs-status-card {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  padding: 0.6rem 0.8rem;
+  background: var(--md-default-bg-color);
+}
+.rwy-schedule .rs-status-card.active {
+  border-left: 3px solid var(--md-primary-fg-color);
+}
+.rwy-schedule .rs-status-card.next {
+  border-left: 3px solid var(--md-default-fg-color--lightest);
+}
+.md-typeset .rwy-schedule .rs-sc-label {
+  font-size: 0.65rem;
+  font-weight: 800 !important;
+  color: var(--md-default-fg-color);
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.rwy-schedule .rs-sc-rwy {
+  font-family: var(--md-code-font, monospace);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--md-default-fg-color);
+}
+.rwy-schedule .rs-sc-sub {
+  font-size: 0.7rem;
+  color: var(--md-default-fg-color--light);
+  margin-top: 3px;
+}
+.rwy-schedule .rs-sc-sub span {
+  color: var(--md-primary-fg-color);
+  font-weight: 600;
+}
+
+.rwy-schedule .rs-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--md-primary-fg-color);
+  margin-right: 5px;
+  animation: rs-pulse 2s infinite;
+}
+@keyframes rs-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@media (max-width: 480px) {
+  .rwy-schedule .rs-row,
+  .rwy-schedule .rs-axis { grid-template-columns: 80px 1fr; }
+  .rwy-schedule .rs-status-grid { grid-template-columns: 1fr; }
+  .rwy-schedule .rs-bar-label { font-size: 0.55rem; }
+}
+</style>
+
+<div class="rs-header">
+  <div>
+    <div class="rs-clock" id="rs-clock">--:--:--Z</div>
+  </div>
+</div>
+
+<div class="rs-legend">
+  <div class="rs-legend-item"><div class="rs-legend-box" style="background:var(--md-primary-fg-color);"></div> Active</div>
+  <div class="rs-legend-item"><div class="rs-legend-box" style="background:var(--md-default-bg-color); border:1px solid var(--md-default-fg-color--lightest);"></div> Inactive</div>
+  <div class="rs-legend-item"><div class="rs-legend-line"></div> Now</div>
+</div>
+
+<div class="rs-row">
+  <div>
+    <div class="rs-rwy-name">04R/22L</div>
+    <div class="rs-rwy-type">Primary</div>
+  </div>
+  <div class="rs-bar-wrap">
+    <div class="rs-bar-bg"></div>
+    <div class="rs-bar-active" style="left:39.58%; width:41.67%;"></div>
+    <div class="rs-bar-label" style="left:60.21%; transform:translate(-50%, -50%);">0930Z – 1930Z</div>
+    <div class="rs-now-line" id="rs-now1"></div>
+  </div>
+</div>
+
+<div class="rs-row">
+  <div>
+    <div class="rs-rwy-name">04L/22R</div>
+    <div class="rs-rwy-type">Secondary</div>
+  </div>
+  <div class="rs-bar-wrap">
+    <div class="rs-bar-bg"></div>
+    <div class="rs-bar-active-2a" id="rs-seg2a"></div>
+    <div class="rs-bar-active-2b" id="rs-seg2b"></div>
+    <div class="rs-bar-label" style="left:19.79%; transform:translate(-50%, -50%);">0000Z – 0930Z</div>
+    <div class="rs-bar-label" style="right:2.5px;">1930Z – 2359Z</div>
+    <div class="rs-now-line" id="rs-now2"></div>
+  </div>
+</div>
+
+<div class="rs-axis">
+  <div></div>
+  <div class="rs-axis-ticks">
+    <span>0000</span><span>0200</span><span>0400</span><span>0600</span>
+    <span>0800</span><span>1000</span><span>1200</span><span>1400</span>
+    <span>1600</span><span>1800</span><span>2000</span><span>2200</span><span>2400</span>
+  </div>
+</div>
+
+<div class="rs-status-grid">
+  <div class="rs-status-card active">
+    <div class="rs-sc-label"></span>Currently active</div>
+    <div class="rs-sc-rwy" id="rs-active-rwy">—</div>
+    <div class="rs-sc-sub" id="rs-active-sub">—</div>
+  </div>
+  <div class="rs-status-card next">
+    <div class="rs-sc-label">Next change</div>
+    <div class="rs-sc-rwy" id="rs-next-rwy">—</div>
+    <div class="rs-sc-sub" id="rs-next-sub">—</div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var PRIMARY_START = 9 * 60 + 30;
+  var PRIMARY_END   = 19 * 60 + 30;
+
+  function pct(m) { return (m / 1440) * 100; }
+
+  document.getElementById('rs-seg2a').style.width = pct(PRIMARY_START) + '%';
+  document.getElementById('rs-seg2b').style.left  = pct(PRIMARY_END) + '%';
+  document.getElementById('rs-seg2b').style.width = (100 - pct(PRIMARY_END)) + '%';
+
+  function update() {
+    var now = new Date();
+    var hh = String(now.getUTCHours()).padStart(2, '0');
+    var mm = String(now.getUTCMinutes()).padStart(2, '0');
+    var ss = String(now.getUTCSeconds()).padStart(2, '0');
+    document.getElementById('rs-clock').textContent = hh + ':' + mm + ':' + ss + 'Z';
+
+    var total = now.getUTCHours() * 60 + now.getUTCMinutes() + now.getUTCSeconds() / 60;
+    var p = pct(total) + '%';
+    document.getElementById('rs-now1').style.left = p;
+    document.getElementById('rs-now2').style.left = p;
+
+    var isPrimary = total >= PRIMARY_START && total < PRIMARY_END;
+
+    if (isPrimary) {
+      var left = PRIMARY_END - total;
+      var h = Math.floor(left / 60), m = Math.floor(left % 60);
+      document.getElementById('rs-active-rwy').textContent = '04R/22L';
+      document.getElementById('rs-active-sub').innerHTML = 'Primary · until <span>1930Z</span>';
+      document.getElementById('rs-next-rwy').textContent = '04L/22R';
+      document.getElementById('rs-next-sub').innerHTML = 'Secondary · in <span>' + h + 'h ' + m + 'm</span>';
+    } else {
+      var left2 = total < PRIMARY_START ? PRIMARY_START - total : (1440 - total) + PRIMARY_START;
+      var h2 = Math.floor(left2 / 60), m2 = Math.floor(left2 % 60);
+      document.getElementById('rs-active-rwy').textContent = '04L/22R';
+      document.getElementById('rs-active-sub').innerHTML = 'Secondary · until <span>0930Z</span>';
+      document.getElementById('rs-next-rwy').textContent = '04R/22L';
+      document.getElementById('rs-next-sub').innerHTML = 'Primary · in <span>' + h2 + 'h ' + m2 + 'm</span>';
+    }
+  }
+
+  update();
+  setInterval(update, 1000);
+})();
+</script>
+</div>
 
 Below is a table of the Take-Off Run available
 
 **Take-off Run Available.**
-</div>
 <table>
   <thead>
     <tr>
