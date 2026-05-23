@@ -1,4 +1,4 @@
-## Secondary Window
+# Secondary Window
 
 A floating popout for EuroScope that draws TopSky and Groundradar style polygon maps and
 altitude filtered traffic in a separate, always on top window.
@@ -7,7 +7,7 @@ altitude filtered traffic in a separate, always on top window.
 
 ## Install
 
-1. Download the latest `Secondary Window.zip` from the [**Releases**](https://github.com/HacobAllon/Secondary-Window/releases)
+1. Download the latest `Secondary Window.zip` from the **Releases**
     Inside:
    - `SecondaryWindow.dll`
    - `SecondaryWindowMap.txt`     ← put your map definitions here
@@ -390,7 +390,7 @@ unknown lines without complaining.
 | `ENDPOLYGON`      | *(none)*                 | Ends a legacy `POLYGON` block.                                                                                          |
 | `LINE:`           | `lat1:lon1:lat2:lon2`    | One-shot straight segment in current color.                                                                             |
 | `TEXT:`           | `lat:lon:label-text`     | Label at a coord, current color, current size. Label may contain colons.                                                |
-| `TEXT_SIZE:`      | `#`                      | Sticky font size in pixels for following `TEXT:` and ESE labels. `0` = default.                                         |
+| `TEXT_SIZE:`      | `px`                     | Sticky font size in pixels for following `TEXT:` and ESE labels. `0` = default.                                         |
 | `INCLUDE_ESE:`    | `path`                   | Imports labels from a `.ese` files. Path can be relative to the map file or absolute.                                   |
 | *raw line*        | `lat:lon:category:label` | Inline ESE label. Category becomes its own map under folder `ESE`.                                                      |
 | `FILTER_ALT_MIN:` | `feet`                   | Lower bound of traffic-altitude filter. Targets below are hidden. Default: `INT_MIN`.                                   |
@@ -418,7 +418,7 @@ unknown lines without complaining.
 | `COLOR_DEPARTURE`    | `R:G:B`          | *(unset)*     | Override tag color when the aircraft's origin airport is active for departure in EuroScope.                           |
 | `COLOR_ARRIVAL`      | `R:G:B`          | *(unset)*     | Override tag color when the aircraft's destination airport is active for arrival in EuroScope. Wins over departure.   |
 | `TAG_FONT_FACE`      | font name        | `Consolas`    | Tag font.                                                                                                             |
-| `TAG_FONT_SIZE`      | `px`             | `12`          | Tag font height.                                                                                                      |
+| `TAG_FONT_SIZE`      | `px`             | `12`          | Tag font size.                                                                                                        |
 | `TAG_FONT_BOLD`      | `true` / `false` | `false`       | Bold tag text.                                                                                                        |
 | `TAG_OFFSET_X`       | `px`             | `5`           | Default horizontal offset of tag from the dot. Per-aircraft offset wins once a tag is dragged.                        |
 | `TAG_OFFSET_Y`       | `px`             | `-3`          | Default vertical offset (negative = above the dot).                                                                   |
