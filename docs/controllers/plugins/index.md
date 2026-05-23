@@ -9,6 +9,8 @@
 -   **Plugins**
 
     ---
+    [Secondary Window →](https://learn.vatphil.com/controllers/plugins/secondarywindow/)
+
     [Booking Manager →](https://learn.vatphil.com/controllers/plugins/booking-manager/)
 
     [CDM →](https://learn.vatphil.com/controllers/plugins/cdm/)
