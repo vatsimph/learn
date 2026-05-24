@@ -9,7 +9,7 @@
 -   **Plugins**
 
     ---
-    [Secondary Window →](https://learn.vatphil.com/controllers/plugins/secondarywindow/)
+    [Secondary Window →](https://learn.vatphil.com/controllers/plugins/SecondaryWindow/)
 
     [Booking Manager →](https://learn.vatphil.com/controllers/plugins/booking-manager/)
 

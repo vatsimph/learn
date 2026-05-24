@@ -20,6 +20,8 @@ Here you will find supporting documents on helping you setup or refresh your kno
 -   **Plugins**
 
     ---
+    [Secondary Window](https://learn.vatphil.com/controllers/plugins/SecondaryWindow/)
+    
     [Booking Manager [WIP]](https://learn.vatphil.com/controllers/plugins/booking-manager/)
 
     [CDM [WIP]](https://learn.vatphil.com/controllers/plugins/cdm/)
