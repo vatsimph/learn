@@ -1,5 +1,6 @@
 nav:
     - index.md
+    - Events: events
     - Charts: charts.md
     - Routes: routes.md
     - Airspace Reservation: airspacereservation.md
