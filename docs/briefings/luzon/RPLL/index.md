@@ -1385,18 +1385,6 @@ Normally, a controller will instruct you to push back to the nearest start-up po
 
     **RPLL_3_RMP**: CEB585, push approved, abeam gate 119, face G12
 
-In the event there is **RPLL_P_GND**
-
-??? phraseology "Phraseology with Planner"
-
-    **CEB585**: Manila Planner, CEB585 Stand 120
-
-    **RPLL_P_GND**: CEB585, Manila Planner, expect TOBT at time 1300z
-
-    **CEB585**: 1300z, **CEB585**
-
-    At ± 5 TOBT **RPLL_P_GND**: CEB585, contact Apron Control Three 121.350
-
 
 ## Departure
 
