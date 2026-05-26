@@ -1,3 +1,29 @@
+/* ── Next event strip ─────────────────────────────────────── */
+
+.next-event-strip {
+    display: block;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 0.6rem 1rem;
+    font-family: "Mulish", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background 0.2s ease;
+}
+
+.next-event-strip:hover {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+.next-event-strip[hidden] {
+    display: none;
+}
+
 /* ── Layout shell ─────────────────────────────────────────── */
 
 .home-wrapper {

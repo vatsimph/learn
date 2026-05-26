@@ -3,6 +3,8 @@
 {{ super() }}
 <link rel="stylesheet" href="{{ 'assets/stylesheets/home.css' | url }}">
 
+<a id="next-event-strip" class="next-event-strip" href="#vatphil-events" hidden></a>
+
 <div class="home-wrapper">
     <!-- Hero -->
     <section class="container">
@@ -137,6 +139,7 @@
       <div class="modal-description">${ev.short_description || ev.description || ''}</div>
       ${buildRoutesHTML(ev.routes)}
       <a class="modal-link" href="${ev.link}" target="_blank" rel="noopener noreferrer">View on myVATSIM</a>
+      ${/elite\s*wings/i.test(ev.name) ? `<a class="modal-link" href="https://learn.vatphil.com/briefings/events/elitewings/" target="_blank" rel="noopener noreferrer">View Briefing</a>` : ''}
     `;
             document.getElementById('event-modal').classList.add('open');
             document.getElementById('event-modal-overlay').classList.add('open');
@@ -168,6 +171,17 @@
             if (events.length === 0) {
                 container.innerHTML = '<p class="events-empty">No upcoming VATPHIL events at this time. Check back soon!</p>';
                 return;
+            }
+
+            const now = Date.now();
+            const upcoming = events
+                .filter(e => new Date(e.start_time).getTime() > now)
+                .sort((a, b) => new Date(a.start_time) - new Date(b.start_time));
+            if (upcoming.length > 0) {
+                const next = upcoming[0];
+                const strip = document.getElementById('next-event-strip');
+                strip.textContent = `Next event: ${next.name} on ${formatDate(next.start_time)} ${formatTime(next.start_time, next.end_time)}`;
+                strip.hidden = false;
             }
 
             const grid = document.createElement('div');
