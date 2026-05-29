@@ -278,9 +278,9 @@
                 if (!res.ok) throw new Error('VATSIM data error');
                 const data = await res.json();
 
-                const controllers = (data.controllers || []).filter(c => isPHCallsign(c.callsign));
-                const atis = (data.atis || []).filter(a => isPHCallsign(a.callsign));
-                const allATC = [...controllers, ...atis];
+                const allATC = (data.controllers || []).filter(c =>
+                    isPHCallsign(c.callsign) && !/_ATIS$/i.test(c.callsign)
+                );
 
                 const phPilots = (data.pilots || []).filter(p => {
                     const fp = p.flight_plan || {};
