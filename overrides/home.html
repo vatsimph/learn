@@ -67,6 +67,27 @@
                 <div id="vatphil-events" class="events-feed">
                     <p class="events-loading">Loading events...</p>
                 </div>
+
+                <h2>Network Status</h2>
+                <div class="live-stats" id="vatphil-stats">
+                    <div class="stat-card">
+                        <div class="stat-number" data-stat="controllers">—</div>
+                        <div class="stat-label">Online Controllers</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-stat="pilots">—</div>
+                        <div class="stat-label">Active Flights</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-stat="airborne">—</div>
+                        <div class="stat-label">Airborne in PH</div>
+                    </div>
+                </div>
+
+                <h2>Online ATC</h2>
+                <div id="vatphil-atc" class="atc-strip">
+                    <p class="events-loading">Loading controllers...</p>
+                </div>
             </div>
         </div>
     </div>
@@ -217,6 +238,90 @@
             container.innerHTML = '<p class="no-events">Could not load events. Please try again later or visit <a href="https://vatphil.com/events" target="_blank">vatphil.com/events</a>.</p>';
             console.error('VATPHIL events error:', err);
         }
+    })();
+
+    // ── Live VATSIM network data (PH) ───────────────────────────
+    (function () {
+        const statsEl = document.getElementById('vatphil-stats');
+        const atcEl = document.getElementById('vatphil-atc');
+        // PH FIR bounding box (rough): lat 4.5–21.5, lon 116–127
+        const PH_LAT = [4.5, 21.5];
+        const PH_LON = [116, 127];
+
+        function isPHCallsign(cs) {
+            if (!cs) return false;
+            // RP* covers all PH airport/ATC callsigns
+            return /^RP[A-Z]{2}[_-]/i.test(cs) || /^MNL_/i.test(cs);
+        }
+
+        function inPHBox(lat, lon) {
+            return lat >= PH_LAT[0] && lat <= PH_LAT[1] && lon >= PH_LON[0] && lon <= PH_LON[1];
+        }
+
+        function elapsed(sinceISO) {
+            if (!sinceISO) return '';
+            const mins = Math.floor((Date.now() - new Date(sinceISO).getTime()) / 60000);
+            if (mins < 60) return `${mins}m`;
+            const h = Math.floor(mins / 60);
+            const m = mins % 60;
+            return `${h}h ${m}m`;
+        }
+
+        function setStat(key, value) {
+            const el = statsEl.querySelector(`[data-stat="${key}"]`);
+            if (el) el.textContent = value;
+        }
+
+        async function refresh() {
+            try {
+                const res = await fetch('https://data.vatsim.net/v3/vatsim-data.json', { cache: 'no-store' });
+                if (!res.ok) throw new Error('VATSIM data error');
+                const data = await res.json();
+
+                const controllers = (data.controllers || []).filter(c => isPHCallsign(c.callsign));
+                const atis = (data.atis || []).filter(a => isPHCallsign(a.callsign));
+                const allATC = [...controllers, ...atis];
+
+                const phPilots = (data.pilots || []).filter(p => {
+                    const fp = p.flight_plan || {};
+                    const dep = (fp.departure || '').toUpperCase();
+                    const arr = (fp.arrival || '').toUpperCase();
+                    return dep.startsWith('RP') || arr.startsWith('RP');
+                });
+                const airborne = phPilots.filter(p =>
+                    typeof p.latitude === 'number' &&
+                    typeof p.longitude === 'number' &&
+                    inPHBox(p.latitude, p.longitude) &&
+                    (p.groundspeed || 0) > 50
+                );
+
+                setStat('controllers', allATC.length);
+                setStat('pilots', phPilots.length);
+                setStat('airborne', airborne.length);
+
+                if (allATC.length === 0) {
+                    atcEl.innerHTML = '<p class="events-empty">No Philippine ATC online right now.</p>';
+                } else {
+                    allATC.sort((a, b) => a.callsign.localeCompare(b.callsign));
+                    atcEl.innerHTML = allATC.map(c => `
+                        <div class="atc-card">
+                            <div class="atc-callsign">${c.callsign}</div>
+                            <div class="atc-freq">${c.frequency || '—'}</div>
+                            <div class="atc-name">${(c.name || '').split(' ')[0] || 'Controller'}</div>
+                            <div class="atc-time">${elapsed(c.logon_time)}</div>
+                        </div>
+                    `).join('');
+                }
+            } catch (err) {
+                console.error('VATPHIL live data error:', err);
+                if (atcEl.querySelector('.events-loading')) {
+                    atcEl.innerHTML = '<p class="no-events">Could not load live data.</p>';
+                }
+            }
+        }
+
+        refresh();
+        setInterval(refresh, 30000);
     })();
 </script>
 
