@@ -98,6 +98,12 @@ The airport caters passenger and cargo flights, as well as general and military 
   </thead>
   <tbody>
     <tr>
+      <td style="text-align:center"><strong>RPVK_ATIS</strong></td>
+      <td style="text-align:center">Kalibo ATIS</td>
+      <td style="text-align:center">127.800</td>
+      <td style="text-align:center"></td>
+    </tr>
+    <tr>
       <td style="text-align:center"><strong>RPVK_TWR</strong></td>
       <td style="text-align:center">Kalibo Tower</td>
       <td style="text-align:center">124.200</td>
