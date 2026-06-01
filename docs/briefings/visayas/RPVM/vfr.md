@@ -1,4 +1,4 @@
-# Visual Flight Rules (VFR) Within Mactan TMA
+# Visual Flight Rules (VFR) Within Mactan CTR
 
 1. All VFR aircraft must be able to tune to frequencies in the VATSIM network, including, but not limited to:
     1. 121.800 MHz (RPVM_GND)

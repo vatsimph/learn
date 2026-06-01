@@ -1,4 +1,4 @@
-# Visual Flight Rules (VFR) Within Clark TMA
+# Visual Flight Rules (VFR) Within Clark CTR
 
 1. All VFR aircraft must be able to tune to frequencies in the VATSIM network, including, but not limited to:
     1. 124.300 MHz (RPLC_GND)

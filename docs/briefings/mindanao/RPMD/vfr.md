@@ -1,4 +1,4 @@
-# Visual Flight Rules (VFR) Within Davao TMA
+# Visual Flight Rules (VFR) Within Davao CTR
 
 1. All VFR aircraft must be able to tune to frequencies in the VATSIM network, including, but not limited to:
     1. 118.100 MHz (RPMD_TWR)
