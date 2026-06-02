@@ -1451,7 +1451,7 @@ When arriving in to Manila, it is best for you to be in between FL160 and FL200 
 
     **PAL301**: “Manila Approach, PAL301, FL180, inbound TADEL”
 
-APP will then issue your arrival clearance including the type of approach to expect to the active runway. APP either gives you radar vectors to final or gives you descent clearances via a STAR. By default, controllers will vector you to the final approach.
+APP will then issue your arrival clearance including the type of approach to expect to the active runway. APP will either give you radar vectors for the ILS or via a STAR. By default, controllers will issue you a STAR followed by radar vectors for the ILS.
 
 ??? phraseology "Phraseology"
 
