@@ -10,4 +10,11 @@ It was made possible with the subsistense from the **Aeronautical Information Pu
 
     The information contained on this site is for **flight simulation purposes only**. It is not intended for real world navigation. All content contained herein is approved only for use on the VATSIM network.
 
+<iframe
+  src="https://vatphil.com/charts"
+  title="Charts"
+  loading="lazy"
+  style="width:100%; height:750px; border:1px solid var(--md-default-fg-color--lightest); border-radius:8px;">
+</iframe>
+
 [Look for Charts](https://vatphil.com/charts){ .md-button .md-button--primary }

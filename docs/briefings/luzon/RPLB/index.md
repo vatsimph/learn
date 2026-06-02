@@ -86,7 +86,14 @@ The airport caters passenger and cargo flights, as well as general and military 
 
 ## Charts
 
-[RPLB](https://vatphil.com/charts?icao=RPLB){ .md-button .md-button--primary }
+<iframe
+  src="https://vatphil.com/charts?icao=RPLB"
+  title="RPLB Charts"
+  loading="lazy"
+  style="width:100%; height:750px; border:1px solid var(--md-default-fg-color--lightest); border-radius:8px;">
+</iframe>
+
+[Open charts in new tab](https://vatphil.com/charts?icao=RPLB){ .md-button .md-button--primary }
 
 ## Frequency List
 <table>

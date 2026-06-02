@@ -8,7 +8,14 @@ The Roxas Principal Airport (RPVR) is a Class 1 airport located approximately 1.
 The airport caters to passenger and cargo flights, as well as general aviation.
 
 ## Charts
-[RPVR](https://vatphil.com/charts?icao=RPVR){ .md-button .md-button--primary }
+<iframe
+  src="https://vatphil.com/charts?icao=RPVR"
+  title="RPVR Charts"
+  loading="lazy"
+  style="width:100%; height:750px; border:1px solid var(--md-default-fg-color--lightest); border-radius:8px;">
+</iframe>
+
+[Open charts in new tab](https://vatphil.com/charts?icao=RPVR){ .md-button .md-button--primary }
 
 ## Frequency List
 <table>
