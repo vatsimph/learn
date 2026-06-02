@@ -296,8 +296,7 @@ APP will then issue your arrival clearance including the type of approach to exp
 
     If APP didn’t give you any turns after you have passed the last waypoint on your routing, maintain your present heading.
 
-[^1]: Vertical limit of FL150 can be increased to a maximum of FL200.
-[^2]: Controls RPVE, RPVK and RPVR
+[^1]: Controls RPVE, RPVK and RPVR
 
 *[GA]: General Aviation
 *[EOBT]: Estimated off block time
