@@ -729,8 +729,6 @@ function searchStand(){
 </body>
 </html>
 
-<iframe src="../../../assets/pdfs/stands.pdf" width="70%" height="500px"></iframe>
-
 ## Runways
 
 <div markdown="1">
@@ -1285,8 +1283,6 @@ Below is a table of the Take-Off Run available
 Local flights within RPHI and some international flights are to use routes given below. Simbrief also give a standard route which looks like this
 
 ![Simbrief Routes](../../../assets/img/simbrief.png)
-
-<iframe src="../../../assets/pdfs/stands.pdf" width="70%" height="500px"></iframe>
 
 If your route is still invalid, a controller will send you a private message with your new route. Routes within RPHI are to follow the half-moon principle in both RVSM and non-RVSM conditions. During events you will have 5 minutes between the time you request clearance and the time you request pushback, or you will have to wait until a new slot is available.
 

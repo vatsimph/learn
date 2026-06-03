@@ -380,8 +380,12 @@ Here you will find aerodrome briefings for the airports within the Philippines. 
     { icao: "RPVE", name: "Caticlan",             type: "Principal Class 1", lat: 11.9246, lon: 121.9530, region: "visayas"  },
     { icao: "RPVK", name: "Kalibo",               type: "Principal Class 1", lat: 11.6795, lon: 122.3760, region: "visayas"  },
     { icao: "RPVR", name: "Roxas",                type: "Principal Class 1", lat: 11.5977, lon: 122.7517, region: "visayas"  },
+    { icao: "RPVD", name: "Dumaguete",            type: "Principal Class 1", lat:  9.3342, lon: 123.3019, region: "visayas"  },
+    { icao: "RPSP", name: "Bohol-Panglao Intl",   type: "International",     lat:  9.5739, lon: 123.7706, region: "visayas"  },
     { icao: "RPVM", name: "Mactan-Cebu Intl",     type: "International",     lat: 10.3075, lon: 123.9794, region: "visayas"  },
     { icao: "RPMD", name: "Francisco Bangoy",     type: "International",     lat:  7.1255, lon: 125.6458, region: "mindanao" },
+    { icao: "RPMR", name: "Gen. Santos (Tambler)", type: "Principal Class 1", lat:  6.0581, lon: 125.0961, region: "mindanao" },
+    { icao: "RPMY", name: "Laguindingan",         type: "Principal Class 1", lat:  8.6122, lon: 124.4564, region: "mindanao" },
     { icao: "RPVP", name: "Puerto Princesa",      type: "International",     lat: 9.7419,  lon: 118.7597, region: "visayas"  },
     { icao: "RPLB", name: "Subic",                type: "International",     lat: 14.7944, lon: 120.2714, region: "luzon"    },
   ];
@@ -871,10 +875,18 @@ Here you will find aerodrome briefings for the airports within the Philippines. 
 
     [RPVP →](https://learn.vatphil.com/briefings/visayas/RPVP/)
 
+    [RPVD →](https://learn.vatphil.com/briefings/visayas/RPVD/)
+
+    [RPSP →](https://learn.vatphil.com/briefings/visayas/RPSP/)
+
 -   **Mindanao**
 
     ---
     [RPMD →](https://learn.vatphil.com/briefings/mindanao/RPMD/)
+
+    [RPMR →](https://learn.vatphil.com/briefings/mindanao/RPMR/)
+
+    [RPMY →](https://learn.vatphil.com/briefings/mindanao/RPMY/)
 
 -   **RPHI**
 
