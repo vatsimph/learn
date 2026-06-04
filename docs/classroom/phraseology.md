@@ -317,9 +317,9 @@
 
     === "Enter Hold"
 
-        **RPLL_APP**: PAL101, hold WAYEM, expect further clearance at time 45, maintain 6000ft.
+        **RPLL_APP**: PAL101, hold WAYEM as published, expect further clearance at time 45, maintain 6000ft.
 
-        **PAL101**: Hold WAYEM, maintain 6000ft, PAL101.
+        **PAL101**: Hold WAYEM as published, maintain 6000ft, PAL101.
 
     === "Cleared for Approach from Hold"
 
