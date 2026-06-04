@@ -149,7 +149,7 @@
 
 ---
 
-## Tower (Aerodrome Control)
+## Tower
 
 ### Holding Instructions
 
@@ -227,7 +227,7 @@
 
 ---
 
-## Approach Control
+## Approach
 
 ### Departure Instructions (Radar)
 
@@ -257,6 +257,12 @@
 
         **PAL101**: cleared Manila, LAIYA5R arrival, vectors ILS 06, PAL101.
 
+    === "Circle to Land"
+
+        **RPVP_APP**: PAL123, cleared Puerto Princessa, NOMYO2W, RNP Approach Runway 27, Circle to Land Runway 09.
+
+        **PAL123**: Cleared Manila, NOMYO2W, RNP Approach Runway 27, Circle to Land Runway 09, PAL123.
+
     === "Speed Control"
 
         **RPLL_APP**: PAL101, reduce speed, 210 knots.
@@ -280,6 +286,12 @@
         **RPLL_APP**: PAL101, cleared ILS approach runway 06, report established.
 
         **PAL101**: Cleared ILS approach runway 06, wilco, PAL101.
+
+    === "DME ARC"
+
+        **RPVP_APP**: PAL123, cleared ILS approach 27 via TIBOR, report commencing.
+
+        **PAL123**: Cleared cleared ILS approach 27 via TIBOR, wilco PAL123.
 
     === "RNP"
 

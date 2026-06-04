@@ -82,3 +82,20 @@
   font-weight: 700;
   color: var(--md-default-fg-color) !important;
 }
+
+/* ---- Compact briefing tables on small screens ----
+   The aerodrome briefings use wide data tables (frequency lists, declared
+   distances, VFR reporting points). Material already wraps tables in a
+   horizontally scrollable container, but on phones the columns are cramped and
+   often need scrolling. Shrinking the font and padding lets the narrower
+   tables fit on screen and reduces scrolling on the wide ones. */
+@media screen and (max-width: 48em) {
+  .md-typeset table:not([class]) {
+    font-size: 0.62rem;
+  }
+  .md-typeset table:not([class]) th,
+  .md-typeset table:not([class]) td {
+    padding: 0.45em 0.55em;
+    line-height: 1.4;
+  }
+}
