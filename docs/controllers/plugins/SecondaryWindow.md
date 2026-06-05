@@ -135,7 +135,7 @@ If you close a window with the **X** and want it back, type `.sw show`. If you
 want to start fresh with a single default window, close EuroScope and delete
 the file `SecondaryWindowState.txt`, then start again.
 
-# Secondary Window (Developers)
+## Secondary Window (Developers)
 
 ## File layout
 
