@@ -1,4 +1,4 @@
-# [Booking Manager](https://github.com/VATSIMCanada/Slots-Plugin)
+# [Booking Manager WIP](https://github.com/VATSIMCanada/Slots-Plugin)
 
 Booking Manager is a plugin created by VATCAN and is used only for events. ACCPHL6 will include the booking code (if applicable) in the controller announcement channel. 
 To setup the plugin, simply enter the code in the box, and wait for it to turn green

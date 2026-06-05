@@ -1,4 +1,4 @@
-# Collaborative Decision Making (CDM)
+# Collaborative Decision Making (CDM) WIP
 
 On VATSIM, CDM is a tool that encourages virtual pilots & controllers to coordinate more effectively - much like in the real world, but adapted for an online flight simulation environment. By sharing essential departure data, planning collaborative push-back times, and adhering to consistent procedures, CDM helps to reduce airfield congestion and improve overall traffic flow. The result is a more immersive, realistic, and seamless experience for everyone involved in the virtual aviation community.
 

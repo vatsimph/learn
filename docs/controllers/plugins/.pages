@@ -1,5 +1,5 @@
 nav: 
     - index.md
-    - Secondary Window: SecondaryWindow.md
+    - Secondary Window: SecondaryWindow
     - Booking Manager: booking-manager.md
     - CDM: cdm.md
