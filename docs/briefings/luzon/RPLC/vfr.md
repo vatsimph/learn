@@ -156,6 +156,18 @@ Proceed to destination.
     2. Report over Magalang.
     3. Report over Feliciano then join downwind at traffic altitude or proceed as instructed by ATC.
 
+# Transiting VFR Traffic
+
+=== "North Bound"
+
+    1. Contact 119.2 MHZ before entering Clark TMA.
+    2. Proceed to Candaba at 3500 FT all the way to Zaragosa then proceed direct to Paniqui.
+
+=== "South Bound"
+
+    1. Contact 119.2 MHZ before entering Clark TMA.
+    2. Proceed to Paniqui, Tarlac at 2500 FT then proceed to Zaragosa, to be at Zaragosa at 1500 FT then proceed to Candaba.
+
 # OMNI Operations
 
 !!! warning
