@@ -341,6 +341,17 @@
 
         **PAL101**: Cleared to join CAB, then as filed, climb FL200, squawk 4010
 
+### IFR to VFR
+
+!!! phraseology "Phraseology"
+
+        **MNL_CTR**: PAL101, Report ready to cancel IFR
+
+        **PAL101**: Cancelling IFR, PAL101
+
+        **MNL_CTR**: PAL101, IFR cancelled at time HH:MM (z). Maintain VFR, retain squawk.
+
+        **PAL101**: Maintain VFR, retain squawk.
 ---
 
 ### Separation Instructions
