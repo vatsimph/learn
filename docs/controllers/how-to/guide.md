@@ -43,7 +43,7 @@ Before installing, you need to point the updater to a folder where your sector f
 2. Navigate to any location on your computer (e.g. your EuroScope directory).
 3. The updater will automatically create a **VATPHIL Sector** subfolder inside your chosen location.
 
-!!! tip 
+!!! tip
 
     The updater remembers your folder between sessions — you only need to do this once.
 
@@ -79,10 +79,6 @@ After installing, fill in the **Controller Details** panel in the left sidebar:
 
 Click **Apply** when done. EuroScope is ready to connect immediately.
 
-!!! warning
-
-     Your VATSIM password is saved locally in `config.json` next to the updater. **Do not share this file with anyone.**
-
 ??? info "Hoppie Account"
 
     Create an account from [Hoppie](https://www.hoppie.nl/acars/system/register.html)
@@ -112,45 +108,62 @@ If only specific files are missing or corrupted, use **Selective Repair** instea
 
 The updater checks for a new version of itself each time you log in. If a newer version is available, you will be prompted to download and install it. The app restarts automatically once the update is applied, no manual steps required.
 
-!!! info "**Version 0.9.2**"
+!!! info "**Updater**"
 
-    Controller Beta can be found [here](https://vats.im/ph/install)
-
----
-
-## Folder Structure
-
-### Setup/
-Contains the installers for VACS, Track Audio, and vATIS. Can be deleted after installation.
-
-### RPHI/
-The main folder containing all required files for EuroScope.
-
-#### Alias.txt
-This file contains keyboard shortcuts for messages you want to type quickly during your session. To add your own shortcut, use the following format:
-
-```
-.[shortcut] [Message]
-```
-
-**Example:**
-```
-.yes Affirm
-```
-
-Each shortcut must begin with a period (`.`).
-If you think this shortcut should be added for everyone, create a ticket with your shortcut.
-
-#### ASR/
-Contains all the `.asr` screen files for EuroScope. If you are looking for an aerodrome that isn't accessible via the `F+#` shortcut, you can find and open it manually from this folder.
-
-#### Everything else
-
-!!! warning
-
-    Do not touch anything else inside the RPHI folder unless you know what you are doing. Modifying other files may break your EuroScope setup.
+    VATPHIL Updater can be found [here](https://vats.im/ph/install)
 
 ---
+
+# Folder Guide
+
+This guide explains the folders you actually use as a controller. In normal use you only open one profile, and everything else loads by itself. You do not need to touch most files.
+
+## The Main Folder
+
+This is the top folder you point EuroScope at. The important items here are the profiles, which end in `.prf`.
+
+### Profiles (.prf)
+
+A profile is the single file you open to start controlling. Opening it loads the correct map, screens, settings, and plugins for that role. Pick the profile that matches the position you are signing on as:
+
+1. **Manila ACC** for the en route centre.
+2. **The TMA profiles** (Bacolod, Bicol, Clark, Davao, Kalibo, Laoag, Mactan, Manila, Puerto Princesa, Tambler) for those approach areas.
+3. **FSS** for the regional Flight Service (radio) aerodromes.
+4. **Custom** for a blank starting point.
+
+### .sct, .ese, .rwy
+
+These hold the map and the aeronautical data such as fixes, airways, runways, and airspace. You never open these directly. Your profile loads them for you. Just keep them in this folder and keep them up to date.
+
+### vATIS Profile (.json)
+
+This is the ATIS setup. You import it into the vATIS app, not into EuroScope.
+
+## The RPHI Folder
+
+Everything the profiles rely on lives inside `RPHI`. The folder you will care about most is `ASR`, and occasionally `Settings`.
+
+### ASR (your screens)
+
+An ASR is a saved screen layout: the map detail, the ranges, and the label style you see on screen. They are grouped so you can find the right one fast:
+
+1. **A Luzon, B Visayas, C Mindanao** hold the ground, tower, and approach screens for each region group.
+2. **D FSS** holds the Flight Service aerodrome screens, one per field.
+3. The loose screens in the ASR folder (Manila Control and similar) are the centre screens.
+
+While connected you switch between screens using the number fast keys or the open screen menu. You only edit these if you are building a layout, or making a custom version for yourself.
+
+### Settings
+
+This holds the colours, label styles, lists, and the login profiles that decide which positions you can connect as. It is already configured for you.
+
+### Plugins
+
+These are the tools that add features on top of EuroScope, such as TopSky, the ground radar, CDM, the AFV voice bridge, bookings, and the direction finder. They load automatically with your profile.
+
+### Sounds, Alias, ICAO, NavData
+
+Support data that runs in the background. Sounds are the alert tones. Alias holds the chat command shortcuts you can type while connected. ICAO and NavData hold the aircraft, airline, airport, and airway reference data used for flight plans and the map. You do not need to open any of these.
 
 ## Need Help?
 

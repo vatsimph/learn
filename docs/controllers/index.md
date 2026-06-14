@@ -22,7 +22,7 @@ For **SOPs, theory exams, and controller applications**, head over to the [VATPH
 -   **How to 101**
 
     ---
-    [Download Sector Files](https://learn.vatphil.com/controllers/how-to/install/)
+    [Download Sector Files](https://learn.vatphil.com/controllers/how-to/guide/)
 
     [How to use VACS](https://learn.vatphil.com/controllers/how-to/vacs/)
 
