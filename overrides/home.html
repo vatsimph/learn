@@ -1,7 +1,7 @@
 {% extends "main.html" %}
 {% block tabs %}
 {{ super() }}
-<link rel="stylesheet" href="{{ 'assets/stylesheets/home.css' | url }}?v=8">
+<link rel="stylesheet" href="{{ 'assets/stylesheets/home.css' | url }}?v=10">
 
 <a id="next-event-strip" class="next-event-strip" href="#vatphil-events" hidden></a>
 
@@ -113,6 +113,14 @@
     (async function () {
         const container = document.getElementById('vatphil-events');
 
+        // Airports that have a briefing page, mapped to their region folder.
+        const BRIEFING_REGION = {
+            RPLL: 'luzon', RPLC: 'luzon', RPLB: 'luzon',
+            RPVM: 'visayas', RPVE: 'visayas', RPVK: 'visayas', RPVR: 'visayas',
+            RPVP: 'visayas', RPVD: 'visayas', RPSP: 'visayas',
+            RPMD: 'mindanao', RPMR: 'mindanao', RPMY: 'mindanao'
+        };
+
         function formatDate(iso) {
             const d = new Date(iso);
             return d.toLocaleDateString('en-PH', {
@@ -147,6 +155,11 @@
 
         function openModal(ev) {
             const airports = (Array.isArray(ev.airports) ? ev.airports : []).map(a => a.icao).join(', ');
+            const briefingButtons = (Array.isArray(ev.airports) ? ev.airports : [])
+                .map(a => (a.icao || '').toUpperCase())
+                .filter((icao, i, arr) => icao && BRIEFING_REGION[icao] && arr.indexOf(icao) === i)
+                .map(icao => `<a class="modal-link modal-link--briefing" href="https://learn.vatphil.com/briefings/${BRIEFING_REGION[icao]}/${icao}/" target="_blank" rel="noopener noreferrer">${icao} Briefing</a>`)
+                .join('');
             const content = document.getElementById('event-modal-content');
             content.innerHTML = `
       ${ev.banner ? `<div class="modal-banner"><img src="${ev.banner}" alt="${ev.name}"></div>` : ''}
@@ -160,6 +173,7 @@
       <div class="modal-description">${ev.short_description || ev.description || ''}</div>
       ${buildRoutesHTML(ev.routes)}
       <a class="modal-link" href="${ev.link}" target="_blank" rel="noopener noreferrer">View on myVATSIM</a>
+      ${briefingButtons}
       ${/elite\s*wings/i.test(ev.name) ? `<a class="modal-link" href="https://learn.vatphil.com/briefings/events/elitewings/" target="_blank" rel="noopener noreferrer">View Briefing</a>` : ''}
     `;
             document.getElementById('event-modal').classList.add('open');
@@ -172,7 +186,7 @@
             if (!res.ok) throw new Error('API error');
             const json = await res.json();
 
-            const PHIL_KEYWORDS = ['vatphil', 'philippines', 'rpll', 'rpvp', 'rpmd', 'rplb', 'rplc'];
+            const PHIL_KEYWORDS = ['vatphil', 'philippines', 'manila', 'mnl_', 'rphi', 'rpll', 'rpvp', 'rpmd', 'rplb', 'rplc'];
 
             const events = (json.data || []).filter(e => {
                 const airports = Array.isArray(e.airports) ? e.airports : [];

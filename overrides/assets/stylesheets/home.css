@@ -366,7 +366,7 @@
 }
 
 .event-card {
-    flex: 0 0 280px;
+    flex: 0 0 340px;
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 14px;
     overflow: hidden;
@@ -684,6 +684,22 @@
     transform: translateY(-1px);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
     opacity: 0.95;
+}
+
+/* Airport briefing buttons — outlined secondary style to set them apart from
+   the primary "View on myVATSIM" action. */
+.modal-link--briefing {
+    background: transparent;
+    color: var(--md-primary-fg-color, #1976d2) !important;
+    border: 2px solid var(--md-primary-fg-color, #1976d2);
+    padding: calc(0.6rem - 2px) calc(1.25rem - 2px);
+    box-shadow: none;
+}
+
+.modal-link--briefing:hover {
+    background: var(--md-primary-fg-color, #1976d2);
+    color: #fff !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
 }
 
 /* ── Hide default Material for MkDocs elements ──────────────────────────── */
