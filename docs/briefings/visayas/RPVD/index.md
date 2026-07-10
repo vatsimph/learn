@@ -92,7 +92,7 @@ The airport caters to passenger and cargo flights, as well as general aviation.
 
 ## Charts
 <iframe
-  src="https://vatphil.com/charts?icao=RPVD"
+  data-chart-src="https://vatphil.com/charts?icao=RPVD"
   title="RPVD Charts"
   loading="lazy"
   style="width:100%; height:750px; border:1px solid var(--md-default-fg-color--lightest); border-radius:8px;">

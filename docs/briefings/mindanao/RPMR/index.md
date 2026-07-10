@@ -98,7 +98,7 @@ No wide body aircraft (A330 and above category) shall taxi behind a parked B777-
 
 ## Charts
 <iframe
-  src="https://vatphil.com/charts?icao=RPMR"
+  data-chart-src="https://vatphil.com/charts?icao=RPMR"
   title="RPMR Charts"
   loading="lazy"
   style="width:100%; height:750px; border:1px solid var(--md-default-fg-color--lightest); border-radius:8px;">
