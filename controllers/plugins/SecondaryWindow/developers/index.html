@@ -1,0 +1,3215 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Jacob Allen, Juan Carlos. Inspired by Kenzo Tayko, Emilio Perez and Michael Uy">
+      
+      
+        <link rel="canonical" href="https://learn.vatphil.com/controllers/plugins/SecondaryWindow/developers/">
+      
+      
+        <link rel="prev" href="../general/">
+      
+      
+        <link rel="next" href="../../booking-manager/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Developers - Philippines vACC Knowledge Base</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M22%2012a10%2010%200%200%201-10%2010A10%2010%200%200%201%202%2012%2010%2010%200%200%201%2012%202a10%2010%200%200%201%2010%2010M6%2013h8l-3.5%203.5%201.42%201.42L17.84%2012l-5.92-5.92L10.5%207.5%2014%2011H6z%22/%3E%3C/svg%3E');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Mulish";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/vatphil.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-779QHKRL0K"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-779QHKRL0K",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-779QHKRL0K",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="vatphil" data-md-color-primary="indigo" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#secondary-window-developers" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden="">
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Philippines vACC Knowledge Base" class="md-header__button md-logo" aria-label="Philippines vACC Knowledge Base" data-md-component="logo">
+      
+  <img src="../../../../assets/img/vatphil-wlogo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Philippines vACC Knowledge Base
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Developers
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="vatphil" data-md-color-primary="indigo" data-md-color-accent="amber" aria-hidden="true" type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard="" data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Welcome
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../briefings/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Briefings
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../classroom/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Classroom
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Controllers
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Philippines vACC Knowledge Base" class="md-nav__button md-logo" aria-label="Philippines vACC Knowledge Base" data-md-component="logo">
+      
+  <img src="../../../../assets/img/vatphil-wlogo.png" alt="logo">
+
+    </a>
+    Philippines vACC Knowledge Base
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../briefings/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Briefings
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../classroom/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classroom
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked="">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Controllers
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Controllers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2">
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to 101
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    How to 101
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../how-to/cc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Booking a Session
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../how-to/guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sector Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../how-to/vacs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VACS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../how-to/trackaudio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TrackAudio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpdlc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hoppie's information
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked="">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plugins
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_4" id="__nav_4_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Plugins
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_2" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_4_4_2" id="__nav_4_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Secondary Window
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Secondary Window
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developers
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#file-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File layout
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File layout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map-file-secondarywindowmaptxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Map file (SecondaryWindowMap.txt)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Map file (SecondaryWindowMap.txt)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#colors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Colors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Map blocks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shapes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shapes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#single-line-segments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Single line segments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Text labels
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Text labels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#per-section-label-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-section label size
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importing-labels-from-ese-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Importing labels from .ese files
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importing-sct-sct2-sector-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Importing .sct / .sct2 sector files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Importing .sct / .sct2 sector files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#waypoints-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Waypoints (fixes)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#settings-file-secondarywindowsettingstxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Settings file (SecondaryWindowSettings.txt)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Settings file (SecondaryWindowSettings.txt)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#window" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Window
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map-rendering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Map rendering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#label-font-text-inline-ese-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Label font (TEXT + inline ESE labels)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traffic-dots-trails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Traffic dots + trails
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tags-labels-next-to-each-dot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tags (labels next to each dot)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tags (labels next to each dot)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tag-background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tag background
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tag-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tag content
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tag content">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#placeholder-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Placeholder reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-tag-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example tag formats
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiple-secondary-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multiple Secondary Windows
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loading-from-euroscope-asr-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loading from EuroScope .asr files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#window-state-persistence-secondarywindowstatetxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Window state persistence (SecondaryWindowState.txt)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chat-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chat commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#all-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        All References
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="All References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#secondarywindowmaptxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SecondaryWindowMap.txt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secondarywindowsettingstxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SecondaryWindowSettings.txt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#window-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Window controls
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Window controls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sidebar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sidebar
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../booking-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Booking Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cdm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CDM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#file-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File layout
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File layout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map-file-secondarywindowmaptxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Map file (SecondaryWindowMap.txt)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Map file (SecondaryWindowMap.txt)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#colors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Colors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Map blocks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shapes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shapes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#single-line-segments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Single line segments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Text labels
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Text labels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#per-section-label-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-section label size
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importing-labels-from-ese-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Importing labels from .ese files
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importing-sct-sct2-sector-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Importing .sct / .sct2 sector files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Importing .sct / .sct2 sector files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#waypoints-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Waypoints (fixes)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#settings-file-secondarywindowsettingstxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Settings file (SecondaryWindowSettings.txt)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Settings file (SecondaryWindowSettings.txt)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#window" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Window
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map-rendering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Map rendering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#label-font-text-inline-ese-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Label font (TEXT + inline ESE labels)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traffic-dots-trails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Traffic dots + trails
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tags-labels-next-to-each-dot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tags (labels next to each dot)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tags (labels next to each dot)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tag-background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tag background
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tag-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tag content
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tag content">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#placeholder-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Placeholder reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-tag-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example tag formats
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiple-secondary-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multiple Secondary Windows
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loading-from-euroscope-asr-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loading from EuroScope .asr files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#window-state-persistence-secondarywindowstatetxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Window state persistence (SecondaryWindowState.txt)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chat-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chat commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#all-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        All References
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="All References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#secondarywindowmaptxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SecondaryWindowMap.txt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secondarywindowsettingstxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SecondaryWindowSettings.txt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#window-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Window controls
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Window controls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sidebar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sidebar
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="secondary-window-developers">Secondary Window (Developers)<a class="headerlink" href="#secondary-window-developers" title="Permanent link">¶</a></h1>
+<h2 id="file-layout">File layout<a class="headerlink" href="#file-layout" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SecondaryWindowMap.txt</code></td>
+<td>Map definitions: colors, polygons, lines, polylines, labels.</td>
+</tr>
+<tr>
+<td><code>SecondaryWindowSettings.txt</code></td>
+<td>Visual settings: background, dots, fonts, tag format, <code>SCT_FILE:</code>, etc.</td>
+</tr>
+<tr>
+<td><code>SecondaryWindowState.txt</code></td>
+<td>Auto saved window state</td>
+</tr>
+</tbody>
+</table>
+<h3 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code>.sw reload
+</code></pre></div>
+<hr>
+<h2 id="map-file-secondarywindowmaptxt">Map file (<code>SecondaryWindowMap.txt</code>)<a class="headerlink" href="#map-file-secondarywindowmaptxt" title="Permanent link">¶</a></h2>
+<p>Plain text. Each line is a directive: <code>KEY:value...</code>. 
+Coordinates use TopSky format: <code>hemisphere + DDD.MM.SS.fff</code>,
+e.g. <code>N014.30.00.000</code></p>
+<h3 id="colors">Colors<a class="headerlink" href="#colors" title="Permanent link">¶</a></h3>
+<p>Declare named colors once near the top, then reference by name:</p>
+<div class="highlight"><pre><span></span><code>COLORDEF:Black:0:0:0
+</code></pre></div>
+<h3 id="map-blocks">Map blocks<a class="headerlink" href="#map-blocks" title="Permanent link">¶</a></h3>
+<p>Every map starts with <code>MAP:</code>. Everything that follows belongs to that map
+until the next <code>MAP:</code> directive.</p>
+<div class="highlight"><pre><span></span><code>MAP:RPLL:A                 // required — display name
+FOLDER:CTR                 // optional — grouping label
+ACTIVE:1                   // optional — 0 hides on load, 1 shows (default)
+COLOR:Blue                 // sets the active color
+</code></pre></div>
+<p><code>COLOR:</code> can be issued multiple times inside a map to change color
+between shapes.</p>
+<h3 id="shapes">Shapes<a class="headerlink" href="#shapes" title="Permanent link">¶</a></h3>
+<p>Three closed/open variants, all the syntax Ground Radar / TopSky use:</p>
+<table>
+<thead>
+<tr>
+<th>Directive</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>COORDTYPE:OTHER:REGION</code> + <code>COORD:</code> lines</td>
+<td><strong>Filled</strong> closed area</td>
+</tr>
+<tr>
+<td><code>COORDTYPE:OTHER:POLYGON</code> + <code>COORD:</code> lines</td>
+<td><strong>Outline only</strong> closed shape (last vertex connects to first)</td>
+</tr>
+<tr>
+<td><code>COORDTYPE:OTHER:POLYLINE</code> + <code>COORD:</code> lines</td>
+<td>Open line strip, no closing segment</td>
+</tr>
+<tr>
+<td>-------------------------------------------</td>
+<td>-------------------------------------------------------------</td>
+</tr>
+<tr>
+<td><code>COORDTYPE:OTHER:REGION</code> + <code>COORD:</code> lines</td>
+<td><strong>Filled</strong> closed area</td>
+</tr>
+<tr>
+<td><code>COORDTYPE:OTHER:POLYGON</code> + <code>COORD:</code> lines</td>
+<td><strong>Outline only</strong> closed shape (last vertex connects to first)</td>
+</tr>
+<tr>
+<td><code>COORDTYPE:OTHER:POLYLINE</code> + <code>COORD:</code> lines</td>
+<td>Open line strip, no closing segment</td>
+</tr>
+</tbody>
+</table>
+<p>Each shape ends at the next <code>COORDTYPE:</code>, <code>MAP:</code>, or end of file.</p>
+<div class="highlight"><pre><span></span><code>// Filled area:
+COORDTYPE:OTHER:REGION
+COORD:N014.30.00.000:E120.30.00.000
+COORD:N014.30.00.000:E121.30.00.000
+COORD:N015.30.00.000:E121.30.00.000
+COORD:N015.30.00.000:E120.30.00.000
+
+// no fill:
+COORDTYPE:OTHER:POLYGON
+COORD:N014.37.36.529:E120.59.29.134
+COORD:N014.37.35.053:E120.59.48.519
+... more coords ...
+
+// Approach arc with no closing line:
+COORDTYPE:OTHER:POLYLINE
+COORD:N014.28.29.254:E121.05.29.662
+COORD:N014.28.24.532:E121.05.27.335
+... more coords ...
+</code></pre></div>
+<p>Other:</p>
+<div class="highlight"><pre><span></span><code>POLYGON
+COORD:N..:E..
+COORD:N..:E..
+ENDPOLYGON
+</code></pre></div>
+<h3 id="single-line-segments">Single line segments<a class="headerlink" href="#single-line-segments" title="Permanent link">¶</a></h3>
+<p>For one off straight lines without setting up a polyline block:</p>
+<div class="highlight"><pre><span></span><code>LINE:N014.30.00.000:E120.30.00.000:N014.30.00.000:E121.30.00.000
+//   ^from-lat       ^from-lon       ^to-lat         ^to-lon
+</code></pre></div>
+<h3 id="text-labels">Text labels<a class="headerlink" href="#text-labels" title="Permanent link">¶</a></h3>
+<p>Drops a label at a geographic coordinate in the current color:</p>
+<div class="highlight"><pre><span></span><code>TEXT:N014.34.35.000:E120.54.02.800:2000ft
+TEXT:N014.42.05.500:E121.06.55.600:2500ft
+TEXT:N014.35.50.679:E120.59.24.237:5500ft
+</code></pre></div>
+<h4 id="per-section-label-size">Per-section label size<a class="headerlink" href="#per-section-label-size" title="Permanent link">¶</a></h4>
+<p>Use <code>TEXT_SIZE:</code> to set the font size (in pixels) for every <code>TEXT:</code> and
+inline ESE label that follows. It sticks until the next <code>TEXT_SIZE:</code>
+directive. Use <code>TEXT_SIZE:0</code> to reset to the global default
+(<code>LABEL_FONT_SIZE</code> in settings).</p>
+<div class="highlight"><pre><span></span><code>TEXT_SIZE:18
+TEXT:N014.30.00.000:E121.00.00.000:RPLL TWR
+
+TEXT_SIZE:10
+TEXT:N014.30.45.000:E121.00.30.000:Bay 18
+TEXT:N014.30.46.000:E121.00.32.000:Bay 19
+
+TEXT_SIZE:0     // back to default
+</code></pre></div>
+<p>The font face and bold are configured globally in
+<code>SecondaryWindowSettings.txt</code> (see <code>LABEL_FONT_FACE</code> / <code>LABEL_FONT_BOLD</code>).</p>
+<h3 id="importing-labels-from-ese-files">Importing labels from <code>.ese</code> files<a class="headerlink" href="#importing-labels-from-ese-files" title="Permanent link">¶</a></h3>
+<p>EuroScope <code>.ese</code> label format is <code>lat:lon:category:label</code>, e.g.</p>
+<div class="highlight"><pre><span></span><code>N014.30.53.908:E121.00.32.721:RPLL BAYS-GroundLayout:61
+N014.31.10.449:E121.00.44.997:RPLL BAYS-GroundLayout:115
+</code></pre></div>
+<p>Relative paths resolve against the map file's folder. Absolute paths
+work too. Add as many <code>INCLUDE_ESE:</code> lines as you want.</p>
+<div class="highlight"><pre><span></span><code>.sw ese "C:\.ese"
+</code></pre></div>
+<p>it will skips lines starting with <code>;</code> (ESE comments)
+or <code>[</code> (section headers like <code>[FREETEXT]</code>), so you can point it at a full
+<code>.ese</code> file with many sections and it'll just pick out the label formated
+lines. Imported labels render in white by default.</p>
+<p><strong>Text Size</strong> 
+Put <code>TEXT_SIZE:#</code> before the coords to apply that pixel size to everything that follows.</p>
+<div class="highlight"><pre><span></span><code>TEXT_SIZE:8
+N014.30.53.908:E121.00.32.721:RPLL BAYS-GroundLayout:61
+N014.31.10.449:E121.00.44.997:RPLL BAYS-GroundLayout:115
+
+TEXT_SIZE:0      // reset to default
+</code></pre></div>
+<hr>
+<h2 id="importing-sct-sct2-sector-files">Importing <code>.sct</code> / <code>.sct2</code> sector files<a class="headerlink" href="#importing-sct-sct2-sector-files" title="Permanent link">¶</a></h2>
+<p>Standard EuroScope sector files can be merged straight into the maps menu
+— no need to translate them into the plugin's own map format.</p>
+<p>Add one line per file to <strong><code>SecondaryWindowSettings.txt</code></strong>:</p>
+<div class="highlight"><pre><span></span><code>SCT_FILE:xxxx.sct
+</code></pre></div>
+<p><strong>What gets imported?</strong></p>
+<table>
+<thead>
+<tr>
+<th><code>.sct</code> section</th>
+<th>Becomes</th>
+<th>Folder</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[ARTCC]</code></td>
+<td>One toggle per boundary name (polyline)</td>
+<td><code>ARTCC</code></td>
+</tr>
+<tr>
+<td><code>[ARTCC HIGH]</code></td>
+<td>One toggle per boundary name (polyline)</td>
+<td><code>ARTCC HIGH</code></td>
+</tr>
+<tr>
+<td><code>[ARTCC LOW]</code></td>
+<td>One toggle per boundary name (polyline)</td>
+<td><code>ARTCC LOW</code></td>
+</tr>
+<tr>
+<td><code>[SID]</code></td>
+<td>One toggle per procedure (polyline)</td>
+<td><code>SID</code></td>
+</tr>
+<tr>
+<td><code>[STAR]</code></td>
+<td>One toggle per procedure (polyline)</td>
+<td><code>STAR</code></td>
+</tr>
+<tr>
+<td><code>[GEO]</code></td>
+<td>One toggle per <code>;comment</code> group above a run of lines</td>
+<td><code>GEO</code></td>
+</tr>
+<tr>
+<td><code>[REGIONS]</code></td>
+<td>One toggle per named region (filled polygon)</td>
+<td><code>REGIONS</code></td>
+</tr>
+<tr>
+<td><code>[FIXES]</code></td>
+<td>All fixes collapse into one <code>FIXES</code> toggle (symbol + name)</td>
+<td>(root)</td>
+</tr>
+</tbody>
+</table>
+<p>Other sections (<code>[INFO]</code>, <code>[VOR]</code>, <code>[NDB]</code>, <code>[AIRPORT]</code>, <code>[RUNWAY]</code>,
+airways, <code>[LABELS]</code>) are parsed and discarded for now (I might add them in
+the future).</p>
+<h3 id="waypoints-fixes">Waypoints (fixes)<a class="headerlink" href="#waypoints-fixes" title="Permanent link">¶</a></h3>
+<p>The <code>[FIXES]</code> section of a sector file lists navigation fixes as
+<code>NAME LAT LON</code>, for example:</p>
+<div class="highlight"><pre><span></span><code>[FIXES]
+ALGAD N013.11.08.498 E123.55.19.199
+</code></pre></div>
+<p>Every fix in the file lands in a single layer called <code>FIXES</code>. It starts
+hidden like the rest of the SCT imports, so open the sidebar and tick
+<code>FIXES</code> to show them. Each fix draws as a small triangle with its name
+beside it. The symbol and name share one color you set with
+<code>WAYPOINT_COLOR</code>, and <code>WAYPOINT_SIZE</code> controls how big the triangle is.</p>
+<div class="highlight"><pre><span></span><code>WAYPOINT_COLOR:120:160:200     // R:G:B of the symbol and label
+WAYPOINT_SIZE:4                // px, half height of the triangle
+</code></pre></div>
+<hr>
+<h2 id="settings-file-secondarywindowsettingstxt">Settings file (<code>SecondaryWindowSettings.txt</code>)<a class="headerlink" href="#settings-file-secondarywindowsettingstxt" title="Permanent link">¶</a></h2>
+<p>Same <code>KEY:value</code> syntax. Any key you omit falls back to the built-in default.</p>
+<h3 id="background">Background<a class="headerlink" href="#background" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code>BACKGROUND_COLOR:0:0:0       // R:G:B of the map area
+</code></pre></div>
+<h3 id="window">Window<a class="headerlink" href="#window" title="Permanent link">¶</a></h3>
+<p>All R:G:B. Omit any line to keep the built-in default.</p>
+<div class="highlight"><pre><span></span><code>BORDER_COLOR:40:40:40          // Outline around the window
+TITLE_BAR_COLOR:80:80:80       // Title Bar
+TITLE_TEXT_COLOR:220:220:220   // "Secondary Window" text
+</code></pre></div>
+<h3 id="map-rendering">Map rendering<a class="headerlink" href="#map-rendering" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code>LINE_WIDTH:1                   // pixels, applies to lines, outlines, polylines
+FILL_POLYGONS:true             // true = filled regions are filled; false = outline only
+</code></pre></div>
+<h3 id="label-font-text-inline-ese-labels">Label font (TEXT + inline ESE labels)<a class="headerlink" href="#label-font-text-inline-ese-labels" title="Permanent link">¶</a></h3>
+<p>Per section overrides via <code>TEXT_SIZE:n</code> in the map file take precedence.</p>
+<div class="highlight"><pre><span></span><code>LABEL_FONT_FACE:Consolas
+LABEL_FONT_SIZE:12             // pixel height
+LABEL_FONT_BOLD:false
+</code></pre></div>
+<h3 id="traffic-dots-trails">Traffic dots + trails<a class="headerlink" href="#traffic-dots-trails" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code>TRAFFIC_DOT_COLOR:255:255:0    // dot color
+TRAFFIC_DOT_RADIUS:3           // px (half width of the square dot)
+TRAFFIC_TRAIL_LENGTH:5         // number of historical positions to draw (0 = off)
+</code></pre></div>
+<p>The trail is a row of dots behind each aircraft, same size and color as the
+main dot. The plugin records each target's last <code>TRAFFIC_TRAIL_LENGTH</code>
+positions and renders them every frame. Set to <code>0</code> to disable.</p>
+<h3 id="tags-labels-next-to-each-dot">Tags (labels next to each dot)<a class="headerlink" href="#tags-labels-next-to-each-dot" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code>SHOW_TAGS:true
+TAG_COLOR:255:255:0
+TAG_FONT_FACE:Consolas
+TAG_FONT_SIZE:12               // pixel height
+TAG_FONT_BOLD:false
+TAG_OFFSET_X:5                 // px from dot center (positive = right)
+TAG_OFFSET_Y:-3                // px from dot center (negative = up)
+TAG_CLICK_WIDTH:80             // width of the clickable/hover area for the callsign
+TAG_CLICK_HEIGHT:14
+TAG_BACKGROUND:false           // true draws a filled box behind every tag
+TAG_BG_COLOR:0:0:0             // R:G:B of that box
+TAG_BG_PADDING:2               // px of fill around the text on each side
+TAG_BACKGROUND_HOVER:false     // true shows the box only on the tag under the cursor
+</code></pre></div>
+<h4 id="tag-background">Tag background<a class="headerlink" href="#tag-background" title="Permanent link">¶</a></h4>
+<p><code>TAG_BACKGROUND</code> puts a solid color box behind the tag text so callsigns stay
+readable over busy ground layouts. <code>TAG_BG_COLOR</code> sets that color, and
+<code>TAG_BG_PADDING</code> controls how far the fill reaches past the text on each side.</p>
+<p><code>TAG_BACKGROUND_HOVER</code> is the lighter option. Tags stay transparent until you
+move the mouse over one, and only that tag gets the box. Use it on its own for a
+clean look that highlights whatever you point at, or alongside <code>TAG_BACKGROUND</code>
+for an always on fill. Both modes share <code>TAG_BG_COLOR</code>.</p>
+<h3 id="tag-content">Tag content<a class="headerlink" href="#tag-content" title="Permanent link">¶</a></h3>
+<p>The text shown next to each aircraft dot is built from one or more
+<code>TAG_LINE:</code> entries, in order. Each is a format string with
+<code>{placeholder}</code> tokens. <strong>You can add as many <code>TAG_LINE:</code> entries as you
+want — each becomes a new line</strong> in the tag.</p>
+<div class="highlight"><pre><span></span><code>TAG_LINE:{callsign}
+TAG_LINE:{type} {alt} {cfl}
+TAG_LINE:{gs}kt {hdg}
+TAG_LINE:{scratch}
+</code></pre></div>
+<p>That gives every tag four lines:
+</p><div class="highlight"><pre><span></span><code>PAL123
+A320 19000/24000
+200kt 045
+BAY105
+</code></pre></div><p></p>
+<p>If no <code>TAG_LINE:</code> is declared, the tag falls back to a single line showing
+just <code>{callsign}</code>.</p>
+<h4 id="placeholder-reference">Placeholder reference<a class="headerlink" href="#placeholder-reference" title="Permanent link">¶</a></h4>
+<p>Position / radar data (always available):</p>
+<table>
+<thead>
+<tr>
+<th>Placeholder</th>
+<th>What it shows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{callsign}</code></td>
+<td>Aircraft callsign</td>
+</tr>
+<tr>
+<td><code>{squawk}</code></td>
+<td>Actual transponder code reported by the aircraft</td>
+</tr>
+<tr>
+<td><code>{alt}</code></td>
+<td>Pressure altitude as 3-digit FL (<code>190</code> = 19 000 ft, <code>050</code> = 5 000 ft)</td>
+</tr>
+<tr>
+<td><code>{altft}</code></td>
+<td>Pressure altitude in raw feet (e.g. <code>19000</code>)</td>
+</tr>
+<tr>
+<td><code>{fl}</code></td>
+<td>Same as <code>{alt}</code> — alias for clarity</td>
+</tr>
+<tr>
+<td><code>{gs}</code></td>
+<td>Reported ground speed (knots)</td>
+</tr>
+<tr>
+<td><code>{hdg}</code></td>
+<td>Reported heading (degrees)</td>
+</tr>
+<tr>
+<td><code>{vs}</code></td>
+<td>Vertical speed (feet per minute)</td>
+</tr>
+<tr>
+<td><code>{trend}</code></td>
+<td>Vertical trend arrow: <code>^</code> climbing, <code>v</code> descending, blank when level</td>
+</tr>
+</tbody>
+</table>
+<p>Flight-plan / controller-assigned data (empty if no flight plan correlated):</p>
+<table>
+<thead>
+<tr>
+<th>Placeholder</th>
+<th>What it shows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{type}</code></td>
+<td>Aircraft ICAO type (e.g. <code>A320</code>, <code>B738</code>)</td>
+</tr>
+<tr>
+<td><code>{wtc}</code></td>
+<td>Wake turbulence category letter (<code>L</code>, <code>M</code>, <code>H</code>, <code>J</code>)</td>
+</tr>
+<tr>
+<td><code>{cfl}</code></td>
+<td>Cleared altitude as 3-digit FL (<code>240</code> = 24 000 ft, <code>030</code> = 3 000 ft). Empty if not set.</td>
+</tr>
+<tr>
+<td><code>{cflft}</code></td>
+<td>Cleared altitude in raw feet</td>
+</tr>
+<tr>
+<td><code>{asquawk}</code></td>
+<td>Assigned (not necessarily set yet) squawk code</td>
+</tr>
+<tr>
+<td><code>{spd}</code></td>
+<td>Assigned speed</td>
+</tr>
+<tr>
+<td><code>{ahdg}</code></td>
+<td>Assigned heading</td>
+</tr>
+<tr>
+<td><code>{scratch}</code></td>
+<td>Controller scratchpad string</td>
+</tr>
+<tr>
+<td><code>{dep}</code></td>
+<td>Departure airport (origin)</td>
+</tr>
+<tr>
+<td><code>{arr}</code></td>
+<td>Arrival airport (destination)</td>
+</tr>
+<tr>
+<td><code>{sid}</code></td>
+<td>SID name</td>
+</tr>
+<tr>
+<td><code>{star}</code></td>
+<td>STAR name</td>
+</tr>
+<tr>
+<td><code>{rwy}</code></td>
+<td>Departure runway</td>
+</tr>
+<tr>
+<td><code>{arrwy}</code></td>
+<td>Arrival runway</td>
+</tr>
+<tr>
+<td><code>{rfl}</code></td>
+<td>Requested cruising level as FL</td>
+</tr>
+</tbody>
+</table>
+<p>Anything between <code>{</code> and <code>}</code> that isn't a known placeholder is echoed back
+literally, so typos are visible (<code>{calsign}</code> shows as <code>{calsign}</code> in the
+tag). Any text outside <code>{...}</code> is rendered literally.</p>
+<h4 id="example-tag-formats">Example tag formats<a class="headerlink" href="#example-tag-formats" title="Permanent link">¶</a></h4>
+<p>Minimal callsign-only (the default if you set nothing):</p>
+<div class="highlight"><pre><span></span><code>TAG_LINE:{callsign}
+</code></pre></div>
+<p>Compact ATC-style:</p>
+<div class="highlight"><pre><span></span><code>TAG_LINE:{callsign} {squawk}
+TAG_LINE:{fl} {gs}
+</code></pre></div>
+<p>Full IFR clearance summary:</p>
+<div class="highlight"><pre><span></span><code>TAG_LINE:{callsign}
+TAG_LINE:{type} {dep}-{arr}
+TAG_LINE:{fl}/{cfl} {gs}kt
+TAG_LINE:{scratch}
+</code></pre></div>
+<p>Ground-radar-ish (squawk + scratchpad first):</p>
+<div class="highlight"><pre><span></span><code>TAG_LINE:{callsign} {squawk}
+TAG_LINE:{scratch}
+TAG_LINE:{rwy} {sid}
+</code></pre></div>
+<hr>
+<h2 id="multiple-secondary-windows">Multiple Secondary Windows<a class="headerlink" href="#multiple-secondary-windows" title="Permanent link">¶</a></h2>
+<p>Up to <strong>5</strong> Secondary Windows can be open at once. Each has its own
+position, size, view (pan/zoom), altitude filter, and <strong>per-window</strong> map
+visibility — so you can have one window showing the ground layout for a
+particular airport and another showing the TMA, without affecting either.</p>
+<table>
+<thead>
+<tr>
+<th>How to open another</th>
+<th>What you get</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sidebar → <strong>Open new window</strong></td>
+<td>New window starts <strong>with all maps hidden</strong> so you can pick exactly what to show.</td>
+</tr>
+<tr>
+<td><code>.sw new</code> chat command</td>
+<td>Same as above.</td>
+</tr>
+</tbody>
+</table>
+<p>The first window at plugin load seeds its visibility from the <code>ACTIVE:</code>
+flags in the map file (and from any saved <code>HIDE:</code> lines in
+<code>SecondaryWindowState.txt</code>). New windows opened during the session start
+blank by design — opening a new window almost always means "I want a
+different view," not "show me everything again."</p>
+<hr>
+<h2 id="loading-from-euroscope-asr-files">Loading from EuroScope <code>.asr</code> files<a class="headerlink" href="#loading-from-euroscope-asr-files" title="Permanent link">¶</a></h2>
+<p>Open the sidebar and click <strong>Load .asr</strong> to bring up a Windows file
+picker. Pick any EuroScope <code>.asr</code> and the window's visible-map set is
+replaced with whatever that <code>.asr</code> had on:</p>
+<ul>
+<li>Maps mentioned in the <code>.asr</code> and <em>also</em> loaded in our <code>MapCollection</code>
+  → become visible in this window</li>
+<li>Anything else → hidden in this window</li>
+</ul>
+<p>The window then refits its view to fit the new selection. Other windows
+are untouched — each window can load a different <code>.asr</code>.</p>
+<p>The plugin recognises these <code>.asr</code> section prefixes (case-insensitive):</p>
+<div class="highlight"><pre><span></span><code>ARTCC boundary:        ARTCC high boundary:        ARTCC low boundary:
+ARTCC:                 ARTCC high:                 ARTCC low:
+Airports:              Fixes:                      Free Text:
+Geo:                   Regions:                    Runways:
+Sids:                  Stars:
+VORs:                  NDBs:
+Low airway:            High airway:
+</code></pre></div>
+<p>Lines from any other prefix (display config, plugin properties, window
+position, etc.) are ignored.</p>
+<p><strong>Name matching:</strong> the second <code>:</code> separated field of each line is the map
+name. <code>Free Text:</code> entries strip everything after the first backslash
+(so <code>Free Text:RPLL TWY-GroundLayout\C:freetext</code> matches a map named
+<code>RPLL TWY-GroundLayout</code>). Comparison is case-insensitive.</p>
+<hr>
+<h2 id="window-state-persistence-secondarywindowstatetxt">Window state persistence (<code>SecondaryWindowState.txt</code>)<a class="headerlink" href="#window-state-persistence-secondarywindowstatetxt" title="Permanent link">¶</a></h2>
+<p>The plugin auto-saves your window layout on unload and restores it at
+startup. <strong>You normally never touch this file</strong>, it's the persisted form
+of every position drag, resize, view pan/zoom, map toggle, and altitude
+filter change.</p>
+<p><strong>What survives a restart, per window:</strong></p>
+<ul>
+<li>Screen position + size</li>
+<li>Collapsed-to-title-bar state</li>
+<li>View center (lat/lon) and zoom (nm/px)</li>
+<li>Altitude filter (inherit / explicit min/max)</li>
+<li>The set of maps hidden in this window</li>
+</ul>
+<p><strong>Format</strong> (line based, one <code>WINDOW</code> block per open window):</p>
+<div class="highlight"><pre><span></span><code>WINDOW
+POS:100:100:420:420
+COLLAPSED:0
+UNCOLLAPSED_H:420
+VIEW:14.500000:121.000000:0.500000
+ALT:1:-2147483648:2147483647
+HIDE:RPLL Groundlayout
+HIDE:RPLL Background
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POS</code></td>
+<td><code>x:y:w:h</code> screen coords, pixels</td>
+</tr>
+<tr>
+<td><code>COLLAPSED</code></td>
+<td><code>0</code> / <code>1</code></td>
+</tr>
+<tr>
+<td><code>UNCOLLAPSED_H</code></td>
+<td>Height to restore when uncollapsed</td>
+</tr>
+<tr>
+<td><code>VIEW</code></td>
+<td><code>centerLat:centerLon:nmPerPixel</code></td>
+</tr>
+<tr>
+<td><code>ALT</code></td>
+<td><code>inherit:minFt:maxFt</code> (inherit=1 means use file level filter)</td>
+</tr>
+<tr>
+<td><code>HIDE</code></td>
+<td>One per hidden map (visible = absent). Names match <code>MAP:</code> names</td>
+</tr>
+</tbody>
+</table>
+<p>Up to 5 <code>WINDOW</code> blocks are restored; extras are silently dropped. Lines
+starting with <code>//</code> and blank lines are ignored.</p>
+<p><strong>Useful one offs:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Want to...</th>
+<th>Do this</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reset to a single default window</td>
+<td>Delete <code>SecondaryWindowState.txt</code></td>
+</tr>
+<tr>
+<td>Force save mid-session (e.g. before EuroScope might crash)</td>
+<td><code>.sw save</code></td>
+</tr>
+<tr>
+<td>Reset one window without losing the others</td>
+<td>Remove its <code>WINDOW</code> block, or just delete its <code>HIDE:</code> lines for "all visible"</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="chat-commands">Chat commands<a class="headerlink" href="#chat-commands" title="Permanent link">¶</a></h2>
+<p>All issued in the EuroScope command bar:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.sw reload</code></td>
+<td>Re-read both <code>.txt</code> files from disk (also re-imports SCTs)</td>
+</tr>
+<tr>
+<td><code>.sw load &lt;path&gt;</code></td>
+<td>Load a different map file (e.g. Ground Radar's)</td>
+</tr>
+<tr>
+<td><code>.sw settings &lt;path&gt;</code></td>
+<td>Load a different settings file</td>
+</tr>
+<tr>
+<td><code>.sw ese &lt;path&gt;</code></td>
+<td>Import labels from a <code>.ese</code> file (one category → one map)</td>
+</tr>
+<tr>
+<td><code>.sw sct &lt;path&gt;</code></td>
+<td>Import a <code>.sct</code> / <code>.sct2</code> sector file ad-hoc</td>
+</tr>
+<tr>
+<td><code>.sw new</code></td>
+<td>Open another Secondary Window (up to 5 total, all maps hidden)</td>
+</tr>
+<tr>
+<td><code>.sw show</code></td>
+<td>Show all hidden windows</td>
+</tr>
+<tr>
+<td><code>.sw hide</code></td>
+<td>Hide all windows</td>
+</tr>
+<tr>
+<td><code>.sw save</code></td>
+<td>Force-save window state now (positions, hidden maps, alt filter)</td>
+</tr>
+<tr>
+<td><code>.sw alt &lt;min&gt; &lt;max&gt;</code></td>
+<td>Set the altitude filter on <strong>all</strong> windows. Use feet, e.g. <code>.sw alt 3000 24000</code>.</td>
+</tr>
+<tr>
+<td><code>.sw alt off</code> / <code>.sw alt reset</code></td>
+<td>Reset altitude filter on all windows back to the map file default.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="all-references">All References<a class="headerlink" href="#all-references" title="Permanent link">¶</a></h2>
+<p>Every <code>KEY:value</code> line you can put in either of the <code>.txt</code> files, in one
+place. Anything not listed is ignored, so the parser silently accepts
+unknown lines without complaining.</p>
+<h3 id="secondarywindowmaptxt"><code>SecondaryWindowMap.txt</code><a class="headerlink" href="#secondarywindowmaptxt" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>COLORDEF:</code></td>
+<td><code>Name:R:G:B</code></td>
+<td>Defines a named color. R/G/B are 0–255.</td>
+</tr>
+<tr>
+<td><code>MAP:</code></td>
+<td><code>display name</code></td>
+<td>Starts a new map block; everything below belongs to it until the next <code>MAP:</code></td>
+</tr>
+<tr>
+<td><code>FOLDER:</code></td>
+<td><code>name</code></td>
+<td>Optional folder/grouping label (not currently shown in UI but parsed).</td>
+</tr>
+<tr>
+<td><code>AIRPORT</code>:</td>
+<td><code>ICAO</code></td>
+<td>Optional stored, not rendered (as of now)</td>
+</tr>
+<tr>
+<td><code>ACTIVE:</code></td>
+<td><code>0</code> or <code>1</code></td>
+<td>Initial visibility. Default <code>1</code> (visible).</td>
+</tr>
+<tr>
+<td><code>COLOR:</code></td>
+<td><code>name</code></td>
+<td>Sets the active color (must match a prior <code>COLORDEF</code>). Applies to all shapes/labels that follow until the next <code>COLOR:</code></td>
+</tr>
+<tr>
+<td><code>COORDTYPE:</code></td>
+<td><code>OTHER:REGION</code></td>
+<td>Starts a <strong>filled</strong> closed polygon — see <code>COORD:</code> lines below. Block ends at next <code>COORDTYPE:</code> / <code>MAP:</code> / EOF.</td>
+</tr>
+<tr>
+<td><code>COORDTYPE:</code></td>
+<td><code>OTHER:POLYGON</code></td>
+<td>Starts an <strong>outline only</strong> closed shape. Last vertex auto connects to the first.</td>
+</tr>
+<tr>
+<td><code>COORDTYPE:</code></td>
+<td><code>OTHER:POLYLINE</code></td>
+<td>Starts an <strong>open</strong> line strip (no closing segment).</td>
+</tr>
+<tr>
+<td><code>COORD:</code></td>
+<td><code>lat:lon</code></td>
+<td>Adds a vertex to the active polygon / polyline. Lat/lon in DMS format (<code>N014.30.00.000</code> etc.).</td>
+</tr>
+<tr>
+<td><code>POLYGON</code></td>
+<td><em>(none)</em></td>
+<td>Legacy alias for <code>COORDTYPE:OTHER:REGION</code>. Closed by an <code>ENDPOLYGON</code> line.</td>
+</tr>
+<tr>
+<td><code>ENDPOLYGON</code></td>
+<td><em>(none)</em></td>
+<td>Ends a legacy <code>POLYGON</code> block.</td>
+</tr>
+<tr>
+<td><code>LINE:</code></td>
+<td><code>lat1:lon1:lat2:lon2</code></td>
+<td>One-shot straight segment in current color.</td>
+</tr>
+<tr>
+<td><code>TEXT:</code></td>
+<td><code>lat:lon:label-text</code></td>
+<td>Label at a coord, current color, current size. Label may contain colons.</td>
+</tr>
+<tr>
+<td><code>TEXT_SIZE:</code></td>
+<td><code>px</code></td>
+<td>Sticky font size in pixels for following <code>TEXT:</code> and ESE labels. <code>0</code> = default.</td>
+</tr>
+<tr>
+<td><code>INCLUDE_ESE:</code></td>
+<td><code>path</code></td>
+<td>Imports labels from a <code>.ese</code> files. Path can be relative to the map file or absolute.</td>
+</tr>
+<tr>
+<td><em>raw line</em></td>
+<td><code>lat:lon:category:label</code></td>
+<td>Inline ESE label. Category becomes its own map under folder <code>ESE</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="secondarywindowsettingstxt"><code>SecondaryWindowSettings.txt</code><a class="headerlink" href="#secondarywindowsettingstxt" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Default</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>//</code></td>
+<td>anything</td>
+<td>—</td>
+<td>Comment line.</td>
+</tr>
+<tr>
+<td><code>BACKGROUND_COLOR</code></td>
+<td><code>R:G:B</code></td>
+<td><code>128:128:128</code></td>
+<td>Map area background.</td>
+</tr>
+<tr>
+<td><code>BORDER_COLOR</code></td>
+<td><code>R:G:B</code></td>
+<td><code>40:40:40</code></td>
+<td>Outline around the window.</td>
+</tr>
+<tr>
+<td><code>TITLE_BAR_COLOR</code></td>
+<td><code>R:G:B</code></td>
+<td><code>80:80:80</code></td>
+<td>Strip behind the title text.</td>
+</tr>
+<tr>
+<td><code>TITLE_TEXT_COLOR</code></td>
+<td><code>R:G:B</code></td>
+<td><code>220:220:220</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>RESIZE_GRIP_COLOR</code></td>
+<td><code>R:G:B</code></td>
+<td><code>140:140:140</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>LINE_WIDTH</code></td>
+<td><code>px</code></td>
+<td><code>1</code></td>
+<td>Width for lines, polygon outlines, polylines.</td>
+</tr>
+<tr>
+<td><code>FILL_POLYGONS</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td><code>true</code></td>
+<td><code>false</code> makes <code>REGION</code> shapes outline only.</td>
+</tr>
+<tr>
+<td><code>WAYPOINT_COLOR</code></td>
+<td><code>R:G:B</code></td>
+<td><code>120:160:200</code></td>
+<td>Color of the fix triangle and its name (the <code>FIXES</code> layer).</td>
+</tr>
+<tr>
+<td><code>WAYPOINT_SIZE</code></td>
+<td><code>px</code></td>
+<td><code>4</code></td>
+<td>Half height of the triangle symbol.</td>
+</tr>
+<tr>
+<td><code>LABEL_FONT_FACE</code></td>
+<td>font name</td>
+<td><code>Consolas</code></td>
+<td>Font for <code>TEXT:</code> labels</td>
+</tr>
+<tr>
+<td><code>LABEL_FONT_SIZE</code></td>
+<td><code>px</code></td>
+<td><code>12</code></td>
+<td>Default label height. Overridable per section with <code>TEXT_SIZE:</code>.</td>
+</tr>
+<tr>
+<td><code>LABEL_FONT_BOLD</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td><code>false</code></td>
+<td>Bold label text.</td>
+</tr>
+<tr>
+<td><code>TRAFFIC_DOT_COLOR</code></td>
+<td><code>R:G:B</code></td>
+<td><code>255:255:0</code></td>
+<td>Aircraft dot color.</td>
+</tr>
+<tr>
+<td><code>TRAFFIC_DOT_RADIUS</code></td>
+<td><code>px</code></td>
+<td><code>3</code></td>
+<td>Width of the square dots.</td>
+</tr>
+<tr>
+<td><code>TRAFFIC_TRAIL_LENGTH</code></td>
+<td>integer</td>
+<td><code>0</code></td>
+<td>Number of historical positions drawn behind each aircraft. <code>0</code> disables the trail entirely.</td>
+</tr>
+<tr>
+<td><code>SHOW_TAGS</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td><code>true</code></td>
+<td>Master switch for callsign labels.</td>
+</tr>
+<tr>
+<td><code>TAG_COLOR</code></td>
+<td><code>R:G:B</code></td>
+<td><code>255:255:0</code></td>
+<td>Default tag text color.</td>
+</tr>
+<tr>
+<td><code>COLOR_DEPARTURE</code></td>
+<td><code>R:G:B</code></td>
+<td><em>(unset)</em></td>
+<td>Override tag color when the aircraft's origin airport is active for departure in EuroScope.</td>
+</tr>
+<tr>
+<td><code>COLOR_ARRIVAL</code></td>
+<td><code>R:G:B</code></td>
+<td><em>(unset)</em></td>
+<td>Override tag color when the aircraft's destination airport is active for arrival in EuroScope. Wins over departure.</td>
+</tr>
+<tr>
+<td><code>TAG_FONT_FACE</code></td>
+<td>font name</td>
+<td><code>Consolas</code></td>
+<td>Tag font.</td>
+</tr>
+<tr>
+<td><code>TAG_FONT_SIZE</code></td>
+<td><code>px</code></td>
+<td><code>12</code></td>
+<td>Tag font size.</td>
+</tr>
+<tr>
+<td><code>TAG_FONT_BOLD</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td><code>false</code></td>
+<td>Bold tag text.</td>
+</tr>
+<tr>
+<td><code>TAG_OFFSET_X</code></td>
+<td><code>px</code></td>
+<td><code>5</code></td>
+<td>Default horizontal offset of tag from the dot. Per-aircraft offset wins once a tag is dragged.</td>
+</tr>
+<tr>
+<td><code>TAG_OFFSET_Y</code></td>
+<td><code>px</code></td>
+<td><code>-3</code></td>
+<td>Default vertical offset (negative = above the dot).</td>
+</tr>
+<tr>
+<td><code>TAG_CLICK_WIDTH</code></td>
+<td><code>px</code></td>
+<td><code>80</code></td>
+<td>Width of the clickable and hover area around the callsign.</td>
+</tr>
+<tr>
+<td><code>TAG_CLICK_HEIGHT</code></td>
+<td><code>px</code></td>
+<td><code>14</code></td>
+<td>Height of that area per line.</td>
+</tr>
+<tr>
+<td><code>TAG_BACKGROUND</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td><code>false</code></td>
+<td>Draw a filled box behind every tag.</td>
+</tr>
+<tr>
+<td><code>TAG_BG_COLOR</code></td>
+<td><code>R:G:B</code></td>
+<td><code>0:0:0</code></td>
+<td>Color of the tag background box. Setting this also turns the background on.</td>
+</tr>
+<tr>
+<td><code>TAG_BG_PADDING</code></td>
+<td><code>px</code></td>
+<td><code>2</code></td>
+<td>How far the fill reaches past the text on each side.</td>
+</tr>
+<tr>
+<td><code>TAG_BACKGROUND_HOVER</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td><code>false</code></td>
+<td>Show the background only on the tag under the cursor.</td>
+</tr>
+<tr>
+<td><code>TAG_LINE</code></td>
+<td>format string</td>
+<td>—</td>
+<td>Adds one line to every tag. Repeat for multiple lines. Supports <code>{placeholder}</code>. See the <em>Tag content</em> section above.</td>
+</tr>
+<tr>
+<td><code>SCT_FILE</code></td>
+<td>path</td>
+<td>—</td>
+<td>Imports a <code>.sct</code> / <code>.sct2</code> sector file. See <em>Importing <code>.sct</code> sector files</em> for the path resolution rules. Repeat for multiple files.</td>
+</tr>
+<tr>
+<td><code>SCT_DIR</code></td>
+<td>path</td>
+<td>—</td>
+<td>Optional base folder for plain (non absolute, non<code>\</code>anchored) <code>SCT_FILE:</code> entries. Lets you reference every sector by filename only.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="window-controls">Window controls<a class="headerlink" href="#window-controls" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drag title bar</td>
+<td>Move the window</td>
+</tr>
+<tr>
+<td>Drag bottom-right grip</td>
+<td>Resize</td>
+</tr>
+<tr>
+<td>Right drag inside map area</td>
+<td>Pan the map view</td>
+</tr>
+<tr>
+<td>Double click then drag in map area</td>
+<td>Draw a measuring ruler with distance in NM and bearing. It stays on screen after you let go, until your next left click dismisses it</td>
+</tr>
+<tr>
+<td>Drag an aircraft callsign</td>
+<td>Move that tag's offset relative to its dot (per aircraft, persists for the session)</td>
+</tr>
+<tr>
+<td>Mouse wheel</td>
+<td>Zoom</td>
+</tr>
+<tr>
+<td>Click the list button in title bar</td>
+<td>Open the sidebar to toggle maps and reach every action</td>
+</tr>
+<tr>
+<td>Click the <strong>-</strong> in the title bar</td>
+<td>Collapse the window to just the title bar (click again to restore)</td>
+</tr>
+<tr>
+<td>Click the <strong>X</strong> in the title bar</td>
+<td>Hide the window (<code>.sw show</code> to bring it back)</td>
+</tr>
+</tbody>
+</table>
+<p>Panning moved to the right mouse button so a left click stays free for tags
+and the measuring ruler. The right button no longer opens a popup menu;
+everything that used to live there now sits in the sidebar.</p>
+<h3 id="sidebar">Sidebar<a class="headerlink" href="#sidebar" title="Permanent link">¶</a></h3>
+<p>Every control lives in the sidebar now. Click the list button in the title bar
+to slide it open. The top shows a row of action buttons, and below that the map
+list as a tree grouped by folder (such as <code>GEO</code>, <code>REGIONS</code>, <code>ESE</code>, and per
+airport sub folders like <code>ESE/RPLL</code>). Tick a map to show it in this window,
+untick to hide it. Folders expand and collapse, and your layout is saved per
+window.</p>
+<p>ESE free text imports nest under <code>ESE</code> by aerodrome, so the taxiway and bay
+labels for each airport sit under their own <code>ESE/&lt;ICAO&gt;</code> folder and each one
+has its own toggle.</p>
+<p><strong>Sidebar actions</strong></p>
+<table>
+<thead>
+<tr>
+<th>Button</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hide all</strong> / <strong>Show all</strong></td>
+<td>Hide or show every map in this window at once</td>
+</tr>
+<tr>
+<td><strong>Load .asr</strong></td>
+<td>File picker that applies an EuroScope <code>.asr</code> visible map list to this window only</td>
+</tr>
+<tr>
+<td><strong>Altitude filter...</strong></td>
+<td>Open a dialog for the per window altitude filter (min/max in feet, or "No filter")</td>
+</tr>
+<tr>
+<td><strong>Hide aircraft on ground</strong></td>
+<td>Toggle skipping slow targets (under about 40 kt) so taxiing and parked aircraft stop cluttering the view</td>
+</tr>
+<tr>
+<td><strong>Open new window</strong></td>
+<td>Spawn another window (up to 5). Starts with all maps hidden.</td>
+</tr>
+<tr>
+<td><strong>Reload maps</strong></td>
+<td>Re-read the map file from disk (also re-imports any <code>SCT_FILE:</code> entries)</td>
+</tr>
+<tr>
+<td><strong>Reload settings</strong></td>
+<td>Re-read settings and re-import SCT content</td>
+</tr>
+</tbody>
+</table>
+<p>When the map area is empty (no maps loaded, or every map hidden in this
+window), the window shows a centered hint — <strong>No maps loaded</strong> or
+<strong>No maps visible</strong>. The first time you enable a map in a previously-blank
+window, the view automatically refits to the map's bounding box so you
+see it right away.</p>
+<hr>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 31, 2026 00:56:42 UTC">July 31, 2026</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 Philippines vACC. All rights reserved. This site is not affiliated with the CAAP, the actual Philippines ACC, or any governing aviation body. All content contained herein is approved only for use on the VATSIM network.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://facebook.com/philippinesvacc" target="_blank" rel="noopener" title="Facebook Page" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://instagram.com/vatphil" target="_blank" rel="noopener" title="Instagram" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M224.3 141a115 115 0 1 0-.6 230 115 115 0 1 0 .6-230m-.6 40.4a74.6 74.6 0 1 1 .6 149.2 74.6 74.6 0 1 1-.6-149.2m93.4-45.1a26.8 26.8 0 1 1 53.6 0 26.8 26.8 0 1 1-53.6 0m129.7 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8M399 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://vatphil.com" target="_blank" rel="noopener" title="Philippines vACC Main Website" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://community.vatsim.net/" target="_blank" rel="noopener" title="Join our Discord!" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.317 4.37a19.8 19.8 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.3 18.3 0 0 0-5.487 0 13 13 0 0 0-.617-1.25.08.08 0 0 0-.079-.037A19.7 19.7 0 0 0 3.677 4.37a.1.1 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.08.08 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.08.08 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13 13 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10 10 0 0 0 .372-.292.07.07 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.07.07 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.08.08 0 0 0 .084.028 19.8 19.8 0 0 0 6.002-3.03.08.08 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.06.06 0 0 0-.031-.03M8.02 15.33c-1.182 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418m7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:staff@vatphil.com" target="_blank" rel="noopener" title="Contact Us" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m20 8-8 5-8-5V6l8 5 8-5m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.indexes", "navigation.sections", "navigation.top", "navigation.prune", "search.suggest", "search.highlight", "search.share", "content.footnote.tooltips", "content.tooltips", "content.tabs.link"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+      
+        <script src="../../../../javascripts/embeds.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
