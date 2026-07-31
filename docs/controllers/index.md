@@ -17,7 +17,7 @@ For **SOPs, theory exams, and controller applications**, head over to the [VATPH
     ---
     [SOPs & Theory Exams](https://academy.vatphil.com/my/courses.php)
 
-    [Apply to become a Controller](https://academy.vatphil.com/)
+    [Apply to become a Resident Controller](https://vats.im/ph/apply)
 
 -   **How to 101**
 
