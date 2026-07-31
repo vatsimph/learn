@@ -4,6 +4,7 @@ nav:
     - Routes: routes.md
     - Airspace Reservation: airspacereservation.md
     - RPHI: manilacontrol.md
+    - Events: events
     - Luzon: luzon
     - Visayas: visayas
     - Mindanao: mindanao

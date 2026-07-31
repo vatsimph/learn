@@ -1,0 +1,1630 @@
+# RPLL - Manila - Ninoy Aquino International Airport - Friday Fly-In
+
+<div class="metar-widget" data-icao="RPLL">
+<style>
+.metar-widget {
+  margin: 1rem 0;
+}
+.metar-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-left: 4px solid var(--md-primary-fg-color, #4051b5);
+  border-radius: 4px;
+  background: var(--md-code-bg-color);
+}
+.metar-raw {
+  font-family: var(--md-code-font, monospace);
+  font-size: 0.75rem;
+  line-height: 1.7;
+  color: var(--md-default-fg-color);
+  white-space: pre-wrap;
+  letter-spacing: 0.02em;
+}
+.metar-loading {
+  font-size: 0.75rem;
+  color: var(--md-default-fg-color--light);
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0;
+}
+</style>
+
+<div class="metar-loading" id="metar-loading-RPLL">Fetching METAR...</div>
+<div class="metar-card" id="metar-card-RPLL" style="display:none;"></div>
+</div>
+
+<script>
+(function () {
+  var ICAO = "RPLL";
+  var loadingEl = document.getElementById("metar-loading-" + ICAO);
+  var cardEl    = document.getElementById("metar-card-" + ICAO);
+
+  function render(metar) {
+    cardEl.innerHTML = '<div class="metar-raw">' + metar + '</div>';
+    cardEl.style.display = "";
+    loadingEl.style.display = "none";
+  }
+
+  function renderError(msg) {
+    cardEl.innerHTML = '<div class="metar-raw" style="color:#b71c1c;">' + msg + '</div>';
+    cardEl.style.display = "";
+    loadingEl.style.display = "none";
+  }
+
+  function fetchMetar() {
+    fetch("https://metar.vatsim.net/" + ICAO + "?format=json")
+      .then(function(r) {
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        return r.json();
+      })
+      .then(function(data) {
+        if (!data || !data.length || !data[0].metar) {
+          renderError("No METAR available for " + ICAO + ".");
+          return;
+        }
+        render(data[0].metar);
+      })
+      .catch(function(e) {
+        renderError(e.message || "Network error.");
+      });
+  }
+
+  fetchMetar();
+  setInterval(fetchMetar, 5000);
+})();
+</script>
+
+## General
+The Ninoy Aquino International Airport has 2 Runways, 4 passenger terminals, 2 general aviation areas, 1 military airbase, 1 maintenance hangar, and 1 presidential ramp.
+
+- Terminal 1 - International and Cargo Terminal
+- Terminal 2 - Domestic Flights
+- Terminal 3 - International and Domestic Flights
+- Terminal 4/5 - Currently under construction
+
+The airport caters passenger and cargo flights, as well as general and military aviation.
+
+## NOTAMS
+
+|                             Date                              |                                                     Description                                                     |
+| :-------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------: |
+| Active	May 18 2026, 1:37 PM CEST Ends	Aug 18 2026, 1:59 AM CEST | TWY F1B CLOSED DUE WORK IN PROGRESS (CONST OF TWY FM COORD 143124N 1210011E TO 143046N 1210050E). RPLLYNYX B2158/26 |
+
+## Charts
+<iframe
+  data-chart-src="https://vatphil.com/charts?icao=RPLL"
+  title="RPLL Charts"
+  loading="lazy"
+  style="width:100%; height:750px; border:1px solid var(--md-default-fg-color--lightest); border-radius:8px;">
+</iframe>
+
+[Open charts in new tab](https://vatphil.com/charts?icao=RPLL){ .md-button .md-button--primary }
+
+## Frequency List
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:center">Designator</th>
+      <th style="text-align:center">Callsign</th>
+      <th style="text-align:center">Frequency</th>
+      <th style="text-align:center">Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center"><strong>RPLL_ATIS</strong></td>
+      <td style="text-align:center"></td>
+      <td style="text-align:center">126.400</td>
+      <td style="text-align:center">Every hour</td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>RPLL_DEL</strong></td>
+      <td style="text-align:center">Clearance Delivery</td>
+      <td style="text-align:center">125.100</td>
+      <td style="text-align:center">DCL [RPLL]</td>
+    </tr>
+        <tr>
+      <td style="text-align:center"><strong>RPLL_P_GND</strong></td>
+      <td style="text-align:center">Manila Planner</td>
+      <td style="text-align:center">122.000</td>
+      <td style="text-align:center">Event's only</td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>RPLL_1_RMP</strong></td>
+      <td style="text-align:center">Apron Control One</td>
+      <td style="text-align:center">121.700</td>
+      <td style="text-align:center">Terminal 1</td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>RPLL_2_RMP</strong></td>
+      <td style="text-align:center">Apron Control Two</td>
+      <td style="text-align:center">128.800</td>
+      <td style="text-align:center">Terminal 2</td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>RPLL_3_RMP</strong></td>
+      <td style="text-align:center">Apron Control Three</td>
+      <td style="text-align:center">121.350</td>
+      <td style="text-align:center">Terminal 3</td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>RPLL_G_RMP</strong></td>
+      <td style="text-align:center">Apron Control GenAv</td>
+      <td style="text-align:center">123.250</td>
+      <td style="text-align:center">GenAv</td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>RPLL_GND</strong></td>
+      <td style="text-align:center">Manila Ground</td>
+      <td style="text-align:center">121.800</td>
+      <td style="text-align:center"></td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>RPLL_TWR</strong></td>
+      <td style="text-align:center">Manila Tower</td>
+      <td style="text-align:center">118.100</td>
+      <td style="text-align:center"></td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>RPLL_F_APP</strong></td>
+      <td style="text-align:center">Manila Finals/Departure</td>
+      <td style="text-align:center">124.400</td>
+      <td style="text-align:center">1500ft - FL150</td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>RPLL_S_APP</strong></td>
+      <td rowspan="3" style="text-align:center">Manila Approach</td>
+      <td style="text-align:center">127.700</td>
+      <td rowspan="3" style="text-align:center">8000ft - FL150</td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>RPLL_N_APP</strong></td>
+      <td style="text-align:center">119.900</td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>RPLL_APP</strong></td>
+      <td style="text-align:center">124.800</td>
+    </tr>
+  </tbody>
+</table>
+
+## Stand Assignments
+
+Bay assignments, are strictly implemented virtually, and are based on the latest
+real-world operations. Virtual and other real-world airlines that are not listed will park at terminal 1.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manila International Airport</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        #sf-root {
+            all: initial;
+            display: block;
+            font-family: 'Mulish', system-ui, -apple-system, sans-serif;
+            box-sizing: border-box;
+            color: #e8e6dc;
+            background: transparent;
+            position: relative;
+            --sf-gold: #8c7804;
+            --sf-gold-light: #d9d61c;
+            --sf-panel-bg: rgba(15, 17, 25, 0.94);
+            --sf-text: #e8e6dc;
+            --sf-text-muted: rgba(232, 230, 220, 0.55);
+        }
+        #sf-root *, #sf-root *::before, #sf-root *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: inherit;
+        }
+
+        #sf-root #wrapper {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            border-radius: 8px;
+            overflow: hidden;
+            z-index: 0;
+            isolation: isolate;
+            border: 1px solid rgba(140, 120, 4, 0.3);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        #sf-root #map {
+            height: 100%;
+            width: 100%;
+        }
+
+        #sf-root #panel {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            z-index: 10;
+            background: var(--sf-panel-bg);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-left: 3px solid var(--sf-gold);
+            border-radius: 6px;
+            padding: 12px 14px;
+            width: 280px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+        }
+
+        #sf-root .sf-title {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--sf-text);
+            letter-spacing: 0.1em;
+            line-height: 1.45;
+            text-transform: uppercase;
+        }
+
+        #sf-root .sf-row {
+            display: flex;
+            gap: 6px;
+        }
+
+        #sf-root #standInput {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 4px;
+            color: var(--sf-text);
+            font-size: 13px;
+            padding: 7px 10px;
+            outline: none;
+            flex: 1;
+            line-height: normal;
+            height: auto;
+            width: auto;
+            min-height: 0;
+            box-shadow: none;
+            -webkit-appearance: none;
+            appearance: none;
+            transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+        }
+
+        #sf-root #standInput::placeholder {
+            color: rgba(232, 230, 220, 0.4);
+        }
+
+        #sf-root #standInput:focus {
+            border-color: var(--sf-gold-light);
+            background: rgba(255, 255, 255, 0.07);
+            box-shadow: 0 0 0 2px rgba(217, 214, 28, 0.18);
+        }
+
+        #sf-root #goBtn {
+            background: var(--sf-gold);
+            border: 1px solid var(--sf-gold);
+            border-radius: 4px;
+            color: #1a1a1a;
+            cursor: pointer;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 7px 14px;
+            line-height: normal;
+            height: auto;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            box-shadow: none;
+            transition: background 0.15s, border-color 0.15s;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        #sf-root #goBtn:hover {
+            background: var(--sf-gold-light);
+            border-color: var(--sf-gold-light);
+        }
+
+        #sf-root .sf-legend {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 10px;
+            margin-top: 2px;
+        }
+
+        #sf-root .sf-leg-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11px;
+            color: rgba(232, 230, 220, 0.8);
+            line-height: 1.4;
+        }
+
+        #sf-root .sf-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: inline-block;
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05);
+        }
+
+        #sf-root .leaflet-tooltip {
+            background: rgba(15, 17, 25, 0.95);
+            border: 1px solid rgba(140, 120, 4, 0.6);
+            color: var(--sf-gold-light);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 3px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+            letter-spacing: 0.04em;
+        }
+
+        /* Kill the gray box that appears over a stand when clicked. This is the
+           WebKit tap-highlight (Leaflet adds the .leaflet-touch class), plus the
+           browser focus outline as a belt-and-suspenders measure. Neither shows
+           up as an "outline" in computed styles, which is why both are needed. */
+        #sf-root,
+        #sf-root .leaflet-container,
+        #sf-root .leaflet-container * {
+            -webkit-tap-highlight-color: transparent;
+        }
+        #sf-root .leaflet-interactive,
+        #sf-root .leaflet-interactive:focus,
+        #sf-root .leaflet-interactive:focus-visible,
+        #sf-root path.leaflet-interactive,
+        #sf-root .leaflet-container:focus,
+        #sf-root .leaflet-container:focus-visible,
+        #sf-root .leaflet-container *:focus,
+        #sf-root .leaflet-container *:focus-visible {
+            outline: none !important;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Hide Leaflet's default white arrow on tooltips */
+        #sf-root .leaflet-tooltip-top::before,
+        #sf-root .leaflet-tooltip-bottom::before,
+        #sf-root .leaflet-tooltip-left::before,
+        #sf-root .leaflet-tooltip-right::before {
+            border: none !important;
+            display: none !important;
+        }
+
+        #sf-root .leaflet-popup-content-wrapper {
+            background: rgba(15, 17, 25, 0.97);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 3px solid var(--pop-col, var(--sf-gold));
+            color: var(--sf-text);
+            border-radius: 6px;
+            box-shadow: 0 6px 22px rgba(0, 0, 0, 0.55);
+        }
+
+        /* Per-terminal popup colour (set on the popup wrapper by JS) */
+        .sf-pop-t1     { --pop-col: #00a8ff; --pop-col-bg: rgba(0,168,255,0.16);  --pop-col-bd: rgba(0,168,255,0.45); }
+        .sf-pop-t2     { --pop-col: #00e096; --pop-col-bg: rgba(0,224,150,0.16);  --pop-col-bd: rgba(0,224,150,0.45); }
+        .sf-pop-rpa-t2 { --pop-col: #00b07a; --pop-col-bg: rgba(0,176,122,0.16);  --pop-col-bd: rgba(0,176,122,0.45); }
+        .sf-pop-t3     { --pop-col: #ff9900; --pop-col-bg: rgba(255,153,0,0.16);  --pop-col-bd: rgba(255,153,0,0.45); }
+        .sf-pop-t4     { --pop-col: #cc66ff; --pop-col-bg: rgba(204,102,255,0.16);--pop-col-bd: rgba(204,102,255,0.45); }
+        .sf-pop-cgo    { --pop-col: #ff4444; --pop-col-bg: rgba(255,68,68,0.16);  --pop-col-bd: rgba(255,68,68,0.45); }
+
+        #sf-root .leaflet-popup-tip {
+            background: rgba(15, 17, 25, 0.97);
+        }
+
+        #sf-root .leaflet-popup-content {
+            margin: 12px 16px;
+            font-size: 12px;
+            line-height: 1.6;
+            color: var(--sf-text);
+        }
+
+        #sf-root .pop-stand {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--pop-col, var(--sf-gold-light));
+            letter-spacing: 0.02em;
+        }
+
+        #sf-root .pop-term {
+            font-size: 10px;
+            color: var(--sf-text-muted);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+        }
+
+        #sf-root .pop-lbl {
+            font-size: 9px;
+            color: rgba(232, 230, 220, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 9px;
+            font-weight: 700;
+        }
+
+        #sf-root .pop-val {
+            color: var(--sf-text);
+            font-size: 12px;
+            margin-top: 2px;
+        }
+
+        #sf-root .atag {
+            display: inline-block;
+            background: var(--pop-col-bg, rgba(140, 120, 4, 0.18));
+            border: 1px solid var(--pop-col-bd, rgba(140, 120, 4, 0.45));
+            border-radius: 3px;
+            color: var(--pop-col, var(--sf-gold-light));
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 6px;
+            margin: 3px 3px 0 0;
+            text-decoration: none;
+            line-height: 1.4;
+            letter-spacing: 0.03em;
+        }
+
+        @media (max-width: 520px) {
+            #sf-root #panel {
+                width: calc(100% - 24px);
+                max-width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="sf-root">
+    <div id="panel">
+        <div class="sf-title">RPLL — Manila/Ninoy Aquino International Airport Stand Finder</div>
+        <div class="sf-row">
+            <input type="text" id="standInput" placeholder="Stand or airline (e.g. 17, GAP)" onkeypress="if(event.key==='Enter') searchStand()">
+            <button id="goBtn" onclick="searchStand()">Go</button>
+        </div>
+        <div class="sf-legend">
+            <div class="sf-leg-row"><span class="sf-dot" style="background:#00a8ff"></span>Terminal 1</div>
+            <div class="sf-leg-row"><span class="sf-dot" style="background:#00e096"></span>Terminal 2</div>
+            <div class="sf-leg-row"><span class="sf-dot" style="background:#ff9900"></span>Terminal 3</div>
+            <div class="sf-leg-row"><span class="sf-dot" style="background:#cc66ff"></span>Terminal 4</div>
+            <div class="sf-leg-row"><span class="sf-dot" style="background:#ff4444"></span>Cargo Terminal</div>
+        </div>
+    </div>
+    <div id="wrapper">
+        <div id="map"></div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+var map = L.map('map', {zoomControl:false}).setView([14.508, 121.010], 14);
+L.control.zoom({position:'bottomright'}).addTo(map);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {attribution:'© OpenStreetMap © CARTO'}).addTo(map);
+
+// Prevent MkDocs Material's "instant navigation" from hijacking Leaflet's
+// close button (it's an <a href="#close">, which Material treats as a link).
+map.on('popupopen', function(e){
+    var btn = e.popup._container && e.popup._container.querySelector('.leaflet-popup-close-button');
+    if(btn){
+        btn.removeAttribute('href');
+        btn.setAttribute('role','button');
+        btn.style.cursor = 'pointer';
+    }
+});
+
+var polyStyle = {color:"#2a4a6a", weight:1.5, fillColor:"#0a1e30", fillOpacity:0.7, interactive:false};
+var set1=[[14.5096807,121.0128721],[14.5096502,121.0128261],[14.5094288,121.0124263],[14.5094091,121.0123949],[14.509393,121.0123628],[14.5090514,121.0117447],[14.5090331,121.0117116],[14.5088765,121.011794],[14.5087251,121.0115192],[14.5086648,121.0115521],[14.5087344,121.0116953],[14.5086096,121.0117723],[14.5086037,121.0117631],[14.5085629,121.01179],[14.5085807,121.0118212],[14.5085615,121.0118359],[14.5085128,121.0118648],[14.5083753,121.0119448],[14.5084437,121.0120802],[14.508412,121.0121006],[14.5083607,121.0121335],[14.50835,121.0121404],[14.5083277,121.012157],[14.5082978,121.0121739],[14.5083138,121.0122006],[14.5083274,121.012223],[14.5083898,121.0121829],[14.5084716,121.0121303],[14.5085065,121.0121984],[14.5085918,121.012365],[14.5085226,121.0124194],[14.508476,121.0124504],[14.5084909,121.0124784],[14.508501,121.0124947],[14.5085456,121.0124636],[14.508624,121.0124142],[14.5087409,121.0126358],[14.5087481,121.0126494],[14.5086787,121.0126991],[14.5086105,121.0127443],[14.5086206,121.0127645],[14.5086345,121.012788],[14.5087029,121.0127447],[14.5087784,121.0126976],[14.5089049,121.0129329],[14.5088366,121.0129854],[14.5087804,121.0130198],[14.5087897,121.0130371],[14.5088024,121.0130584],[14.50886,121.0130243],[14.5089363,121.0129751],[14.5089789,121.0130512],[14.5090377,121.0131561],[14.5090124,121.0131751],[14.5090443,121.0132319],[14.5089911,121.0132663],[14.5089388,121.0132962],[14.5089533,121.0133183],[14.5089687,121.0133416],[14.5090177,121.0133106],[14.509097,121.0132605],[14.509133,121.0133274],[14.5093001,121.0136378],[14.5092259,121.0136882],[14.509178,121.0137198],[14.5091893,121.0137378],[14.5092051,121.0137635],[14.5092541,121.0137324],[14.5093282,121.0136859],[14.5094911,121.0139542],[14.5095403,121.0139177],[14.5095897,121.0136426],[14.5095181,121.0136243],[14.5094678,121.0135945],[14.5094352,121.0135646],[14.5094079,121.0135288],[14.5093859,121.0134854],[14.5093749,121.0134504],[14.5093677,121.0133957],[14.50937,121.0133534],[14.5093801,121.0133085],[14.5093965,121.0132687],[14.5094156,121.0132372],[14.5094432,121.0132046],[14.5094706,121.0131809],[14.5095031,121.0131604],[14.5095524,121.013141],[14.5096012,121.0131335],[14.5096514,121.0131352],[14.50967,121.0131394],[14.5096733,121.0131119],[14.5097017,121.0128778],[14.5096807,121.0128721]];
+var set2=[[14.50967,121.0131394],[14.5096875,121.0131433],[14.5097045,121.0131495],[14.5097201,121.0131563],[14.5097597,121.0131801],[14.5097989,121.013216],[14.5098323,121.0132638],[14.509851,121.0133077],[14.5098611,121.0133513],[14.5098637,121.0133938],[14.5098599,121.0134335],[14.5098483,121.0134779],[14.5098369,121.0135047],[14.5098196,121.0135346],[14.5097949,121.0135659],[14.5097721,121.0135876],[14.5097454,121.0136071],[14.5097118,121.013625],[14.5096695,121.0136389],[14.5096342,121.0136446],[14.5096107,121.0136448],[14.5095897,121.0136426],[14.5095403,121.0139177],[14.5095147,121.0141177],[14.5095144,121.0141197],[14.5095047,121.0141191],[14.5095049,121.0142234],[14.5095396,121.0142237],[14.5095809,121.0142223],[14.5095811,121.0141737],[14.5095828,121.0141243],[14.5096039,121.0139366],[14.5096402,121.0139653],[14.5098571,121.0137252],[14.5099418,121.0138141],[14.5099562,121.0138251],[14.5099672,121.0138146],[14.5099854,121.0137951],[14.509972,121.0137826],[14.509882,121.0136961],[14.5101408,121.013433],[14.510187,121.013386],[14.5102743,121.0134671],[14.5102893,121.0134809],[14.5103062,121.0134659],[14.5103216,121.0134522],[14.5103048,121.0134369],[14.5102179,121.0133489],[14.5103673,121.0131992],[14.5105246,121.0130416],[14.5106011,121.0131128],[14.510629,121.0131402],[14.510646,121.0131221],[14.5106601,121.013107],[14.5106329,121.01308],[14.5105569,121.0130085],[14.5106952,121.0128683],[14.5109771,121.0125825],[14.5110451,121.0126576],[14.511083,121.0126996],[14.5110997,121.0126788],[14.5111157,121.0126612],[14.5110776,121.0126226],[14.5110004,121.0125381],[14.5110308,121.0125045],[14.5110763,121.0124543],[14.5112165,121.012304],[14.51109153,121.0119973],[14.5110364,121.0118703],[14.5109976,121.0118309],[14.5109704,121.0118594],[14.5107797,121.0120593],[14.5106532,121.0119305],[14.5104764,121.0121124],[14.5104274,121.0121614],[14.51014,121.0124585],[14.51012,121.0124812],[14.5100914,121.0125107],[14.5097201,121.0128827],[14.5097017,121.0128778],[14.5096733,121.0131119],[14.50967,121.0131394]];
+var set3=[[14.5161662,121.016276],[14.51655,121.0158744],[14.5165255,121.0158473],[14.5165736,121.0157985],[14.5165656,121.0157923],[14.5164061,121.0156274],[14.5163965,121.0156175],[14.5164069,121.0156061],[14.5164198,121.0155934],[14.5165889,121.0157682],[14.5166254,121.0158059],[14.5170133,121.0154019],[14.5169875,121.0153711],[14.517032,121.015324],[14.5170246,121.0153148],[14.5168665,121.0151514],[14.516853,121.0151374],[14.5168656,121.0151245],[14.5168782,121.0151115],[14.5170493,121.0152883],[14.5170853,121.0153255],[14.5173559,121.0150498],[14.5174743,121.01493],[14.5174457,121.0148985],[14.5174981,121.0148456],[14.5174912,121.0148398],[14.5173297,121.0146731],[14.5173209,121.0146639],[14.5173333,121.0146511],[14.5173457,121.0146383],[14.5175155,121.0148137],[14.5175547,121.0148543],[14.5179388,121.0144524],[14.5179084,121.0144202],[14.5179617,121.0143685],[14.5179445,121.0143507],[14.5177947,121.0141959],[14.5177766,121.0141773],[14.5177883,121.0141653],[14.5178,121.0141532],[14.5179673,121.0143261],[14.518015,121.0143754],[14.5180132,121.0143779],[14.5180656,121.0143238],[14.5183529,121.0140272],[14.5184032,121.0139752],[14.5183716,121.013943],[14.5184265,121.0138831],[14.5184712,121.0139272],[14.5185142,121.013878],[14.5184647,121.0138251],[14.5183087,121.0136639],[14.5182972,121.013652],[14.5183073,121.0136417],[14.5183173,121.0136313],[14.5184845,121.0138041],[14.518517,121.0138377],[14.5185321,121.0138183],[14.5188593,121.0134805],[14.5188676,121.0134891],[14.5189144,121.0134413],[14.5188825,121.0134088],[14.5189263,121.0133532],[14.5187631,121.0131845],[14.518756,121.0131772],[14.518766,121.0131669],[14.5187759,121.0131566],[14.5189461,121.0133324],[14.5189832,121.0133708],[14.5193754,121.0129643],[14.5193452,121.0129318],[14.519397,121.0128792],[14.5193965,121.0128787],[14.5192285,121.012705],[14.5192149,121.012691],[14.5192236,121.012682],[14.5192323,121.012673],[14.519414,121.0128606],[14.5194464,121.0128941],[14.5198456,121.0124853],[14.5198104,121.0124512],[14.5198565,121.0124033],[14.5198558,121.0124026],[14.5196874,121.0122286],[14.5196831,121.0122241],[14.5196943,121.0122126],[14.5197054,121.0122011],[14.5198777,121.0123792],[14.5199132,121.0124159],[14.5203035,121.0120081],[14.5202662,121.0119708],[14.5203128,121.0119222],[14.5203123,121.0119216],[14.520148,121.011752],[14.5201397,121.0117434],[14.520151,121.0117318],[14.5201622,121.0117201],[14.5203333,121.011897],[14.5203719,121.0119369],[14.5204132,121.0118865],[14.5204289,121.0118871],[14.5204297,121.0119549],[14.5204626,121.0119876],[14.5204749,121.0119797],[14.5205103,121.012023],[14.5205502,121.0119886],[14.5205179,121.0119529],[14.5205714,121.0118936],[14.5205987,121.0119234],[14.5209015,121.0116158],[14.5209711,121.0115452],[14.5209301,121.0115029],[14.5207736,121.011341],[14.5207644,121.0113315],[14.5207765,121.0113191],[14.5207885,121.0113066],[14.5209546,121.0114782],[14.5209938,121.0115187],[14.5210082,121.0115035],[14.5209822,121.011476],[14.5210351,121.01142],[14.521064,121.0114478],[14.5213619,121.011138],[14.5214284,121.0110689],[14.5213898,121.011029],[14.5212343,121.0108683],[14.5212247,121.0108584],[14.5212373,121.0108455],[14.5212498,121.0108325],[14.5214141,121.0110023],[14.5214537,121.0110432],[14.5214686,121.0110258],[14.5214408,121.0109963],[14.5214932,121.0109426],[14.521521,121.0109713],[14.5215874,121.0109029],[14.521823,121.0106601],[14.521893,121.010588],[14.5218538,121.0105475],[14.5216991,121.0103877],[14.5216942,121.0103826],[14.5217058,121.0103707],[14.5217173,121.0103587],[14.5218764,121.0105231],[14.5219156,121.0105636],[14.5219321,121.0105445],[14.521905,121.0105169],[14.521958,121.0104612],[14.5219852,121.0104888],[14.5220492,121.0104237],[14.5222847,121.0101842],[14.5223542,121.0101135],[14.5223136,121.0100716],[14.5221555,121.0099181],[14.5221424,121.0099054],[14.5221555,121.0098919],[14.5221685,121.0098784],[14.5223402,121.0100452],[14.5223823,121.0100887],[14.5223893,121.0100807],[14.5224021,121.0100965],[14.5224258,121.010072],[14.5224372,121.0100837],[14.5224144,121.0101074],[14.5224276,121.0101191],[14.5224649,121.0100805],[14.5225166,121.0101339],[14.5224804,121.0101713],[14.5225002,121.0101916],[14.5225084,121.0101804],[14.5225226,121.0101912],[14.5225066,121.0102516],[14.5224479,121.0103136],[14.5222857,121.010481],[14.522208,121.0105613],[14.5221886,121.0105837],[14.5220328,121.0107446],[14.522023,121.0107345],[14.5218976,121.0108677],[14.5219044,121.0108749],[14.5216532,121.0111431],[14.5211838,121.0116278],[14.520765,121.0120602],[14.5206923,121.0121353],[14.5206797,121.0121483],[14.5209965,121.0124668],[14.5209503,121.0125184],[14.521001,121.0125671],[14.5211984,121.0127742],[14.5213783,121.0129585],[14.5213596,121.0129792],[14.521329,121.0130131],[14.5211628,121.0131854],[14.5211399,121.0132094],[14.5211279,121.013222],[14.521117,121.0132334],[14.5211109,121.0132398],[14.5210995,121.0132544],[14.5209278,121.0134278],[14.5208934,121.0134638],[14.5208874,121.0134701],[14.520878,121.0134799],[14.5208704,121.0134895],[14.5208632,121.0134981],[14.5207044,121.0136591],[14.5206879,121.0136764],[14.520674,121.0136909],[14.5206668,121.0136985],[14.5206533,121.0137126],[14.5206454,121.0137248],[14.5204717,121.0138995],[14.5204526,121.0139195],[14.5204333,121.0139397],[14.5204214,121.0139522],[14.5204082,121.0139651],[14.5204061,121.013965],[14.5202414,121.0141367],[14.5202234,121.0141555],[14.5202015,121.0141786],[14.5201919,121.0141886],[14.5201772,121.0142036],[14.520177,121.014208],[14.5199869,121.0143929],[14.5200173,121.01442],[14.5199938,121.0144469],[14.5199638,121.0144798],[14.5198621,121.0145893],[14.519827,121.0146256],[14.5197791,121.0146753],[14.5197541,121.0147017],[14.5197375,121.0147193],[14.5197342,121.0147232],[14.5197102,121.0147457],[14.5196136,121.0148429],[14.5195575,121.0149003],[14.5195369,121.0148789],[14.519501,121.0148414],[14.5195828,121.0147603],[14.519273,121.014439],[14.5192151,121.0143789],[14.5191884,121.0143512],[14.5191165,121.0144268],[14.5190944,121.0144009],[14.5190839,121.0143885],[14.51875,121.0140435],[14.5187177,121.0140707],[14.5187278,121.0140798],[14.5185897,121.0142445],[14.5185368,121.0141899],[14.5183448,121.0143882],[14.5180752,121.0146666],[14.5180714,121.0146627],[14.5175681,121.0151823],[14.5175278,121.015224],[14.517441,121.0153012],[14.5174829,121.0153463],[14.5172409,121.0156035],[14.5173115,121.0156765],[14.517415,121.0157834],[14.5174031,121.0157957],[14.5173911,121.015808],[14.517288,121.0157014],[14.5172188,121.0156299],[14.5171588,121.0156919],[14.5171215,121.0156534],[14.5170434,121.0157327],[14.5170778,121.0157657],[14.516843,121.0160142],[14.5169114,121.0160849],[14.5170044,121.0161809],[14.5170166,121.0161936],[14.5170046,121.0162061],[14.5169925,121.0162185],[14.5168877,121.0161101],[14.5168249,121.0160452],[14.5167616,121.0161106],[14.5167227,121.0160703],[14.5167003,121.0160938],[14.5167335,121.0161281],[14.5164946,121.0163796],[14.5165635,121.0164508],[14.5166694,121.0165602],[14.516655,121.0165751],[14.5166406,121.0165899],[14.5165361,121.0164819],[14.5164685,121.0164121],[14.5164191,121.0164581],[14.5163829,121.0164166],[14.5162923,121.0165068],[14.5163264,121.016542],[14.5160789,121.0167908],[14.5161489,121.0168631],[14.516245,121.0169624],[14.516256,121.0169738],[14.5162429,121.0169874],[14.5162298,121.0169009],[14.5161241,121.0168917],[14.5160692,121.0168364],[14.5160341,121.0167987],[14.5159997,121.0168343],[14.5159484,121.0167812],[14.5159811,121.0167475],[14.5159454,121.0167128],[14.5162113,121.016426],[14.5161384,121.0163543],[14.5161549,121.0163328],[14.516142,121.0163203],[14.5160952,121.0162751],[14.5159396,121.0161154],[14.515928,121.0161035],[14.5159441,121.0160838],[14.5159554,121.0160704],[14.5161269,121.0162434],[14.5161662,121.016276]];
+var set4=[[14.5051531,121.0051967],[14.5051651,121.0054983],[14.5051174,121.0055446],[14.5049925,121.0056616],[14.5049972,121.0057864],[14.5049981,121.0058453],[14.5051626,121.0058368],[14.5051836,121.0058357],[14.5051932,121.006134],[14.505175,121.00614],[14.5049886,121.0062005],[14.5049871,121.0062697],[14.5048725,121.0062922],[14.5048728,121.0063198],[14.5048731,121.0063473],[14.5049095,121.0063436],[14.5049829,121.0063361],[14.5049935,121.0066107],[14.505034,121.0066281],[14.5049892,121.0067893],[14.5050033,121.0067954],[14.505014,121.0068],[14.505092,121.0066541],[14.5052997,121.0067616],[14.5053131,121.0067499],[14.5054173,121.0068667],[14.5054345,121.006847],[14.5054481,121.0068313],[14.5053801,121.0067176],[14.5055354,121.0066115],[14.5055922,121.0065686],[14.5057153,121.0065441],[14.5057139,121.0065261],[14.5057126,121.0065075],[14.5055922,121.006501],[14.5055821,121.0061689],[14.5053593,121.0061223],[14.5053558,121.0060738],[14.5055322,121.0059111],[14.5055283,121.0058262],[14.5055219,121.0057241],[14.5053403,121.0057283],[14.5053227,121.0052028],[14.5053222,121.0051894],[14.5051531,121.0051967]];
+var set5=[[14.5050844,121.0047104],[14.5050695,121.0046974],[14.505089,121.0046641],[14.5050915,121.0046598],[14.5049939,121.0045875],[14.5049758,121.0046215],[14.5049492,121.0046714],[14.5048351,121.004602],[14.5048327,121.0045714],[14.504812,121.0043573],[14.5047411,121.0043098],[14.5046639,121.0042583],[14.5045868,121.0043677],[14.5045681,121.0043959],[14.5045641,121.0044019],[14.5045584,121.0044108],[14.5043308,121.0042517],[14.5043445,121.0041874],[14.5043956,121.0040415],[14.5043767,121.0040354],[14.5044062,121.0039376],[14.5043968,121.0039324],[14.5043844,121.0039256],[14.5043288,121.0040053],[14.5041734,121.0039072],[14.5040709,121.0038317],[14.5040587,121.0038378],[14.5040333,121.0038507],[14.503971,121.0037621],[14.5039572,121.0037735],[14.5039477,121.0037814],[14.5039959,121.0038701],[14.5037653,121.0039886],[14.5037622,121.0040499],[14.5036499,121.0040644],[14.5036497,121.004085],[14.5036494,121.0041069],[14.5036945,121.0041064],[14.5037562,121.0041057],[14.503745,121.0043294],[14.5037896,121.0043638],[14.5037503,121.0044629],[14.5037637,121.0044775],[14.503781,121.0044916],[14.5038362,121.0044051],[14.5040846,121.0045675],[14.5042338,121.0043961],[14.5042716,121.0044203],[14.5042785,121.0045297],[14.5042904,121.004668],[14.5043853,121.004726],[14.5044464,121.0047626],[14.504524,121.0046468],[14.5045449,121.0046102],[14.5046878,121.0047054],[14.5047864,121.0047752],[14.5049219,121.0048599],[14.5049641,121.0048863],[14.5050844,121.0047104]];
+var set6=[[14.5053227,121.0052028],[14.505563,121.0050582],[14.5058214,121.0049093],[14.5065639,121.0049744],[14.5068464,121.0049903],[14.5068457,121.0049784],[14.5070053,121.0050622],[14.5071027,121.0048657],[14.5069547,121.0047858],[14.5069722,121.0047591],[14.5068275,121.0046772],[14.5067716,121.004639],[14.5067237,121.0045961],[14.5067311,121.0045867],[14.5067464,121.004567],[14.5067645,121.0045439],[14.5066983,121.0044774],[14.5066444,121.0044151],[14.5065782,121.0043339],[14.5065198,121.0042394],[14.5064691,121.0041361],[14.5064392,121.0040469],[14.506414,121.0039624],[14.5063879,121.0038122],[14.5063663,121.0038173],[14.506342,121.0038198],[14.5063309,121.003821],[14.5063185,121.0037472],[14.5063068,121.0036742],[14.5063049,121.0035836],[14.5063117,121.003493],[14.5062574,121.0034914],[14.5062599,121.003424],[14.5061018,121.0034211],[14.5060962,121.0034885],[14.5060277,121.0034893],[14.5059951,121.003489],[14.5058992,121.0037038],[14.5057278,121.0040815],[14.5057152,121.0041124],[14.5057279,121.0041348],[14.5057545,121.0041809],[14.5056617,121.0043835],[14.5056162,121.0044164],[14.5053789,121.0045667],[14.5053099,121.0046059],[14.5051741,121.0046831],[14.5050994,121.0047255],[14.5050844,121.0047104],[14.5049641,121.0048863],[14.5049243,121.004955],[14.5050614,121.0052003],[14.5051531,121.0051967],[14.5053222,121.0051894],[14.5053227,121.0052028]];
+[set1,set2,set3,set4,set5,set6].forEach(function(s){L.polygon(s,polyStyle).addTo(map);});
+
+function parseCoord(s) {
+    var dir = s.slice(-1);
+    var num = s.slice(0,-1);
+    var isLng = (dir==='E'||dir==='W');
+    var dLen = isLng ? 3 : 2;
+    var d = parseFloat(num.slice(0,dLen));
+    var m = parseFloat(num.slice(dLen,dLen+2));
+    var sec = parseFloat(num.slice(dLen+2));
+    var dec = d + m/60 + sec/3600;
+    return (dir==='S'||dir==='W') ? -dec : dec;
+}
+
+var T1 = ["CCA","AIC","ANG","AAR","CAL","CES","EVA","IAE","JAL","KAL","KAC","MAS","OMA","PAL_T1","RBA","RYL_T1","SVA","CSZ","HVN","CXA","TZP","VJC"];
+var T3I = ["ANA","ACA","CPA","CSN","UAE","ETH","ETD","HGB","GFA","HKE","AXM","QFA","JJA","KLM","QTR","THA","THY","TGW","SIA","AFR","UAL","CEB"];
+var CARGO = ["PAL_CGO","GAP_CGO","FDX","UPS","ABW","CKS","GTI","CLX"];
+
+var stands = [
+    {id:"1",  lat:parseCoord("143020.88N"), lng:parseCoord("1210018.55E"), t:"T1", acft:"B757, B737, B727, A321, A320, A319, A310", al:T1},
+    {id:"2",  lat:parseCoord("143020.02N"), lng:parseCoord("1210020.70E"), t:"T1", acft:"B767, B757, B737, B787-800, A321, A320, A319, A310, A300, A330-200, A330-300", al:T1},
+    {id:"3",  lat:parseCoord("143020.60N"), lng:parseCoord("1210023.17E"), t:"T1", acft:"B747, B777-200, B767, B757, A340-300, A340-200, A330, A321, A320", al:T1},
+    {id:"4",  lat:parseCoord("143020.00N"), lng:parseCoord("1210024.63E"), t:"T1", acft:"B747, B777-300, B787-800/900, B767, B757, A350, A340-300, A330", al:T1},
+    {id:"5",  lat:parseCoord("143018.24N"), lng:parseCoord("1210024.72E"), t:"T1", acft:"B747, B777-300, B777-200, B767, B757, A350, A340-600/500/300", al:T1},
+    {id:"6",  lat:parseCoord("143017.51N"), lng:parseCoord("1210023.60E"), t:"T1", acft:"B747, B777-300, B777-200, B767, B787-900, A350, A340-300, A330", al:T1},
+    {id:"7",  lat:parseCoord("143017.60N"), lng:parseCoord("1210021.37E"), t:"T1", acft:"B767, B757, B737, B787-800, B777, A350, A330", al:T1},
+    {id:"9",  lat:parseCoord("143016.12N"), lng:parseCoord("1210018.43E"), t:"T1", acft:"B777-300, B747, B777-200, B767, B757, B737-800, B787-800, A350, A340-300", al:T1},
+    {id:"10", lat:parseCoord("143013.66N"), lng:parseCoord("1210016.58E"), t:"T1", acft:"B747, B777-300, B777-200, B767, B757, B787-800/900, A350", al:T1},
+    {id:"11", lat:parseCoord("143012.76N"), lng:parseCoord("1210015.55E"), t:"T1", acft:"B747, B777-300, B777-200, B767, B757, B737-800, B787-900", al:T1},
+    {id:"12", lat:parseCoord("143013.62N"), lng:parseCoord("1210014.06E"), t:"T1", acft:"B747, B777-300, B777-200, B767, B757, B737, B787-900", al:T1},
+    {id:"14", lat:parseCoord("143015.20N"), lng:parseCoord("1210013.98E"), t:"T1", acft:"B747, B777-200, B767, B757, B737, B777-300, B787-1000", al:T1},
+    {id:"15", lat:parseCoord("143016.46N"), lng:parseCoord("1210015.36E"), t:"T1", acft:"B747, B777-300, B777-200, B767, B757, B737, B727, B707", al:T1},
+    {id:"16", lat:parseCoord("143018.64N"), lng:parseCoord("1210016.50E"), t:"T1", acft:"B767, B757, B737, B727, B707, A321, A320", al:T1},
+    {id:"20", lat:parseCoord("143016.60N"), lng:parseCoord("1210007.12E"), t:"T1", acft:"B777-300, B777-200, B767, B747, B737, A330, A320", al:T1},
+    {id:"21", lat:parseCoord("143014.24N"), lng:parseCoord("1210006.96E"), t:"T1", acft:"B777-300, B777-200, B767, B747, B737, A330, A320", al:T1},
+    {id:"22", lat:parseCoord("143011.89N"), lng:parseCoord("1210006.72E"), t:"T1", acft:"B777-300, B767, B747, B737, A330, A320", al:T1},
+    {id:"23", lat:parseCoord("143009.56N"), lng:parseCoord("1210006.53E"), t:"T1", acft:"B777-300, B767, B747-800/400, B737, A350, A330, A320", al:T1},
+    {id:"24", lat:parseCoord("143006.49N"), lng:parseCoord("1210007.57E"), t:"T1", acft:"B777-300, B767, B747, B737, A330", al:T1},
+    {id:"17",  lat:parseCoord("143020.20N"), lng:parseCoord("1210030.85E"), t:"CGO", acft:"A321 and lower category aircraft", al:CARGO},
+    {id:"18",  lat:parseCoord("143022.94N"), lng:parseCoord("1210033.52E"), t:"CGO", acft:"B747-400, B777-200, A350-900 and lower category aircraft", al:["PAL_CGO","GAP_CGO","GTI","CLX","ABW"]},
+    {id:"18A", lat:parseCoord("143021.92N"), lng:parseCoord("1210032.15E"), t:"CGO", acft:"A321 and lower category aircraft", al:CARGO},
+    {id:"18B", lat:parseCoord("143022.64N"), lng:parseCoord("1210033.45E"), t:"CGO", acft:"A321 and lower category aircraft", al:CARGO},
+    {id:"18C", lat:parseCoord("143023.36N"), lng:parseCoord("1210034.75E"), t:"CGO", acft:"A321 and lower category aircraft", al:CARGO},
+    {id:"19",  lat:parseCoord("143024.51N"), lng:parseCoord("1210036.32E"), t:"CGO", acft:"B777-200, A340-300, A330-300 and lower category aircraft", al:["PAL_CGO","GAP_CGO","GTI","CLX","ABW","FDX","UPS"]},
+    {id:"19A", lat:parseCoord("143024.08N"), lng:parseCoord("1210036.06E"), t:"CGO", acft:"A321 and lower category aircraft", al:CARGO},
+    {id:"25", lat:parseCoord("143024.05N"), lng:parseCoord("1210038.36E"), t:"T2", acft:"A320, A319, A318, ATR72, ATR42", al:["APG","ATX","SRQ","RYL_T2","RLB"]},
+    {id:"26", lat:parseCoord("143024.71N"), lng:parseCoord("1210039.55E"), t:"T2", acft:"A320, A319, A318, ATR72, ATR42", al:["APG","ATX","SRQ","RYL_T2","RLB"]},
+    {id:"27", lat:parseCoord("143025.33N"), lng:parseCoord("1210040.71E"), t:"T2", acft:"A320, A319, A318, ATR72, ATR42", al:["APG","ATX","SRQ","RYL_T2","RLB"]},
+    {id:"28", lat:parseCoord("143025.99N"), lng:parseCoord("1210041.86E"), t:"T2", acft:"A320, A319, A318, ATR72, ATR42", al:["APG","ATX","SRQ","RYL_T2","RLB"]},
+    {id:"30", lat:parseCoord("143028.85N"), lng:parseCoord("1210042.93E"), t:"T2", acft:"A330, A321, A320, Q400 and lower", al:["APG"]},
+    {id:"32", lat:parseCoord("143029.72N"), lng:parseCoord("1210044.44E"), t:"T2", acft:"A321, A320, Q400 and lower", al:["APG"]},
+    {id:"33", lat:parseCoord("143029.93N"), lng:parseCoord("1210045.82E"), t:"T2", acft:"A321, A320, Q400 and lower", al:["APG"]},
+    {id:"34", lat:parseCoord("143030.94N"), lng:parseCoord("1210046.72E"), t:"T2", acft:"A321, A320, Q400 and lower", al:["APG"]},
+    {id:"35", lat:parseCoord("143031.39N"), lng:parseCoord("1210048.02E"), t:"T2", acft:"A321, A320, Q400 and lower", al:["APG"]},
+    {id:"36", lat:parseCoord("143032.16N"), lng:parseCoord("1210049.12E"), t:"T2", acft:"A321, A320, Q400, ATR and lower", al:["APG"]},
+    {id:"38", lat:parseCoord("143033.18N"), lng:parseCoord("1210050.64E"), t:"T2", acft:"B777-300ER, A350-900, A330neo, A330, A321, A320neo, A320, Q400, ATR and lower", al:["PAL_T2","GAP"]},
+    {id:"39", lat:parseCoord("143034.32N"), lng:parseCoord("1210052.18E"), t:"T2", acft:"B777-300ER, A330neo, A330, A321, A320neo, A320, Q400, ATR and lower", al:["PAL_T2","GAP"]},
+    {id:"40", lat:parseCoord("143034.73N"), lng:parseCoord("1210054.38E"), t:"T2", acft:"A321, A320neo, A320, Q400, ATR and lower", al:["PAL_T2","GAP"]},
+    {id:"42", lat:parseCoord("143035.19N"), lng:parseCoord("1210051.41E"), t:"T2", acft:"B777-300ER, A350-900, A330neo, A330, A321, A320neo, A320, Q400, ATR and lower", al:["PAL_T2","GAP"]},
+    {id:"43", lat:parseCoord("143036.47N"), lng:parseCoord("1210050.10E"), t:"T2", acft:"A321, A320neo, A320, Q400, ATR and lower", al:["PAL_T2","GAP"]},
+    {id:"45", lat:parseCoord("143037.89N"), lng:parseCoord("1210048.64E"), t:"T2", acft:"B777-300ER, A350-900, A330neo, A330, A321, A320neo, A320 and lower", al:["PAL_T2","GAP"]},
+    {id:"47", lat:parseCoord("143039.40N"), lng:parseCoord("1210047.07E"), t:"T2", acft:"A321, A320neo, A320, Q400, ATR and lower", al:["PAL_T2","GAP"]},
+    {id:"49", lat:parseCoord("143041.05N"), lng:parseCoord("1210045.37E"), t:"T2", acft:"B777-300ER, A350-900, A330neo, A330, A321, A320neo, A320 and lower", al:["PAL_T2","GAP"]},
+    {id:"54", lat:parseCoord("143047.06N"), lng:parseCoord("1210039.17E"), t:"RPA-T2", acft:"A321, A320, A319, A318", al:["GAP"]},
+    {id:"56", lat:parseCoord("143049.02N"), lng:parseCoord("1210037.44E"), t:"RPA-T2", acft:"B777-300ER, B777-200, B767, B737, A330, A321, A320", al:["GAP"]},
+    {id:"58", lat:parseCoord("143050.82N"), lng:parseCoord("1210035.42E"), t:"RPA-T2", acft:"A321, A320, A319", al:["GAP"]},
+    {id:"60", lat:parseCoord("143052.86N"), lng:parseCoord("1210033.61E"), t:"RPA-T2", acft:"A321, A320, A319", al:["GAP"]},
+    {id:"61", lat:parseCoord("143053.96N"), lng:parseCoord("1210032.76E"), t:"RPA-T2", acft:"A321, A320, A319", al:["GAP"]},
+    {id:"101",lat:parseCoord("143103.80N"), lng:parseCoord("1210056.40E"), t:"T3", acft:"B737, A321, A320, A319, ATR", al:["AXM","CEB"]},
+    {id:"102",lat:parseCoord("143102.30N"), lng:parseCoord("1210057.71E"), t:"T3", acft:"B737, A321, A320, A319, ATR", al:["AXM","CEB"]},
+    {id:"103",lat:parseCoord("143102.30N"), lng:parseCoord("1210058.80E"), t:"T3", acft:"B737, A321, A320, A319, ATR", al:["AXM","CEB"]},
+    {id:"104",lat:parseCoord("143100.98N"), lng:parseCoord("1210059.46E"), t:"T3", acft:"B737, A321, A320, A319, ATR", al:["AXM","CEB"]},
+    {id:"105",lat:parseCoord("143059.53N"), lng:parseCoord("1210100.62E"), t:"T3", acft:"B737, A321, A320, A319, ATR", al:["AXM","CEB"]},
+    {id:"106",lat:parseCoord("143059.40N"), lng:parseCoord("1210101.80E"), t:"T3", acft:"B737, A321, A320, A319, ATR", al:["AXM","CEB"]},
+    {id:"107",lat:parseCoord("143057.10N"), lng:parseCoord("1210058.64E"), t:"T3", acft:"B777, B787-1000, B787-900, B787-800, B767, B747, B737, A350-1000, A350-900, A321, A320, A319", al:T3I},
+    {id:"108",lat:parseCoord("143058.74N"), lng:parseCoord("1210056.91E"), t:"T3", acft:"B777, B787-1000, B787-900, B787-800, B767, B747, B737, A350-1000, A350-900, A321, A320, A319", al:T3I},
+    {id:"109",lat:parseCoord("143100.41N"), lng:parseCoord("1210055.20E"), t:"T3", acft:"B777, B787-1000, B787-900, B787-800, B767, B747, B737, A350-1000, A350-900, A321, A320, A319", al:T3I},
+    {id:"110",lat:parseCoord("143102.10N"), lng:parseCoord("1210053.50E"), t:"T3", acft:"B777, B787-1000, B787-900, B787-800, B767, B747, B737, A350-1000, A350-900, A321, A320, A319", al:T3I},
+    {id:"111",lat:parseCoord("143103.73N"), lng:parseCoord("1210051.80E"), t:"T3", acft:"B777, B787-1000, B787-900, B787-800, B767, B747, B737, A350-1000, A350-900, A321, A320, A319", al:T3I},
+    {id:"112",lat:parseCoord("143105.60N"), lng:parseCoord("1210049.90E"), t:"T3", acft:"B777, B787-1000, B787-900, B787-800, B767, B747, B737, A350-1000, A350-900, A321, A320, A319", al:T3I},
+    {id:"113",lat:parseCoord("143107.22N"), lng:parseCoord("1210048.15E"), t:"T3", acft:"B777, B787-1000, B787-900, B787-800, B767, B747, B737, A350-1000, A350-900, A321, A320, A319", al:T3I},
+    {id:"114",lat:parseCoord("143108.90N"), lng:parseCoord("1210046.43E"), t:"T3", acft:"B777, B787-1000, B787-900, B787-800, B767, B747, B737, A350-1000, A350-900, A321, A320, A319", al:T3I},
+    {id:"115",lat:parseCoord("143110.60N"), lng:parseCoord("1210044.71E"), t:"T3", acft:"B777, B787-1000, B787-900, B787-800, B767, B747, B737, A350-1000, A350-900, A321, A320, A319", al:T3I},
+    {id:"116",lat:parseCoord("143112.21N"), lng:parseCoord("1210042.99E"), t:"T3", acft:"B777, B787-1000, B787-900, B787-800, B767, B747, B737, A350-1000, A350-900, A321, A320, A319", al:T3I},
+    {id:"117",lat:parseCoord("143114.50N"), lng:parseCoord("1210041.52E"), t:"T3", acft:"A330, A321, A320, A319", al:["CEB"]},
+    {id:"118",lat:parseCoord("143116.12N"), lng:parseCoord("1210039.82E"), t:"T3", acft:"B767, A330, A321, A320, A319", al:["CEB"]},
+    {id:"119",lat:parseCoord("143117.80N"), lng:parseCoord("1210038.10E"), t:"T3", acft:"A330, A321, A320, A319", al:["CEB"]},
+    {id:"120",lat:parseCoord("143119.50N"), lng:parseCoord("1210036.40E"), t:"T3", acft:"A330, A321, A320, A319", al:["CEB"]},
+    {id:"121",lat:parseCoord("143121.00N"), lng:parseCoord("1210034.71E"), t:"T3", acft:"A321, A320, A319, B737-800", al:["CEB"]},
+    {id:"122",lat:parseCoord("143122.81N"), lng:parseCoord("1210032.83E"), t:"T3", acft:"A321, A320, A319, B737-800", al:["CEB"]},
+    {id:"123",lat:parseCoord("143124.03N"), lng:parseCoord("1210030.63E"), t:"T3", acft:"A321, A320, A319, B737-800", al:["CEB"]},
+    {id:"124",lat:parseCoord("143125.72N"), lng:parseCoord("1210028.97E"), t:"T3", acft:"A321, A320, A319, B737-800", al:["CEB"]},
+    {id:"125",lat:parseCoord("143127.40N"), lng:parseCoord("1210027.29E"), t:"T3", acft:"A321, A320, A319, B737-800", al:["CEB"]},
+    {id:"126",lat:parseCoord("143129.08N"), lng:parseCoord("1210025.53E"), t:"T3", acft:"A321, A320, A319, B737-800", al:["CEB"]},
+    {id:"127",lat:parseCoord("143130.00N"), lng:parseCoord("1210023.72E"), t:"T3", acft:"A321, A320, A319, B737-800", al:["CEB"]},
+    {id:"128",lat:parseCoord("143130.71N"), lng:parseCoord("1210022.46E"), t:"T3", acft:"A321, A320, A319, B737-800", al:["CEB"]},
+    {id:"71", lat:parseCoord("143124.14N"), lng:parseCoord("1210007.52E"), t:"T4", acft:"A321, A320, A319, A318, ATR72, ATR42", al:["CEB"]},
+    {id:"72", lat:parseCoord("143125.40N"), lng:parseCoord("1210007.80E"), t:"T4", acft:"A321, A320, A319, A318, ATR72, ATR42", al:["CEB"]},
+    {id:"73", lat:parseCoord("143126.91N"), lng:parseCoord("1210007.78E"), t:"T4", acft:"A320, A319, A318, ATR72, ATR42", al:["CEB"]},
+    {id:"74", lat:parseCoord("143128.18N"), lng:parseCoord("1210007.65E"), t:"T4", acft:"A321, A320, A319, A318, ATR72, ATR42", al:["CEB"]},
+    {id:"75", lat:parseCoord("143129.15N"), lng:parseCoord("1210007.68E"), t:"T4", acft:"A321, A320, A319, A318, ATR72, ATR42", al:["CEB"]},
+    {id:"76", lat:parseCoord("143129.86N"), lng:parseCoord("1210006.81E"), t:"T4", acft:"A321, A320, A319, A318, ATR72, ATR42", al:["CEB"]},
+    {id:"77", lat:parseCoord("143130.77N"), lng:parseCoord("1210005.92E"), t:"T4", acft:"A321, A320, A319, A318, ATR72, ATR42", al:["CEB"]},
+    {id:"78", lat:parseCoord("143131.61N"), lng:parseCoord("1210004.94E"), t:"T4", acft:"A321, A320, A319, A318, ATR72, ATR42", al:["CEB"]},
+    {id:"79", lat:parseCoord("143132.50N"), lng:parseCoord("1210004.05E"), t:"T4", acft:"A321, A320, A319, A318, ATR72, ATR42", al:["CEB"]},
+];
+
+var tCol = {"T1":"#00a8ff","T2":"#00e096","RPA-T2":"#00b07a","T3":"#ff9900","T4":"#cc66ff","CGO":"#ff4444"};
+var tLbl = {"T1":"Terminal 1","T2":"Terminal 2","RPA-T2":"T2 Remote Apron","T3":"Terminal 3","T4":"Terminal 4","CGO":"Cargo Terminal"};
+var standMarkers = {};
+
+stands.forEach(function(s){
+    var col = tCol[s.t]||"#00a8ff";
+    var m = L.circleMarker([s.lat,s.lng],{radius:5,fillColor:col,color:"#000",weight:1,fillOpacity:0.9}).addTo(map);
+    var tags = s.al.map(function(a){return '<span class="atag">'+a.replace(/_T[12]$|_CGO$/,'')+'</span>';}).join('');
+    m.bindPopup(
+        '<div class="pop-stand">Stand '+s.id+'</div><div class="pop-term">'+tLbl[s.t]+'</div><div class="pop-lbl">Aircraft Types</div><div class="pop-val">'+s.acft+'</div><div class="pop-lbl">Airlines</div><div>'+tags+'</div>',
+        {
+            maxWidth: 300,
+            offset: [0, -8],
+            autoPan: true,
+            autoPanPaddingTopLeft: [320, 80],
+            autoPanPaddingBottomRight: [40, 80],
+            className: 'sf-pop-' + s.t.toLowerCase()
+        }
+    );
+    m.bindTooltip('Stand '+s.id,{sticky:true,direction:'top',offset:[0,-6]});
+    standMarkers[s.id]={marker:m,stand:s,defCol:col};
+});
+
+function resetMarkerStyles(){
+    Object.keys(standMarkers).forEach(function(k){
+        var rec = standMarkers[k];
+        rec.marker.setStyle({
+            radius: 5,
+            fillColor: rec.defCol,
+            color: "#000",
+            weight: 1,
+            fillOpacity: 0.9,
+            opacity: 1
+        });
+    });
+}
+
+function normalizeAirline(code){
+    return code.replace(/_T[12]$|_CGO$/, '').toUpperCase();
+}
+
+function searchStand(){
+    var v = document.getElementById('standInput').value.trim().toUpperCase();
+    resetMarkerStyles();
+    if(!v) return;
+
+    // 1) Stand ID match — single result, zoom + popup
+    if(standMarkers[v]){
+        map.closePopup();
+        map.setView(standMarkers[v].marker.getLatLng(), 18);
+        standMarkers[v].marker.openPopup();
+        return;
+    }
+
+    // 2) Airline code match — highlight all matching stands
+    var matches = [];
+    Object.keys(standMarkers).forEach(function(k){
+        var rec = standMarkers[k];
+        var airlines = rec.stand.al.map(normalizeAirline);
+        if(airlines.indexOf(v) !== -1) matches.push(rec);
+    });
+
+    if(matches.length === 0){
+        alert('No stand or airline matches "' + v + '".');
+        return;
+    }
+
+    // Dim non-matches
+    Object.keys(standMarkers).forEach(function(k){
+        var rec = standMarkers[k];
+        if(matches.indexOf(rec) === -1){
+            rec.marker.setStyle({fillOpacity: 0.15, opacity: 0.25});
+        }
+    });
+
+    // Highlight matches in gold
+    matches.forEach(function(rec){
+        rec.marker.setStyle({
+            radius: 8,
+            fillColor: '#d9d61c',
+            color: '#8c7804',
+            weight: 2,
+            fillOpacity: 1,
+            opacity: 1
+        });
+        rec.marker.bringToFront();
+    });
+
+    // Fit map to the highlighted group
+    map.closePopup();
+    var bounds = L.latLngBounds(matches.map(function(r){ return r.marker.getLatLng(); }));
+    if(matches.length === 1){
+        map.setView(matches[0].marker.getLatLng(), 18);
+        matches[0].marker.openPopup();
+    } else {
+        map.fitBounds(bounds, {
+            paddingTopLeft: [320, 60],
+            paddingBottomRight: [40, 60],
+            maxZoom: 16
+        });
+    }
+}
+</script>
+</body>
+</html>
+
+## Runways
+
+<div markdown="1">
+Manila currently only has 2 runways that intersect each other.
+
+### Hours of Operation
+
+|     Days      |          RWY 13/31           |          RWY 06/24           |
+| :-----------: | :--------------------------: | :--------------------------: |
+| MON, WED, FRI |             H24              | 0000Z – 2200Z, 2220Z – 2359Z |
+|   TUE, SUN    |             H24              | 0000Z – 1630Z, 2130Z – 2359Z |
+|   THU, SAT    | 0000Z – 1500Z, 2000Z – 2359Z | 0000Z – 2200Z, 2220Z – 2359Z |
+</div>
+
+<div class="rwy-schedule">
+<style>
+.rwy-schedule {
+  margin: 1rem 0 1.5rem;
+  padding: 0.9rem 1rem 1rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-left: 4px solid var(--md-primary-fg-color);
+  border-radius: 4px;
+  background: var(--md-code-bg-color);
+  color: var(--md-default-fg-color);
+  font-size: 0.8rem;
+}
+.rwy-schedule * { box-sizing: border-box; }
+
+.rwy-schedule .rs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+.rwy-schedule .rs-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--md-default-fg-color--light);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.rwy-schedule .rs-subtitle {
+  font-size: 0.65rem;
+  color: var(--md-default-fg-color--lighter);
+  margin-top: 2px;
+  letter-spacing: 0.04em;
+}
+.rwy-schedule .rs-clock {
+  font-family: var(--md-code-font, monospace);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--md-default-fg-color);
+  letter-spacing: 0.04em;
+  text-align: right;
+}
+.rwy-schedule .rs-clock-label {
+  font-size: 0.6rem;
+  color: var(--md-default-fg-color--lighter);
+  text-align: right;
+  margin-top: 2px;
+  letter-spacing: 0.06em;
+}
+
+.rwy-schedule .rs-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+.rwy-schedule .rs-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.7rem;
+  color: var(--md-default-fg-color--light);
+}
+.rwy-schedule .rs-legend-box {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+.rwy-schedule .rs-legend-line {
+  width: 12px;
+  height: 2px;
+  background: #e53935;
+  border-radius: 1px;
+}
+
+.rwy-schedule .rs-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+.rwy-schedule .rs-rwy-name {
+  font-family: var(--md-code-font, monospace);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--md-default-fg-color);
+}
+.rwy-schedule .rs-rwy-type {
+  font-size: 0.65rem;
+  color: var(--md-default-fg-color--lighter);
+  margin-top: 2px;
+}
+
+.rwy-schedule .rs-bar-wrap {
+  position: relative;
+  height: 32px;
+  border-radius: 4px;
+}
+.rwy-schedule .rs-bar-bg {
+  position: absolute;
+  inset: 0;
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+}
+.rwy-schedule .rs-bar-active {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: var(--md-primary-fg-color);
+  border-radius: 3px;
+}
+.rwy-schedule .rs-bar-label {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--md-code-font, monospace);
+  font-size: 0.62rem;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.rwy-schedule .rs-now-line {
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  width: 2px;
+  background: #e53935;
+  border-radius: 2px;
+  z-index: 10;
+  transition: left 1s linear;
+}
+.rwy-schedule .rs-now-line::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background: #e53935;
+  border-radius: 50%;
+}
+
+.rwy-schedule .rs-axis {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.9rem;
+}
+.rwy-schedule .rs-axis-ticks {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--md-code-font, monospace);
+  font-size: 0.6rem;
+  color: var(--md-default-fg-color--lighter);
+}
+
+.rwy-schedule .rs-status-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+.rwy-schedule .rs-status-card {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  padding: 0.6rem 0.8rem;
+  background: var(--md-default-bg-color);
+}
+.rwy-schedule .rs-status-card.active {
+  border-left: 3px solid var(--md-primary-fg-color);
+}
+.rwy-schedule .rs-status-card.inactive {
+  border-left: 3px solid var(--md-default-fg-color--lightest);
+}
+.md-typeset .rwy-schedule .rs-sc-label {
+  font-size: 0.65rem;
+  font-weight: 800 !important;
+  color: var(--md-default-fg-color);
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.rwy-schedule .rs-sc-rwy {
+  font-family: var(--md-code-font, monospace);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--md-default-fg-color);
+}
+.rwy-schedule .rs-sc-sub {
+  font-size: 0.7rem;
+  color: var(--md-default-fg-color--light);
+  margin-top: 3px;
+}
+.rwy-schedule .rs-sc-sub span {
+  color: var(--md-primary-fg-color);
+  font-weight: 600;
+}
+
+.rwy-schedule .rs-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--md-primary-fg-color);
+  margin-right: 5px;
+  animation: rs-pulse 2s infinite;
+}
+.rwy-schedule .rs-dot.off {
+  background: var(--md-default-fg-color--lighter);
+  animation: none;
+}
+@keyframes rs-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@media (max-width: 480px) {
+  .rwy-schedule .rs-row,
+  .rwy-schedule .rs-axis { grid-template-columns: 80px 1fr; }
+  .rwy-schedule .rs-status-grid { grid-template-columns: 1fr; }
+  .rwy-schedule .rs-bar-label { font-size: 0.55rem; }
+}
+</style>
+
+<div class="rs-header">
+  <div>
+    <div class="rs-clock" style="text-align:left;" id="rs-clock">--:--:--Z</div>
+    <div class="rs-clock-label" style="text-align:left;" id="rs-today">—</div>
+  </div>
+  <div style="text-align:right;">
+  </div>
+</div>
+
+<div class="rs-legend">
+  <div class="rs-legend-item"><div class="rs-legend-box" style="background:var(--md-primary-fg-color);"></div> Active</div>
+  <div class="rs-legend-item"><div class="rs-legend-box" style="background:var(--md-default-bg-color); border:1px solid var(--md-default-fg-color--lightest);"></div> Inactive</div>
+  <div class="rs-legend-item"><div class="rs-legend-line"></div> Now</div>
+</div>
+
+<div class="rs-row">
+  <div>
+    <div class="rs-rwy-name">13/31</div>
+  </div>
+  <div class="rs-bar-wrap">
+    <div class="rs-bar-bg"></div>
+    <div id="rs-1331-segments"></div>
+    <div class="rs-now-line" id="rs-now1"></div>
+  </div>
+</div>
+
+<div class="rs-row">
+  <div>
+    <div class="rs-rwy-name">06/24</div>
+  </div>
+  <div class="rs-bar-wrap">
+    <div class="rs-bar-bg"></div>
+    <div id="rs-0624-segments"></div>
+    <div class="rs-now-line" id="rs-now2"></div>
+  </div>
+</div>
+
+<div class="rs-axis">
+  <div></div>
+  <div class="rs-axis-ticks">
+    <span>0000</span><span>0200</span><span>0400</span><span>0600</span>
+    <span>0800</span><span>1000</span><span>1200</span><span>1400</span>
+    <span>1600</span><span>1800</span><span>2000</span><span>2200</span><span>2400</span>
+  </div>
+</div>
+
+<div class="rs-status-grid">
+  <div class="rs-status-card" id="rs-card-1331">
+    <div class="rs-sc-label">RWY 13/31</div>
+    <div class="rs-sc-rwy" id="rs-state-1331">—</div>
+    <div class="rs-sc-sub" id="rs-sub-1331">—</div>
+  </div>
+  <div class="rs-status-card" id="rs-card-0624">
+    <div class="rs-sc-label">RWY 06/24</div>
+    <div class="rs-sc-rwy" id="rs-state-0624">—</div>
+    <div class="rs-sc-sub" id="rs-sub-0624">—</div>
+  </div>
+</div>
+
+<script>
+(function () {
+  // Schedules in minutes from 0000Z. 1440 = end of day.
+  // Day index: 0 = Sun, 1 = Mon, ..., 6 = Sat (UTC)
+  var DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+  // RWY 13/31
+  //   MON, TUE, WED, FRI, SUN: H24
+  //   THU, SAT: 0000-1500, 2000-2359
+  var SCHED_1331 = {
+    0: [[0, 1440]],                  // Sun H24
+    1: [[0, 1440]],                  // Mon H24
+    2: [[0, 1440]],                  // Tue H24
+    3: [[0, 1440]],                  // Wed H24
+    4: [[0, 900], [1200, 1440]],     // Thu
+    5: [[0, 1440]],                  // Fri H24
+    6: [[0, 900], [1200, 1440]]      // Sat
+  };
+
+  // RWY 06/24
+  //   MON, WED, THU, FRI, SAT: 0000-2200, 2220-2359
+  //   TUE, SUN: 0000-1630, 2130-2359
+  var SCHED_0624 = {
+    0: [[0, 990], [1290, 1440]],     // Sun
+    1: [[0, 1320], [1340, 1440]],    // Mon
+    2: [[0, 990], [1290, 1440]],     // Tue
+    3: [[0, 1320], [1340, 1440]],    // Wed
+    4: [[0, 1320], [1340, 1440]],    // Thu
+    5: [[0, 1320], [1340, 1440]],    // Fri
+    6: [[0, 1320], [1340, 1440]]     // Sat
+  };
+
+  function pct(m) { return (m / 1440) * 100; }
+  function fmtHHMM(m) {
+    m = ((m % 1440) + 1440) % 1440;
+    var h = Math.floor(m / 60), mm = Math.floor(m % 60);
+    return String(h).padStart(2, '0') + String(mm).padStart(2, '0') + 'Z';
+  }
+  function fmtDur(m) {
+    if (m < 0) m = 0;
+    var h = Math.floor(m / 60), mm = Math.floor(m % 60);
+    if (h === 0) return mm + 'm';
+    return h + 'h ' + mm + 'm';
+  }
+
+  function renderSegments(containerId, segments) {
+    var c = document.getElementById(containerId);
+    c.innerHTML = '';
+    var wrap = c.parentElement; // .rs-bar-wrap
+    segments.forEach(function (seg) {
+      var start = seg[0], end = seg[1];
+      var widthPct = pct(end - start);
+      var bar = document.createElement('div');
+      bar.className = 'rs-bar-active';
+      bar.style.left = pct(start) + '%';
+      bar.style.width = widthPct + '%';
+      c.appendChild(bar);
+
+      // Only draw a label if the segment is wide enough to hold it
+      if (widthPct >= 10) {
+        var label = document.createElement('div');
+        label.className = 'rs-bar-label';
+        label.style.left = pct((start + end) / 2) + '%';
+        label.textContent = fmtHHMM(start) + ' – ' + fmtHHMM(end >= 1440 ? 1439 : end);
+        c.appendChild(label);
+
+        // If the centred label overflows the bar, anchor it to the segment edge instead
+        var wrapRect = wrap.getBoundingClientRect();
+        var labRect = label.getBoundingClientRect();
+        if (labRect.right > wrapRect.right - 2) {
+          label.style.left = 'auto';
+          label.style.right = (100 - pct(end >= 1440 ? 1440 : end)) + '%';
+          label.style.marginRight = '4px';
+          label.style.transform = 'translateY(-50%)';
+        } else if (labRect.left < wrapRect.left + 2) {
+          label.style.left = pct(start) + '%';
+          label.style.marginLeft = '4px';
+          label.style.transform = 'translateY(-50%)';
+        }
+      }
+    });
+  }
+
+  function describeSchedule(segs) {
+    if (segs.length === 1 && segs[0][0] === 0 && segs[0][1] >= 1440) return 'H24';
+    return segs.map(function (s) {
+      return fmtHHMM(s[0]) + '–' + fmtHHMM(s[1] >= 1440 ? 1439 : s[1]);
+    }).join(', ');
+  }
+
+  function activeNow(segs, t) {
+    for (var i = 0; i < segs.length; i++) {
+      if (t >= segs[i][0] && t < segs[i][1]) return true;
+    }
+    return false;
+  }
+
+  // minutes until next state change, scanning today and tomorrow if needed
+  function nextChange(daySegs, dayIdx, t) {
+    var todaySegs = daySegs[dayIdx];
+    var active = activeNow(todaySegs, t);
+
+    // build state transitions for today: list of times when state flips
+    var flips = [];
+    todaySegs.forEach(function (s) {
+      if (s[0] > 0) flips.push(s[0]);                 // inactive -> active
+      if (s[1] < 1440) flips.push(s[1]);              // active -> inactive
+    });
+    flips.sort(function (a, b) { return a - b; });
+
+    for (var i = 0; i < flips.length; i++) {
+      if (flips[i] > t) {
+        return { in: flips[i] - t, at: flips[i], newState: !active };
+      }
+    }
+
+    // no flip today — check start of tomorrow
+    var tomorrow = daySegs[(dayIdx + 1) % 7];
+    var tStart = tomorrow[0][0];
+    var tomorrowActiveAtMidnight = (tStart === 0);
+    if (tomorrowActiveAtMidnight !== active) {
+      return { in: (1440 - t) + 0, at: 0, newState: tomorrowActiveAtMidnight };
+    }
+    // otherwise look for first flip in tomorrow
+    var tFlips = [];
+    tomorrow.forEach(function (s) {
+      if (s[0] > 0) tFlips.push(s[0]);
+      if (s[1] < 1440) tFlips.push(s[1]);
+    });
+    tFlips.sort(function (a, b) { return a - b; });
+    if (tFlips.length) {
+      return { in: (1440 - t) + tFlips[0], at: tFlips[0], newState: !active };
+    }
+    return null;
+  }
+
+  function update() {
+    var now = new Date();
+    var hh = String(now.getUTCHours()).padStart(2, '0');
+    var mm = String(now.getUTCMinutes()).padStart(2, '0');
+    var ss = String(now.getUTCSeconds()).padStart(2, '0');
+    document.getElementById('rs-clock').textContent = hh + ':' + mm + ':' + ss + 'Z';
+
+    var day = now.getUTCDay();
+    document.getElementById('rs-today').textContent = DAYS[day] + ' (UTC)';
+
+    var total = now.getUTCHours() * 60 + now.getUTCMinutes() + now.getUTCSeconds() / 60;
+    var p = pct(total) + '%';
+    document.getElementById('rs-now1').style.left = p;
+    document.getElementById('rs-now2').style.left = p;
+
+    var segs1331 = SCHED_1331[day];
+    var segs0624 = SCHED_0624[day];
+
+    renderSegments('rs-1331-segments', segs1331);
+    renderSegments('rs-0624-segments', segs0624);
+
+    // status cards
+    [
+      {
+        active: activeNow(segs1331, total),
+        change: nextChange(SCHED_1331, day, total),
+        card: 'rs-card-1331', state: 'rs-state-1331', sub: 'rs-sub-1331'
+      },
+      {
+        active: activeNow(segs0624, total),
+        change: nextChange(SCHED_0624, day, total),
+        card: 'rs-card-0624', state: 'rs-state-0624', sub: 'rs-sub-0624'
+      }
+    ].forEach(function (r) {
+      var card = document.getElementById(r.card);
+      card.classList.remove('active', 'inactive');
+      card.classList.add(r.active ? 'active' : 'inactive');
+      document.getElementById(r.state).textContent = r.active ? 'Active' : 'Inactive';
+      if (r.change) {
+        var verb = r.change.newState ? 'Opens' : 'Closes';
+        document.getElementById(r.sub).innerHTML =
+          verb + ' at <span>' + fmtHHMM(r.change.at) + '</span> · in <span>' + fmtDur(r.change.in) + '</span>';
+      } else {
+        document.getElementById(r.sub).innerHTML = r.active ? 'H24 today' : 'Closed all day';
+      }
+    });
+  }
+
+  update();
+  setInterval(update, 1000);
+})();
+</script>
+</div>
+
+Below is a table of the Take-Off Run available
+
+**Take-off Run Available.**
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:center">Runway</th>
+      <th style="text-align:center">Intersection</th>
+      <th style="text-align:center">TORA ft (m)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2" style="text-align:center"><strong>06</strong></td>
+      <td style="text-align:center">E4</td>
+      <td style="text-align:center">6,854 (2089)</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">E5</td>
+      <td style="text-align:center">10,098 (3078)</td>
+    </tr>
+    <tr>
+      <td rowspan="2" style="text-align:center"><strong>24</strong></td>
+      <td style="text-align:center">E1</td>
+      <td style="text-align:center">9,951 (3033)</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">E2</td>
+      <td style="text-align:center">7,733 (2357)</td>
+    </tr>
+    <tr>
+      <td rowspan="2" style="text-align:center"><strong>13</strong></td>
+      <td style="text-align:center">F1</td>
+      <td style="text-align:center">6,148 (1874)</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">F2</td>
+      <td style="text-align:center">4,701 (1433)</td>
+    </tr>
+    <tr>
+      <td rowspan="2" style="text-align:center"><strong>31</strong></td>
+      <td style="text-align:center">F4</td>
+      <td style="text-align:center">4,948 (1508)</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">F5</td>
+      <td style="text-align:center">6,516 (1986)</td>
+    </tr>
+  </tbody>
+</table>
+
+!!! warning
+
+    Runway 31 is only for departures.
+
+## Routes
+
+Local flights within RPHI and some international flights are to use routes given below. Simbrief also give a standard route which looks like this
+
+![Simbrief Routes](../../../assets/img/simbrief.png)
+
+If your route is still invalid, a controller will send you a private message with your new route. Routes within RPHI are to follow the half-moon principle in both RVSM and non-RVSM conditions. During events you will have 5 minutes between the time you request clearance and the time you request pushback, or you will have to wait until a new slot is available.
+
+!!! warning
+
+    During events it is important that you put your EOBT in your flight plan as 
+    controllers will use that to determine your takeoff slot.
+
+## Waypoint Restrictions
+
+<h3 style="text-align:center"><strong>Waypoint Restrictions</strong></h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:center">FIR</th>
+      <th style="text-align:center">Waypoint</th>
+      <th style="text-align:center">Airway</th>
+      <th style="text-align:center">Altitude (FL)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center"><strong>HONG KONG</strong></td>
+      <td style="text-align:center"><strong>NOMAN / SABNO</strong></td>
+      <td style="text-align:center"><strong>A583 / A461 / M501</strong></td>
+      <td style="text-align:center"><strong>300 / 340 / 380</strong></td>
+    </tr>
+    <tr>
+      <td rowspan="4" style="text-align:center"><strong>SINGAPORE</strong></td>
+      <td style="text-align:center"><strong>TEGID</strong></td>
+      <td style="text-align:center"><strong>M767</strong></td>
+      <td style="text-align:center"><strong>310 / 320 / 350 / 360 / 390 / 400</strong></td>
+    </tr>
+    <tr>
+      <td rowspan="3" style="text-align:center"><strong>LAXOR</strong></td>
+      <td style="text-align:center"><strong>L649</strong></td>
+      <td style="text-align:center"><strong>300 / 380</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>M772</strong></td>
+      <td style="text-align:center"><strong>300 / 380</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>N884</strong></td>
+      <td style="text-align:center"><strong>320 / 360 / 400</strong></td>
+    </tr>
+    <tr>
+      <td rowspan="3" style="text-align:center"><strong>HO CHI MINH</strong></td>
+      <td rowspan="2" style="text-align:center"><strong>PANDI / ARESI</strong></td>
+      <td style="text-align:center"><strong>M765 / L628</strong></td>
+      <td style="text-align:center"><strong>280 / 340</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>N500</strong></td>
+      <td style="text-align:center"><strong>300</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>MIGUG</strong></td>
+      <td style="text-align:center"><strong>N892</strong></td>
+      <td style="text-align:center"><strong>310 / 320 / 350 / 360 / 390 / 400</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+## Clearance
+
+On first contact with the controller that will issue your clearance, it is recommended for you to give
+the following information:
+
+- Your bay number
+- Your aircraft type
+- The ATIS information letter
+
+??? phraseology "Phraseology"
+
+    **PAL300**: Clearance Delivery, PAL300, stand 10, A-3-2-1, with Information Alpha, request clearance Hong Kong, runway 06
+
+!!! warning
+
+    Radio Checks on first contact are **discouraged** when building communication with the controller. 
+    It's best to greet or ask the controller, should you need any help before clearance issuance.
+
+    Be straightforward and concise as possible when communicating within a controlled frequency. 
+
+Once you have requested for clearance, the controller will either tell you to standby, or give your clearance on the spot. Clearances include your routing, flight level restrictions, departure instructions and your squawk.
+
+You must read back the clearance in full. Listen carefully to all details that the controller gives you, and if you are unsure about your clearance, **let the controller know.**
+
+??? phraseology "Phraseology"
+
+    === "Non-Radar"
+
+        **CEB585**: Clearance Delivery, CEB585, Stand 120, A-3-2-0 with information A, request clearance Mactan, runway 06.
+
+        **RPLL_DEL**: CEB585, cleared Mactan, W25 BATAY, RUNWAY 06 IPATA2R, Climb 7000, Squawk 4251
+
+    === "Radar"
+
+        **CEB585**: Clearance Delivery, CEB585, Stand 120, A-3-2-0 with information A, request clearance Mactan, runway 06.
+
+        **RPLL_DEL**: CEB585, cleared Mactan, W25 BATAY, RUNWAY 06, fly runway heading, climb 7000ft, expect radar vectors IPATA, squawk 4251
+
+## Pushback
+
+Normally, a controller will instruct you to push back to the nearest start-up point. The location of the start-up points are indicated in available charts 
+
+!!! warning 
+
+    1. **Do not preplan your pushback!**
+    2. Connect the tug first!
+
+??? phraseology "Phraseology"
+
+    **CEB585**: Apron Control Three, CEB585, Stand 120, request push, runway 06.
+
+    **RPLL_3_RMP**: CEB585, push approved, S14, face G12
+
+  A controller may push you to a certain reference point due traffic
+
+??? phraseology "Phraseology"	
+
+    **CEB585**: Apron Control Three, CEB585, Stand 120, request push, runway 06.
+
+    **RPLL_3_RMP**: CEB585, push approved, abeam gate 119, face G12
+
+
+## Departure
+
+The departure procedure is decided by an online Approach (**APP**) or En-route Controller (**CTR**). When both are offline, Standard Instrument Departures (**SIDs**) are given by the aerodrome controllers (**TWR**, **GND** or **DEL**). When either **APP** or **CTR** is online, they decide if departures will be given radar vectors (climb and heading instructions) to the TMA exit points or will be following a **SID**.
+
+When **APP** or **CTR** is online, after passing 2000 feet or 5 DME from RPLL, report your passing altitude to **APP**  or **CTR**. This is to help them identify you successfully in their radar screens.
+
+??? phraseology "Phraseology"
+
+    **PAL300**: “Manila Departure, PAL300, on runway heading, passing 2000 climbing 7000”
+
+    **RPLL_F_APP**: “PAL300, radar identified, continue climb 7000”
+
+### Runway 31
+
+For all departing IFR traffic on runway 31 must use the **HARBO1** Departure.
+
+<div markdown class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
+<div markdown>
+![Image title](../../../assets/img/31.png)
+</div>
+<div markdown>
+After HARBO, Maintain 318°(M) until instructed by ATC.
+</div>
+</div>
+
+### Runway Occupancy Time-Departure (ROTD)
+
+At RPLL we implement ROTD - Runway Occupancy Time-Departure for **A320 and lower**. ROTD of 45 seconds will start at the time the aircraft reaches no 1 position (lined-up on the runway threshold marker) and the pilot reads back the ATC’s take-off clearance to the time it is airborne (wheels off the ground).
+
+## Arrival
+
+When arriving in to Manila, it is best for you to be in between FL160 and FL200 when reaching the border of the TMA or the start of the [STAR](https://learn.vatphil.com/briefings/arrival/star/). On initial contact with Manila Approach (RPLL_APP), report your current level.
+
+??? phraseology "Phraseology"
+
+    **PAL301**: “Manila Approach, PAL301, FL180, inbound TADEL”
+
+APP will then issue your arrival clearance including the type of approach to expect to the active runway. APP will either give you radar vectors for the ILS or via a STAR. By default, controllers will issue you a STAR followed by radar vectors for the ILS.
+
+??? phraseology "Phraseology"
+
+    **RPLL_APP**: “PAL301, radar contact, cleared Manila expect radar vectors ILS 06”
+
+    **PAL301**: “Cleared Manila expect radar vectors ILS 06, PAL301”
+
+    **RPLL_APP**: “PAL301, maintain present heading, descend 10,000, QNH 1011”
+
+    **PAL301**: “maintain present heading, descend 10,000, QNH 1011, PAL301”
+
+!!! warning
+
+    If APP **did not** give you any turns after you have passed the last waypoint on your routing, maintain your present heading.
+
+Below is the mandatory speed restrictions when under vectors by approach.
+<p style="color: red; font-style: italic; font-weight: bold; text-align: center;">Please follow the following table unless instructed by ATC.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:center">Category</th>
+      <th style="text-align:center">Distance (NM)</th>
+      <th style="text-align:center">Speed (IAS)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center"><strong>All</strong></td>
+      <td style="text-align:center">Crossing STAR Waypoint</td>
+      <td style="text-align:center">250</td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>All</strong></td>
+      <td style="text-align:center">20</td>
+      <td style="text-align:center">210</td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>All</strong></td>
+      <td style="text-align:center">10 FINAL</td>
+      <td style="text-align:center">180</td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>C & D</strong></td>
+      <td style="text-align:center">FAF/FAP</td>
+      <td style="text-align:center">150</td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>ATR</strong></td>
+      <td style="text-align:center">5</td>
+      <td style="text-align:center">150</td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><strong>A & B</strong></td>
+      <td style="text-align:center">5</td>
+      <td style="text-align:center">130</td>
+    </tr>
+  </tbody>
+</table>
+
+## Manila Approach
+
+### Scope configurations
+
+=== "One scope"
+    <figure markdown style="float: left; margin-right: 1.5rem; width: 40%;">
+    ![One Scope](../../../assets/img/RPHI/4.png)
+    </figure>
+
+    | Designator   | Limits             | Freq    |
+    | ------------ | ------------------ | ------- |
+    | RPLL_APP[^2] | 1500ft – FL150[^1] | 124.800 |
+
+    <div style="clear: both;"></div>
+
+=== "Two scope"
+    <figure markdown style="float: left; margin-right: 1.5rem; width: 40%;">
+    ![Two Scope](../../../assets/img/RPHI/3.png)
+    </figure>
+
+    | Designator   | Limits             | Freq    |
+    | ------------ | ------------------ | ------- |
+    | RPLL_F_APP   | 1500ft – FL150[^1] | 124.400 |
+    | RPLL_APP[^2] | 8000ft – FL150[^1] | 124.800 |
+
+    <div style="clear: both;"></div>
+
+=== "Three scope"
+    <figure markdown style="float: left; margin-right: 1.5rem; width: 40%;">
+    ![Three Scope](../../../assets/img/RPHI/2.png)
+    </figure>
+
+    | Designator     | Limits             | Freq    |
+    | -------------- | ------------------ | ------- |
+    | RPLL_F_APP     | 1500ft – FL150[^1] | 124.400 |
+    | RPLL_N_APP[^2] | 8000ft – FL150[^1] | 119.900 |
+    | RPLL_S_APP     | 8000ft – FL150[^1] | 127.700 |
+
+    <div style="clear: both;"></div>
+</div>
+
+[^1]: Vertical limit of FL150 can be increased to a maximum of FL250.
+[^2]: Can control top-down Clark TMA which includes RPLC and RPLB. But check the controller information if they do!
+
+
+## Vacating
+
+You must vacate the runway as fast as possible in order for TWR to make best use of the runway.
+
+You have not vacated the runway until you have fully passed the runway stop bar, so **DO NOT STOP UNTIL YOU ARE FULLY ON A TAXIWAY** or you might cause a go around.
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:center">Runway</th>
+      <th style="text-align:center">Category</th>
+      <th style="text-align:center">Exit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2" style="text-align:center"><strong>06</strong></td>
+      <td style="text-align:center">A, B, C and Lower</td>
+      <td style="text-align:center">R2, R3, E4</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">D and Higher</td>
+      <td style="text-align:center">E2 / R1 / E1 / H1</td>
+    </tr>
+    <tr>
+      <td rowspan="2" style="text-align:center"><strong>24</strong></td>
+      <td style="text-align:center">A, B, C and Lower</td>
+      <td style="text-align:center">R4, E4</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">D and Higher</td>
+      <td style="text-align:center">R5 / E5 / H2</td>
+    </tr>
+    <tr>
+      <td rowspan = "2" style="text-align:center"><strong>13</strong></td>
+      <td style="text-align:center">A, B, C and Lower</td>
+      <td style="text-align:center">Any Taxiway on the Left/Right</td>
+    </tr>
+	<tr>
+      <td style="text-align:center">D Limited to A321 or similar</td>
+      <td style="text-align:center">Any Taxiway on the Left/Right</td>
+    </tr>
+  </tbody>
+</table>
+
+The controller may give you a taxi instruction to vacate and some might not. If so, keep moving until you are vacated and hold position until GND has given you further instructions to taxi.
+
+### Runway Occupancy Time-Arrivals (ROTA)
+For arrivals we implement ROTA - Runway Occupancy Time-Arrivals for **A320 and lower**. ROTA of 55 seconds will start at the time the aircraft reaches above the threshold marker to the time it vacates.
+
+*[ROTD]: Runway Occupancy Time-Departure
+*[ROTA]: Runway Occupancy Time-Arrivals
+*[EOBT]: Estimated off block time
+*[TOBT]: Target off block time
+*[TSAT]: Target start approval time
+*[ASRT]: Actual start up time
+*[TTOT]: Target takeoff time
+*[CTOT]: Calculated takeoff time
+*[RPLL_DEL]: Clearance Delivery
+*[RPLL_GND]: Manila Ground
+*[RPLL_1_RMP]: Apron Control One
+*[RPLL_2_RMP]: Apron Control Two
+*[RPLL_3_RMP]: Apron Control Three
+*[RPLL_G_RMP]: Apron Control GenAv
+*[RPLL_TWR]: Manila Tower
+*[RPLL_F_APP]: Manila Departures/Finals
+*[RPLL_N_APP]: Manila Approach
+*[RPLL_S_APP]: Manila Approach
+*[RPLL_P_GND]: Manila Planner
