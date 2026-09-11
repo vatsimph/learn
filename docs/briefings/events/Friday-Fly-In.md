@@ -90,7 +90,8 @@ The airport caters passenger and cargo flights, as well as general and military 
 
 |                             Date                              |                                                     Description                                                     |
 | :-------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------: |
-| Active	May 18 2026, 1:37 PM CEST Ends	Aug 18 2026, 1:59 AM CEST | TWY F1B CLOSED DUE WORK IN PROGRESS (CONST OF TWY FM COORD 143124N 1210011E TO 143046N 1210050E). RPLLYNYX B2158/26 |
+| Active May 18 2026, 1:37 PM CEST Ends Aug 18 2026, 1:59 AM CEST | TWY F1B CLOSED DUE WORK IN PROGRESS (CONST OF TWY FM COORD 143124N 1210011E TO 143046N 1210050E). RPLLYNYX B2158/26 |
+| Active Aug 13 2026, 2:50 PM CEST Ends Oct 26 2026, 9:00 PM CEST | MON THU SAT 1400-2000 TWY J AND P CLOSED DUE WORK IN PROGRESS (CONST OF TWY). RPLLYNYX B4115/26 |
 
 ## Charts
 <iframe

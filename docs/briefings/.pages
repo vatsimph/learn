@@ -2,6 +2,7 @@ nav:
     - index.md
     - Charts: charts.md
     - Routes: routes.md
+    - Random Flight: flight-generator.md
     - Airspace Reservation: airspacereservation.md
     - RPHI: manilacontrol.md
     - Events: events

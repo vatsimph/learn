@@ -1,4 +1,17 @@
-# Secondary Window (Developers)
+# Secondary Window
+
+## Install
+
+1. Download the latest `Secondary Window.zip` from the **Releases**
+    Inside:
+   - `SecondaryWindow.dll`
+   - `SecondaryWindowMap.txt`     ← put your map definitions here
+   - `SecondaryWindowSettings.txt` ← put your settings here
+2. Drop all three files into the same folder.
+3. In EuroScope: **Other Set → Plugins → Load**, pick `SecondaryWindow.dll`.
+4. A small floating window labeled *Secondary Window* appears above EuroScope.
+
+---
 
 ## File layout
 
@@ -163,6 +176,74 @@ N014.31.10.449:E121.00.44.997:RPLL BAYS-GroundLayout:115
 
 TEXT_SIZE:0      // reset to default
 ```
+
+---
+
+## Raster image layers (charts)
+
+You can display a `.png` / `.jpg` / `.bmp` / `.gif` inside the window as its
+own toggleable layer — handy for VFR/heli charts, aerodrome diagrams or any
+reference image. PDFs aren't read directly; export the page to a PNG first.
+
+Once a chart is shown, **zoom it with the mouse wheel and pan it by
+right-dragging**, exactly like the map.
+
+### Easiest: the drop-in `charts` folder
+
+Just drop image files into the **`charts`** folder next to the DLL. Each one
+is picked up automatically at load (or after `.sw reload`) and appears as its
+own layer under the **CHARTS** folder in the sidebar, named after the file
+(without extension) and hidden until you tick it. No map-file edits at all.
+
+```
+…/Secondary Window/
+   SecondaryWindow.dll
+   charts/
+      RPLL TWR VFR Heli.png     ← becomes layer "RPLL TWR VFR Heli"
+      RPLL Ground.jpg           ← becomes layer "RPLL Ground"
+```
+
+The folder is configurable with `CHARTS_DIR:` in the settings file (default
+`charts`; set it empty to disable the scan). PDFs in the folder are skipped
+with a note in chat — convert them to PNG/JPG first.
+
+### Manual: the `IMAGE:` directive
+
+For finer control (e.g. georeferencing), add an `IMAGE:` directive inside a
+`MAP:` block:
+
+```
+MAP:RPLL TWR VFR Heli Chart
+FOLDER:CHARTS
+ACTIVE:0
+IMAGE:RPLL_TWR_VFR_Heli.png
+```
+
+Drop the image file next to the map file (i.e. next to the DLL). Relative
+paths resolve against the map file's folder; absolute paths work too. Then
+open the sidebar and tick the layer (here under the **CHARTS** folder) to
+show it.
+
+**Two display modes:**
+
+| Mode                        | How                  | Behavior                                                                                                                                                                                                |
+| --------------------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Screen-locked** (default) | just `IMAGE:`        | The chart fills the window, aspect preserved, and stays put regardless of pan/zoom — a standalone viewer. Best for schematic charts that aren't geographically accurate (approach plates, heli routes). |
+| **Georeferenced**           | add `IMAGE_CORNERS:` | The image's top-left and bottom-right pixels are pinned to real coordinates, so it pans and zooms with the map and overlays the sector. Best for geo-accurate ground layouts.                           |
+
+```
+IMAGE:RPLL_Ground.png
+IMAGE_CORNERS:N014.31.30.000:E121.00.00.000:N014.29.30.000:E121.02.30.000
+//            ^top-left lat  ^top-left lon   ^bottom-right   ^bottom-right lon
+```
+
+Notes:
+- The image is drawn **beneath** vector shapes, labels and traffic dots, so
+  those stay readable on top.
+- Multiple `IMAGE:` lines can live in one `MAP:` block; each `IMAGE_CORNERS:`
+  applies to the `IMAGE:` directly above it.
+- A screen-locked chart doesn't participate in auto-fit; toggle off other
+  layers to view it on its own.
 
 ---
 
@@ -516,6 +597,18 @@ All issued in the EuroScope command bar:
 | `.sw save`                      | Force-save window state now (positions, hidden maps, alt filter)                 |
 | `.sw alt <min> <max>`           | Set the altitude filter on **all** windows. Use feet, e.g. `.sw alt 3000 24000`. |
 | `.sw alt off` / `.sw alt reset` | Reset altitude filter on all windows back to the map file default.               |
+| `.sw update`                    | Check GitHub for a newer release right now (reports result either way)           |
+
+---
+
+Turn the automatic check off with a settings line:
+
+```
+CHECK_FOR_UPDATES:false
+```
+
+`.sw update` checks on demand regardless of that setting, and also tells
+you when you're already up to date.
 
 ---
 
@@ -527,25 +620,27 @@ unknown lines without complaining.
 
 ### `SecondaryWindowMap.txt`
 
-| Key            | Value                    | Remarks                                                                                                                 |
-| -------------- | ------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
-| `COLORDEF:`    | `Name:R:G:B`             | Defines a named color. R/G/B are 0–255.                                                                                 |
-| `MAP:`         | `display name`           | Starts a new map block; everything below belongs to it until the next `MAP:`                                            |
-| `FOLDER:`      | `name`                   | Optional folder/grouping label (not currently shown in UI but parsed).                                                  |
-| `AIRPORT`:     | `ICAO`                   | Optional stored, not rendered (as of now)                                                                               |
-| `ACTIVE:`      | `0` or `1`               | Initial visibility. Default `1` (visible).                                                                              |
-| `COLOR:`       | `name`                   | Sets the active color (must match a prior `COLORDEF`). Applies to all shapes/labels that follow until the next `COLOR:` |
-| `COORDTYPE:`   | `OTHER:REGION`           | Starts a **filled** closed polygon — see `COORD:` lines below. Block ends at next `COORDTYPE:` / `MAP:` / EOF.          |
-| `COORDTYPE:`   | `OTHER:POLYGON`          | Starts an **outline only** closed shape. Last vertex auto connects to the first.                                        |
-| `COORDTYPE:`   | `OTHER:POLYLINE`         | Starts an **open** line strip (no closing segment).                                                                     |
-| `COORD:`       | `lat:lon`                | Adds a vertex to the active polygon / polyline. Lat/lon in DMS format (`N014.30.00.000` etc.).                          |
-| `POLYGON`      | *(none)*                 | Legacy alias for `COORDTYPE:OTHER:REGION`. Closed by an `ENDPOLYGON` line.                                              |
-| `ENDPOLYGON`   | *(none)*                 | Ends a legacy `POLYGON` block.                                                                                          |
-| `LINE:`        | `lat1:lon1:lat2:lon2`    | One-shot straight segment in current color.                                                                             |
-| `TEXT:`        | `lat:lon:label-text`     | Label at a coord, current color, current size. Label may contain colons.                                                |
-| `TEXT_SIZE:`   | `px`                     | Sticky font size in pixels for following `TEXT:` and ESE labels. `0` = default.                                         |
-| `INCLUDE_ESE:` | `path`                   | Imports labels from a `.ese` files. Path can be relative to the map file or absolute.                                   |
-| *raw line*     | `lat:lon:category:label` | Inline ESE label. Category becomes its own map under folder `ESE`.                                                      |
+| Key              | Value                     | Remarks                                                                                                                                                                   |
+| ---------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `COLORDEF:`      | `Name:R:G:B`              | Defines a named color. R/G/B are 0–255.                                                                                                                                   |
+| `MAP:`           | `display name`            | Starts a new map block; everything below belongs to it until the next `MAP:`                                                                                              |
+| `FOLDER:`        | `name`                    | Optional folder/grouping label (not currently shown in UI but parsed).                                                                                                    |
+| `AIRPORT`:       | `ICAO`                    | Optional stored, not rendered (as of now)                                                                                                                                 |
+| `ACTIVE:`        | `0` or `1`                | Initial visibility. Default `1` (visible).                                                                                                                                |
+| `COLOR:`         | `name`                    | Sets the active color (must match a prior `COLORDEF`). Applies to all shapes/labels that follow until the next `COLOR:`                                                   |
+| `COORDTYPE:`     | `OTHER:REGION`            | Starts a **filled** closed polygon — see `COORD:` lines below. Block ends at next `COORDTYPE:` / `MAP:` / EOF.                                                            |
+| `COORDTYPE:`     | `OTHER:POLYGON`           | Starts an **outline only** closed shape. Last vertex auto connects to the first.                                                                                          |
+| `COORDTYPE:`     | `OTHER:POLYLINE`          | Starts an **open** line strip (no closing segment).                                                                                                                       |
+| `COORD:`         | `lat:lon`                 | Adds a vertex to the active polygon / polyline. Lat/lon in DMS format (`N014.30.00.000` etc.).                                                                            |
+| `POLYGON`        | *(none)*                  | Legacy alias for `COORDTYPE:OTHER:REGION`. Closed by an `ENDPOLYGON` line.                                                                                                |
+| `ENDPOLYGON`     | *(none)*                  | Ends a legacy `POLYGON` block.                                                                                                                                            |
+| `LINE:`          | `lat1:lon1:lat2:lon2`     | One-shot straight segment in current color.                                                                                                                               |
+| `TEXT:`          | `lat:lon:label-text`      | Label at a coord, current color, current size. Label may contain colons.                                                                                                  |
+| `TEXT_SIZE:`     | `px`                      | Sticky font size in pixels for following `TEXT:` and ESE labels. `0` = default.                                                                                           |
+| `INCLUDE_ESE:`   | `path`                    | Imports labels from a `.ese` files. Path can be relative to the map file or absolute.                                                                                     |
+| `IMAGE:`         | `path`                    | Adds a raster image (PNG/JPG/BMP/GIF) as a layer in the current map. Relative to the map file, or absolute. Screen-locked (fills window) unless `IMAGE_CORNERS:` follows. |
+| `IMAGE_CORNERS:` | `tlLat:tlLon:brLat:brLon` | Georeferences the preceding `IMAGE:` — pins its top-left and bottom-right pixels to those coords so it pans/zooms with the map.                                           |
+| *raw line*       | `lat:lon:category:label`  | Inline ESE label. Category becomes its own map under folder `ESE`.                                                                                                        |
 
 ### `SecondaryWindowSettings.txt`
 
@@ -582,6 +677,8 @@ unknown lines without complaining.
 | `TAG_BG_COLOR`         | `R:G:B`          | `0:0:0`       | Color of the tag background box. Setting this also turns the background on.                                                           |
 | `TAG_BG_PADDING`       | `px`             | `2`           | How far the fill reaches past the text on each side.                                                                                  |
 | `TAG_BACKGROUND_HOVER` | `true` / `false` | `false`       | Show the background only on the tag under the cursor.                                                                                 |
+| `CHECK_FOR_UPDATES`    | `true` / `false` | `true`        | Ask GitHub for the latest release at plugin load and pop up when a newer version exists. `.sw update` works regardless.               |
+| `CHARTS_DIR`           | path             | `charts`      | Folder (next to the DLL, or absolute) auto-scanned for chart images; each becomes a `CHARTS` layer. Empty disables the scan.          |
 | `TAG_LINE`             | format string    | —             | Adds one line to every tag. Repeat for multiple lines. Supports `{placeholder}`. See the *Tag content* section above.                 |
 | `SCT_FILE`             | path             | —             | Imports a `.sct` / `.sct2` sector file. See *Importing `.sct` sector files* for the path resolution rules. Repeat for multiple files. |
 | `SCT_DIR`              | path             | —             | Optional base folder for plain (non absolute, non`\`anchored) `SCT_FILE:` entries. Lets you reference every sector by filename only.  |
