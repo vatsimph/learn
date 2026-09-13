@@ -1356,6 +1356,7 @@ the following information:
 - Your bay number
 - Your aircraft type
 - The ATIS information letter
+- Runway (If not you will be issued to either 06 or 24)
 
 ??? phraseology "Phraseology"
 
