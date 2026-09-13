@@ -1,4 +1,4 @@
-# Visual Flight Rules (VFR) Within Caticlan ATZ/CTR
+# Visual Flight Rules (VFR) Within Kalibo ATZ/CTR
 
 1. All VFR aircraft must be able to tune to frequencies in the VATSIM network, including, but not limited to:
     1. 124.200 MHz (RPVK_TWR)
