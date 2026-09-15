@@ -1,6 +1,6 @@
 # Booking a Session
 
-The Philippines vACC utilizes a system of booking sessions and training with **VATPHIL Control Center**!. This tool was designed to controllers and controller-to be to get the most out of their controling.
+The Philippines vACC utilizes a custom application for the use of booking sessions and updating sector files. This tool was designed to controllers and controller-to be to get the most out of their controling.
 
 This serves as a training management system for the controllers. It is a centralized system that allows the controllers to manage their training sessions and to manage the sessions that are booked by the controllers.
 
@@ -8,13 +8,13 @@ You may refer to the next session on how to use the booking system.
 
 ## How do I do it?
 
-Logging in to the Control Panel is as easy as 1-2-3! You just need to simply go to the [Control Panel](https://cc.vatphil.com) and click on the “Log In” button. Afterwards, you will be greeted by a notice from the Handover authorization. Kindly click **Authorise** to continue.
+Logging in to the app is as easy as 1-2-3! You just need to simply go to the [VATPHIL App](https://vats.im/ph/install) and click on the “Log In” button. Afterwards, you will be greeted by a notice from the Handover authorization. Kindly click **Authorise** to continue.
 
-![Control Panel](/assets/diagram/cc-1.png)
+![Control Panel](/assets/png/Bookings.png)
 
 **You are officially signed-in!**
 <br>
-<br> Now, the next thing that you need to do is to locate the left pane of the dashboard and click on the **VATBook** Tab. You will now be redirected to the Booking Page.
+<br> Now, the next thing that you need to do is to locate the top panel of the dashboard and click on the **Bookings** Tab. You will now be redirected to the Booking and Events Page.
 
 ![Control Panel - DashTab](/assets/diagram/cc-2.png)
 
