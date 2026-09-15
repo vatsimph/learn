@@ -4,7 +4,7 @@ Is a set of regulations under which a pilot operates an aircraft in generally cl
 
 ## Topographic Map
 
-The Philippine 1:250,000 topographic index below is a useful VFR reference for visual navigation. Hover over a sheet to see its number and area, and click it to open the full topographic chart (opens on the NAMRIA website).
+The Philippine 1:250,000 topographic index below is a useful VFR reference for visual navigation. Hover over a sheet to see its area, and click it to open the full topographic chart (opens on the NAMRIA website).
 
 <style>
   #topo-tt {
