@@ -496,7 +496,8 @@ real-world operations. Virtual and other real-world airlines that are not listed
 <script>
 var map = L.map('map', {zoomControl:false}).setView([14.508, 121.010], 14);
 L.control.zoom({position:'bottomright'}).addTo(map);
-L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {attribution:'© OpenStreetMap © CARTO'}).addTo(map);
+L.tileLayer('https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {attribution:'Tiles © Esri', maxNativeZoom:16, maxZoom:19}).addTo(map);
+L.tileLayer('https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {maxNativeZoom:16, maxZoom:19, opacity:0.85}).addTo(map);
 
 // Prevent MkDocs Material's "instant navigation" from hijacking Leaflet's
 // close button (it's an <a href="#close">, which Material treats as a link).

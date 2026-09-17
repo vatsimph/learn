@@ -119,8 +119,10 @@ Press **Generate** for a random flight that either starts or ends within the RPH
     var status = document.getElementById('rg-status');
     var map = L.map('rg-map', { zoomControl: true, attributionControl: true, scrollWheelZoom: false })
       .setView([12.0, 122.5], 5);
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
-      { attribution: '&copy; OpenStreetMap &copy; CARTO', subdomains: 'abcd', maxZoom: 19 }).addTo(map);
+    L.tileLayer('https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',
+      { attribution: 'Tiles &copy; Esri', maxZoom: 16 }).addTo(map);
+    L.tileLayer('https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}',
+      { maxZoom: 16, opacity: 0.85 }).addTo(map);
     map.on('focus', function () { map.scrollWheelZoom.enable(); });
     map.on('blur',  function () { map.scrollWheelZoom.disable(); });
 
@@ -144,6 +146,27 @@ Press **Generate** for a random flight that either starts or ends within the RPH
 
     var layer = L.layerGroup().addTo(map);
     var ROUTES = [];
+
+    // Per-airport maximum aircraft type. rank: lower = more restrictive
+    // (1 = turboprop only, 2 = A320, 3 = A321, 4 = A330, 5 = 747-400). When a
+    // route touches more than one restricted field, the most restrictive wins.
+    var AC_LIMIT = {
+      RPMS:{rank:1, txt:'Q400 / ATR'},   RPSV:{rank:1, txt:'ATR / Q400'},
+      RPNS:{rank:1, txt:'ATR / Q400'},   RPUO:{rank:1, txt:'Q400'},
+      RPEN:{rank:1, txt:'ATR / Q400'},
+      RPMP:{rank:2, txt:'A320'},         RPVR:{rank:2, txt:'A320'},
+      RPMG:{rank:2, txt:'A320'},         RPUT:{rank:2, txt:'A320'},
+      RPMC:{rank:2, txt:'A320'},
+      RPVE:{rank:3, txt:'A321'},         RPMY:{rank:3, txt:'A321'},
+      RPLK:{rank:3, txt:'A321'},
+      RPVI:{rank:4, txt:'A330'},         RPVP:{rank:4, txt:'A330'},
+      RPLI:{rank:5, txt:'747-400'}
+    };
+    function acLimit(dept, dest){
+      var lim=null;
+      [dept, dest].forEach(function(a){ var l=AC_LIMIT[a]; if (l && (!lim || l.rank<lim.rank)) lim=l; });
+      return lim;
+    }
 
     function toRad(d){ return d*Math.PI/180; }
     function nm(a, b){
@@ -223,7 +246,8 @@ Press **Generate** for a random flight that either starts or ends within the RPH
       document.getElementById('rg-dep').textContent = r.dept;
       document.getElementById('rg-dest').textContent = r.dest;
       document.getElementById('rg-route').textContent = r.route || 'DCT';
-      document.getElementById('rg-acft').textContent = r.acft || 'Any';
+      var lim = acLimit(r.dept, r.dest);
+      document.getElementById('rg-acft').textContent = lim ? ('Max ' + lim.txt) : (r.acft || 'Any');
       document.getElementById('rg-dist').textContent = info ? Math.round(info.dist) + ' NM' : '—';
       var eastbound = info ? (info.brg < 180) : null;
       document.getElementById('rg-dir').textContent = info ? (eastbound ? 'Eastbound' : 'Westbound') : '—';

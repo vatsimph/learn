@@ -1,11 +1,10 @@
 nav:
     - index.md
+    - Live Traffic: live-traffic.md
     - Charts: charts.md
     - Routes: routes.md
-    - Random Flight: flight-generator.md
-    - Airspace Reservation: airspacereservation.md
+    - Random Flight Generator: flight-generator.md
     - RPHI: manilacontrol.md
-    - Events: events
     - Luzon: luzon
     - Visayas: visayas
     - Mindanao: mindanao

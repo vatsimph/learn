@@ -1,4 +1,4 @@
-# Recommended Flight Plans
+# Preferential Routes
 
 These are the suggested routes for the flights within the Manila FIR. This is inline with the current AIRAC.
 

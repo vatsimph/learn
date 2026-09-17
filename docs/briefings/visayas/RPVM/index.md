@@ -428,7 +428,8 @@ Bay assignments, are strictly implemented virtually, and are based on the latest
 <script>
 var map = L.map('map', {zoomControl:false}).setView([10.3145, 123.9795], 16);
 L.control.zoom({position:'bottomright'}).addTo(map);
-L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {attribution:'© OpenStreetMap © CARTO'}).addTo(map);
+L.tileLayer('https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {attribution:'Tiles © Esri', maxNativeZoom:16, maxZoom:19}).addTo(map);
+L.tileLayer('https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {maxNativeZoom:16, maxZoom:19, opacity:0.85}).addTo(map);
 
 map.on('popupopen', function(e){
     var btn = e.popup._container && e.popup._container.querySelector('.leaflet-popup-close-button');
