@@ -130,3 +130,5 @@ dmypy.json
 
 # Local Rep Dir
 .sh
+# CI cache of the last NOTAM snapshot (tools/build_notams.py --cache)
+.notam-cache/

@@ -11,8 +11,10 @@ Output: docs/assets/data/notams.json
   { generated, total, airports:{ICAO:[lat,lon,name]}, notams:[ {...} ] }
 
 Re-run to refresh:  venv/bin/python tools/build_notams.py
+(add --full to re-fetch every NOTAM's detail page instead of reusing the
+previous snapshot). CI runs this on a schedule — see .github/workflows/build.yaml.
 """
-import csv, io, json, os, re, subprocess, sys
+import csv, html, io, json, os, re, subprocess, sys
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 
@@ -47,6 +49,13 @@ _COORD = re.compile(
     r"(\d{2})(\d{2})(\d{2}(?:\.\d+)?)?\s*([NS])[\s\-–]{0,3}(\d{3})(\d{2})(\d{2}(?:\.\d+)?)?\s*([EW])")
 _AREA_KW = ("BOUNDED BY", "WITHIN:", "WI:", "AREA BOUND", "AREA:",
             "TAKE PLACE WI", "FALL AREA", "ACT WI", "OPS WI", "CONDUCTED WI")
+# Tabulated obstacle / runway NOTAMs put lat and lon in separate columns or
+# lines ("142959.90N   209 /   1210209.09E"), which _COORD cannot pair.
+_LAT = re.compile(r"(?<![\d.])(\d{2})(\d{2})(\d{2}(?:\.\d+)?)?\s*([NS])\b")
+_LON = re.compile(r"(?<![\d.])(\d{3})(\d{2})(\d{2}(?:\.\d+)?)?\s*([EW])\b")
+# radius stated next to its keyword: "5NM RADIUS", "1KM RADIUS", "RADIUS OF 3NM"
+_RADIUS = re.compile(r"(\d+(?:\.\d+)?)\s*(NM|KM|M)\s+RADIUS|RADIUS\s+(?:OF\s+)?(\d+(?:\.\d+)?)\s*(NM|KM|M)\b")
+_TO_NM = {"NM": 1.0, "KM": 1 / 1.852, "M": 1 / 1852.0}
 
 
 def _deg(d, m, s, hemi):
@@ -54,18 +63,46 @@ def _deg(d, m, s, hemi):
     return round(-v if hemi in "SW" else v, 5)
 
 
-def parse_geo(text):
+def _in_rphi(lat, lon):
+    return 3 < lat < 23 and 114 < lon < 134
+
+
+def _radius_nm(U):
+    m = _RADIUS.search(U)
+    if not m:
+        return None
+    val, unit = (m.group(1), m.group(2)) if m.group(1) else (m.group(3), m.group(4))
+    return round(float(val) * _TO_NM[unit], 3)
+
+
+def parse_geo(text, ap=None):
     """Pull a drawable shape out of the NOTAM free text, or return None.
-    Types: poly (area), circ (centre + radius NM), line (2 pts), pts (markers)."""
-    pts = []
+    Types: poly (area), circ (centre + radius NM), line (2 pts), pts (markers).
+    `ap` is the aerodrome [lat, lon] for "RADIUS CENTERED AT ... ARP" texts."""
+    U = text.upper()
+    pts, spans = [], []
     for m in _COORD.finditer(text):
         lat = _deg(m.group(1), m.group(2), m.group(3), m.group(4))
         lon = _deg(m.group(5), m.group(6), m.group(7), m.group(8))
-        if 3 < lat < 23 and 114 < lon < 134:          # sanity: in/near RPHI
+        if _in_rphi(lat, lon):
             pts.append([lat, lon])
+            spans.append(m.span())
     if not pts:
+        # fall back to pairing lone lat / lon tokens in reading order; these
+        # are always discrete points (obstacles, thresholds, stands)
+        lats = [_deg(*m.groups()) for m in _LAT.finditer(text)]
+        lons = [_deg(*m.groups()) for m in _LON.finditer(text)]
+        if lats and len(lats) == len(lons):
+            for p in ([a, o] for a, o in zip(lats, lons) if _in_rphi(a, o)):
+                if p not in pts:
+                    pts.append(p)
+            if pts:
+                return {"t": "pts", "c": pts}
+    rad = _radius_nm(U)
+    if not pts:
+        if rad and ap and ("ARP" in U or "ATZ" in U) and ("CENTERED" in U or "CENTRED" in U):
+            return {"t": "circ", "c": [ap[:2]], "r": rad}
         return None
-    U = text.upper()
     uniq = []
     for p in pts:
         if not uniq or uniq[-1] != p:
@@ -76,15 +113,14 @@ def parse_geo(text):
 
     if (area_kw or closed) and len(ring) >= 3:
         return {"t": "poly", "c": ring}
-    rad = None
-    if any(k in U for k in ("RADIUS", "CENTERED", "CENTRED", "CIRCLE", "NM OF", "WI ")):
-        rm = re.search(r"(\d+(?:\.\d+)?)\s*NM", U)
-        if rm:
-            rad = float(rm.group(1))
-    if rad and rad <= 400 and uniq:
+    if rad and rad <= 400:
         return {"t": "circ", "c": [uniq[0]], "r": rad}
-    if len(uniq) == 2:
-        return {"t": "line", "c": uniq}
+    if len(uniq) == 2 and len(spans) == 2:
+        # a line only when the two coords are joined ("X - Y", "FM X TO Y",
+        # "BTN X AND Y"); two separate obstacles / WDIs are just points
+        between = text[spans[0][1]:spans[1][0]].upper()
+        if re.fullmatch(r"[\s.,]*(?:-|–|TO|AND)[\s.,]*", between):
+            return {"t": "line", "c": uniq}
     return {"t": "pts", "c": uniq}
 
 
@@ -113,7 +149,7 @@ def parse_alt(text):
 def fetch_modal(series, nid):
     """The list API drops the Q-line limits, the D) schedule and F)/G) items.
     The per-NOTAM modal returns the full ICAO NOTAM, so we scrape it for those.
-    Returns a dict {low,high,sched,fitem,gitem} or {} on failure."""
+    Returns a dict {low,high,q,ref,sched,fitem,gitem} or {} on failure."""
     ser = SERIES.get(series, str(series).lower())
     url = MODAL.format(ser=ser, id=nid)
     for _ in range(2):
@@ -125,10 +161,15 @@ def fetch_modal(series, nid):
     return {}
 
 
-def parse_modal(html):
-    t = re.sub(r"<script.*?</script>", " ", html, flags=re.S)
+def parse_modal(page):
+    # only the NOTAM body — keeps the footer/toast markup out of the D/F/G items
+    i, j = page.find("NOTAM Information"), page.find("<!-- Modal Footer")
+    if i != -1 and j > i:
+        page = page[i:j]
+    t = re.sub(r"<script.*?</script>", " ", page, flags=re.S)
     t = re.sub(r"<style.*?</style>", " ", t, flags=re.S)
-    t = re.sub(r"<[^>]+>", " ", t).replace("&nbsp;", " ").replace("&amp;", "&")
+    t = re.sub(r"<!--.*?-->", " ", t, flags=re.S)
+    t = html.unescape(re.sub(r"<[^>]+>", " ", t)).replace("\xa0", " ")
     lines, started = [], False
     for l in t.splitlines():
         l = re.sub(r"[ \t]+", " ", l).strip()
@@ -138,6 +179,10 @@ def parse_modal(html):
             lines.append(l)
     raw = "\n".join(lines)
     out = {}
+    # NOTAMR / NOTAMC header names the NOTAM being replaced or cancelled
+    m = re.search(r"NOTAM[RC]\s+([A-Z]\d{4}/\d{2})", t)
+    if m:
+        out["ref"] = m.group(1)
     m = re.search(r"Q\)\s*([^\n]+)", raw)
     if m:
         parts = m.group(1).split("/")
@@ -147,11 +192,45 @@ def parse_modal(html):
                 out["high"] = int(parts[6])
             except ValueError:
                 pass
+            # 8th field: centre + radius of influence, e.g. 1246N12403E999
+            qm = re.match(r"(\d{2})(\d{2})([NS])(\d{3})(\d{2})([EW])(\d{3})", parts[7].strip())
+            if qm:
+                lat = _deg(qm.group(1), qm.group(2), None, qm.group(3))
+                lon = _deg(qm.group(4), qm.group(5), None, qm.group(6))
+                out["q"] = [lat, lon, int(qm.group(7))]
     for it, key in (("D", "sched"), ("F", "fitem"), ("G", "gitem")):
         m = re.search(r"(?:^|\n)" + it + r"\)\s*([^\n]*(?:\n(?![A-GQ]\))[^\n]*)*)", raw)
         if m and m.group(1).strip():
             out[key] = re.sub(r"\s+", " ", m.group(1).strip())
     return out
+
+
+MODAL_KEYS = ("low", "high", "q", "sched", "ref", "alt")
+
+
+def load_prev():
+    """Previous snapshots' NOTAMs by id, used as a cache of modal data: the
+    committed output plus an optional `--cache PATH` (CI keeps its latest
+    snapshot there between scheduled runs)."""
+    paths = [OUT]
+    if "--cache" in sys.argv[:-1]:
+        paths.append(sys.argv[sys.argv.index("--cache") + 1])
+    prev = {}
+    for p in paths:
+        try:
+            with open(p) as f:
+                for n in json.load(f).get("notams", []):
+                    if _cached(n) or n.get("id") not in prev:
+                        prev[n.get("id")] = n
+        except (OSError, ValueError):
+            pass
+    return prev
+
+
+def _cached(old):
+    # "q" is only written after a successful modal fetch, so its presence
+    # (even as null) marks a complete entry; older snapshots lack it
+    return bool(old) and "low" in old and "q" in old
 
 
 def alt_display(rec):
@@ -173,6 +252,9 @@ def main():
     data = json.loads(curl(API, origin="https://learn.vatphil.com"))
     notams_raw = data.get("notams", [])
     print("  got", len(notams_raw), "of", data.get("pagination", {}).get("total"), file=sys.stderr)
+    if not notams_raw:
+        # never overwrite a good snapshot with an empty one (API hiccup / block)
+        sys.exit("CAAP API returned no NOTAMs — keeping the existing %s" % os.path.relpath(OUT))
 
     print("fetching airport coordinates …", file=sys.stderr)
     coords = {}
@@ -198,9 +280,10 @@ def main():
             continue
         icao = (n.get("loc_indicator") or "").strip().upper()
         est = n.get("estperm")
-        est = est.upper() if isinstance(est, str) and est not in ("NULL",) else None
+        est = est.strip().upper() if isinstance(est, str) else ""
+        est = est if est in ("EST", "PERM") else None
         body = (n.get("additional_txt") or "").replace("\r", "").strip()
-        geo = parse_geo(body)
+        geo = parse_geo(body, coords.get(icao))
         rec = {
             "id":   n.get("id"),
             "num":  n.get("full_number") or (str(n.get("series") or "") + str(n.get("number") or "")),
@@ -222,26 +305,40 @@ def main():
         if icao in coords:
             used_ap[icao] = coords[icao]
 
-    # enrich each NOTAM with its full-modal data (Q-line limits, D/F/G items)
-    print("fetching %d NOTAM modals for altitude + schedule …" % len(jobs), file=sys.stderr)
+    # enrich each NOTAM with its full-modal data (Q-line limits, D/F/G items).
+    # A NOTAM's content never changes once issued (a change is a new NOTAMR
+    # with a new id), so reuse what the previous snapshot already fetched and
+    # only hit CAAP for new ones. --full ignores the snapshot.
+    prev = {} if "--full" in sys.argv else load_prev()
+    todo = sum(1 for j in jobs if not _cached(prev.get(j[2])))
+    print("fetching %d new NOTAM modals (%d reused) …" % (todo, len(jobs) - todo), file=sys.stderr)
     def enrich(job):
         rec, series, nid, body = job
-        m = fetch_modal(series, nid)
-        if "low" in m:
-            rec["low"] = m["low"]
-            rec["high"] = m["high"]
-        if m.get("sched"):
-            rec["sched"] = m["sched"]
-        for k in ("fitem", "gitem"):
-            if m.get(k):
+        old = prev.get(nid)
+        hit = _cached(old)
+        m = {k: old[k] for k in MODAL_KEYS if k in old} if hit else fetch_modal(series, nid)
+        if m:
+            rec["q"] = m.get("q")            # kept in the output so the next run can reuse it
+        for k in ("low", "high", "sched", "ref", "fitem", "gitem"):
+            if m.get(k) is not None and m.get(k) != "":
                 rec[k] = m[k]
-        alt = alt_display(rec) or (parse_alt(body) or {}).get("txt")
+        # FIR-wide (or unknown-location) NOTAMs with no coordinates in the text
+        # would all pile onto the RPHI bubble; the Q-line centre + radius puts
+        # them roughly where they apply. 999 NM means "whole FIR", and anything
+        # past ~250 NM (AIP amendment triggers) is FIR-wide in practice.
+        q = m.get("q")
+        if (not rec.get("geo") and q and q[2] <= 250 and _in_rphi(q[0], q[1])
+                and (rec["icao"] == "RPHI" or rec["icao"] not in coords)):
+            rec["geo"] = ({"t": "circ", "c": [q[:2]], "r": q[2], "q": 1} if q[2] > 0
+                          else {"t": "pts", "c": [q[:2]], "q": 1})
+        alt = (m.get("alt") if hit else alt_display(rec)) or (parse_alt(body) or {}).get("txt")
         if alt:
             rec["alt"] = alt
-        return 1 if m else 0
-    with ThreadPoolExecutor(max_workers=10) as ex:
-        ok = sum(ex.map(enrich, jobs))
-    print("  enriched %d/%d" % (ok, len(jobs)), file=sys.stderr)
+        return "reused" if hit else ("fetched" if m else "failed")
+    with ThreadPoolExecutor(max_workers=6) as ex:
+        res = list(ex.map(enrich, jobs))
+    print("  %d fetched, %d reused, %d failed" % tuple(res.count(k) for k in ("fetched", "reused", "failed")),
+          file=sys.stderr)
     # drop the transient item fields once alt/limits are computed
     for rec in notams:
         rec.pop("fitem", None)

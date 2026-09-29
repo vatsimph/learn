@@ -107,9 +107,20 @@ Click an aircraft for its route and details.
     if (!window.L) { setTimeout(init, 100); return; }
     var el = document.getElementById('lt-map');
     if (!el || el._leaflet_id) return;
+    // Leaflet loads twice (page + site-wide); pin the copy the map is built
+    // with so a later reload of window.L can't mix instances.
+    var L = window.L;
 
-    var map = L.map('lt-map', { zoomControl:true, attributionControl:true })
+    // The wheel zooms as soon as the pointer moves over the map. While the page
+    // itself is scrolling and the map slides under a still pointer, the wheel
+    // keeps scrolling the page instead of getting stuck zooming the map.
+    var map = L.map('lt-map', { zoomControl:true, attributionControl:true, scrollWheelZoom:false })
       .setView([12.2, 122.5], 5);
+    // (browsers fire a zero-movement mousemove after a page scroll; ignore it)
+    el.addEventListener('mousemove', function(e){ if (e.movementX || e.movementY) map.scrollWheelZoom.enable(); });
+    window.addEventListener('scroll', function(){
+      if (document.body.contains(el)) map.scrollWheelZoom.disable();
+    }, { passive:true });
     // Esri Dark Gray Canvas — keyless dark basemap (CARTO's keyless tiles now
     // rate-limit / require a key in some regions).
     L.tileLayer('https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',
