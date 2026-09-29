@@ -1,6 +1,7 @@
 nav:
     - index.md
     - Live Traffic: live-traffic.md
+    - NOTAMs: notams.md
     - Charts: charts.md
     - Routes: routes.md
     - Random Flight Generator: flight-generator.md
