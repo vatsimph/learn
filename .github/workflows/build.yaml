@@ -43,6 +43,13 @@ jobs:
           mkdir -p .notam-cache && cp docs/assets/data/notams.json .notam-cache/
         continue-on-error: true
         timeout-minutes: 15
+      # Chart lists for the briefing chart pickers, read from vatphil.com/charts
+      # so added / renamed / removed charts appear on the next run. On failure
+      # the committed lists are deployed unchanged.
+      - name: Refresh chart lists
+        run: python tools/build_charts.py
+        continue-on-error: true
+        timeout-minutes: 5
       - uses: actions/cache/save@v4
         if: steps.notams.outcome == 'success'
         with:

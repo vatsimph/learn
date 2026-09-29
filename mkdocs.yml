@@ -18,6 +18,7 @@ plugins:
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js
   - javascripts/embeds.js
+  - javascripts/charts.js
 
 # Configuration
 theme:
