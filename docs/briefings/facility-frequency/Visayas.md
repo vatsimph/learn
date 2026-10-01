@@ -9,6 +9,7 @@
 ## RPVB - Bacolod Principal Airport
 | Callsign | Position | Frequency |
 | --- | --- | --- |
+| **RPVB_ATIS** | Bacolod ATIS | 128.600 MHz |
 | **RPVB_TWR** | Bacolod Tower | 118.800 MHz |
 | **RPVB_APP** | Bacolod Approach | 121.000 MHz |
 
@@ -32,9 +33,10 @@
 | --- | --- | --- |
 | **RPVF_R_APP** | Catarman Radio | 122.700 MHz |
 
-## RPVI - Iloilo Principal Airport
+## RPVI - Iloilo International Airport
 | Callsign | Position | Frequency |
 | --- | --- | --- |
+| **RPVI_ATIS** | Iloilo ATIS | 126.450 MHz |
 | **RPVI_GND** | Iloilo Ground | 121.800 MHz |
 | **RPVI_TWR** | Iloilo Tower | 123.400 MHz |
 

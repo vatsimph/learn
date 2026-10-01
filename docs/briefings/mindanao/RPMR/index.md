@@ -97,14 +97,7 @@ The airport caters to passenger and cargo flights, as well as general and milita
 No wide body aircraft (A330 and above category) shall taxi behind a parked B777-300ER. Narrow body aircraft (A321 and below category) are allowed to taxi behind a B777-300ER.
 
 ## Charts
-<iframe
-  data-chart-src="https://vatphil.com/charts?icao=RPMR"
-  title="RPMR Charts"
-  loading="lazy"
-  style="width:100%; height:750px; border:1px solid var(--md-default-fg-color--lightest); border-radius:8px;">
-</iframe>
-
-[Open charts in new tab](https://vatphil.com/charts?icao=RPMR){ .md-button .md-button--primary }
+<div class="chart-picker" data-icao="RPMR"></div>
 
 ## Frequency List
 <table>

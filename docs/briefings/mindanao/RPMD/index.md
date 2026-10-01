@@ -85,14 +85,7 @@ The Francisco Bangoy International Airport (also known as Davao International Ai
 The airport caters passenger and cargo flights, as well as general and military aviation.
 
 ## Charts
-<iframe
-  data-chart-src="https://vatphil.com/charts?icao=RPMD"
-  title="RPMD Charts"
-  loading="lazy"
-  style="width:100%; height:750px; border:1px solid var(--md-default-fg-color--lightest); border-radius:8px;">
-</iframe>
-
-[Open charts in new tab](https://vatphil.com/charts?icao=RPMD){ .md-button .md-button--primary }
+<div class="chart-picker" data-icao="RPMD"></div>
 
 ## Frequency List
 <table>

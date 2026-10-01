@@ -50,6 +50,7 @@
 | Callsign | Position | Frequency |
 | --- | --- | --- |
 | **RPLK_TWR** | Bicol Tower | 118.700 MHz |
+| **RPLK_APP** | Bicol Approach | 120.200 MHz |
 
 ## RPLS - Sangley Airport
 | Callsign | Position | Frequency |

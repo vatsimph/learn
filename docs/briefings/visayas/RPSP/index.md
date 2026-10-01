@@ -107,14 +107,7 @@ The airport caters to passenger and cargo flights, as well as general aviation.
 1.2.3 Bays 3 to 9 may be used by A321 or lower category aircraft (wingspan less than 36 M).
 
 ## Charts
-<iframe
-  data-chart-src="https://vatphil.com/charts?icao=RPSP"
-  title="RPSP Charts"
-  loading="lazy"
-  style="width:100%; height:750px; border:1px solid var(--md-default-fg-color--lightest); border-radius:8px;">
-</iframe>
-
-[Open charts in new tab](https://vatphil.com/charts?icao=RPSP){ .md-button .md-button--primary }
+<div class="chart-picker" data-icao="RPSP"></div>
 
 ## Frequency List
 <table>

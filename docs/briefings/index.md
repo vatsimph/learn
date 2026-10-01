@@ -383,6 +383,11 @@ Here you will find aerodrome briefings for the airports within the Philippines. 
     { icao: "RPVD", name: "Dumaguete",            type: "Principal Class 1", lat:  9.3342, lon: 123.3019, region: "visayas"  },
     { icao: "RPSP", name: "Bohol-Panglao Intl",   type: "International",     lat:  9.5739, lon: 123.7706, region: "visayas"  },
     { icao: "RPVM", name: "Mactan-Cebu Intl",     type: "International",     lat: 10.3075, lon: 123.9794, region: "visayas"  },
+    { icao: "RPVI", name: "Iloilo Intl",          type: "International",     lat: 10.8331, lon: 122.4933, region: "visayas"  },
+    { icao: "RPVB", name: "Bacolod-Silay",        type: "Principal Class 1", lat: 10.7767, lon: 123.0192, region: "visayas"  },
+    { icao: "RPLK", name: "Bicol (Legazpi)",      type: "Principal Class 1", lat: 13.1128, lon: 123.6778, region: "luzon"    },
+    { icao: "RPVA", name: "Tacloban",             type: "Principal Class 1", lat: 11.2275, lon: 125.0278, region: "visayas"  },
+    { icao: "RPME", name: "Butuan",               type: "Principal Class 1", lat:  8.9519, lon: 125.4781, region: "mindanao" },
     { icao: "RPMD", name: "Francisco Bangoy",     type: "International",     lat:  7.1255, lon: 125.6458, region: "mindanao" },
     { icao: "RPMR", name: "Gen. Santos (Tambler)", type: "Principal Class 1", lat:  6.0581, lon: 125.0961, region: "mindanao" },
     { icao: "RPMY", name: "Laguindingan",         type: "Principal Class 1", lat:  8.6122, lon: 124.4564, region: "mindanao" },
@@ -865,6 +870,8 @@ Here you will find aerodrome briefings for the airports within the Philippines. 
 
     [RPLB →](https://learn.vatphil.com/briefings/luzon/RPLB/)
 
+    [RPLK →](https://learn.vatphil.com/briefings/luzon/RPLK/)
+
 -   **Visayas**
 
     ---
@@ -882,6 +889,12 @@ Here you will find aerodrome briefings for the airports within the Philippines. 
 
     [RPSP →](https://learn.vatphil.com/briefings/visayas/RPSP/)
 
+    [RPVI →](https://learn.vatphil.com/briefings/visayas/RPVI/)
+
+    [RPVB →](https://learn.vatphil.com/briefings/visayas/RPVB/)
+
+    [RPVA →](https://learn.vatphil.com/briefings/visayas/RPVA/)
+
 -   **Mindanao**
 
     ---
@@ -890,6 +903,8 @@ Here you will find aerodrome briefings for the airports within the Philippines. 
     [RPMR →](https://learn.vatphil.com/briefings/mindanao/RPMR/)
 
     [RPMY →](https://learn.vatphil.com/briefings/mindanao/RPMY/)
+
+    [RPME →](https://learn.vatphil.com/briefings/mindanao/RPME/)
 
 -   **RPHI**
 

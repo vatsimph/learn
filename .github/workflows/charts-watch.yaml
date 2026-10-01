@@ -1,0 +1,47 @@
+name: charts watch
+# Keeps the briefing chart pickers in step with vatphil.com.
+#
+# Every 5 minutes (the shortest GitHub allows — expect 5 to 15 in practice, as
+# scheduled runs are often late) this reads the chart lists on vatphil.com and
+# compares them with the ones published on learn.vatphil.com. Only when a chart
+# was added, renamed or removed does it start the normal build workflow; an
+# unchanged list costs a few seconds and no deploy.
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: charts-watch
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  actions: write        # to start the build workflow
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compare vatphil.com with the published chart lists
+        id: diff
+        run: python3 tools/build_charts.py --check-live
+      - name: Start a build if the lists changed
+        if: steps.diff.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          # Never pile up deploys: leave it if a build is queued or running, or
+          # one started in the last 15 minutes (that one may still be publishing,
+          # and if builds keep failing this caps retries at four an hour).
+          busy=$(gh run list --workflow build.yaml --limit 5 --json status,createdAt \
+            --jq '[.[] | select(.status != "completed" or (.createdAt | fromdateiso8601) > (now - 900))] | length')
+          if [ "$busy" -gt 0 ]; then
+            echo "A build is already running or started in the last 15 minutes - leaving it."
+            exit 0
+          fi
+          gh workflow run build.yaml --ref main
+          echo "Chart lists changed - build started."

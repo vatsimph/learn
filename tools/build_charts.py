@@ -17,6 +17,12 @@ Output: docs/assets/data/charts.json
   { generated, airports:{ ICAO:[ [category, [[id, name], ...]], ... ] } }
 
 Re-run to refresh:  venv/bin/python tools/build_charts.py
+
+  --check-live [URL]   don't write anything: compare vatphil.com with the lists
+                       already published on learn.vatphil.com and report
+                       whether they differ (used by the 5-minute
+                       .github/workflows/charts-watch.yaml, which only starts a
+                       site build when they do).
 """
 import glob, json, os, re, subprocess, sys
 from datetime import datetime, timezone
@@ -25,6 +31,7 @@ from html.parser import HTMLParser
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 OUT = os.path.join(ROOT, "docs", "assets", "data", "charts.json")
 PAGE = "https://vatphil.com/charts?icao={icao}"
+LIVE = "https://learn.vatphil.com/assets/data/charts.json"
 
 
 def curl(url):
@@ -118,13 +125,10 @@ def describe(old, new):
     return ", ".join(parts)
 
 
-def main():
-    try:
-        with open(OUT) as f:
-            prev = json.load(f).get("airports", {})
-    except (OSError, ValueError):
-        prev = {}
-
+def fetch_lists(prev):
+    """Read every wanted airport's chart list from vatphil.com. An airport that
+    fails or comes back empty keeps its `prev` list (or is skipped if it has
+    none). Returns (airports, kept, skipped)."""
     airports, kept, skipped = {}, [], []
     for icao in wanted_icaos():
         try:
@@ -147,7 +151,40 @@ def main():
         change = describe(prev.get(icao, []), cats) if icao in prev else "new airport"
         total = sum(len(items) for _, items in cats)
         print("  %s: %d charts%s" % (icao, total, " (" + change + ")" if change else ""), file=sys.stderr)
+    return airports, kept, skipped
 
+
+def check_live(url):
+    """Does vatphil.com differ from the published lists? Prints the verdict and,
+    under GitHub Actions, sets the step output `changed`. Anything that can't be
+    read counts as unchanged, so an outage on either site never starts a build."""
+    try:
+        live = json.loads(curl(url)).get("airports", {})
+    except (RuntimeError, ValueError) as e:
+        print("could not read the published lists (%s) — treating as unchanged" % e, file=sys.stderr)
+        live = None
+    changed = False
+    if live is not None:
+        airports, _, _ = fetch_lists(live)
+        changed = any(cats != live.get(icao) for icao, cats in airports.items())
+        print("chart lists %s the published ones" % ("DIFFER from" if changed else "match"))
+    out = os.environ.get("GITHUB_OUTPUT")
+    if out:
+        with open(out, "a") as f:
+            f.write("changed=%s\n" % ("true" if changed else "false"))
+
+
+def main():
+    if "--check-live" in sys.argv:
+        nxt = sys.argv[sys.argv.index("--check-live") + 1:][:1]
+        return check_live(nxt[0] if nxt and "://" in nxt[0] else LIVE)
+    try:
+        with open(OUT) as f:
+            prev = json.load(f).get("airports", {})
+    except (OSError, ValueError):
+        prev = {}
+
+    airports, kept, skipped = fetch_lists(prev)
     if not airports:
         sys.exit("no chart lists fetched — keeping the existing %s" % os.path.relpath(OUT))
     out = {

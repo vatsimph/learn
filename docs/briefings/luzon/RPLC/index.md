@@ -85,14 +85,7 @@ The Clark International Airport has 1 commercial Runway and 1 general aviation r
 The airport caters passenger and cargo flights, as well as general and military aviation.
 
 ## Charts
-<iframe
-  data-chart-src="https://vatphil.com/charts?icao=RPLC"
-  title="RPLC Charts"
-  loading="lazy"
-  style="width:100%; height:750px; border:1px solid var(--md-default-fg-color--lightest); border-radius:8px;">
-</iframe>
-
-[Open charts in new tab](https://vatphil.com/charts?icao=RPLC){ .md-button .md-button--primary }
+<div class="chart-picker" data-icao="RPLC"></div>
 
 ## Frequency List
 <table>
