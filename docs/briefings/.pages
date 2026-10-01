@@ -5,7 +5,6 @@ nav:
     - Charts: charts.md
     - Routes: routes.md
     - Random Flight Generator: flight-generator.md
-    - Incident Report: incident-report.md
     - RPHI: manilacontrol.md
     - Luzon: luzon
     - Visayas: visayas

@@ -13,7 +13,7 @@ Fill out the form below to generate an **ICAO model Air Traffic Incident Report*
 
 !!! note "When to use this form"
 
-    File an air traffic incident report only when your aircraft was **receiving an air traffic control service** (under ATC). It does **not** apply to flights operating under **advisory** only.
+    File an air traffic incident report only when your aircraft was **receiving an air traffic control service** (under ATC). It does **not** apply to flights operating under **advisory**.
 
 ??? info "Instructions for completion (ICAO Doc 4444)"
 
@@ -89,6 +89,12 @@ Fill out the form below to generate an **ICAO model Air Traffic Incident Report*
       <legend>A — Aircraft identification</legend>
       <label class="ir-q" for="ir-acid">Your aircraft identification (callsign)</label>
       <input type="text" id="ir-acid" placeholder="e.g. PAL431">
+      <label class="ir-q" for="ir-d-cid">Your VATSIM CID</label>
+      <input type="text" id="ir-d-cid" inputmode="numeric" placeholder="e.g. 1234567">
+      <div class="ir-grid2">
+        <div><label class="ir-q" for="ir-c-cid">Controller CID</label><input type="text" id="ir-c-cid" inputmode="numeric" placeholder="e.g. 1234567"></div>
+        <div><label class="ir-q" for="ir-c-pos">Controller position</label><input type="text" id="ir-c-pos" placeholder="e.g. RPLL_APP"></div>
+      </div>
     </fieldset>
     <fieldset>
       <legend>B — Type of incident</legend>
@@ -349,10 +355,7 @@ Fill out the form below to generate an **ICAO model Air Traffic Incident Report*
     <div class="ir-sub">2. Function, address and signature of person submitting report</div>
     <div class="ir-grid2">
       <div><label class="ir-q" for="ir-d-function">a) Function</label><input type="text" id="ir-d-function"></div>
-      <div><label class="ir-q" for="ir-d-phone">d) Telephone number</label><input type="text" id="ir-d-phone"></div>
-      <div><label class="ir-q" for="ir-d-address">b) Address</label><input type="text" id="ir-d-address"></div>
       <div><label class="ir-q" for="ir-d-signature">c) Signature (name)</label><input type="text" id="ir-d-signature"></div>
-      <div><label class="ir-q" for="ir-d-cid">VATSIM CID</label><input type="text" id="ir-d-cid" inputmode="numeric" placeholder="e.g. 1234567"></div>
     </div>
   </fieldset>
 
@@ -569,7 +572,7 @@ Fill out the form below to generate an **ICAO model Air Traffic Incident Report*
     content = content.concat(q('f', 'Aircraft direction of bank', ['Left', 'Right', 'Unknown'], radio('o-bankdir')));
     content = content.concat(q('g', 'Restrictions to visibility (select as many as required)', ['Sunglare', 'Windscreen pillar', 'Dirty windscreen', 'Other cockpit structure', 'None'], checks('o-vis')));
     content = content.concat(q('h', 'Use of aircraft lighting (select as many as required)', ['Navigation lights', 'Strobe lights', 'Cabin lights', 'Red anti-collision lights', 'Landing / taxi lights', 'Logo (tail fin) lights', 'Other', 'None'], checks('o-lights')));
-    content = content.concat(q('i', 'Traffic avoidance advice issued by VATPHIL', ['Yes, based on radar', 'Yes, based on visual sighting', 'Yes, based on other information', 'No'], radio('o-taa')));
+    content = content.concat(q('i', 'Traffic avoidance advice issued by ATS', ['Yes, based on radar', 'Yes, based on visual sighting', 'Yes, based on other information', 'No'], radio('o-taa')));
     content = content.concat(q('j', 'Traffic information issued', ['Yes, based on radar', 'Yes, based on visual sighting', 'Yes, based on other information', 'No'], radio('o-ti')));
     content = content.concat(q('k', 'Airborne collision avoidance system — ACAS', ['Not carried', 'Traffic advisory issued', 'Resolution advisory issued', 'Traffic advisory or resolution advisory not issued'], radio('o-acas')));
     if (txt('o-acastype')) content.push({ text: [{ text: '     ACAS type:  ', fontSize: 8.5 }, { text: txt('o-acastype'), bold: true, fontSize: 8.5 }], margin: [12, 0, 0, 1] });
@@ -587,7 +590,7 @@ Fill out the form below to generate an **ICAO model Air Traffic Incident Report*
     content = content.concat(q('d', 'Aircraft bank angle', ['Wings level', 'Slight bank', 'Moderate bank', 'Steep bank', 'Inverted', 'Unknown'], radio('x-bank')));
     content = content.concat(q('e', 'Aircraft direction of bank', ['Left', 'Right', 'Unknown'], radio('x-bankdir')));
     content = content.concat(q('f', 'Lights displayed', ['Navigation lights', 'Strobe lights', 'Cabin lights', 'Red anti-collision lights', 'Landing / taxi lights', 'Logo (tail fin) lights', 'Other', 'None', 'Unknown'], checks('x-lights')));
-    content = content.concat(q('g', 'Traffic avoidance advice issued by VATPHIL', ['Yes, based on radar', 'Yes, based on visual sighting', 'Yes, based on other information', 'No', 'Unknown'], radio('x-taa')));
+    content = content.concat(q('g', 'Traffic avoidance advice issued by ATS', ['Yes, based on radar', 'Yes, based on visual sighting', 'Yes, based on other information', 'No', 'Unknown'], radio('x-taa')));
     content = content.concat(q('h', 'Traffic information issued', ['Yes, based on radar', 'Yes, based on visual sighting', 'Yes, based on other information', 'No', 'Unknown'], radio('x-ti')));
     content = content.concat(q('i', 'Avoiding action taken', ['Yes', 'No', 'Unknown'], radio('x-avoid')));
 
@@ -614,20 +617,18 @@ Fill out the form below to generate an **ICAO model Air Traffic Incident Report*
     content.push(qtext('c', 'Operator', txt('d-operator')));
     content.push(qtext('d', 'Aerodrome of departure', txt('d-adep')));
     content.push(qtext('e', 'Aerodrome of first landing / destination', (txt('d-firstland') + (txt('d-dest') ? '  /  ' + txt('d-dest') : '')).replace(/^ +\/ +/, '')));
-    content.push(qtext('f', 'Reported by radio or other means to (name of VATPHIL unit) at time UTC', (txt('d-reportedto') + (txt('d-reportedtime') ? '  at  ' + txt('d-reportedtime') : ''))));
+    content.push(qtext('f', 'Reported by radio or other means to (name of ATS unit) at time UTC', (txt('d-reportedto') + (txt('d-reportedtime') ? '  at  ' + txt('d-reportedtime') : ''))));
     content.push(qtext('g', 'Date / time / place of completion of form', txt('d-completion')));
     content.push({ text: '2.  Function, address and signature of person submitting report', bold: true, fontSize: 9.5, margin: [0, 6, 0, 2] });
     content.push(qtext('a', 'Function', txt('d-function')));
-    content.push(qtext('b', 'Address', txt('d-address')));
     content.push(qtext('c', 'Signature', txt('d-signature')));
-    content.push(qtext('d', 'Telephone number', txt('d-phone')));
 
     // E
-    content.push(sectionHeader('E — SUPPLEMENTARY INFORMATION BY VATPHIL UNIT CONCERNED'));
+    content.push(sectionHeader('E — SUPPLEMENTARY INFORMATION BY ATS UNIT CONCERNED'));
     content.push({ text: '1.  Receipt of report', bold: true, fontSize: 9.5, margin: [0, 2, 0, 2] });
     content = content.concat(q('a', 'Report received via' + (txt('e-viaother') ? ' — ' + txt('e-viaother') : ''), ['AFTN', 'radio', 'telephone', 'other'], radio('e-via'), 4));
-    content.push(qtext('b', 'Report received by (name of VATPHIL unit)', txt('e-recvby')));
-    content.push({ text: '2.  Details of VATPHIL action', bold: true, fontSize: 9.5, margin: [0, 6, 0, 2] });
+    content.push(qtext('b', 'Report received by (name of ATS unit)', txt('e-recvby')));
+    content.push({ text: '2.  Details of ATS action', bold: true, fontSize: 9.5, margin: [0, 6, 0, 2] });
     content.push({ text: 'Clearance, incident seen (radar/visually), warning given, result of local enquiry, etc.', italics: true, fontSize: 8, margin: [0, 0, 0, 2] });
     content.push({ text: txt('e-action') || ' ', fontSize: 9, margin: [4, 0, 0, 4] });
 
@@ -745,7 +746,7 @@ Fill out the form below to generate an **ICAO model Air Traffic Incident Report*
           fld('Date / time (UTC)', txt('datetime')),
           { name: 'Position', value: (txt('position') || '—').slice(0, 1024), inline: false },
           { name: 'Reporter', value: ((txt('d-signature') || '—') + (txt('d-function') ? ' (' + txt('d-function') + ')' : '') + (txt('d-cid') ? '\nCID: ' + txt('d-cid') : '')).slice(0, 1024), inline: false }
-        ]
+        ].concat((txt('c-cid') || txt('c-pos')) ? [{ name: 'Reporting to (controller)', value: ((txt('c-cid') ? 'CID: ' + txt('c-cid') : '') + (txt('c-pos') ? (txt('c-cid') ? ' · ' : '') + txt('c-pos') : '')).slice(0, 1024), inline: false }] : [])
       }]
     };
   }

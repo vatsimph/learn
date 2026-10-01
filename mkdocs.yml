@@ -5,6 +5,11 @@ site_author: Jacob Allen, Juan Carlos. Inspired by Kenzo Tayko, Emilio Perez and
 edit_uri: edit/main/docs/
 copyright: Copyright © 2026 Philippines vACC. All rights reserved. This site is not affiliated with the CAAP, the actual Philippines ACC, or any governing aviation body. All content contained herein is approved only for use on the VATSIM network.
 
+# Hidden for now — not published, not in nav, not searchable. Remove this line
+# (and re-add the nav entry in docs/briefings/.pages) to bring it back.
+exclude_docs: |
+  briefings/incident-report.md
+
 plugins:
   - search
   - awesome-pages
