@@ -53,6 +53,25 @@ The following air traffic procedures shall apply to all VFR flights when enterin
 
     **From the West:** Report abeam ODIONGAN. Follow Gingoog coastline and report abeam MAGSAYSAY. Turn right towards Butuan Airport and report over NASIPIT. Continue towards BUENAVISTA. Request ATC clearance to cross final approach RWY 30 and join right downwind RWY 30 or proceed as instructed by ATC.
 
+## Traffic Circuit
+
+=== "RWY 12"
+
+    ![RPME Traffic Circuit RWY 12](../../../assets/img/RPME%20VFR/Traffic%20Circuit%20RWY%2012.png)
+
+    **Left-hand circuit.** Aircraft at **105 KT or less** fly the inner circuit (1.0 NM from the runway); aircraft at **106 KT or more** fly the outer circuit (2.0 NM).
+
+=== "RWY 30"
+
+    ![RPME Traffic Circuit RWY 30](../../../assets/img/RPME%20VFR/Traffic%20Circuit%20RWY%2030.png)
+
+    **Right-hand circuit.** Aircraft at **105 KT or less** fly the inner circuit (1.0 NM from the runway); aircraft at **106 KT or more** fly the outer circuit (2.0 NM).
+
+!!! info "Circuit entry and exit"
+
+    - **Arriving aircraft** shall enter the traffic circuit on the **downwind leg at an angle of 45 degrees**.
+    - **Departing aircraft** shall follow the traffic circuit and **leave the circuit at an angle of 45 degrees**.
+
 ## Visual Landmarks and Reporting Points
 
 <table>

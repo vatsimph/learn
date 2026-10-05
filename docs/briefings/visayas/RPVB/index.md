@@ -85,7 +85,7 @@ Bacolod Principal Airport (RPVB), also known as Bacolod-Silay Airport, is a Clas
 
 The airport caters to passenger and cargo flights, as well as general aviation.
 
-!!! note "Airspace"
+!!! airspace "Airspace"
 
     - **Bacolod ATZ** — surface up to but excluding 2000 FT (Class B). Aerodrome control is provided by **Bacolod Tower (RPVB_TWR)**.
     - **Bacolod CTR** — surface up to 1500 FT (Class D). Controlled by **Bacolod Approach (RPVB_APP)**.

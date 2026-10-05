@@ -83,7 +83,7 @@ Tambler Principal Airport (RPMR), also known as General Santos International Air
 
 The airport caters to passenger and cargo flights, as well as general and military aviation.
 
-!!! note "Airspace"
+!!! airspace "Airspace"
 
     - **Tambler ATZ** — circle 5 NM radius centered on the ARP, surface up to but excluding 2000 FT (Class B). Aerodrome control is provided by **Tambler Tower (RPMR_TWR)**.
     - **Tambler CTR** — circle 10 NM radius centered on the ARP, surface up to 1500 FT (Class D). Controlled by **Tambler Tower (RPMR_TWR)**.

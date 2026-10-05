@@ -46,7 +46,7 @@ Tuguegarao Airport (RPUT) is a Principal Class 1 airport serving Tuguegarao City
 
 The airport reference point (ARP) is 173837N 1214359E, aerodrome elevation 75 FT.
 
-!!! note "Airspace"
+!!! airspace "Airspace"
 
     - **Tuguegarao Aerodrome Advisory Zone (AAZ)** — circle 5 NM radius centered on the ARP (173837N 1214359E), surface up to but excluding 2000 FT (Class G). Flight information and advisory service is provided by **Tuguegarao Radio (RPUT_R_TWR)**.
     - There is no control zone, terminal area, or radar approach service.

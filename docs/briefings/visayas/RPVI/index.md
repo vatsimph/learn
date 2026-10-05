@@ -84,7 +84,7 @@ Iloilo International Airport (RPVI) is an international airport located in Baran
 
 The airport caters to passenger and cargo flights, as well as general aviation.
 
-!!! note "Airspace"
+!!! airspace "Airspace"
 
     - **Iloilo ATZ** — surface up to but excluding 2000 FT (Class B). Aerodrome control is provided by **Iloilo Tower (RPVI_TWR)**.
     - **Iloilo CTR** — surface up to 1500 FT (Class D). Controlled by **Bacolod Approach (RPVB_APP)**.

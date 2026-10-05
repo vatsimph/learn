@@ -83,7 +83,7 @@ Zamboanga International Airport (RPMZ), also known as Zamboanga Airport, is a Cl
 
 The airport caters to passenger and cargo flights, as well as general and military aviation.
 
-!!! note "Airspace"
+!!! airspace "Airspace"
 
     - **Zamboanga ATZ** — circle 5 NM radius centered on the ARP, surface up to but excluding 2000 FT (Class B). Aerodrome control is provided by **Zamboanga Tower (RPMZ_TWR)**.
     - **Zamboanga CTR** — circle 10 NM radius centered on the ZAM DVOR/DME, surface up to 1500 FT (Class D). Controlled by **Zamboanga Approach (RPMZ_APP)**.

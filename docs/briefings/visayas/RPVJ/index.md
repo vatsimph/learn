@@ -46,10 +46,10 @@ Masbate Airport (RPVJ) is a Principal Class 2 airport in Masbate City, Masbate. 
 
 The airport reference point (ARP) is 122210N 1233747E, aerodrome elevation 50 FT.
 
-!!! note "Airspace"
+!!! airspace "Airspace"
 
-    - A real-world **Masbate Aerodrome Advisory Zone (AAZ)** exists (circle 5 NM radius, surface to below 2000 FT, Class G) served by an FSS, but **it is not staffed on the network**.
-    - On VATSIM treat Masbate as **uncontrolled**: operate on **UNICOM (122.800)** and self-announce. When a Manila Radio / Center (**CTR/FSS**) controller is online, they provide a top-down service.
+    - **Masbate Aerodrome Advisory Zone (AAZ)** — circle 5 NM radius centered on the ARP, surface up to but excluding 2000 FT (Class G). Flight information and advisory service is provided by **Masbate Radio (RPVJ_R_TWR)** on **122.000**, an FSS.
+    - There is no control zone, terminal area, or radar approach service. When Masbate Radio is offline, operate on **UNICOM (122.800)**.
     - **Transition altitude:** not published.
 
 ## Charts
@@ -66,7 +66,8 @@ The airport reference point (ARP) is 122210N 1233747E, aerodrome elevation 50 FT
     </tr>
   </thead>
   <tbody>
-    <tr><td style="text-align:center"><strong>Unicom</strong></td><td style="text-align:center">—</td><td style="text-align:center">122.800</td><td style="text-align:center">Self-announce; no ATS at this aerodrome</td></tr>
+    <tr><td style="text-align:center"><strong>RPVJ_R_TWR</strong></td><td style="text-align:center">Masbate Radio</td><td style="text-align:center">122.000</td><td style="text-align:center">FSS, advisory within the AAZ</td></tr>
+    <tr><td style="text-align:center"><strong>Unicom</strong></td><td style="text-align:center">—</td><td style="text-align:center">122.800</td><td style="text-align:center">When Masbate Radio is offline</td></tr>
   </tbody>
 </table>
 
@@ -103,7 +104,15 @@ Below is a table of the declared distances.
 
     **Single-direction operations.** The declared distances allow **take-off on runway 04 only** and **landing on runway 22 only** (the opposite directions are not usable). Plan to depart on 04 and arrive on 22.
 
-Masbate operates VFR only and is uncontrolled. Broadcast your intentions on **UNICOM 122.800** — taxi, backtrack, line-up, take-off, circuit joining and final — and keep a good lookout for other traffic.
+!!! note "Flight Service Station"
+
+    Masbate Radio is a **Flight Service Station (FSS)**. It provides **traffic and flight information advisories only** and **cannot issue ATC clearances**. Pilots remain responsible for their own separation and self-announce their intentions.
+
+Masbate operates VFR. On first contact with Masbate Radio (or on UNICOM when it is offline), give your position, aircraft type and intentions, and listen out for other traffic.
+
+!!! tip "Who to monitor"
+
+    Monitor the advisory frequency — Masbate Radio on **122.000** (or **UNICOM 122.800** when it is offline). When no local controller is online, you are also advised to monitor **Manila Control (CTR)** when one is online for traffic information.
 
 !!! warning
 
@@ -116,3 +125,4 @@ Masbate operates VFR only and is uncontrolled. Broadcast your intentions on **UN
 *[VFR]: Visual Flight Rules
 *[PAPI]: Precision Approach Path Indicator
 *[PCN]: Pavement Classification Number
+*[RPVJ_R_TWR]: Masbate Radio

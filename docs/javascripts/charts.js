@@ -24,15 +24,20 @@
     ["Traffic Circuit Chart", "Circuit"],
     ["Area Chart", "General"]
   ];
-  // ICAO -> name, for the airport selector on the main Charts page (briefing airports only)
+  // ICAO -> name, for searching the airport list on the main Charts page
   var NAMES = {
-    RPLL: "Ninoy Aquino Intl", RPLC: "Clark Intl", RPLB: "Subic", RPLI: "Laoag Intl",
-    RPUT: "Tuguegarao", RPUB: "Baguio (Loakan)", RPUS: "San Fernando", RPUN: "Naga",
-    RPLK: "Bicol (Legazpi)", RPVM: "Mactan-Cebu Intl", RPVI: "Iloilo Intl", RPVB: "Bacolod-Silay",
-    RPVE: "Caticlan", RPVK: "Kalibo", RPVR: "Roxas", RPVD: "Dumaguete", RPVP: "Puerto Princesa",
-    RPVA: "Tacloban", RPSP: "Bohol-Panglao Intl", RPVV: "Busuanga (Coron)",
-    RPMD: "Francisco Bangoy", RPMR: "Gen. Santos (Tambler)", RPMY: "Laguindingan",
-    RPMZ: "Zamboanga Intl", RPME: "Butuan"
+    RPLL: "Ninoy Aquino Intl (Manila)", RPLC: "Clark Intl", RPLB: "Subic Bay Intl", RPLI: "Laoag Intl",
+    RPLK: "Bicol Intl (Legazpi)", RPLP: "Legazpi", RPLS: "Sangley Point", RPLV: "Fort Magsaysay",
+    RPUB: "Baguio (Loakan)", RPUG: "Lingayen", RPUN: "Naga", RPUO: "Basco (Batanes)",
+    RPUQ: "Vigan", RPUS: "San Fernando", RPUT: "Tuguegarao", RPUV: "Virac (Catanduanes)",
+    RPUX: "Plaridel", RPUY: "Cauayan",
+    RPVA: "Tacloban", RPVB: "Bacolod-Silay", RPVC: "Calbayog", RPVD: "Dumaguete",
+    RPVE: "Caticlan", RPVF: "Catarman", RPVI: "Iloilo Intl", RPVJ: "Masbate", RPVK: "Kalibo Intl",
+    RPVM: "Mactan-Cebu Intl", RPVP: "Puerto Princesa Intl", RPVR: "Roxas", RPVT: "Tagbilaran",
+    RPVU: "Romblon", RPVV: "Busuanga (Coron)", RPSP: "Bohol-Panglao Intl",
+    RPMC: "Cotabato (Awang)", RPMD: "Francisco Bangoy (Davao)", RPME: "Butuan", RPMG: "Dipolog",
+    RPMO: "Ozamiz", RPMP: "Pagadian", RPMR: "Gen. Santos (Tambler)", RPMY: "Laguindingan",
+    RPMZ: "Zamboanga Intl"
   };
   var MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   var PHONE = window.matchMedia ? window.matchMedia("(max-width: 44.9375em), (hover: none) and (pointer: coarse)") : null;
@@ -216,21 +221,20 @@
     el.innerHTML =
       '<div class="cp-browser">' +
         '<div class="cp-browser-bar">' +
-          '<label class="cp-browser-lbl" for="cp-apsel">Airport</label>' +
-          '<select class="cp-apsel" id="cp-apsel" aria-label="Choose an airport">' +
-            '<option value="">Select an airport…</option>' +
-            icaos.map(function (ic) {
-              return '<option value="' + esc(ic) + '">' + esc((NAMES[ic] ? NAMES[ic] + " " : "") + "(" + ic + ")") + '</option>';
-            }).join("") +
-          '</select>' +
+          '<input class="cp-apsearch" type="search" placeholder="Search by ICAO code or airport name…" aria-label="Search airports" autocomplete="off">' +
+          '<div class="cp-apresults" role="listbox" hidden></div>' +
         '</div>' +
-        '<div class="cp-browser-body"><div class="cp-hint">Choose an airport to see its charts.</div></div>' +
-        '<div class="cp-foot">Need another aerodrome? <a href="https://vatphil.com/charts" target="_blank" rel="noopener">Search all charts on vatphil.com ↗</a></div>' +
+        '<div class="cp-browser-body"><div class="cp-hint">Search for an airport by ICAO code or name to see its charts.</div></div>' +
+        '<div class="cp-foot">' + icaos.length + ' aerodromes · lists from <a href="https://vatphil.com/charts" target="_blank" rel="noopener">vatphil.com/charts ↗</a></div>' +
       '</div>';
-    var sel = el.querySelector(".cp-apsel");
+    var input = el.querySelector(".cp-apsearch");
+    var results = el.querySelector(".cp-apresults");
     var body = el.querySelector(".cp-browser-body");
+
+    function label(ic) { return (NAMES[ic] ? NAMES[ic] + " " : "") + "(" + ic + ")"; }
+    function hideResults() { results.hidden = true; results.innerHTML = ""; }
+
     function show(icao) {
-      if (!icao) { body.innerHTML = '<div class="cp-hint">Choose an airport to see its charts.</div>'; return; }
       var gs = groups(aps[icao]);
       var sub = document.createElement("div");
       sub.className = "chart-picker";
@@ -243,7 +247,45 @@
       }
       renderPicker(sub, gs, data);
     }
-    sel.addEventListener("change", function () { show(sel.value); });
+
+    function filter(q) {
+      q = q.trim().toLowerCase();
+      if (!q) { hideResults(); return; }
+      var qs = q.replace(/\s+/g, "");
+      var matches = icaos.filter(function (ic) {
+        var hay = (ic + " " + (NAMES[ic] || "")).toLowerCase();
+        return hay.indexOf(q) !== -1 || hay.replace(/\s+/g, "").indexOf(qs) !== -1;
+      });
+      if (!matches.length) {
+        results.innerHTML = '<div class="cp-noresult">No aerodrome matches “' + esc(q) + '”.</div>';
+        results.hidden = false;
+        return;
+      }
+      results.innerHTML = matches.slice(0, 40).map(function (ic) {
+        return '<button type="button" class="cp-apitem" data-ic="' + esc(ic) + '" role="option">' +
+                 '<span class="cp-apicao">' + esc(ic) + '</span>' +
+                 (NAMES[ic] ? '<span class="cp-apname">' + esc(NAMES[ic]) + '</span>' : '') +
+               '</button>';
+      }).join("");
+      results.hidden = false;
+    }
+
+    function pick(icao) { input.value = label(icao); hideResults(); show(icao); }
+
+    input.addEventListener("input", function () { filter(input.value); });
+    input.addEventListener("focus", function () { if (input.value.trim()) filter(input.value); });
+    input.addEventListener("blur", function () { setTimeout(hideResults, 150); });  // let a result click land first
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        var first = results.querySelector(".cp-apitem");
+        if (first) pick(first.getAttribute("data-ic"));
+      } else if (e.key === "Escape") { hideResults(); }
+    });
+    results.addEventListener("mousedown", function (e) {   // mousedown beats the input blur
+      var b = e.target.closest(".cp-apitem");
+      if (b) { e.preventDefault(); pick(b.getAttribute("data-ic")); }
+    });
   }
 
   function init() {

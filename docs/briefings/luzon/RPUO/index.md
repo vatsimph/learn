@@ -48,7 +48,7 @@ The airport reference point (ARP) is 202705N 1215849E, aerodrome elevation 309 F
 
 Runway 06 is served by a PAPI (3.0°); runway 24 has no visual glide-slope guidance. The runway slopes up towards the threshold of runway 24.
 
-!!! note "Airspace"
+!!! airspace "Airspace"
 
     - **Basco Aerodrome Advisory Zone (AAZ)** — circle 5 NM radius centered on the ARP, surface up to but excluding 2000 FT (Class G). Flight information and advisory service is provided by **Basco Radio (RPUO_R_TWR)** on **122.000**, an FSS.
     - There is no control zone, terminal area, or radar approach service. When Basco Radio is offline, operate on **UNICOM (122.800)**.
@@ -109,6 +109,10 @@ Below is a table of the declared distances.
     Basco Radio is a **Flight Service Station (FSS)**. It provides **traffic and flight information advisories only** and **cannot issue ATC clearances**. Pilots remain responsible for their own separation and self-announce their intentions.
 
 Basco operates VFR. On first contact with Basco Radio (or on UNICOM when it is offline), give your position, aircraft type and intentions, and listen out for other traffic.
+
+!!! tip "Who to monitor"
+
+    Monitor the advisory frequency — Basco Radio on **122.000** (or **UNICOM 122.800** when it is offline). When no local controller is online, you are also advised to monitor **Manila Control (CTR)** when one is online for traffic information.
 
 !!! warning
 

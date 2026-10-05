@@ -101,7 +101,7 @@
 ## RPUV - Virac Airport
 | Callsign | Position | Frequency |
 | --- | --- | --- |
-| **RPUV_R_TWR** | Virac Radio | 122.200 MHz |
+| **RPUV_R_TWR** | Virac Radio | 128.500 MHz |
 
 ## RPUW - Marinduque Airport
 | Callsign | Position | Frequency |

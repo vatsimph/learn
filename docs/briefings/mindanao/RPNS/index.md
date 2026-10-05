@@ -46,7 +46,7 @@ Siargao Airport (RPNS) is a Principal Class 2 airport serving Siargao Island in 
 
 The airport reference point (ARP) is 095131N 1260055E, aerodrome elevation 33 FT.
 
-!!! note "Airspace"
+!!! airspace "Airspace"
 
     - **Siargao ATZ** — circle 5 NM radius centered on the ARP (095131N 1260055E), surface up to but excluding 2000 FT (Class B). Aerodrome control is provided by **Siargao Tower (RPNS_TWR)**.
     - There is no control zone, terminal area, or radar approach service; it is a tower-only aerodrome.
@@ -77,7 +77,7 @@ The airport reference point (ARP) is 095131N 1260055E, aerodrome elevation 33 FT
 
 !!! info "When no controller is online"
 
-    When no Philippine controller is online, operate under **UNICOM (122.800)** and self-announce your intentions. When a Manila Radio / Center (**CTR/FSS**) controller is online, they provide a top-down service.
+    When no Philippine controller is online, operate under **UNICOM (122.800)** and self-announce your intentions. When **Butuan Approach (RPME_APP)** or **Manila Control (CTR)** is online, monitor it for traffic information.
 
 ## Runways
 
@@ -149,4 +149,5 @@ The chart shows the published VFR **arrival** (magenta) and **departure** (blue)
 *[CTR]: Control Zone
 *[VFR]: Visual Flight Rules
 *[PCN]: Pavement Classification Number
+*[RPME_APP]: Butuan Approach
 *[RPNS_TWR]: Siargao Tower

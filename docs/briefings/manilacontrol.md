@@ -18,6 +18,9 @@
 ## *Central* ACC Combined
 ![RPHI](../assets/img/RPHI/8.png){width=400px}
 
+## Aerodromes
+
+![Aerodromes](../assets/img/aerodromes.png){width=400px}
 
 ## Strategic Lateral Offset Procedures (SLOP)
 

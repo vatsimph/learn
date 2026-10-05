@@ -87,7 +87,7 @@ The airport caters to passenger and cargo flights, as well as general and milita
 
     Exercise extreme caution during landing and take-off on RWY 18/36 due to concentration of birds at the aerodrome.
 
-!!! note "Airspace"
+!!! airspace "Airspace"
 
     - **Tacloban ATZ** — circle 5 NM radius centered on the ARP, surface up to but excluding 2000 FT (Class B). Aerodrome control is provided by **Tacloban Tower (RPVA_TWR)**.
     - **Tacloban CTR** — circle 10 NM radius centered on the TAC DVOR/DME, surface up to 1500 FT (Class D). Controlled by **Tacloban Approach (RPVA_APP)**.
@@ -260,6 +260,25 @@ APP will then issue your arrival clearance including the type of approach to exp
 !!! warning
 
     If APP didn't give you any turns after you have passed the last waypoint on your routing, maintain your present heading.
+
+## Traffic Circuit
+
+=== "RWY 18"
+
+    ![RPVA Traffic Circuit RWY 18](../../../assets/img/RPVA%20VFR/Traffic%20Circuit%20RWY%2018.png)
+
+    **Left-hand circuit.** Aircraft at **105 KT or less** fly the inner circuit (1.0 NM from the runway); aircraft at **106 KT or more** fly the outer circuit (2.0 NM).
+
+=== "RWY 36"
+
+    ![RPVA Traffic Circuit RWY 36](../../../assets/img/RPVA%20VFR/Traffic%20Circuit%20RWY%2036.png)
+
+    **Right-hand circuit.** Aircraft at **105 KT or less** fly the inner circuit (1.0 NM from the runway); aircraft at **106 KT or more** fly the outer circuit (2.0 NM).
+
+!!! info "Circuit entry and exit"
+
+    - **Arriving aircraft** shall enter the traffic circuit on the **downwind leg at an angle of 45 degrees**.
+    - **Departing aircraft** shall follow the traffic circuit and **leave the circuit at an angle of 45 degrees**.
 
 *[ATZ]: Aerodrome Traffic Zone
 *[CTR]: Control Zone

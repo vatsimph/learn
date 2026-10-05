@@ -50,7 +50,7 @@ The airport reference point (ARP) is 120719N 1200603E, aerodrome elevation 148 F
 
     Busuanga is surrounded by high terrain, with hills rising above 1,000 FT close to the aerodrome. Fly the published traffic circuit accurately and remain within the ATZ lateral and vertical limits.
 
-!!! note "Airspace"
+!!! airspace "Airspace"
 
     - **Busuanga ATZ** — circle 5 NM radius centered on the ARP (120719N 1200603E), surface up to but excluding 3000 FT (Class B). Aerodrome control is provided by **Busuanga Tower (RPVV_TWR)**.
     - There is no control zone, terminal area, or radar approach service; it is a tower-only aerodrome.
@@ -81,7 +81,7 @@ The airport reference point (ARP) is 120719N 1200603E, aerodrome elevation 148 F
 
 !!! info "When no controller is online"
 
-    When no Philippine controller is online, operate under **UNICOM (122.800)** and self-announce your intentions. When a Manila Radio / Center (**CTR/FSS**) controller is online, they provide a top-down service.
+    When no Philippine controller is online, operate under **UNICOM (122.800)** and self-announce your intentions. When **Manila Control (CTR)** is online, monitor it for traffic information.
 
 ## Runways
 

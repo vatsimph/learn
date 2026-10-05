@@ -87,7 +87,7 @@ The airport caters to passenger and cargo flights, as well as general aviation.
 
     Exercise caution during landing and take-off on RWY 12/30 due to the presence of birds in the vicinity of the airport.
 
-!!! note "Airspace"
+!!! airspace "Airspace"
 
     - **Butuan ATZ** — circle 5 NM radius centered on the ARP, surface up to but excluding 2000 FT (Class B). Aerodrome control is provided by **Butuan Tower (RPME_TWR)**.
     - **Butuan CTR** — circle 10 NM radius centered on the ARP, surface up to 1500 FT (Class D). Controlled by **Butuan Approach (RPME_APP)**.

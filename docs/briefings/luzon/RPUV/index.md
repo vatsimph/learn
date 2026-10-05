@@ -48,9 +48,9 @@ The airport reference point (ARP) is 133437N 1241218E, aerodrome elevation 154 F
 
 The runway slopes up towards the threshold of runway 06.
 
-!!! note "Airspace"
+!!! airspace "Airspace"
 
-    - **Virac Aerodrome Advisory Zone (AAZ)** — circle 5 NM radius centered on the ARP, surface up to but excluding 2000 FT (Class G). Flight information and advisory service is provided by **Virac Radio (RPUV_R_TWR)** on **122.200**, an FSS.
+    - **Virac Aerodrome Advisory Zone (AAZ)** — circle 5 NM radius centered on the ARP, surface up to but excluding 2000 FT (Class G). Flight information and advisory service is provided by **Virac Radio (RPUV_R_TWR)** on **128.500**, an FSS.
     - There is no control zone, terminal area, or radar approach service. When Virac Radio is offline, operate on **UNICOM (122.800)**.
     - **Transition altitude:** not published.
 
@@ -68,7 +68,7 @@ The runway slopes up towards the threshold of runway 06.
     </tr>
   </thead>
   <tbody>
-    <tr><td style="text-align:center"><strong>RPUV_R_TWR</strong></td><td style="text-align:center">Virac Radio</td><td style="text-align:center">122.200</td><td style="text-align:center">FSS, advisory within the AAZ</td></tr>
+    <tr><td style="text-align:center"><strong>RPUV_R_TWR</strong></td><td style="text-align:center">Virac Radio</td><td style="text-align:center">128.500</td><td style="text-align:center">FSS, advisory within the AAZ</td></tr>
     <tr><td style="text-align:center"><strong>Unicom</strong></td><td style="text-align:center">—</td><td style="text-align:center">122.800</td><td style="text-align:center">When Virac Radio is offline</td></tr>
   </tbody>
 </table>
@@ -106,6 +106,10 @@ Below is a table of the declared distances.
 
 Virac operates VFR. On first contact with Virac Radio (or on UNICOM when it is offline), give your position, aircraft type and intentions, and listen out for other traffic.
 
+!!! tip "Who to monitor"
+
+    Monitor the advisory frequency — Virac Radio on **128.500** (or **UNICOM 122.800** when it is offline). When no local controller is online, you are also advised to monitor **Bicol Approach (RPLK_APP)** or **Manila Control (CTR)** when one is online for traffic information.
+
 !!! warning
 
     With a single runway and no radar service, maintain a good lookout and self-announce on each leg of the circuit. Never enter or backtrack the runway until it is confirmed clear. Read back any hold short instruction with **"HOLDING SHORT"**.
@@ -118,3 +122,4 @@ Virac operates VFR. On first contact with Virac Radio (or on UNICOM when it is o
 *[PAPI]: Precision Approach Path Indicator
 *[PCN]: Pavement Classification Number
 *[RPUV_R_TWR]: Virac Radio
+*[RPLK_APP]: Bicol Approach

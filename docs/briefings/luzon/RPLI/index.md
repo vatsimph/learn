@@ -81,7 +81,7 @@ Laoag International Airport (RPLI) is located in Laoag City, Ilocos Norte, in th
 
 The airport reference point (ARP) is 181034N 1203152E, aerodrome elevation 24 FT.
 
-!!! note "Airspace"
+!!! airspace "Airspace"
 
     - **Laoag ATZ** — circle 5 NM radius centered on the ARP (181034N 1203152E), surface up to but excluding 2000 FT (Class B).
     - **Laoag CTR** — circle 10 NM radius centered on the LAO DVOR/DME (181044N 1203145E), surface up to 1500 FT (Class D).

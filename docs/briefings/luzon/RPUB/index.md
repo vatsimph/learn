@@ -87,7 +87,7 @@ The airport caters to passenger flights and general aviation.
 
     Baguio sits at **4251 FT** in mountainous terrain, with a short 1566 M runway. Expect reduced aircraft performance (density altitude), terrain on all approaches, and often marginal mountain weather. Plan carefully.
 
-!!! note "Airspace"
+!!! airspace "Airspace"
 
     - **Baguio ATZ** — 5 NM arc centered on the ARP, surface up to but excluding 2000 FT AGL (Class B). Aerodrome control is provided by **Baguio Tower (RPUB_TWR)**.
     - There is no control zone, terminal area, or approach-control service at Baguio; it is a tower-only aerodrome.
@@ -183,7 +183,7 @@ The apron connects to runway 09/27. Follow any instruction from Baguio Tower and
 
 ## Departure
 
-Baguio has no approach-control service, so Standard Instrument Departures (**SIDs**) or departure instructions are given by **Baguio Tower**. After departure, remain clear of terrain and climb on your cleared routing; contact the en-route controller (**CTR**) when one is online, otherwise continue to your destination's controlling unit.
+Baguio has no approach-control service, so Standard Instrument Departures (**SIDs**) or departure instructions are given by **Baguio Tower**. After departure, remain clear of terrain and climb on your cleared routing. After leaving the Tower's frequency it is highly suggested to **monitor Manila Control (CTR)** when one is online for traffic information.
 
 ??? phraseology "Phraseology"
 

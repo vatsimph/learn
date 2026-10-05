@@ -81,7 +81,7 @@ San Fernando Airport (RPUS), also known as Poro Point Airport, is a community ai
 
 - General aviation and light domestic traffic
 
-!!! note "Airspace"
+!!! airspace "Airspace"
 
     - **San Fernando ATZ** — circle 5 NM radius centered on the ARP, surface up to but excluding 2000 FT (Class B). Aerodrome control is provided by **San Fernando Tower (RPUS_TWR)**.
     - There is no control zone, terminal area, or approach-control service at San Fernando; it is a tower-only aerodrome.
@@ -171,7 +171,7 @@ The apron connects to runway 01/19. Follow any instruction from San Fernando Tow
 
 ## Departure
 
-San Fernando has no approach-control service. Departure instructions are given by **San Fernando Tower**. After departure, climb on your cleared routing and contact the en-route controller (**CTR**) when one is online, otherwise continue to your destination's controlling unit.
+San Fernando has no approach-control service. Departure instructions are given by **San Fernando Tower**. After departure, climb on your cleared routing. After leaving the Tower's frequency it is highly suggested to **monitor Manila Control (CTR)** when one is online for traffic information.
 
 ??? phraseology "Phraseology"
 

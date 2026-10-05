@@ -76,4 +76,4 @@
 ## RPVV - Busuanga Airport
 | Callsign | Position | Frequency |
 | --- | --- | --- |
-| **RPVV_R_TWR** | Busuanga Radio | 123.200 MHz |
+| **RPVV_TWR** | Busuanga Tower | 126.700 MHz |

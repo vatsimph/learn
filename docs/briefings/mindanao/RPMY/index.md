@@ -83,7 +83,7 @@ Laguindingan Principal Airport (RPMY) is a Class 1 airport located in Laguinding
 
 The airport caters to passenger and cargo flights, as well as general aviation.
 
-!!! note "Airspace"
+!!! airspace "Airspace"
 
     - **Laguindingan ATZ** — circle 5 NM radius centered on the ARP, surface up to but excluding 2000 FT (Class B). Aerodrome control is provided by **Laguindingan Tower (RPMY_TWR)**.
     - **Laguindingan CTR** — circle 10 NM radius centered on the ARP, surface up to 1500 FT (Class D). Controlled by **Laguindingan Tower (RPMY_TWR)**.

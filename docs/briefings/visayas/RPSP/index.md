@@ -83,7 +83,7 @@ Bohol-Panglao International Airport (RPSP) is an international airport located i
 
 The airport caters to passenger and cargo flights, as well as general aviation.
 
-!!! note "Airspace"
+!!! airspace "Airspace"
 
     - **Panglao ATZ** — circle 5 NM radius centered on the ARP, surface up to but excluding 2000 FT (Class B). Aerodrome control is provided by **Panglao Tower (RPSP_TWR)**.
     - **Panglao CTR** — circle 10 NM radius centered on the ARP, surface up to 1500 FT (Class D). Controlled by **Panglao Tower (RPSP_TWR)**.

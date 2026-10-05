@@ -83,7 +83,7 @@ Naga Airport (RPUN), also known as Pili Airport, is a Class 1 principal airport 
 
 The airport caters to passenger and cargo flights, as well as general aviation.
 
-!!! note "Airspace"
+!!! airspace "Airspace"
 
     - **Naga ATZ** — circle 5 NM radius centered on the ARP, surface up to but excluding 2000 FT (Class B). Aerodrome control is provided by **Naga Tower (RPUN_TWR)**.
     - **Naga CTR** — circle 10 NM radius centered on the ARP, surface up to 1500 FT (Class D). Controlled by **Bicol Approach (RPLK_APP)**.

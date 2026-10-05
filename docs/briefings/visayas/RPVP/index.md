@@ -264,6 +264,25 @@ APP will then issue your arrival clearance including the type of approach to exp
 
 <iframe src="../../../assets/pdfs/RPVP%20VPT.pdf" width="100%" height="600px" style="border:none;"></iframe>
 
+## Traffic Circuit
+
+=== "RWY 09"
+
+    ![RPVP Traffic Circuit RWY 09](../../../assets/img/RPVP%20VFR/Traffic%20Circuit%20RWY%2009.png)
+
+    **Left-hand circuit.** Aircraft at **105 KT or less** fly the inner circuit (1.0 NM from the runway); aircraft at **106 KT or more** fly the outer circuit (2.0 NM).
+
+=== "RWY 27"
+
+    ![RPVP Traffic Circuit RWY 27](../../../assets/img/RPVP%20VFR/Traffic%20Circuit%20RWY%2027.png)
+
+    **Left-hand circuit.** Aircraft at **105 KT or less** fly the inner circuit (1.0 NM from the runway); aircraft at **106 KT or more** fly the outer circuit (2.0 NM).
+
+!!! info "Circuit entry and exit"
+
+    - **Arriving aircraft** shall enter the traffic circuit on the **downwind leg at an angle of 45 degrees**.
+    - **Departing aircraft** shall follow the traffic circuit and **leave the circuit at an angle of 45 degrees**.
+
 [^1]: Vertical limit of FL150 can be increased to a maximum of FL200.
 [^2]: Visual Manoeuvring with Prescribed Tracks
 

@@ -46,7 +46,7 @@ Antique Airport (RPVS), also known as Evelio Javier Airport, is a Principal Clas
 
 The airport reference point (ARP) is 104605N 1215556E, aerodrome elevation 33 FT.
 
-!!! note "Airspace"
+!!! airspace "Airspace"
 
     - **Antique Aerodrome Advisory Zone (AAZ)** — circle 5 NM radius centered on the ARP (104605N 1215556E), surface up to but excluding 2000 FT (Class G). Flight information and advisory service is provided by **Antique Radio (RPVS_R_TWR)**, an FSS, during published hours (2200 - 0900).
     - There is no control zone, terminal area, or radar approach service. Outside the advisory hours the aerodrome is uncontrolled.
@@ -77,7 +77,7 @@ The airport reference point (ARP) is 104605N 1215556E, aerodrome elevation 33 FT
 
 !!! info "When no controller is online"
 
-    Antique is an advisory aerodrome and is rarely staffed on the network. When no Philippine controller is online, operate under **UNICOM (122.800)** and self-announce your intentions. When a Manila Radio / Center (**CTR/FSS**) controller is online, they provide a top-down service.
+    Antique is an advisory aerodrome and is rarely staffed on the network. When no Philippine controller is online, operate under **UNICOM (122.800)** and self-announce your intentions. When **Manila Control (CTR)** is online, monitor it for traffic information.
 
 ## Runways
 

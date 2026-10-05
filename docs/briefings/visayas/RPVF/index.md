@@ -46,7 +46,7 @@ Catarman Airport (RPVF) is a Principal Class 2 airport in Catarman, Northern Sam
 
 The airport reference point (ARP) is 123008N 1243809E, aerodrome elevation 18 FT.
 
-!!! note "Airspace"
+!!! airspace "Airspace"
 
     - **Catarman Aerodrome Advisory Zone (AAZ)** — circle 5 NM radius centered on the ARP, surface up to but excluding 2000 FT (Class G). Flight information and advisory service is provided by **Catarman Radio (RPVF_R_TWR)** on **122.700**, an FSS.
     - There is no control zone, terminal area, or radar approach service. When Catarman Radio is offline, operate on **UNICOM (122.800)**.
@@ -103,6 +103,10 @@ Below is a table of the declared distances.
     Catarman Radio is a **Flight Service Station (FSS)**. It provides **traffic and flight information advisories only** and **cannot issue ATC clearances**. Pilots remain responsible for their own separation and self-announce their intentions.
 
 Catarman operates VFR. On first contact with Catarman Radio (or on UNICOM when it is offline), give your position, aircraft type and intentions, and listen out for other traffic.
+
+!!! tip "Who to monitor"
+
+    Monitor the advisory frequency — Catarman Radio on **122.700** (or **UNICOM 122.800** when it is offline). When no local controller is online, you are also advised to monitor **Manila Control (CTR)** when one is online for traffic information.
 
 !!! warning
 

@@ -83,7 +83,7 @@ Dumaguete Principal Airport (RPVD) is a Class 1 airport located approximately 1.
 
 The airport caters to passenger and cargo flights, as well as general aviation.
 
-!!! note "Airspace"
+!!! airspace "Airspace"
 
     - **Dumaguete ATZ** — circle 5 NM radius centered on the ARP, up to but excluding 2000 FT (Class B). Do not enter the ATZ on an IAS exceeding **200 KT** unless authorized by ATC.
     - **Dumaguete CTR** — circle 10 NM radius centered on the ARP, surface up to 1500 FT (Class D).

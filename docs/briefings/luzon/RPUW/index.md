@@ -48,7 +48,7 @@ The airport reference point (ARP) is 132140N 1214932E, aerodrome elevation 27 FT
 
 The runway slopes slightly up towards the threshold of runway 34.
 
-!!! note "Airspace"
+!!! airspace "Airspace"
 
     - Marinduque is an **uncontrolled** aerodrome with no published advisory zone. On the network, **Marinduque Radio (RPUW_R_TWR)** may provide flight information service on **122.000** when online; otherwise operate on **UNICOM (122.800)** and self-announce.
     - There is no control zone, terminal area, or radar service.
@@ -105,6 +105,10 @@ Below is a table of the declared distances.
     Marinduque Radio is a **Flight Service Station (FSS)**. It provides **traffic and flight information advisories only** and **cannot issue ATC clearances**. Pilots remain responsible for their own separation and self-announce their intentions.
 
 Marinduque operates VFR. On first contact with Marinduque Radio (or on UNICOM when it is offline), give your position, aircraft type and intentions, and listen out for other traffic.
+
+!!! tip "Who to monitor"
+
+    Monitor the advisory frequency — Marinduque Radio on **122.000** (or **UNICOM 122.800** when it is offline). When no local controller is online, you are also advised to monitor **Manila Control (CTR)** when one is online for traffic information.
 
 !!! warning
 

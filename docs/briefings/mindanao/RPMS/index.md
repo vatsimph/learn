@@ -46,7 +46,7 @@ Surigao Airport (RPMS) is a Principal Class 2 airport in Surigao City, Surigao d
 
 The airport reference point (ARP) is 094528N 1252852E, aerodrome elevation 20 FT.
 
-!!! note "Airspace"
+!!! airspace "Airspace"
 
     - **Surigao Aerodrome Advisory Zone (AAZ)** — circle 5 NM radius centered on the ARP, surface up to but excluding 2000 FT (Class G). Flight information and advisory service is provided by **Surigao Radio (RPMS_R_TWR)** on **122.000**, an FSS.
     - There is no control zone, terminal area, or radar approach service. When Surigao Radio is offline, operate on **UNICOM (122.800)**.
@@ -104,6 +104,10 @@ Below is a table of the declared distances.
 
 Surigao operates VFR. On first contact with Surigao Radio (or on UNICOM when it is offline), give your position, aircraft type and intentions, and listen out for other traffic.
 
+!!! tip "Who to monitor"
+
+    Monitor the advisory frequency — Surigao Radio on **122.000** (or **UNICOM 122.800** when it is offline). When no local controller is online, you are also advised to monitor **Butuan Approach (RPME_APP)** or **Manila Control (CTR)** when one is online for traffic information.
+
 !!! warning
 
     With a single runway and no radar service, maintain a good lookout and self-announce on each leg of the circuit. Never enter or backtrack the runway until it is confirmed clear. Read back any hold short instruction with **"HOLDING SHORT"**.
@@ -116,3 +120,4 @@ Surigao operates VFR. On first contact with Surigao Radio (or on UNICOM when it 
 *[PAPI]: Precision Approach Path Indicator
 *[PCN]: Pavement Classification Number
 *[RPMS_R_TWR]: Surigao Radio
+*[RPME_APP]: Butuan Approach

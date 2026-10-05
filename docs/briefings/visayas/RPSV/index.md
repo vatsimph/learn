@@ -50,7 +50,7 @@ The airport reference point (ARP) is approximately 103130N 1191625E, aerodrome e
 
     High terrain lies to the south-east of the aerodrome, with peaks above 2,000 FT. Note the obstacles on the Runway 22 approach and fly the published circuit accurately.
 
-!!! note "Airspace"
+!!! airspace "Airspace"
 
     - San Vicente is an **advisory** aerodrome. Flight information and advisory service within the aerodrome advisory zone is provided by **San Vicente Radio (RPSV_R_TWR)**, an FSS, during published hours (2300 - 0900).
     - There is no control zone, terminal area, or radar approach service. Outside the advisory hours the aerodrome is uncontrolled.
@@ -81,7 +81,7 @@ The airport reference point (ARP) is approximately 103130N 1191625E, aerodrome e
 
 !!! info "When no controller is online"
 
-    San Vicente is an advisory aerodrome and is rarely staffed on the network. When no Philippine controller is online, operate under **UNICOM (122.800)** and self-announce your intentions. When a Manila Radio / Center (**CTR/FSS**) controller is online, they provide a top-down service.
+    San Vicente is an advisory aerodrome and is rarely staffed on the network. When no Philippine controller is online, operate under **UNICOM (122.800)** and self-announce your intentions. When **Manila Control (CTR)** is online, monitor it for traffic information.
 
 ## Runways
 

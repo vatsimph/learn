@@ -84,7 +84,7 @@ Bicol International Airport (RPLK), also known as Bicol Airport, is a Class 1 pr
 
 The airport caters to passenger and cargo flights, as well as general aviation.
 
-!!! note "Airspace"
+!!! airspace "Airspace"
 
     - **Bicol ATZ** — circle 5 NM radius centered on the ARP, surface up to but excluding 2000 FT (Class B). Aerodrome control is provided by **Bicol Tower (RPLK_TWR)**.
     - **Bicol CTR** — circle 10 NM radius centered on the ARP, surface up to 1500 FT (Class D). Controlled by **Bicol Approach (RPLK_APP)**.

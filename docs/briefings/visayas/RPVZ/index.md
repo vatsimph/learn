@@ -46,10 +46,10 @@ Siquijor Airport (RPVZ) is a Community aerodrome in Siquijor. It has a single ru
 
 The airport reference point (ARP) is 091242N 1232816E, aerodrome elevation 80 FT.
 
-!!! note "Airspace"
+!!! airspace "Airspace"
 
     - Siquijor is an **uncontrolled** aerodrome. There is no control tower, advisory (FSS) service, control zone, terminal area, or radar service.
-    - Operate under **UNICOM (122.800)** and self-announce your position and intentions on each leg. When a Manila Radio / Center (**CTR/FSS**) controller is online, they provide a top-down service.
+    - Operate under **UNICOM (122.800)** and self-announce your position and intentions on each leg. When **Manila Control (CTR)** is online, monitor it for traffic information.
     - **Transition altitude:** not published.
 
 ## Charts
@@ -98,6 +98,10 @@ Below is a table of the declared distances.
 ## Operations
 
 Siquijor operates VFR only and is uncontrolled. Broadcast your intentions on **UNICOM 122.800** — taxi, backtrack, line-up, take-off, circuit joining and final — and keep a good lookout for other traffic.
+
+!!! tip "Who to monitor"
+
+    Monitor the advisory frequency — **UNICOM (122.800)**. When no local controller is online, you are also advised to monitor **Manila Control (CTR)** when one is online for traffic information.
 
 !!! warning
 
