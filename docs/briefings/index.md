@@ -388,11 +388,31 @@ Here you will find aerodrome briefings for the airports within the Philippines. 
     { icao: "RPLK", name: "Bicol (Legazpi)",      type: "Principal Class 1", lat: 13.1128, lon: 123.6778, region: "luzon"    },
     { icao: "RPVA", name: "Tacloban",             type: "Principal Class 1", lat: 11.2275, lon: 125.0278, region: "visayas"  },
     { icao: "RPME", name: "Butuan",               type: "Principal Class 1", lat:  8.9519, lon: 125.4781, region: "mindanao" },
+    { icao: "RPMZ", name: "Zamboanga Intl",       type: "International",     lat:  6.9225, lon: 122.0597, region: "mindanao" },
+    { icao: "RPUN", name: "Naga",                 type: "Principal Class 1", lat: 13.5850, lon: 123.2708, region: "luzon"    },
+    { icao: "RPUB", name: "Baguio (Loakan)",      type: "Principal Class 2", lat: 16.3750, lon: 120.6189, region: "luzon"    },
+    { icao: "RPUS", name: "San Fernando",         type: "Community",         lat: 16.5956, lon: 120.3033, region: "luzon"    },
     { icao: "RPMD", name: "Francisco Bangoy",     type: "International",     lat:  7.1255, lon: 125.6458, region: "mindanao" },
     { icao: "RPMR", name: "Gen. Santos (Tambler)", type: "Principal Class 1", lat:  6.0581, lon: 125.0961, region: "mindanao" },
     { icao: "RPMY", name: "Laguindingan",         type: "Principal Class 1", lat:  8.6122, lon: 124.4564, region: "mindanao" },
     { icao: "RPVP", name: "Puerto Princesa",      type: "International",     lat: 9.7419,  lon: 118.7597, region: "visayas"  },
     { icao: "RPLB", name: "Subic",                type: "International",     lat: 14.7944, lon: 120.2714, region: "luzon"    },
+    { icao: "RPLI", name: "Laoag Intl",           type: "International",     lat: 18.1761, lon: 120.5311, region: "luzon"    },
+    { icao: "RPUT", name: "Tuguegarao",           type: "Principal Class 1", lat: 17.6436, lon: 121.7331, region: "luzon"    },
+    { icao: "RPVS", name: "Antique (San Jose)",   type: "Principal Class 2", lat: 10.7681, lon: 121.9322, region: "visayas"  },
+    { icao: "RPVV", name: "Busuanga (Coron)",     type: "Principal Class 2", lat: 12.1219, lon: 120.1008, region: "visayas"  },
+    { icao: "RPNS", name: "Siargao",              type: "Principal Class 2", lat:  9.8586, lon: 126.0153, region: "mindanao" },
+    { icao: "RPSV", name: "San Vicente",          type: "Principal Class 2", lat: 10.5250, lon: 119.2740, region: "visayas"  },
+    { icao: "RPUO", name: "Basco (Batanes)",      type: "Principal Class 2", lat: 20.4514, lon: 121.9803, region: "luzon"    },
+    { icao: "RPUV", name: "Virac (Catanduanes)",  type: "Principal Class 2", lat: 13.5769, lon: 124.2050, region: "luzon"    },
+    { icao: "RPUW", name: "Marinduque (Gasan)",   type: "Principal Class 2", lat: 13.3611, lon: 121.8256, region: "luzon"    },
+    { icao: "RPVF", name: "Catarman",             type: "Principal Class 2", lat: 12.5022, lon: 124.6358, region: "visayas"  },
+    { icao: "RPVJ", name: "Masbate",              type: "Principal Class 2", lat: 12.3694, lon: 123.6297, region: "visayas"  },
+    { icao: "RPVW", name: "Borongan",             type: "Community",         lat: 11.6744, lon: 125.4794, region: "visayas"  },
+    { icao: "RPVZ", name: "Siquijor",             type: "Community",         lat:  9.2117, lon: 123.4711, region: "visayas"  },
+    { icao: "RPSB", name: "Bantayan",             type: "Community",         lat: 11.1622, lon: 123.7847, region: "visayas"  },
+    { icao: "RPMH", name: "Camiguin",             type: "Principal Class 2", lat:  9.2542, lon: 124.7092, region: "mindanao" },
+    { icao: "RPMS", name: "Surigao",              type: "Principal Class 2", lat:  9.7578, lon: 125.4811, region: "mindanao" },
   ];
 
   var SECTOR_INFO = {
@@ -864,47 +884,87 @@ Here you will find aerodrome briefings for the airports within the Philippines. 
 -   **Luzon**
 
     ---
-    [RPLL →](https://learn.vatphil.com/briefings/luzon/RPLL/)
+    [RPLB →](https://learn.vatphil.com/briefings/luzon/RPLB/)
 
     [RPLC →](https://learn.vatphil.com/briefings/luzon/RPLC/)
 
-    [RPLB →](https://learn.vatphil.com/briefings/luzon/RPLB/)
+    [RPLI →](https://learn.vatphil.com/briefings/luzon/RPLI/)
 
     [RPLK →](https://learn.vatphil.com/briefings/luzon/RPLK/)
+
+    [RPLL →](https://learn.vatphil.com/briefings/luzon/RPLL/)
+
+    [RPUB →](https://learn.vatphil.com/briefings/luzon/RPUB/)
+
+    [RPUN →](https://learn.vatphil.com/briefings/luzon/RPUN/)
+
+    [RPUO →](https://learn.vatphil.com/briefings/luzon/RPUO/)
+
+    [RPUS →](https://learn.vatphil.com/briefings/luzon/RPUS/)
+
+    [RPUT →](https://learn.vatphil.com/briefings/luzon/RPUT/)
+
+    [RPUV →](https://learn.vatphil.com/briefings/luzon/RPUV/)
+
+    [RPUW →](https://learn.vatphil.com/briefings/luzon/RPUW/)
 
 -   **Visayas**
 
     ---
-    [RPVM →](https://learn.vatphil.com/briefings/visayas/RPVM/)
-
-    [RPVE →](https://learn.vatphil.com/briefings/visayas/RPVE/)
-
-    [RPVK →](https://learn.vatphil.com/briefings/visayas/RPVK/)
-
-    [RPVR →](https://learn.vatphil.com/briefings/visayas/RPVR/)
-
-    [RPVP →](https://learn.vatphil.com/briefings/visayas/RPVP/)
-
-    [RPVD →](https://learn.vatphil.com/briefings/visayas/RPVD/)
+    [RPSB →](https://learn.vatphil.com/briefings/visayas/RPSB/)
 
     [RPSP →](https://learn.vatphil.com/briefings/visayas/RPSP/)
 
-    [RPVI →](https://learn.vatphil.com/briefings/visayas/RPVI/)
+    [RPSV →](https://learn.vatphil.com/briefings/visayas/RPSV/)
+
+    [RPVA →](https://learn.vatphil.com/briefings/visayas/RPVA/)
 
     [RPVB →](https://learn.vatphil.com/briefings/visayas/RPVB/)
 
-    [RPVA →](https://learn.vatphil.com/briefings/visayas/RPVA/)
+    [RPVD →](https://learn.vatphil.com/briefings/visayas/RPVD/)
+
+    [RPVE →](https://learn.vatphil.com/briefings/visayas/RPVE/)
+
+    [RPVF →](https://learn.vatphil.com/briefings/visayas/RPVF/)
+
+    [RPVI →](https://learn.vatphil.com/briefings/visayas/RPVI/)
+
+    [RPVJ →](https://learn.vatphil.com/briefings/visayas/RPVJ/)
+
+    [RPVK →](https://learn.vatphil.com/briefings/visayas/RPVK/)
+
+    [RPVM →](https://learn.vatphil.com/briefings/visayas/RPVM/)
+
+    [RPVP →](https://learn.vatphil.com/briefings/visayas/RPVP/)
+
+    [RPVR →](https://learn.vatphil.com/briefings/visayas/RPVR/)
+
+    [RPVS →](https://learn.vatphil.com/briefings/visayas/RPVS/)
+
+    [RPVV →](https://learn.vatphil.com/briefings/visayas/RPVV/)
+
+    [RPVW →](https://learn.vatphil.com/briefings/visayas/RPVW/)
+
+    [RPVZ →](https://learn.vatphil.com/briefings/visayas/RPVZ/)
 
 -   **Mindanao**
 
     ---
     [RPMD →](https://learn.vatphil.com/briefings/mindanao/RPMD/)
 
+    [RPME →](https://learn.vatphil.com/briefings/mindanao/RPME/)
+
+    [RPMH →](https://learn.vatphil.com/briefings/mindanao/RPMH/)
+
     [RPMR →](https://learn.vatphil.com/briefings/mindanao/RPMR/)
+
+    [RPMS →](https://learn.vatphil.com/briefings/mindanao/RPMS/)
 
     [RPMY →](https://learn.vatphil.com/briefings/mindanao/RPMY/)
 
-    [RPME →](https://learn.vatphil.com/briefings/mindanao/RPME/)
+    [RPMZ →](https://learn.vatphil.com/briefings/mindanao/RPMZ/)
+
+    [RPNS →](https://learn.vatphil.com/briefings/mindanao/RPNS/)
 
 -   **RPHI**
 

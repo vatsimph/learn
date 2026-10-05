@@ -1,5 +1,9 @@
 nav:
     - RPMD: RPMD
-    - RPMR: RPMR
-    - RPMY: RPMY
     - RPME: RPME
+    - RPMH: RPMH
+    - RPMR: RPMR
+    - RPMS: RPMS
+    - RPMY: RPMY
+    - RPMZ: RPMZ
+    - RPNS: RPNS

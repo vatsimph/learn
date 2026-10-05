@@ -147,6 +147,22 @@
 .cp-foot { margin-top: 0.55rem; font-size: 0.66rem; color: var(--md-default-fg-color--light); }
 .cp-empty { font-size: 0.78rem; color: var(--md-default-fg-color--light); font-style: italic; padding: 0.6rem 0; }
 
+/* Main Charts page: airport selector wrapping the picker */
+.chart-browser { --cp-gold: #8c7804; margin: 0.8rem 0 1rem; }
+.cp-browser-bar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 0.4rem; }
+.cp-browser-lbl {
+  font-size: 0.66rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase;
+  color: var(--md-default-fg-color--light);
+}
+.cp-apsel {
+  flex: 1 1 260px; max-width: 420px; font: inherit; font-size: 0.82rem; font-weight: 600;
+  padding: 9px 12px; border-radius: 8px; border: 1px solid var(--md-default-fg-color--lightest);
+  background: var(--md-code-bg-color); color: var(--md-default-fg-color); cursor: pointer;
+}
+.cp-apsel:focus { outline: none; border-color: var(--cp-gold); }
+.cp-browser-body .chart-picker { margin-top: 0.3rem; }
+.cp-hint { font-size: 0.8rem; color: var(--md-default-fg-color--light); font-style: italic; padding: 0.7rem 0; }
+
 .cp-modal {
   position: fixed; inset: 0; z-index: 10001; display: none; flex-direction: column;
   padding: 2.2vh 2.2vw; background: rgba(8, 10, 14, 0.82);

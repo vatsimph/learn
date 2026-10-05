@@ -59,11 +59,6 @@ It was made possible with the subsistense from the **Aeronautical Information Pu
 
 - **Traffic Circuit Chart.** This chart depicts the legs that define the circuit and the turn direction for joining and leaving the traffic circuit of an aerodrome.
 
-<iframe
-  data-chart-src="https://vatphil.com/charts"
-  title="Charts"
-  loading="lazy"
-  style="width:100%; height:750px; border:1px solid var(--md-default-fg-color--lightest); border-radius:8px;">
-</iframe>
+## Find charts
 
-[Look for Charts](https://vatphil.com/charts){ .md-button .md-button--primary }
+<div class="chart-browser"></div>

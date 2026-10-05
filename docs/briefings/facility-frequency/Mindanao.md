@@ -11,7 +11,7 @@
 | **RPMD_ATIS** | Davao ATIS | 127.000 MHz |
 | **RPMD_TWR** | Davao Tower | 118.100 MHz |
 | **RPMD_APP** | Davao Approach | 122.400 MHz |
-| **RPMD_R_APP** | Davao Radio | 124.000 MHz |
+| **RPMD_R_TWR** | Davao Radio | 124.000 MHz |
 
 ## RPME - Butuan Airport
 | Callsign | Position | Frequency |
@@ -22,22 +22,22 @@
 ## RPMG - Dipolog Airport
 | Callsign | Position | Frequency |
 | --- | --- | --- |
-| **RPMG_R_APP** | Dipolog Radio | 122.100 MHz |
+| **RPMG_R_TWR** | Dipolog Radio | 122.100 MHz |
 
 ## RPMJ - Jolo Airport
 | Callsign | Position | Frequency |
 | --- | --- | --- |
-| **RPMJ_R_APP** | Jolo Radio | 122.200 MHz |
+| **RPMJ_R_TWR** | Jolo Radio | 122.200 MHz |
 
 ## RPMO - Ozamis Airport
 | Callsign | Position | Frequency |
 | --- | --- | --- |
-| **RPMG_R_APP** | Dipolog Radio | 124.100 MHz |
+| **RPMG_R_TWR** | Dipolog Radio | 124.100 MHz |
 
 ## RPMP - Pagadian Airport
 | Callsign | Position | Frequency |
 | --- | --- | --- |
-| **RPMP_R_APP** | Pagadian Radio | 122.000 MHz |
+| **RPMP_R_TWR** | Pagadian Radio | 122.000 MHz |
 
 ## RPMR - Tambler—General Santos City International Airport
 | Callsign | Position | Frequency |
@@ -48,7 +48,7 @@
 ## RPMS - Surigao Airport
 | Callsign | Position | Frequency |
 | --- | --- | --- |
-| **RPMS_R_APP** | Surigao Radio | 122.000 MHz |
+| **RPMS_R_TWR** | Surigao Radio | 122.000 MHz |
 
 ## RPMY - Laguindingan Principal Airport
 | Callsign | Position | Frequency |

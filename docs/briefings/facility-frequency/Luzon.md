@@ -70,23 +70,23 @@
 ## RPUH - San Jose / Loakan Airport
 | Callsign | Position | Frequency |
 | --- | --- | --- |
-| **RPUH_R_APP** | San Jose Radio | 118.300 MHz |
+| **RPUH_R_TWR** | San Jose Radio | 118.300 MHz |
 
 ## RPUN - Naga Airport
 | Callsign | Position | Frequency |
 | --- | --- | --- |
 | **RPUN_TWR** | Naga Tower | 122.100 MHz |
-| **RPUN_R_APP** | Naga Radio | 122.100 MHz |
+| **RPUN_R_TWR** | Naga Radio | 122.100 MHz |
 
 ## RPUO - Basco Airport
 | Callsign | Position | Frequency |
 | --- | --- | --- |
-| **RPUO_R_APP** | Basco Radio | 122.000 MHz |
+| **RPUO_R_TWR** | Basco Radio | 122.000 MHz |
 
 ## RPUQ - Vigan Airport
 | Callsign | Position | Frequency |
 | --- | --- | --- |
-| **RPUQ_R_APP** | Vigan Radio | 120.100 MHz |
+| **RPUQ_R_TWR** | Vigan Radio | 120.100 MHz |
 
 ## RPUS - San Fernando Community Airport
 | Callsign | Position | Frequency |
@@ -96,17 +96,17 @@
 ## RPUT - Tuguegarao Airport
 | Callsign | Position | Frequency |
 | --- | --- | --- |
-| **RPUT_R_APP** | Tuguegarao Radio | 119.800 MHz |
+| **RPUT_R_TWR** | Tuguegarao Radio | 119.800 MHz |
 
 ## RPUV - Virac Airport
 | Callsign | Position | Frequency |
 | --- | --- | --- |
-| **RPUV_R_APP** | Virac Radio | 122.200 MHz |
+| **RPUV_R_TWR** | Virac Radio | 122.200 MHz |
 
 ## RPUW - Marinduque Airport
 | Callsign | Position | Frequency |
 | --- | --- | --- |
-| **RPUW_R_APP** | Marinduque Radio | 122.000 MHz |
+| **RPUW_R_TWR** | Marinduque Radio | 122.000 MHz |
 
 ## RPUX - Plaridel Airport
 | Callsign | Position | Frequency |
@@ -116,4 +116,4 @@
 ## RPUY - Cauyan Airport
 | Callsign | Position | Frequency |
 | --- | --- | --- |
-| **RPUY_R_APP** | Cauyan Radio | 122.700 MHz |
+| **RPUY_R_TWR** | Cauyan Radio | 122.700 MHz |

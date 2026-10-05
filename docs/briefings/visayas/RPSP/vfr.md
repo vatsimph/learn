@@ -80,6 +80,12 @@ The following air traffic procedures shall apply to all VFR flights when enterin
     1. the helicopter is clear of clouds and ground or water is in sight at all times; and
     2. the helicopter shall be maneuvered at a speed that will give adequate opportunity to observe other traffic or any obstruction to avoid collision.
 
+## VFR Area Chart
+
+![RPSP VFR Area Chart](../../../assets/img/RPSP%20VFR/VFR%20Area%20Chart%20RPSP.png)
+
+The chart shows the published VFR **arrival** (magenta), **departure** (blue) and **overflight** (dashed) routes, together with the visual reporting points around Bohol/Panglao listed below. All altitudes, elevations and heights are in feet.
+
 ## Visual Landmarks and Reporting Points
 
 <table>

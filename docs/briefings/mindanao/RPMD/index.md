@@ -117,7 +117,7 @@ The airport caters passenger and cargo flights, as well as general and military 
       <td style="text-align:center">TMA 1500 ft - FL150[^1]</td>
     </tr>
     <tr>
-      <td style="text-align:center"><strong>RPMD_R_APP</strong></td>
+      <td style="text-align:center"><strong>RPMD_R_TWR</strong></td>
       <td style="text-align:center">Davao Radio</td>
       <td style="text-align:center">124.000</td>
       <td style="text-align:center">SUB TMA 1500 ft - FL150[^1]</td>
@@ -325,4 +325,4 @@ Unless otherwise instructed by ATC, all aircraft landing RWY 05 shall taxi-in vi
 *[RPMD_DEL]: Clearance Delivery
 *[RPMD_TWR]: Davao Tower
 *[RPMD_APP]: Davao Approach
-*[RPMD_R_APP]: Davao Radio
+*[RPMD_R_TWR]: Davao Radio

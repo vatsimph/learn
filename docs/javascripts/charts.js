@@ -24,6 +24,16 @@
     ["Traffic Circuit Chart", "Circuit"],
     ["Area Chart", "General"]
   ];
+  // ICAO -> name, for the airport selector on the main Charts page (briefing airports only)
+  var NAMES = {
+    RPLL: "Ninoy Aquino Intl", RPLC: "Clark Intl", RPLB: "Subic", RPLI: "Laoag Intl",
+    RPUT: "Tuguegarao", RPUB: "Baguio (Loakan)", RPUS: "San Fernando", RPUN: "Naga",
+    RPLK: "Bicol (Legazpi)", RPVM: "Mactan-Cebu Intl", RPVI: "Iloilo Intl", RPVB: "Bacolod-Silay",
+    RPVE: "Caticlan", RPVK: "Kalibo", RPVR: "Roxas", RPVD: "Dumaguete", RPVP: "Puerto Princesa",
+    RPVA: "Tacloban", RPSP: "Bohol-Panglao Intl", RPVV: "Busuanga (Coron)",
+    RPMD: "Francisco Bangoy", RPMR: "Gen. Santos (Tambler)", RPMY: "Laguindingan",
+    RPMZ: "Zamboanga Intl", RPME: "Butuan"
+  };
   var MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   var PHONE = window.matchMedia ? window.matchMedia("(max-width: 44.9375em), (hover: none) and (pointer: coarse)") : null;
   // phones, and browsers that say they can't show PDFs inline, get a new tab instead of the viewer
@@ -196,12 +206,53 @@
     draw();
   }
 
+  // Main Charts page: an airport selector that renders the picker for the chosen airport.
+  //   <div class="chart-browser"></div>
+  function renderBrowser(el, data) {
+    var aps = data.airports || {};
+    var icaos = Object.keys(aps).sort(function (a, b) {
+      return (NAMES[a] || a).localeCompare(NAMES[b] || b);
+    });
+    el.innerHTML =
+      '<div class="cp-browser">' +
+        '<div class="cp-browser-bar">' +
+          '<label class="cp-browser-lbl" for="cp-apsel">Airport</label>' +
+          '<select class="cp-apsel" id="cp-apsel" aria-label="Choose an airport">' +
+            '<option value="">Select an airport…</option>' +
+            icaos.map(function (ic) {
+              return '<option value="' + esc(ic) + '">' + esc((NAMES[ic] ? NAMES[ic] + " " : "") + "(" + ic + ")") + '</option>';
+            }).join("") +
+          '</select>' +
+        '</div>' +
+        '<div class="cp-browser-body"><div class="cp-hint">Choose an airport to see its charts.</div></div>' +
+        '<div class="cp-foot">Need another aerodrome? <a href="https://vatphil.com/charts" target="_blank" rel="noopener">Search all charts on vatphil.com ↗</a></div>' +
+      '</div>';
+    var sel = el.querySelector(".cp-apsel");
+    var body = el.querySelector(".cp-browser-body");
+    function show(icao) {
+      if (!icao) { body.innerHTML = '<div class="cp-hint">Choose an airport to see its charts.</div>'; return; }
+      var gs = groups(aps[icao]);
+      var sub = document.createElement("div");
+      sub.className = "chart-picker";
+      sub.setAttribute("data-icao", icao);
+      body.innerHTML = "";
+      body.appendChild(sub);
+      if (!gs.length) {
+        sub.innerHTML = '<div class="cp-empty">No chart list available here yet — <a href="' + PAGE + esc(icao) + '" target="_blank" rel="noopener">' + esc(icao) + ' charts on vatphil.com ↗</a></div>';
+        return;
+      }
+      renderPicker(sub, gs, data);
+    }
+    sel.addEventListener("change", function () { show(sel.value); });
+  }
+
   function init() {
     closeModal();                                 // instant navigation: don't carry a viewer across pages
-    var els = document.querySelectorAll(".chart-picker[data-icao]");
-    if (!els.length) return;
+    var pickers = document.querySelectorAll(".chart-picker[data-icao]");
+    var browsers = document.querySelectorAll(".chart-browser");
+    if (!pickers.length && !browsers.length) return;
     load().then(function (data) {
-      els.forEach(function (el) {
+      pickers.forEach(function (el) {
         if (el._cpDone || !document.body.contains(el)) return;
         el._cpDone = true;
         var icao = el.getAttribute("data-icao").toUpperCase();
@@ -210,10 +261,18 @@
         if (!gs.length) { el.innerHTML = '<div class="cp-empty">No chart list available here yet — ' + fallback + '</div>'; return; }
         renderPicker(el, gs, data);
       });
+      browsers.forEach(function (el) {
+        if (el._cpDone || !document.body.contains(el)) return;
+        el._cpDone = true;
+        renderBrowser(el, data);
+      });
     }).catch(function () {
-      els.forEach(function (el) {
+      pickers.forEach(function (el) {
         var icao = esc(el.getAttribute("data-icao"));
         el.innerHTML = '<div class="cp-empty">Couldn\'t load the chart list — <a href="' + PAGE + icao + '" target="_blank" rel="noopener">' + icao + ' charts on vatphil.com ↗</a></div>';
+      });
+      browsers.forEach(function (el) {
+        el.innerHTML = '<div class="cp-empty">Couldn\'t load the chart list — <a href="https://vatphil.com/charts" target="_blank" rel="noopener">charts on vatphil.com ↗</a></div>';
       });
     });
   }

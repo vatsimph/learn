@@ -3,10 +3,10 @@
 1. All VFR aircraft must be able to tune to frequencies in the VATSIM network, including, but not limited to:
     1. 118.100 MHz (RPMD_TWR)
     2. 122.400 MHz (RPMD_APP)
-    3. 124.000 MHz (RPMD_R_APP)
+    3. 124.000 MHz (RPMD_R_TWR)
     4. 119.300 MHz (MNL_CTR)
 
-2. All arriving VFR flights shall establish contact and remain on listening watch with RPMD_APP or RPMD_R_APP upon entering Davao TMA or establish two-way radio contact with RPMD_TWR 10 NM to the airport
+2. All arriving VFR flights shall establish contact and remain on listening watch with RPMD_APP or RPMD_R_TWR upon entering Davao TMA or establish two-way radio contact with RPMD_TWR 10 NM to the airport
 3. All departing VFR flights shall maintain listening watch on RPMD_TWR until 20 NM RPMD
 4. IFR flights shall have priority over VFR flights
 5. Maintain not above 1500 FT within 10 NM from DAO DVOR/DME

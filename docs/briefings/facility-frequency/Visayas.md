@@ -16,7 +16,7 @@
 ## RPVC - Calbayog Airport
 | Callsign | Position | Frequency |
 | --- | --- | --- |
-| **RPVC_R_APP** | Calbayog Radio | 122.100 MHz |
+| **RPVC_R_TWR** | Calbayog Radio | 122.100 MHz |
 
 ## RPVD - Dumaguete—Sibulan Prinicipal Airport
 | Callsign | Position | Frequency |
@@ -31,7 +31,7 @@
 ## RPVF - Catarman Airport
 | Callsign | Position | Frequency |
 | --- | --- | --- |
-| **RPVF_R_APP** | Catarman Radio | 122.700 MHz |
+| **RPVF_R_TWR** | Catarman Radio | 122.700 MHz |
 
 ## RPVI - Iloilo International Airport
 | Callsign | Position | Frequency |
@@ -71,9 +71,9 @@
 ## RPVU - Romblon Airport
 | Callsign | Position | Frequency |
 | --- | --- | --- |
-| **RPVU_R_APP** | Romblon Radio | 122.300 MHz |
+| **RPVU_R_TWR** | Romblon Radio | 122.300 MHz |
 
 ## RPVV - Busuanga Airport
 | Callsign | Position | Frequency |
 | --- | --- | --- |
-| **RPVV_R_APP** | Busuanga Radio | 123.200 MHz |
+| **RPVV_R_TWR** | Busuanga Radio | 123.200 MHz |

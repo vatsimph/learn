@@ -94,14 +94,7 @@ The airport caters passenger and cargo flights, as well as general and military 
 | Active Aug 13 2026, 2:50 PM CEST Ends Oct 26 2026, 9:00 PM CEST | MON THU SAT 1400-2000 TWY J AND P CLOSED DUE WORK IN PROGRESS (CONST OF TWY). RPLLYNYX B4115/26 |
 
 ## Charts
-<iframe
-  data-chart-src="https://vatphil.com/charts?icao=RPLL"
-  title="RPLL Charts"
-  loading="lazy"
-  style="width:100%; height:750px; border:1px solid var(--md-default-fg-color--lightest); border-radius:8px;">
-</iframe>
-
-[Open charts in new tab](https://vatphil.com/charts?icao=RPLL){ .md-button .md-button--primary }
+<div class="chart-picker" data-icao="RPLL"></div>
 
 ## Frequency List
 <table>
