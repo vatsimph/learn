@@ -6,10 +6,6 @@ An interactive map of the airspace in the Manila FIR — the **ACC sector splits
 
 <div class="as-legend" id="as-legend"></div>
 
-!!! note "About the data"
-
-    Vertical limits and classes follow the Philippine AIP (ATZ = Class B, CTR = Class D, advisory zone = Class G, TMA = Class D up to FL200). Frequencies are the VATPHIL network frequencies. CTR/ATZ/AAZ are drawn as the published circular zones centred on the aerodrome; the ACC sectors and TMAs use their actual boundaries.
-
 <style>
 .as-map {
   height: 640px; border-radius: 10px; margin: 1rem 0 0.7rem;
