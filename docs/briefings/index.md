@@ -413,6 +413,7 @@ Here you will find aerodrome briefings for the airports within the Philippines. 
     { icao: "RPSB", name: "Bantayan",             type: "Community",         lat: 11.1622, lon: 123.7847, region: "visayas"  },
     { icao: "RPMH", name: "Camiguin",             type: "Principal Class 2", lat:  9.2542, lon: 124.7092, region: "mindanao" },
     { icao: "RPMS", name: "Surigao",              type: "Principal Class 2", lat:  9.7578, lon: 125.4811, region: "mindanao" },
+    { icao: "RPUX", name: "Plaridel",             type: "Community",         lat: 14.8908, lon: 120.8528, region: "luzon"    },
   ];
 
   var SECTOR_INFO = {
@@ -907,6 +908,8 @@ Here you will find aerodrome briefings for the airports within the Philippines. 
     [RPUV →](https://learn.vatphil.com/briefings/luzon/RPUV/)
 
     [RPUW →](https://learn.vatphil.com/briefings/luzon/RPUW/)
+
+    [RPUX →](https://learn.vatphil.com/briefings/luzon/RPUX/)
 
 -   **Visayas**
 

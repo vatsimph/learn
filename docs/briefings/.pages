@@ -1,6 +1,7 @@
 nav:
     - index.md
     - Live Traffic: live-traffic.md
+    - Airspace Explorer: airspace.md
     - NOTAMs: notams.md
     - Charts: charts.md
     - Routes: routes.md
