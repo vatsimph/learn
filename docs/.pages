@@ -2,4 +2,3 @@ nav:
     - Welcome: index.md
     - Briefings: briefings
     - Classroom: classroom
-    - Controllers: controllers
