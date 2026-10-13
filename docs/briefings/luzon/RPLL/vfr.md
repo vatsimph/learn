@@ -187,6 +187,24 @@ Follow next instructions of ATC
     1. Report to RPLL_APP/RPLL_F_APP approaching CORREGIDOR at or below 2500 FT.
     2. Continue towards abeam Sangley not above 1500 FT within 10 NM RPLL, contact RPLL_TWR for further instructions
 
+# VFR to IFR Inbound NAIA
+
+A VFR flight that intends to convert to IFR inbound to NAIA shall refile Item 15 (Route) of its Standard ICAO flight plan, replacing the former VFR route point with the new equivalent below.
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:center">Former Route</th>
+      <th style="text-align:center">New Route to be filed in Standard ICAO Flight Plan Item 15</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td style="text-align:center"><strong>BALAY</strong></td><td style="text-align:center">BUCAL</td></tr>
+    <tr><td style="text-align:center"><strong>30.0 DME</strong></td><td style="text-align:center">AKDAP</td></tr>
+    <tr><td style="text-align:center"><strong>LIPA</strong></td><td style="text-align:center">IBAGO/LAIYA</td></tr>
+  </tbody>
+</table>
+
 # Traffic Patterns
 
 === "Runway 06"
