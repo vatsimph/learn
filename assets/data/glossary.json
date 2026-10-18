@@ -1,0 +1,966 @@
+{
+"_about": "General aviation & ATC abbreviations for learn.vatphil.com/classroom/glossary. Base list is ICAO Doc 8400; site/VATSIM terms added. Edit freely.",
+"generated": "2026-10-05T22:26:15Z",
+"terms": [
+[
+"A/G",
+"air-to-ground"
+],
+[
+"AAZ",
+"aerodrome advisory zone"
+],
+[
+"ABM",
+"abeam"
+],
+[
+"ABV",
+"above"
+],
+[
+"ACC",
+"area control centre"
+],
+[
+"ACFT",
+"aircraft"
+],
+[
+"ACT",
+"active / activated / activity"
+],
+[
+"AD",
+"aerodrome"
+],
+[
+"ADDN",
+"addition / additional"
+],
+[
+"ADJ",
+"adjacent"
+],
+[
+"ADS-B",
+"automatic dependent surveillance – broadcast"
+],
+[
+"ADS-C",
+"automatic dependent surveillance – contract"
+],
+[
+"ADZ",
+"advise"
+],
+[
+"AGL",
+"above ground level"
+],
+[
+"AIP",
+"Aeronautical Information Publication"
+],
+[
+"AIRAC",
+"Aeronautical Information Regulation and Control (fixed 28-day cycle)"
+],
+[
+"ALS",
+"approach lighting system"
+],
+[
+"ALT",
+"altitude"
+],
+[
+"AMDT",
+"amendment"
+],
+[
+"AMSL",
+"above mean sea level"
+],
+[
+"AP",
+"airport"
+],
+[
+"APAPI",
+"abbreviated precision approach path indicator"
+],
+[
+"APCH",
+"approach"
+],
+[
+"APN",
+"apron"
+],
+[
+"APP",
+"approach control office / approach control service"
+],
+[
+"APRX",
+"approximately"
+],
+[
+"ARP",
+"aerodrome reference point"
+],
+[
+"ARR",
+"arrival / arrive"
+],
+[
+"ASDA",
+"accelerate-stop distance available"
+],
+[
+"ASPH",
+"asphalt"
+],
+[
+"ASRT",
+"actual start-up time"
+],
+[
+"ATC",
+"air traffic control"
+],
+[
+"ATFM",
+"air traffic flow management"
+],
+[
+"ATIS",
+"automatic terminal information service"
+],
+[
+"ATS",
+"air traffic services"
+],
+[
+"ATZ",
+"aerodrome traffic zone"
+],
+[
+"AUTH",
+"authorized / authorization"
+],
+[
+"AVBL",
+"available"
+],
+[
+"AWY",
+"airway"
+],
+[
+"BLDG",
+"building"
+],
+[
+"BLW",
+"below"
+],
+[
+"BRG",
+"bearing"
+],
+[
+"BTN",
+"between"
+],
+[
+"CAA",
+"civil aviation authority"
+],
+[
+"CAAP",
+"Civil Aviation Authority of the Philippines"
+],
+[
+"CAT",
+"category"
+],
+[
+"CAVOK",
+"ceiling and visibility OK (visibility 10 km or more, no significant cloud or weather)"
+],
+[
+"CH",
+"channel"
+],
+[
+"CK",
+"check"
+],
+[
+"CL",
+"centre line"
+],
+[
+"CLD",
+"cloud"
+],
+[
+"CLR",
+"clear / cleared"
+],
+[
+"CLSD",
+"closed"
+],
+[
+"COM",
+"communications"
+],
+[
+"CONC",
+"concrete"
+],
+[
+"CONST",
+"construction / constructed"
+],
+[
+"COORD",
+"coordinates"
+],
+[
+"CPDLC",
+"controller–pilot data link communications"
+],
+[
+"CTA",
+"control area"
+],
+[
+"CTL",
+"control"
+],
+[
+"CTN",
+"caution"
+],
+[
+"CTOT",
+"calculated take-off time (ATFM departure slot)"
+],
+[
+"CTR",
+"control zone"
+],
+[
+"CWY",
+"clearway"
+],
+[
+"DA",
+"decision altitude"
+],
+[
+"DEG",
+"degrees"
+],
+[
+"DEP",
+"departure / depart"
+],
+[
+"DH",
+"decision height"
+],
+[
+"DIST",
+"distance"
+],
+[
+"DLY",
+"daily"
+],
+[
+"DME",
+"distance measuring equipment"
+],
+[
+"DRG",
+"during"
+],
+[
+"DVOR",
+"Doppler VHF omnidirectional radio range"
+],
+[
+"ELEV",
+"elevation"
+],
+[
+"ENR",
+"en route"
+],
+[
+"EOBT",
+"estimated off-block time"
+],
+[
+"EQPT",
+"equipment"
+],
+[
+"EST",
+"estimated"
+],
+[
+"EXC",
+"except"
+],
+[
+"EXER",
+"exercise / exercising"
+],
+[
+"FAC",
+"facility / facilities"
+],
+[
+"FAF",
+"final approach fix"
+],
+[
+"FIR",
+"flight information region"
+],
+[
+"FL",
+"flight level"
+],
+[
+"FLG",
+"flashing"
+],
+[
+"FLT",
+"flight"
+],
+[
+"FLTCK",
+"flight check"
+],
+[
+"FLW",
+"follow(s) / following"
+],
+[
+"FM",
+"from"
+],
+[
+"FREQ",
+"frequency"
+],
+[
+"FSS",
+"flight service station"
+],
+[
+"FT",
+"feet"
+],
+[
+"GA",
+"general aviation"
+],
+[
+"GND",
+"ground"
+],
+[
+"GNSS",
+"global navigation satellite system"
+],
+[
+"GP",
+"glide path"
+],
+[
+"H24",
+"continuous day and night service"
+],
+[
+"HEL",
+"helicopter"
+],
+[
+"HGT",
+"height"
+],
+[
+"HJ",
+"sunrise to sunset"
+],
+[
+"HN",
+"sunset to sunrise"
+],
+[
+"HR",
+"hours"
+],
+[
+"HVY",
+"heavy"
+],
+[
+"IAC",
+"instrument approach chart"
+],
+[
+"IAF",
+"initial approach fix"
+],
+[
+"IAP",
+"instrument approach procedure"
+],
+[
+"ICAO",
+"International Civil Aviation Organization"
+],
+[
+"IFR",
+"instrument flight rules"
+],
+[
+"ILS",
+"instrument landing system"
+],
+[
+"IMC",
+"instrument meteorological conditions"
+],
+[
+"INBD",
+"inbound"
+],
+[
+"INFO",
+"information"
+],
+[
+"INSTL",
+"install / installed / installation"
+],
+[
+"INT",
+"intersection"
+],
+[
+"INTL",
+"international"
+],
+[
+"INTST",
+"intensity"
+],
+[
+"KM",
+"kilometres"
+],
+[
+"LCA",
+"local / locally / location / located"
+],
+[
+"LDA",
+"landing distance available"
+],
+[
+"LDG",
+"landing"
+],
+[
+"LGT",
+"light / lighting"
+],
+[
+"LGTD",
+"lighted"
+],
+[
+"LLZ",
+"localizer"
+],
+[
+"LOA",
+"letter of agreement (coordination procedures between ATC units)"
+],
+[
+"LOC",
+"localizer / local / location"
+],
+[
+"LTD",
+"limited"
+],
+[
+"LVL",
+"level"
+],
+[
+"MAG",
+"magnetic"
+],
+[
+"MAINT",
+"maintenance"
+],
+[
+"MAPT",
+"missed approach point"
+],
+[
+"MDA",
+"minimum descent altitude"
+],
+[
+"MEHT",
+"minimum eye height over threshold"
+],
+[
+"MET",
+"meteorological / meteorology"
+],
+[
+"METAR",
+"aerodrome routine meteorological report"
+],
+[
+"MHZ",
+"megahertz"
+],
+[
+"MIL",
+"military"
+],
+[
+"MNM",
+"minimum"
+],
+[
+"MOV",
+"move / movement"
+],
+[
+"MSA",
+"minimum sector altitude"
+],
+[
+"NAV",
+"navigation"
+],
+[
+"NDB",
+"non-directional radio beacon"
+],
+[
+"NIL",
+"none"
+],
+[
+"NM",
+"nautical miles"
+],
+[
+"NOTAM",
+"notice to airmen"
+],
+[
+"NR",
+"number"
+],
+[
+"OBS",
+"observe / observed"
+],
+[
+"OBST",
+"obstacle"
+],
+[
+"OCA",
+"obstacle clearance altitude"
+],
+[
+"OPR",
+"operator / operate / operative / operating"
+],
+[
+"OPS",
+"operations"
+],
+[
+"OUTBD",
+"outbound"
+],
+[
+"PANS",
+"Procedures for Air Navigation Services"
+],
+[
+"PAPI",
+"precision approach path indicator"
+],
+[
+"PAX",
+"passenger(s)"
+],
+[
+"PCN",
+"pavement classification number"
+],
+[
+"PCR",
+"pavement classification rating"
+],
+[
+"PDC",
+"pre-departure clearance (delivered by datalink)"
+],
+[
+"PERM",
+"permanent"
+],
+[
+"PJE",
+"parachute jumping exercise"
+],
+[
+"PN",
+"prior notice required"
+],
+[
+"POSS",
+"possible"
+],
+[
+"PPR",
+"prior permission required"
+],
+[
+"PRI",
+"primary"
+],
+[
+"PRKG",
+"parking"
+],
+[
+"PROC",
+"procedure"
+],
+[
+"PSN",
+"position"
+],
+[
+"PWR",
+"power"
+],
+[
+"QFE",
+"altimeter setting giving height above the aerodrome/runway"
+],
+[
+"QFU",
+"magnetic orientation (direction) of the runway"
+],
+[
+"QNH",
+"altimeter setting giving elevation above mean sea level"
+],
+[
+"RCAG",
+"remote controlled air-ground (communication)"
+],
+[
+"RDO",
+"radio"
+],
+[
+"REF",
+"reference to / refer to"
+],
+[
+"RESA",
+"runway end safety area"
+],
+[
+"RFF",
+"rescue and fire fighting"
+],
+[
+"RFFS",
+"rescue and fire fighting services"
+],
+[
+"RMK",
+"remark"
+],
+[
+"RNAV",
+"area navigation"
+],
+[
+"RNP",
+"required navigation performance"
+],
+[
+"ROTA",
+"runway occupancy time – arrivals"
+],
+[
+"ROTD",
+"runway occupancy time – departures"
+],
+[
+"RQRD",
+"required"
+],
+[
+"RTHL",
+"runway threshold lights"
+],
+[
+"RVSM",
+"reduced vertical separation minima (1000 ft between FL290 and FL410)"
+],
+[
+"RWY",
+"runway"
+],
+[
+"SECN",
+"section"
+],
+[
+"SELCAL",
+"selective calling system (HF)"
+],
+[
+"SER",
+"service / servicing / served"
+],
+[
+"SFC",
+"surface"
+],
+[
+"SID",
+"standard instrument departure"
+],
+[
+"SLOP",
+"strategic lateral offset procedure"
+],
+[
+"SR",
+"sunrise"
+],
+[
+"SRY",
+"secondary"
+],
+[
+"SS",
+"sunset"
+],
+[
+"SSR",
+"secondary surveillance radar"
+],
+[
+"STAR",
+"standard instrument arrival"
+],
+[
+"STN",
+"station"
+],
+[
+"STNR",
+"stationary"
+],
+[
+"SUP",
+"supplement (AIP supplement)"
+],
+[
+"SWY",
+"stopway"
+],
+[
+"TA",
+"transition altitude"
+],
+[
+"TAF",
+"aerodrome forecast"
+],
+[
+"TAX",
+"taxi / taxiing"
+],
+[
+"TCAS",
+"traffic alert and collision avoidance system"
+],
+[
+"TDZ",
+"touchdown zone"
+],
+[
+"TEMPO",
+"temporary / temporarily"
+],
+[
+"TFC",
+"traffic"
+],
+[
+"THR",
+"threshold"
+],
+[
+"TIL",
+"until"
+],
+[
+"TKOF",
+"take-off"
+],
+[
+"TL",
+"transition level"
+],
+[
+"TMA",
+"terminal control area"
+],
+[
+"TOBT",
+"target off-block time"
+],
+[
+"TODA",
+"take-off distance available"
+],
+[
+"TORA",
+"take-off run available"
+],
+[
+"TRG",
+"training"
+],
+[
+"TSAT",
+"target start-up approval time"
+],
+[
+"TTOT",
+"target take-off time"
+],
+[
+"TWR",
+"aerodrome control tower"
+],
+[
+"TWY",
+"taxiway"
+],
+[
+"U/S",
+"unserviceable"
+],
+[
+"UAS",
+"unmanned aircraft system"
+],
+[
+"UAV",
+"unmanned aerial vehicle"
+],
+[
+"UFN",
+"until further notice"
+],
+[
+"UNICOM",
+"universal communications – self-announce frequency (122.800 on VATSIM)"
+],
+[
+"UNL",
+"unlimited"
+],
+[
+"VASIS",
+"visual approach slope indicator system"
+],
+[
+"VATSIM",
+"Virtual Air Traffic Simulation Network"
+],
+[
+"VCY",
+"vicinity"
+],
+[
+"VFR",
+"visual flight rules"
+],
+[
+"VIS",
+"visibility"
+],
+[
+"VMC",
+"visual meteorological conditions"
+],
+[
+"VOR",
+"VHF omnidirectional radio range"
+],
+[
+"VPT",
+"visual manoeuvring with prescribed track"
+],
+[
+"WDI",
+"wind direction indicator"
+],
+[
+"WEF",
+"with effect from"
+],
+[
+"WI",
+"within"
+],
+[
+"WID",
+"width"
+],
+[
+"WIP",
+"work in progress"
+],
+[
+"WX",
+"weather"
+]
+]
+}
