@@ -732,9 +732,9 @@ Manila currently only has 2 runways that intersect each other.
 
 | Days          | RWY 13/31                    | RWY 06/24                    |
 |:-------------:|:----------------------------:|:----------------------------:|
-| MON, WED, FRI | H24                          | 0000Z – 2200Z, 2220Z – 2359Z |
-| TUE, SUN      | H24                          | 0000Z – 1630Z, 2130Z – 2359Z |
-| THU, SAT      | 0000Z – 1500Z, 2000Z – 2359Z | 0000Z – 2200Z, 2220Z – 2359Z |
+| MON, THU, FRI | H24                          | 0000Z – 2200Z, 2220Z – 2359Z |
+| TUE, SAT      | 0000Z – 1500Z, 1900Z – 2359Z | 0000Z – 2200Z, 2220Z – 2359Z |
+| WED, SUN      | H24                          | 0000Z – 1630Z, 2130Z – 2359Z |
 </div>
 
 <div class="rwy-schedule">
@@ -1034,26 +1034,26 @@ Manila currently only has 2 runways that intersect each other.
   var DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
   // RWY 13/31
-  //   MON, TUE, WED, FRI, SUN: H24
-  //   THU, SAT: 0000-1500, 2000-2359
+  //   MON, WED, THU, FRI, SUN: H24
+  //   TUE, SAT: 0000-1500, 1900-2359
   var SCHED_1331 = {
     0: [[0, 1440]],                  // Sun H24
     1: [[0, 1440]],                  // Mon H24
-    2: [[0, 1440]],                  // Tue H24
+    2: [[0, 900], [1140, 1440]],     // Tue
     3: [[0, 1440]],                  // Wed H24
-    4: [[0, 900], [1200, 1440]],     // Thu
+    4: [[0, 1440]],                  // Thu H24
     5: [[0, 1440]],                  // Fri H24
-    6: [[0, 900], [1200, 1440]]      // Sat
+    6: [[0, 900], [1140, 1440]]      // Sat
   };
 
   // RWY 06/24
-  //   MON, WED, THU, FRI, SAT: 0000-2200, 2220-2359
-  //   TUE, SUN: 0000-1630, 2130-2359
+  //   MON, TUE, THU, FRI, SAT: 0000-2200, 2220-2359
+  //   WED, SUN: 0000-1630, 2130-2359
   var SCHED_0624 = {
     0: [[0, 990], [1290, 1440]],     // Sun
     1: [[0, 1320], [1340, 1440]],    // Mon
-    2: [[0, 990], [1290, 1440]],     // Tue
-    3: [[0, 1320], [1340, 1440]],    // Wed
+    2: [[0, 1320], [1340, 1440]],    // Tue
+    3: [[0, 990], [1290, 1440]],     // Wed
     4: [[0, 1320], [1340, 1440]],    // Thu
     5: [[0, 1320], [1340, 1440]],    // Fri
     6: [[0, 1320], [1340, 1440]]     // Sat
@@ -1285,6 +1285,23 @@ If your route is still invalid, a controller will send you a private message wit
     During events it is important that you put your EOBT in your flight plan as 
     controllers will use that to determine your takeoff slot.
 
+### Manila TMA Routes
+
+File your flight plan to match the table below.
+
+| Sector        | Arrival                                                                          | Departure                                         |
+|:-------------:|:---------------------------------------------------------------------------------|:--------------------------------------------------|
+| Central North | CIA W16 MIA                                                                      | MIA DCT CAB                                       |
+| Central East  | POLIO DCT MIA                                                                    | MIA DCT JOM                                       |
+| Central West  | GUKUM / REKEL / LEGED / TOKON DCT LUBAN DCT MIA                                  | MIA L628 KARAG<br>MIA M765 EXOLO<br>MIA M646 BUCAL |
+| Central South | IBAGO B472 LIGPA DCT MIA<br>LAIYA B473 LIGPA DCT MIA<br>CONDE W11 MIA<br>AKDAP DCT MIA | MIA A461 VERDE<br>MIA B462 IPATA<br>MIA W15 TIMON |
+
+
+- **RPLC → RPLL:** OLIVA
+- **RPLB → RPLL:** OLONG
+- **RPLL → RPVV:** MIA M646 until OLRAX
+- **RPVV → RPLL:** join TELEN W3 OLRAX M646 MIA
+
 ## Waypoint Restrictions
 
 <h3 style="text-align:center"><strong>Waypoint Restrictions</strong></h3>
@@ -1381,6 +1398,16 @@ You must read back the clearance in full. Listen carefully to all details that t
 
         **RPLL_DEL**: CEB585, cleared Mactan, W25 BATAY, RUNWAY 06, fly runway heading, climb 7000ft, expect radar vectors IPATA, squawk 4251
 
+## Start-up
+
+Call Clearance Delivery (**125.1**) for your clearance about 5 minutes before you plan to start. Once cleared, the sequence is:
+
+1. **Clearance Delivery (125.1)**: ATC clearance
+2. **Manila Ground (121.8)**: start-up clearance
+3. **Apron Control**: pushback, or any other movement on the apron
+
+If you don't start up within the time given, your clearance is void. Let Clearance Delivery know if you expect a delay.
+
 ## Pushback
 
 Normally, a controller will instruct you to push back to the nearest start-up point. The location of the start-up points are indicated in available charts 
@@ -1389,6 +1416,7 @@ Normally, a controller will instruct you to push back to the nearest start-up po
 
     1. **Do not preplan your pushback!**
     2. Connect the tug first!
+    3. No 180° turns at Terminal 1 start-up points **S1**, **S2** and **S7**, for any aircraft type.
 
 ??? phraseology "Phraseology"
 
@@ -1416,6 +1444,11 @@ When **APP** or **CTR** is online, after passing 2000 feet or 5 DME from RPLL, r
     **PAL300**: “Manila Departure, PAL300, on runway heading, passing 2000 climbing 7000”
 
     **RPLL_F_APP**: “PAL300, radar identified, continue climb 7000”
+
+### Runway 13
+
+- Start your take-off roll at **Arrow 1**.
+- Departures from the South General Aviation area enter at **F1B**, not at H3 or start-up point S22.
 
 ### Runway 31
 
@@ -1579,16 +1612,16 @@ You have not vacated the runway until you have fully passed the runway stop bar,
     </tr>
     <tr>
       <td style="text-align:center">D and Higher</td>
-      <td style="text-align:center">R5 / E5 / H2</td>
+      <td style="text-align:center">R5 / R6 / E5 / H2</td>
     </tr>
     <tr>
       <td rowspan = "2" style="text-align:center"><strong>13</strong></td>
       <td style="text-align:center">A, B, C and Lower</td>
-      <td style="text-align:center">Any Taxiway on the Left/Right</td>
+      <td style="text-align:center">F4 / F5 / G3 / P4</td>
     </tr>
 	<tr>
       <td style="text-align:center">D Limited to A321 or similar</td>
-      <td style="text-align:center">Any Taxiway on the Left/Right</td>
+      <td style="text-align:center">F4 / F5 / G3 / P4</td>
     </tr>
   </tbody>
 </table>
