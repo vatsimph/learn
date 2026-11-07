@@ -144,6 +144,16 @@ Virtual and other real-world airlines that are not listed will park at terminal 
 
 <div markdown="1">
 Clark currently only has 1 Runway.
+
+### Hours of Operation
+
+| Days  | RWY 02/20                    |
+|:-----:|:----------------------------:|
+| Daily | 0000Z – 1259Z, 1431Z – 2359Z |
+
+!!! warning
+    RWY 02/20 is closed every day from **1300Z to 1430Z**. Emergencies and flights diverting to Clark are accepted with 30 minutes' prior notice.
+
 Below is a table of the Take-Off Run available
 
 **Take-off Run Available.**
