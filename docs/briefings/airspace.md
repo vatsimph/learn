@@ -69,12 +69,6 @@ An interactive map of the airspace in the Manila FIR — the **ACC sector splits
 
 <script>
 (function () {
-  var MNL_FREQ = {
-    MNL_CTR:"119.300", MNL_C_CTR:"132.075", MNL_N_CTR:"126.575", MNL_S_CTR:"133.500",
-    MNL_2_CTR:"124.950", MNL_CN_CTR:"120.500", MNL_CE_CTR:"128.750", MNL_CS_CTR:"125.700",
-    MNL_CW_CTR:"132.700", MNL_NE_RDO:"132.500", MNL_NW_CTR:"128.700", MNL_SE_CTR:"125.750",
-    MNL_SW_CTR:"124.900", MNL_W_CTR:"118.900", MNL_N1_CTR:"129.000", MNL_S1_CTR:"131.500"
-  };
   var TMA_FREQ = {
     RPLL:"124.800", RPLI:"122.300", RPLC:"119.200", RPLK:"120.200", RPMD:"122.400",
     RPME:"121.300", RPMR:"119.100", RPMY:"125.500", RPVA:"120.800", RPVB:"121.000",
@@ -121,7 +115,7 @@ An interactive map of the airspace in the Manila FIR — the **ACC sector splits
     var labels = L.layerGroup();          // aerodrome ICAO labels (zoom-gated)
     var labelPts = {};                    // icao -> [lat,lon]
 
-    Promise.all([j("mnl_boundary.json"), j("acc_sectors.json"), j("tmas.json"), j("airspace_zones.json")])
+    Promise.all([j("mnl_boundary.json"), j("mnl_sectors.json"), j("tmas.json"), j("airspace_zones.json")])
       .then(function (res) {
         var fir = res[0], acc = res[1], tmas = res[2], az = res[3];
 
@@ -131,18 +125,16 @@ An interactive map of the airspace in the Manila FIR — the **ACC sector splits
           .addTo(layers.fir);
 
         // --- ACC sectors (overlapping; draw larger first so small ones sit on top) ---
-        if (acc && acc.sectors) {
-          var secs = acc.sectors.slice().sort(function (a, b) { return (b.ring ? b.ring.length : 0) - (a.ring ? a.ring.length : 0); });
-          secs.forEach(function (s) {
-            if (!s.ring || !s.ring.length) return;
-            var abbr = (s.owners && s.owners[0]) || "";
-            var cs = acc.posmap ? acc.posmap[abbr] : null;
-            var freq = cs ? MNL_FREQ[cs] : null;
-            var pg = L.polygon(s.ring, { color: COL.sector[0], weight: 1, fillColor: COL.sector[1], fillOpacity: 0.05 })
-              .bindPopup('<div class="as-pop"><b>' + s.name + '</b>' + clsBadge("A") +
+        if (acc && acc.features) {
+          var bbArea = function (f) { var b = L.geoJSON(f).getBounds(); return (b.getNorth() - b.getSouth()) * (b.getEast() - b.getWest()); };
+          var secs = acc.features.slice().sort(function (x, y) { return bbArea(y) - bbArea(x); });
+          secs.forEach(function (ft) {
+            var nm = ft.properties.name, freq = ft.properties.freq;
+            var pg = L.geoJSON(ft, { style: { color: COL.sector[0], weight: 1, fillColor: COL.sector[1], fillOpacity: 0.05 } })
+              .bindPopup('<div class="as-pop"><b>' + nm + '</b>' + clsBadge("A") +
                 '<table><tr><td>Unit</td><td>Manila Control</td></tr>' + freqRow("Primary", freq) +
                 '<tr><td>Levels</td><td>upper control area</td></tr></table></div>')
-              .bindTooltip(s.name, tip());
+              .bindTooltip(ft.properties.id, tip());
             hover(pg, 1, 0.05);
             pg.addTo(layers.sector);
           });

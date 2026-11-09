@@ -16,6 +16,7 @@ from shapely.ops import unary_union, polygonize, snap, split
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LINES = os.path.join(HERE, "tools", "mnl_sector_lines.geojson")
+EXPLORER = os.path.join(HERE, "docs", "assets", "data", "mnl_sectors.json")  # Airspace Explorer
 INDEX = os.path.join(HERE, "docs", "briefings", "index.md")
 
 # representative (lon, lat) inside each atomic cell
@@ -41,6 +42,22 @@ SECTORS = [
     ("MNL_W", ["W"]), ("MNL_SW", ["SW"]),
     ("MNL_S", ["S"]), ("MNL_SE", ["SE"]),
 ]
+
+
+# id -> (name, primary frequency); keep in sync with SECTOR_INFO in index.md
+INFO = {
+    "MNL_C": ("Manila Inner Combined", "132.075"),
+    "MNL_CNC": ("Manila Central North Combined", "129.000"),
+    "MNL_CNS": ("Manila Central South Combined", "131.500"),
+    "MNL_BBN": ("Manila North Combined", "126.575"),
+    "MNL_BBS": ("Manila South Combined", "133.500"),
+    "MNL_BB2": ("Manila Split South 2", "124.900"),
+    "MNL_NW": ("Manila North West", "128.700"), "MNL_NE": ("Manila North East", "132.500"),
+    "MNL_CN": ("Manila Central North", "120.500"), "MNL_CE": ("Manila Central East", "128.750"),
+    "MNL_CW": ("Manila Central West", "132.700"), "MNL_CS": ("Manila Central South", "125.700"),
+    "MNL_W": ("Manila West", "133.750"), "MNL_SW": ("Manila South West", "118.900"),
+    "MNL_S": ("Manila South", "124.900"), "MNL_SE": ("Manila South East", "125.700"),
+}
 
 
 def main():
@@ -79,6 +96,7 @@ def main():
     found["CS"] = unary_union([found["CS"], south])
 
     out = []
+    explorer = []
     for sid, members in SECTORS:
         u = unary_union([found[m] for m in members]).buffer(0)
         g = mapping(u)
@@ -89,7 +107,13 @@ def main():
             return [rnd(i) for i in o] if isinstance(o, (list, tuple)) and o and isinstance(o[0], (list, tuple)) else [round(o[0], 6), round(o[1], 6)]
         g["coordinates"] = rnd(g["coordinates"])
         out.append({"type": "Feature", "properties": {"id": sid}, "geometry": g})
+        nm, fq = INFO[sid]
+        explorer.append({"type": "Feature", "properties": {"id": sid, "name": nm, "freq": fq}, "geometry": g})
         print(sid, u.geom_type, round(u.area, 2), "holes:", sum(len(p.interiors) for p in (u.geoms if u.geom_type == "MultiPolygon" else [u])))
+
+    with open(EXPLORER, "w") as fh:
+        json.dump({"type": "FeatureCollection", "features": explorer}, fh, separators=(",", ":"))
+    print("wrote", EXPLORER)
 
     js = "  var sectors = [\n" + ",\n".join("    " + json.dumps(f, separators=(",", ":")) for f in out) + "\n  ];"
     src = open(INDEX, encoding="utf-8").read()
