@@ -433,7 +433,7 @@ Here you will find aerodrome briefings for the airports within the Philippines. 
     "MNL_W":     { name: "Manila West",             freqs: [{ role: "Primary", mhz: "133.750" }] },
     "MNL_SW":    { name: "Manila South West",       freqs: [{ role: "Primary", mhz: "118.900" }] },
     "MNL_S":     { name: "Manila South",            freqs: [{ role: "Primary", mhz: "124.900" }] },
-    "MNL_SE":    { name: "Manila South East",       freqs: [{ role: "Primary", mhz: "125.700" }] }
+    "MNL_SE":    { name: "Manila South East",       freqs: [{ role: "Primary", mhz: "125.750" }] }
   };
 
   var sectors = [

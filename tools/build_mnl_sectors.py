@@ -56,7 +56,7 @@ INFO = {
     "MNL_CN": ("Manila Central North", "120.500"), "MNL_CE": ("Manila Central East", "128.750"),
     "MNL_CW": ("Manila Central West", "132.700"), "MNL_CS": ("Manila Central South", "125.700"),
     "MNL_W": ("Manila West", "133.750"), "MNL_SW": ("Manila South West", "118.900"),
-    "MNL_S": ("Manila South", "124.900"), "MNL_SE": ("Manila South East", "125.700"),
+    "MNL_S": ("Manila South", "124.900"), "MNL_SE": ("Manila South East", "125.750"),
 }
 
 
